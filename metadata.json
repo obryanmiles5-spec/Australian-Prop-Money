@@ -1,0 +1,6 @@
+{
+  "name": "Australian Prop Money",
+  "description": "Premium replica prop money for film, television, theatre, photography, and creative productions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
