@@ -17,6 +17,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
     "lucide-react": "^0.553.0",
+    "motion": "^12.42.2",
     "next": "^15.1.0",
     "nodemailer": "^9.0.3",
     "postcss": "^8.5.6",

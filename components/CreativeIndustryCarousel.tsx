@@ -2,7 +2,8 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
+import { getImageUrl } from '@/lib/imagekit';
 import { 
   ChevronLeft, ChevronRight, Film, Tv, Camera, 
   Sparkles, Smartphone, Video, Layers, MonitorPlay 
@@ -16,7 +17,7 @@ interface CarouselItem {
   icon: React.ComponentType<any>;
 }
 
-import { getImageUrl } from '@/lib/imagekit';
+
 
 const CAROUSEL_ITEMS: CarouselItem[] = [
   {
