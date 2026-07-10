@@ -4,7 +4,7 @@ export interface Product {
   price: number;
   description: string;
   longDescription: string;
-  category: 'australian-notes' | 'movie-prop-money' | 'tv-production-props' | 'photography-props' | 'training-currency' | 'wholesale-packs';
+  category: 'australian-notes' | 'movie-prop-money' | 'tv-production-props' | 'photography-props' | 'training-currency' | 'bundle-packs';
   sku: string;
   seoTitle: string;
   metaDescription: string;
@@ -52,7 +52,7 @@ export function getCategoryLabel(cat: string): string {
     case 'tv-production-props': return 'TV Production Props';
     case 'photography-props': return 'Photography Props';
     case 'training-currency': return 'Training Currency';
-    case 'wholesale-packs': return 'Wholesale Packs';
+    case 'bundle-packs': return 'Bundle Packs';
     default: return 'Prop Money';
   }
 }
@@ -69,12 +69,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-N100-STK',
     seoTitle: 'Buy $100 Australian Prop Money Stack - RBA Compliant Replicas',
     metaDescription: 'Get 100 high-fidelity double-sided Australian $100 replica notes in a standard currency band. 100% legal, non-glare and perfect for 4K video shoots.',
-    image: 'https://picsum.photos/seed/money1/600/450',
-    gallery: [
-      'https://picsum.photos/seed/money1/600/450',
-      'https://picsum.photos/seed/money1alt1/600/450',
-      'https://picsum.photos/seed/money1alt2/600/450'
-    ],
+    image: 'images/products/Australian Notes/New-Notes/100 AUD/100-aud-stack',
+    gallery: ['images/products/Australian Notes/New-Notes/100 AUD/100-aud-front','images/products/Australian Notes/New-Notes/100 AUD/100-aud-back','images/products/Australian Notes/New-Notes/100 AUD/100-aud-stack','images/products/Australian Notes/New-Notes/100 AUD/100-aud-bundle'],
     stockStatus: 'in-stock',
     relatedProducts: ['aud-50-new-stack', 'aud-20-new-stack', 'indie-film-crew-pack'],
     features: [
@@ -102,11 +98,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-N50-STK',
     seoTitle: 'Aussie $50 Prop Cash Stack - High-Density Non-Glare Film Replicas',
     metaDescription: '100% RBA-compliant Australian $50 replica prop bills. Perfect gold-yellow color-match, dual-sided printing, matte non-glare finish.',
-    image: 'https://picsum.photos/seed/money2/600/450',
-    gallery: [
-      'https://picsum.photos/seed/money2/600/450',
-      'https://picsum.photos/seed/money2alt1/600/450'
-    ],
+    image: 'images/products/Australian Notes/New-Notes/50 AUD/50-aud-stack',
+    gallery: ['images/products/Australian Notes/New-Notes/50 AUD/50-aud-front','images/products/Australian Notes/New-Notes/50 AUD/50-aud-back','images/products/Australian Notes/New-Notes/50 AUD/50-aud-stack','images/products/Australian Notes/New-Notes/50 AUD/50-aud-bundle'],
     stockStatus: 'in-stock',
     relatedProducts: ['aud-100-new-stack', 'aud-20-new-stack', 'indie-film-crew-pack'],
     features: [
@@ -134,11 +127,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-N20-STK',
     seoTitle: 'New Series $20 Australian Prop Bills - Film-Ready Stacks',
     metaDescription: '100 double-sided $20 AUD prop bills. High durability matte paper, perfect deep red-orange hue, no reflections, 100% legal RBA specimen.',
-    image: 'https://picsum.photos/seed/money5/600/450',
-    gallery: [
-      'https://picsum.photos/seed/money5/600/450',
-      'https://picsum.photos/seed/money5alt1/600/450'
-    ],
+    image: 'images/products/Australian Notes/New-Notes/20 AUD/20-aud-stack',
+    gallery: ['images/products/Australian Notes/New-Notes/20 AUD/20-aud-front','images/products/Australian Notes/New-Notes/20 AUD/20-aud-back','images/products/Australian Notes/New-Notes/20 AUD/20-aud-stack','images/products/Australian Notes/New-Notes/20 AUD/20-aud-bundle'],
     stockStatus: 'in-stock',
     relatedProducts: ['aud-50-new-stack', 'aud-10-new-stack', 'indie-film-crew-pack'],
     features: [
@@ -166,8 +156,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-N10-STK',
     seoTitle: 'Buy $10 Australian Prop Money Stack - RBA Specimen Bills',
     metaDescription: 'Replica $10 Australian banknotes. Blue color-balanced, matte printing, dual-sided. 100 notes in bank wrapper. Fully legal prop.',
-    image: 'https://picsum.photos/seed/money10/600/450',
-    gallery: ['https://picsum.photos/seed/money10/600/450'],
+    image: 'images/products/Australian Notes/New-Notes/10 AUD/10-aud-stack',
+    gallery: ['images/products/Australian Notes/New-Notes/10 AUD/10-aud-front','images/products/Australian Notes/New-Notes/10 AUD/10-aud-back','images/products/Australian Notes/New-Notes/10 AUD/10-aud-stack','images/products/Australian Notes/New-Notes/10 AUD/10-aud-bundle'],
     stockStatus: 'in-stock',
     relatedProducts: ['aud-20-new-stack', 'aud-5-new-stack', 'retail-training-kit'],
     features: [
@@ -193,8 +183,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-N5-STK',
     seoTitle: 'Australian $5 Prop Money Stack - Film & TV Replicas',
     metaDescription: 'Violet toned $5 AUD prop currency. Specimen banknotes for background scenes, wallets and drawers. 100 notes with paper strap.',
-    image: 'https://picsum.photos/seed/money5aud/600/450',
-    gallery: ['https://picsum.photos/seed/money5aud/600/450'],
+    image: 'images/products/Australian Notes/New-Notes/10 AUD/10-aud-stack',
+    gallery: ['images/products/Australian Notes/New-Notes/10 AUD/10-aud-front','images/products/Australian Notes/New-Notes/10 AUD/10-aud-back','images/products/Australian Notes/New-Notes/10 AUD/10-aud-stack','images/products/Australian Notes/New-Notes/10 AUD/10-aud-bundle'],
     stockStatus: 'in-stock',
     relatedProducts: ['aud-10-new-stack', 'retail-training-kit', 'classroom-play-pack'],
     features: [
@@ -220,8 +210,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-C100-STK',
     seoTitle: 'Retro 80s/90s $100 Australian Vintage Prop Money',
     metaDescription: 'Vintage paper-series Australian $100 banknotes replica stack. Nostalgic green hue, soft cotton feel. Ideal for historical period films.',
-    image: 'https://picsum.photos/seed/vintage100/600/450',
-    gallery: ['https://picsum.photos/seed/vintage100/600/450'],
+    image: 'images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-stack',
+    gallery: ['images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-front','images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-back','images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-stack','images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-bundle'],
     stockStatus: 'in-stock',
     relatedProducts: ['aud-100-new-stack', 'action-heist-100-aged'],
     features: [
@@ -250,11 +240,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-M100-AGD',
     seoTitle: 'Aged $100 Prop Money Stack - Distressed Cinema Currency',
     metaDescription: 'Professionally distressed, hand-aged Australian $100 prop banknotes. Creased, soiled, weathered, and soft-cornered for cinematic realism.',
-    image: 'https://picsum.photos/seed/money3/600/450',
-    gallery: [
-      'https://picsum.photos/seed/money3/600/450',
-      'https://picsum.photos/seed/money3alt1/600/450'
-    ],
+    image: 'images/products/Movie-Prop-Money/Action-Heist-Weathered-$100-Stack',
+    gallery: ['images/products/Movie-Prop-Money/Action-Heist-Weathered-$100-Stack'],
     stockStatus: 'in-stock',
     relatedProducts: ['action-heist-50-aged', 'crimson-stained-100-stack', 'ultimate-filmmaker-bundle'],
     features: [
@@ -282,11 +269,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-M50-AGD',
     seoTitle: 'Weathered $50 Aussie Prop Cash Stack - Hand-Aged Film Prop',
     metaDescription: 'Get 100 hand-aged Australian $50 replica bills. Dirt, creases, friction wear, pre-softened paper, non-reflective studio ink.',
-    image: 'https://picsum.photos/seed/money4/600/450',
-    gallery: [
-      'https://picsum.photos/seed/money4/600/450',
-      'https://picsum.photos/seed/money4alt1/600/450'
-    ],
+    image: 'images/products/Movie-Prop-Money/Action-Heist-Weathered-$50-Stack',
+    gallery: ['images/products/Movie-Prop-Money/Action-Heist-Weathered-$50-Stack'],
     stockStatus: 'in-stock',
     relatedProducts: ['action-heist-100-aged', 'charred-singed-50-stack', 'ultimate-filmmaker-bundle'],
     features: [
@@ -314,8 +298,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-M100-BLD',
     seoTitle: 'Blood-Splattered $100 Prop Money - Action Crime Film Props',
     metaDescription: '100 notes of realistic blood-stained Australian $100 replicas. Hand-crafted crimson pigment splatters. Non-toxic and safe for actors.',
-    image: 'https://picsum.photos/seed/bloodmoney/600/450',
-    gallery: ['https://picsum.photos/seed/bloodmoney/600/450'],
+    image: 'images/products/Movie-Prop-Money/Crimson-Stained-$100-Prop-Note-Stack',
+    gallery: ['images/products/Movie-Prop-Money/Crimson-Stained-$100-Prop-Note-Stack'],
     stockStatus: 'in-stock',
     relatedProducts: ['action-heist-100-aged', 'charred-singed-50-stack'],
     features: [
@@ -341,8 +325,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-M50-CHR',
     seoTitle: 'Charred & Burned $50 Prop Money Stack - Arson FX Props',
     metaDescription: 'Controlled singed edges and realistic soot-coated Australian $50 prop currency. Made of heavyweight non-reflective paper for visual drama.',
-    image: 'https://picsum.photos/seed/burnedmoney/600/450',
-    gallery: ['https://picsum.photos/seed/burnedmoney/600/450'],
+    image: 'images/products/Movie-Prop-Money/Charred-&-Singed-$50-Prop-Note-Stack',
+    gallery: ['images/products/Movie-Prop-Money/Charred-&-Singed-$50-Prop-Note-Stack'],
     stockStatus: 'in-stock',
     relatedProducts: ['action-heist-50-aged', 'crimson-stained-100-stack'],
     features: [
@@ -368,8 +352,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-M100-WTR',
     seoTitle: 'Submerged Water-Logged Prop Money $100 - Sea Salvage Props',
     metaDescription: 'Water-damaged and warped Australian $100 prop banknotes. Unique crinkled texture, authentic moisture lines. Hand-processed.',
-    image: 'https://picsum.photos/seed/watermoney/600/450',
-    gallery: ['https://picsum.photos/seed/watermoney/600/450'],
+    image: 'images/products/Movie-Prop-Money/Water-Logged-Underworld-Cash-Stack',
+    gallery: ['images/products/Movie-Prop-Money/Water-Logged-Underworld-Cash-Stack'],
     stockStatus: 'in-stock',
     relatedProducts: ['action-heist-100-aged', 'cop-evidence-bag'],
     features: [
@@ -397,8 +381,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-T20-STK',
     seoTitle: 'TV Studio $20 Prop Money - Broadcast-Grade Cash Stacks',
     metaDescription: '100 double-sided Australian $20 prop banknotes optimized for digital TV broadcasts, commercial spots, and game shows.',
-    image: 'https://picsum.photos/seed/moneytv20/600/450',
-    gallery: ['https://picsum.photos/seed/moneytv20/600/450'],
+    image: 'images/products/TV-Props/Broadcaster-Quality-$20-Prop-Stack',
+    gallery: ['images/products/TV-Props/Broadcaster-Quality-$20-Prop-Stack'],
     stockStatus: 'in-stock',
     relatedProducts: ['aud-20-new-stack', 'cop-evidence-bag'],
     features: [
@@ -424,11 +408,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-T-EV-BAG',
     seoTitle: 'Police Evidence Bag Prop with Cash Stacks - TV Crime Show Props',
     metaDescription: 'Realistic pre-sealed police evidence bag containing 2 weathered Australian prop money stacks. Complete with custody chain forms.',
-    image: 'https://picsum.photos/seed/evidencebag/600/450',
-    gallery: [
-      'https://picsum.photos/seed/evidencebag/600/450',
-      'https://picsum.photos/seed/evidencebagalt/600/450'
-    ],
+    image: 'images/products/TV-Props/Cop-Show-Evidence-Sealed-Cash-Bag',
+    gallery: ['images/products/TV-Props/Cop-Show-Evidence-Sealed-Cash-Bag'],
     stockStatus: 'in-stock',
     relatedProducts: ['action-heist-100-aged', 'action-heist-50-aged', 'drug-bust-briefcase'],
     features: [
@@ -454,11 +435,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-T-CASE-SM',
     seoTitle: 'Ransom Briefcase Prop with 4 Cash Stacks - Film Exchange Props',
     metaDescription: 'Lockable security briefcase prop pre-filled with 4 premium Australian replica banknote stacks ($30,000 prop value). Ideal for mob/deal scenes.',
-    image: 'https://picsum.photos/seed/briefcase/600/450',
-    gallery: [
-      'https://picsum.photos/seed/briefcase/600/450',
-      'https://picsum.photos/seed/briefcaseopen/600/450'
-    ],
+    image: 'images/products/TV-Props/Drug-Bust-Luxury-Briefcase-Layout',
+    gallery: ['images/products/TV-Props/Drug-Bust-Luxury-Briefcase-Layout'],
     stockStatus: 'in-stock',
     relatedProducts: ['cop-evidence-bag', 'high-stakes-ransom-briefcase'],
     features: [
@@ -484,8 +462,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-T-PILE',
     seoTitle: 'Game Show Cash Prize Prop Pack - Display Money Trays',
     metaDescription: 'Jumbo TV display cash prop pack. 6 premium currency stacks with transparent acrylic trays. Perfect for award podiums.',
-    image: 'https://picsum.photos/seed/gameshow/600/450',
-    gallery: ['https://picsum.photos/seed/gameshow/600/450'],
+    image: 'images/products/TV-Props/Game-show-Grand-Prize-Jumbo-Cash-Pile',
+    gallery: ['images/products/TV-Props/Game-show-Grand-Prize-Jumbo-Cash-Pile'],
     stockStatus: 'in-stock',
     relatedProducts: ['drug-bust-briefcase', 'high-stakes-ransom-briefcase'],
     features: [
@@ -511,8 +489,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-T-BRK',
     seoTitle: 'Smuggled Cartel Cash Brick Prop - Wrapped Money Props',
     metaDescription: '5 stacks of $100 Australian replica currency vacuum-sealed in heavy clear plastic packaging. Perfect for drug trade and cartel drama sets.',
-    image: 'https://picsum.photos/seed/moneybrick/600/450',
-    gallery: ['https://picsum.photos/seed/moneybrick/600/450'],
+    image: 'images/products/TV-Props/Telenovela-Wealth-Cartel-Brick',
+    gallery: ['images/products/TV-Props/Telenovela-Wealth-Cartel-Brick'],
     stockStatus: 'in-stock',
     relatedProducts: ['cop-evidence-bag', 'drug-bust-briefcase', 'millionaire-heist-crate'],
     features: [
@@ -540,8 +518,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-P100-STK',
     seoTitle: 'Photography Flash-Safe $100 Prop Cash - Studio Grade',
     metaDescription: '100 notes of high-contrast $100 Australian prop cash. Designed for high-strobe studio lighting, editorial photography, and catalog shoots.',
-    image: 'https://picsum.photos/seed/photo100/600/450',
-    gallery: ['https://picsum.photos/seed/photo100/600/450'],
+    image: 'images/products/Photography-Props/Studio-Grade-High-Contrast-$100-Prop-Stack',
+    gallery: ['images/products/Photography-Props/Studio-Grade-High-Contrast-$100-Prop-Stack'],
     stockStatus: 'in-stock',
     relatedProducts: ['aesthetic-flatlay-fan', 'instagram-luxury-roll'],
     features: [
@@ -567,8 +545,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-P-FAN',
     seoTitle: 'Flatlay Prop Cash Fan $100/$50 - Reusable Low-Tack Spine',
     metaDescription: '30 pre-fanned Australian replica banknotes ($100s and $50s) on a low-tack reusable adhesive. Perfect for product photography layouts.',
-    image: 'https://picsum.photos/seed/flatlayfan/600/450',
-    gallery: ['https://picsum.photos/seed/flatlayfan/600/450'],
+    image: 'images/products/Photography-Props/Aesthetic-Flatlay-Loose-Prop-Currency-Fan',
+    gallery: ['images/products/Photography-Props/Aesthetic-Flatlay-Loose-Prop-Currency-Fan'],
     stockStatus: 'in-stock',
     relatedProducts: ['studio-high-contrast-100', 'instagram-luxury-roll'],
     features: [
@@ -594,8 +572,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-P-ROLL',
     seoTitle: 'Instagram Influencer Cash Roll Prop - Luxury Lifestyle Props',
     metaDescription: '50 tightly rolled $100 Australian replica banknotes with a gold metallic elastic band. Ideal for lifestyle blogging and social media.',
-    image: 'https://picsum.photos/seed/moneyroll/600/450',
-    gallery: ['https://picsum.photos/seed/moneyroll/600/450'],
+    image: 'images/products/Photography-Props/Instagram-Influencer-Luxury-Cash-Roll',
+    gallery: ['images/products/Photography-Props/Instagram-Influencer-Luxury-Cash-Roll'],
     stockStatus: 'in-stock',
     relatedProducts: ['aesthetic-flatlay-fan', 'hiphop-video-rain-pack'],
     features: [
@@ -621,8 +599,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-P-MAC',
     seoTitle: 'Macro Close-Up Prop Money Stack - Micro-Texture Prints',
     metaDescription: 'Close-up macro grade Australian $100 replica notes. High resolution fiber simulation print, 100% matte, no lens flares.',
-    image: 'https://picsum.photos/seed/macro100/600/450',
-    gallery: ['https://picsum.photos/seed/macro100/600/450'],
+    image: 'images/products/Photography-Props/Hyper-Matte-Close-Up-Macro-Prop-Stack',
+    gallery: ['images/products/Photography-Props/Hyper-Matte-Close-Up-Macro-Prop-Stack'],
     stockStatus: 'low-stock',
     relatedProducts: ['studio-high-contrast-100', 'action-heist-100-aged'],
     features: [
@@ -648,8 +626,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-P-RAIN',
     seoTitle: 'Music Video Cash Rain Pack - 300 Loose Floating Notes',
     metaDescription: '300 loose mixed Australian prop banknotes ($100s, $50s, $20s). Printed on lightweight floating paper for epic slow-motion music videos.',
-    image: 'https://picsum.photos/seed/cashrain/600/450',
-    gallery: ['https://picsum.photos/seed/cashrain/600/450'],
+    image: 'images/products/Photography-Props/Hip-Hop-Video-Multi-Denom-Rain-Pack',
+    gallery: ['images/products/Photography-Props/Hip-Hop-Video-Multi-Denom-Rain-Pack'],
     stockStatus: 'in-stock',
     relatedProducts: ['instagram-luxury-roll', 'indie-film-crew-pack'],
     features: [
@@ -677,8 +655,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-TR-BND',
     seoTitle: 'Bank Teller Training Prop Cash Pack - Retail Trainer Cash',
     metaDescription: 'Professional cashier training money set. 3 stacks of Australian replica notes ($50, $20, $10) for register count training.',
-    image: 'https://picsum.photos/seed/banktraining/600/450',
-    gallery: ['https://picsum.photos/seed/banktraining/600/450'],
+    image: 'images/products/Training-Currency/Bank-Teller-Training-Starter-Bundle',
+    gallery: ['images/products/Training-Currency/Bank-Teller-Training-Starter-Bundle'],
     stockStatus: 'in-stock',
     relatedProducts: ['security-cash-handler-trainer', 'retail-register-training-kit'],
     features: [
@@ -704,8 +682,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-TR-HD',
     seoTitle: 'CIT Security Transport Cash Trainer - High-Durability Props',
     metaDescription: 'Armored car crew training banknotes. 100 heavy duty $100 Australian replica prop bills. Built to withstand physical drills.',
-    image: 'https://picsum.photos/seed/securitymoney/600/450',
-    gallery: ['https://picsum.photos/seed/securitymoney/600/450'],
+    image: 'images/products/Training-Currency/Security-Transport-Cash-Handler-Trainer',
+    gallery: ['images/products/Training-Currency/Security-Transport-Cash-Handler-Trainer'],
     stockStatus: 'in-stock',
     relatedProducts: ['bank-teller-training-kit', 'gaming-club-croupier-practice'],
     features: [
@@ -731,8 +709,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-TR-CRP',
     seoTitle: 'Casino Croupier Training Cash $50 - Slip-Coated Replicas',
     metaDescription: '100 notes of croupier training $50 banknotes. Special slip coating for casino training schools and dealer practice.',
-    image: 'https://picsum.photos/seed/casinomoney/600/450',
-    gallery: ['https://picsum.photos/seed/casinomoney/600/450'],
+    image: 'images/products/Training-Currency/Gaming-Club-Croupier-Practice-Currency',
+    gallery: ['images/products/Training-Currency/Gaming-Club-Croupier-Practice-Currency'],
     stockStatus: 'in-stock',
     relatedProducts: ['bank-teller-training-kit', 'security-cash-handler-trainer'],
     features: [
@@ -758,8 +736,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-TR-REG',
     seoTitle: 'Retail Cashier Cash Register Training Set - 200 Notes',
     metaDescription: 'Retailer cash register balancing starter kit. 200 mixed Australian replica prop banknotes for cash register onboarding.',
-    image: 'https://picsum.photos/seed/retailregister/600/450',
-    gallery: ['https://picsum.photos/seed/retailregister/600/450'],
+    image: 'images/products/Training-Currency/Retail-Cash-Register-Training-Kit',
+    gallery: ['images/products/Training-Currency/Retail-Cash-Register-Training-Kit'],
     stockStatus: 'in-stock',
     relatedProducts: ['bank-teller-training-kit', 'classroom-play-pack'],
     features: [
@@ -785,8 +763,8 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-TR-EDU',
     seoTitle: 'Classroom Toy Money Kit - Australian School Finance Play Cash',
     metaDescription: '150 play currency notes for Australian schools. High durability matte card, distinct color coding. Perfect for math and economics classes.',
-    image: 'https://picsum.photos/seed/classroom/600/450',
-    gallery: ['https://picsum.photos/seed/classroom/600/450'],
+    image: 'images/products/Training-Currency/Classroom-Finance-Education-Play-Pack',
+    gallery: ['images/products/Training-Currency/Classroom-Finance-Education-Play-Pack'],
     stockStatus: 'in-stock',
     relatedProducts: ['retail-register-training-kit', 'bank-teller-training-kit'],
     features: [
@@ -810,15 +788,12 @@ export const PRODUCTS: Product[] = [
     price: 1450.00,
     description: 'Bulk wholesale container containing 100 individual stacks of $100 cash props ($1,000,000 prop value). Ships in wooden military-grade crate.',
     longDescription: 'Our ultimate volume offering. Designed for large-scale cinema productions, television studio reserves, and wholesale distribution. Contains 10,000 individual notes of RBA-compliant $100 prop banknotes pre-packaged into 100 separate stacks. Safely crated in a custom-built prop pine shipping container with military style steel latches.',
-    category: 'wholesale-packs',
+    category: 'bundle-packs',
     sku: 'AUD-W-MIL',
     seoTitle: 'Million Dollar Prop Cash Crate - 100 Stacks Wholesale',
     metaDescription: 'Bulk Australian prop money crate. Includes 100 full stacks of $100 prop notes ($1M face value) packed inside a movie prop wooden shipping crate.',
-    image: 'https://picsum.photos/seed/crate100/600/450',
-    gallery: [
-      'https://picsum.photos/seed/crate100/600/450',
-      'https://picsum.photos/seed/crateopen/600/450'
-    ],
+    image: 'images/products/Bundle-Packs/The-Millionaire-Heist-Master-Crate-(100 Stacks)',
+    gallery: ['images/products/Bundle-Packs/The-Millionaire-Heist-Master-Crate-(100 Stacks)'],
     stockStatus: 'in-stock',
     relatedProducts: ['high-stakes-ransom-briefcase', 'commercial-bulk-reserve-50'],
     features: [
@@ -842,15 +817,12 @@ export const PRODUCTS: Product[] = [
     price: 595.00,
     description: 'Lockable high-grade aluminum security briefcase packed with 20 stacks of $100 cash props ($200,000 prop value) arranged flatly.',
     longDescription: 'The classic heist or ransom drop-off accessory. Features a heavy-duty, commercial-grade lockable black aluminum briefcase with a custom foam cut-out that arranges 20 full stacks of $100 prop cash flatly for maximum visual exposure. Perfect for ransom drops, high-level trades, or detective raids.',
-    category: 'wholesale-packs',
+    category: 'bundle-packs',
     sku: 'AUD-W-CASE',
     seoTitle: 'Ransom Briefcase Pro with 20 Cash Stacks - Prop Briefcase',
     metaDescription: 'Commercial lockable prop briefcase flat-packed with 20 premium $100 Australian prop stacks ($200,000 face value). Outstanding movie realism.',
-    image: 'https://picsum.photos/seed/ransomcase/600/450',
-    gallery: [
-      'https://picsum.photos/seed/ransomcase/600/450',
-      'https://picsum.photos/seed/ransomcaseopen/600/450'
-    ],
+    image: 'images/products/Bundle-Packs/High-Stakes-Ransom-Briefcase-Pro-(20 Stacks)',
+    gallery: ['images/products/Bundle-Packs/High-Stakes-Ransom-Briefcase-Pro-(20 Stacks)'],
     stockStatus: 'in-stock',
     relatedProducts: ['millionaire-heist-crate', 'commercial-bulk-reserve-50'],
     features: [
@@ -873,12 +845,12 @@ export const PRODUCTS: Product[] = [
     price: 295.00,
     description: 'Curated filmmaker pack containing 10 mixed stacks ($100s, $50s, $20s, $10s). Excellent entry-level production kit.',
     longDescription: 'The ultimate starter package for independent filmmakers and small production houses. Contains 10 crisp prop money stacks in mixed denominations: 4 stacks of $100, 3 stacks of $50, 2 stacks of $20, and 1 stack of $10 ($56,000 face value prop). Perfect to cover any script requirement.',
-    category: 'wholesale-packs',
+    category: 'bundle-packs',
     sku: 'AUD-W-IND',
     seoTitle: 'Filmmaker Mixed Prop Money Pack - 10 Stacks Bulk',
     metaDescription: '10 mixed stacks of Australian prop notes ($100s, $50s, $20s, $10s) in a bulk pack. Engineered for indie filmmakers, theatres and cameras.',
-    image: 'https://picsum.photos/seed/indiepack/600/450',
-    gallery: ['https://picsum.photos/seed/indiepack/600/450'],
+    image: 'images/products/Bundle-Packs/Indie-Film-Crew-Full-Range-Pack-(10 Stacks)',
+    gallery: ['images/products/Bundle-Packs/Indie-Film-Crew-Full-Range-Pack-(10 Stacks)'],
     stockStatus: 'in-stock',
     relatedProducts: ['high-stakes-ransom-briefcase', 'commercial-bulk-reserve-50'],
     features: [
@@ -900,12 +872,12 @@ export const PRODUCTS: Product[] = [
     price: 850.00,
     description: 'Wholesale reserve pack containing 50 stacks of $100 notes ($500,000 face value) inside a locked courier security pouch.',
     longDescription: 'Designed for production coordinators, ad agencies, and prop warehouse rentals. Contains 50 stacks of crisp, premium-grade $100 notes packaged in bundles inside a heavy-duty locked courier transport security pouch. Perfect for filling vault safes.',
-    category: 'wholesale-packs',
+    category: 'bundle-packs',
     sku: 'AUD-W-RES',
     seoTitle: '50 Stacks $100 Bulk Prop Money - TV Producer Reserve',
     metaDescription: '50 stacks of $100 Australian replica currency ($500,000 face) in a locked ballistic transport bag. Bulk studio discount pack.',
-    image: 'https://picsum.photos/seed/bulkreserve/600/450',
-    gallery: ['https://picsum.photos/seed/bulkreserve/600/450'],
+    image: 'images/products/Bundle-Packs/Commercial-Producer-Bulk-Reserve-(50 Stacks)',
+    gallery: ['images/products/Bundle-Packs/Commercial-Producer-Bulk-Reserve-(50 Stacks)'],
     stockStatus: 'in-stock',
     relatedProducts: ['millionaire-heist-crate', 'high-stakes-ransom-briefcase'],
     features: [
@@ -927,15 +899,12 @@ export const PRODUCTS: Product[] = [
     price: 1950.00,
     description: 'Giant mixed bulk container featuring 150 stacks of all denominations ($100s down to $5s). Custom studio vault supply.',
     longDescription: 'Specially created for costume hire warehouses, theatrical supply rental houses, and multi-franchise production agencies. Contains 150 stacks of currency including $100, $50, $20, $10, and $5 prop stacks, safely boxed in a giant weather-proof flight-grade transit trunk.',
-    category: 'wholesale-packs',
+    category: 'bundle-packs',
     sku: 'AUD-W-MEGA',
     seoTitle: 'Bulk Prop Money Flight Case Trunk - 150 Mixed Stacks',
     metaDescription: '150 mixed stacks of Australian prop notes in a hard flight case. Absolute ultimate wholesale volume offering for major studios.',
-    image: 'https://picsum.photos/seed/megabox/600/450',
-    gallery: [
-      'https://picsum.photos/seed/megabox/600/450',
-      'https://picsum.photos/seed/megaboxopen/600/450'
-    ],
+    image: 'images/products/Bundle-Packs/Production-Supply-Wholesaler-Mega-Box',
+    gallery: ['images/products/Bundle-Packs/Production-Supply-Wholesaler-Mega-Box'],
     stockStatus: 'low-stock',
     relatedProducts: ['millionaire-heist-crate', 'commercial-bulk-reserve-50'],
     features: [
@@ -951,11 +920,168 @@ export const PRODUCTS: Product[] = [
       'Weight Packed': '18.2kg',
       'Dimensions': '600mm x 400mm x 350mm'
     }
+  },
+  // 7. NEW AUSTRALIAN PROP MONEY INDIVIDUAL PRODUCTS
+  {
+    id: 'aud-100-new-polymer-note',
+    name: '$100 Australian Prop Money (New Polymer Note)',
+    price: 60.00,
+    description: 'High-quality, realistic single replica of the new polymer series $100 banknote. Perfect for film close-ups, theatrical plays, and media training.',
+    longDescription: 'Designed with high-fidelity detail for professional production use, our $100 Australian Prop Money (New Polymer Note) replica matches the vibrant color-balance and modern design of the current Australian currency. Made of premium matte, non-glare stock, this prop ensures clear 4K digital capture with zero reflection under bright studio lights. Securely complies with all Reserve Bank of Australia (RBA) guidelines.',
+    category: 'australian-notes',
+    sku: 'AUD-N100-POLY',
+    seoTitle: 'New Polymer $100 Australian Prop Money | Premium Movie Prop',
+    metaDescription: 'Shop realistic New Polymer $100 Australian Prop Money. Exquisite details, non-glare finish, and compliant with RBA design guidelines.',
+    image: 'images/products/Australian Notes/New-Notes/100 AUD/100-aud-front',
+    gallery: ['images/products/Australian Notes/New-Notes/100 AUD/100-aud-front','images/products/Australian Notes/New-Notes/100 AUD/100-aud-back','images/products/Australian Notes/New-Notes/100 AUD/100-aud-stack','images/products/Australian Notes/New-Notes/100 AUD/100-aud-bundle'],
+    stockStatus: 'in-stock',
+    relatedProducts: ['aud-100-new-stack', 'aud-50-new-polymer-note', 'aud-20-new-polymer-note'],
+    features: [
+      'Dual-sided premium matte printing (No studio glare)',
+      'Accurate dimensions conforming to legal requirements',
+      'Perfect for cinema, theatre, photography and TV',
+      'Clear legal markings compliant with RBA guidelines'
+    ],
+    specifications: {
+      'Paper Type': 'Premium Heavyweight Matte Paper',
+      'Ink Type': 'Non-Reflective Organic UV Ink',
+      'Dimensions': '158mm x 65mm (Standard Scale)'
+    }
+  },
+  {
+    id: 'aud-50-new-polymer-note',
+    name: '$50 Australian Prop Money (New Polymer Note)',
+    price: 50.00,
+    description: 'Realistic replica of the new polymer series $50 banknote. Perfect for close-up shots, actor counts, and media training.',
+    longDescription: 'Our $50 Australian Prop Money (New Polymer Note) reproduces the current modern banknote series\' stunning gold-yellow palette. Optimized specifically for modern high-definition video sensors, this note features double-sided printing on fine-matte heavyweight paper. Delivers zero camera glare and an authentic paper-snap sound for extreme realism on set.',
+    category: 'australian-notes',
+    sku: 'AUD-N50-POLY',
+    seoTitle: 'New Polymer $50 Australian Prop Money | Cinematic Film Replica',
+    metaDescription: 'Buy New Polymer $50 Australian Prop Money. Calibrated gold-yellow color, dual-sided non-glare matte print, 100% legal RBA compliance.',
+    image: 'images/products/Australian Notes/New-Notes/50 AUD/50-aud-front',
+    gallery: ['images/products/Australian Notes/New-Notes/50 AUD/50-aud-front','images/products/Australian Notes/New-Notes/50 AUD/50-aud-back','images/products/Australian Notes/New-Notes/50 AUD/50-aud-stack','images/products/Australian Notes/New-Notes/50 AUD/50-aud-bundle'],
+    stockStatus: 'in-stock',
+    relatedProducts: ['aud-50-new-stack', 'aud-100-new-polymer-note', 'aud-20-new-polymer-note'],
+    features: [
+      'Realistic gold-yellow color match',
+      'Dual-sided non-glossy premium finish',
+      'Great tactile feel and natural paper snap',
+      'Fully compliant with RBA guidelines'
+    ],
+    specifications: {
+      'Paper Type': 'Premium Heavyweight Matte Paper',
+      'Ink Type': 'Non-Reflective Organic UV Ink',
+      'Dimensions': '151mm x 65mm (Standard Scale)'
+    }
+  },
+  {
+    id: 'aud-20-new-polymer-note',
+    name: '$20 Australian Prop Money (New Polymer Note)',
+    price: 40.00,
+    description: 'Replica of the current polymer $20 banknote. High durability matte paper, perfect deep red-orange hue, and zero studio reflections.',
+    longDescription: 'Featuring the rich, modern red-orange tones of Australia’s current currency, our $20 Australian Prop Money (New Polymer Note) is calibrated to avoid sensor oversaturation in film and television workflows. The dual-sided matte design removes unwanted light bounce, making it perfect for flatlays, street deal mockups, and quick actor trades.',
+    category: 'australian-notes',
+    sku: 'AUD-N20-POLY',
+    seoTitle: 'New Polymer $20 Australian Prop Money | Photographic Grade Note',
+    metaDescription: 'Shop high-quality New Polymer $20 Australian Prop Money. Vivid red-orange tones, non-glare matte finish, ideal for action scenes.',
+    image: 'images/products/Australian Notes/New-Notes/20 AUD/20-aud-front',
+    gallery: ['images/products/Australian Notes/New-Notes/20 AUD/20-aud-front','images/products/Australian Notes/New-Notes/20 AUD/20-aud-back','images/products/Australian Notes/New-Notes/20 AUD/20-aud-stack','images/products/Australian Notes/New-Notes/20 AUD/20-aud-bundle'],
+    stockStatus: 'in-stock',
+    relatedProducts: ['aud-20-new-stack', 'aud-100-new-polymer-note', 'aud-50-new-polymer-note'],
+    features: [
+      'Accurate red-orange gradient matching',
+      'Dual-sided non-reflective premium print',
+      'Crisp handling response for counting scenes',
+      'RBA compliant legal specimen markings'
+    ],
+    specifications: {
+      'Paper Type': 'Premium Heavyweight Matte Paper',
+      'Ink Type': 'Non-Reflective Organic UV Ink',
+      'Dimensions': '144mm x 65mm (Standard Scale)'
+    }
+  },
+  {
+    id: 'aud-100-classic-note',
+    name: '$100 Australian Prop Money (Classic Note)',
+    price: 65.00,
+    description: 'Vintage-style paper-series Australian $100 prop bill. Replicates the nostalgic pre-1996 green cotton-paper currency look.',
+    longDescription: 'Designed for historical period productions, 80s/90s crime dramas, and flashback set designs, our $100 Australian Prop Money (Classic Note) perfectly captures the nostalgia of the original paper notes. Crafted from premium pre-softened paper, it features the iconic retro green palette and authentic tactile texture.',
+    category: 'australian-notes',
+    sku: 'AUD-C100-NOTE',
+    seoTitle: 'Classic Vintage $100 Australian Prop Money | Period Film Prop',
+    metaDescription: 'Buy vintage-style Classic Paper $100 Australian Prop Money. Authentic 1980s-90s retro green aesthetic, ideal for historical dramas.',
+    image: 'images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-front',
+    gallery: ['images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-front','images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-back','images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-stack','images/products/Australian Notes/Classic-Notes/100 AUD/100-aud-bundle'],
+    stockStatus: 'in-stock',
+    relatedProducts: ['aud-100-classic-stack', 'aud-50-classic-note', 'aud-20-classic-note'],
+    features: [
+      'Vintage green-hued retro aesthetic',
+      'Double-sided print on specialized pre-softened paper',
+      'Authentic vintage paper thickness and dimensions',
+      'Compliant with legal specimen rules'
+    ],
+    specifications: {
+      'Paper Type': 'Pre-Softened Cotton-Bond Blend',
+      'Style': 'Pre-1996 Australian Paper Currency',
+      'Dimensions': '172mm x 82mm'
+    }
+  },
+  {
+    id: 'aud-50-classic-note',
+    name: '$50 Australian Prop Money (Classic Note)',
+    price: 55.00,
+    description: 'Nostalgic replica of the pre-1996 paper $50 note. Beautiful color-matching, vintage paper feel, and RBA compliant design.',
+    longDescription: 'Our $50 Australian Prop Money (Classic Note) takes your viewers back to the decades of paper money. Printed on premium matte cotton-rich stock, this replica note delivers the genuine yellow-gold retro tone and soft-handling qualities of pre-1996 currency, providing high-fidelity visual and auditory realism on set.',
+    category: 'australian-notes',
+    sku: 'AUD-C50-NOTE',
+    seoTitle: 'Classic Vintage $50 Australian Prop Money | Retro Movie Cash',
+    metaDescription: 'Shop vintage-style Classic Paper $50 Australian Prop Money. High-quality nostalgia-grade print on soft-textured matte paper.',
+    image: 'images/products/Australian Notes/Classic-Notes/50 AUD/50-aud-front',
+    gallery: ['images/products/Australian Notes/Classic-Notes/50 AUD/50-aud-front','images/products/Australian Notes/Classic-Notes/50 AUD/50-aud-back','images/products/Australian Notes/Classic-Notes/50 AUD/50-aud-stack','images/products/Australian Notes/Classic-Notes/50 AUD/50-aud-bundle'],
+    stockStatus: 'in-stock',
+    relatedProducts: ['aud-50-classic-stack', 'aud-100-classic-note', 'aud-20-classic-note'],
+    features: [
+      'Retro pre-1996 gold-yellow aesthetic',
+      'Dual-sided print on matte textured paper',
+      'Authentic retro dimensions',
+      'Fully compliant with legal specimen markings'
+    ],
+    specifications: {
+      'Paper Type': 'Pre-Softened Cotton-Bond Blend',
+      'Style': 'Pre-1996 Australian Paper Currency',
+      'Dimensions': '165mm x 78mm'
+    }
+  },
+  {
+    id: 'aud-20-classic-note',
+    name: '$20 Australian Prop Money (Classic Note)',
+    price: 45.00,
+    description: 'Replica of the pre-1996 classic paper $20 banknote. Rich retro orange hue, matte cotton stock, ideal for period scenes.',
+    longDescription: 'Perfect for recreating 80s cash-in-hand exchanges, our $20 Australian Prop Money (Classic Note) replicates the old paper notes with a stunning warm orange-brown color scale. Printed on soft-textured, non-glare art stock, this prop ensures outstanding cinematic integration under vintage lighting setups.',
+    category: 'australian-notes',
+    sku: 'AUD-C20-NOTE',
+    seoTitle: 'Classic Vintage $20 Australian Prop Money | Historical Drama Prop',
+    metaDescription: 'Buy retro Classic Paper $20 Australian Prop Money. Beautiful design, authentic pre-1996 paper-series orange tone, 100% legal.',
+    image: 'images/products/Australian Notes/Classic-Notes/20 AUD/20-aud-front',
+    gallery: ['images/products/Australian Notes/Classic-Notes/20 AUD/20-aud-front','images/products/Australian Notes/Classic-Notes/20 AUD/20-aud-back','images/products/Australian Notes/Classic-Notes/20 AUD/20-aud-stack','images/products/Australian Notes/Classic-Notes/20 AUD/20-aud-bundle'],
+    stockStatus: 'in-stock',
+    relatedProducts: ['aud-20-classic-stack', 'aud-100-classic-note', 'aud-50-classic-note'],
+    features: [
+      'Classic pre-1996 warm orange aesthetic',
+      'Double-sided print on non-glare cotton stock',
+      'Standard vintage dimensions and scale',
+      'RBA compliant legal disclaimers'
+    ],
+    specifications: {
+      'Paper Type': 'Pre-Softened Cotton-Bond Blend',
+      'Style': 'Pre-1996 Australian Paper Currency',
+      'Dimensions': '160mm x 74mm'
+    }
   }
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
-  {
+{
     id: 'prop-money-legality-australia',
     title: 'The Legality of Prop Money in Australia: What Filmmakers Need to Know',
     excerpt: 'Using fake currency for film and TV in Australia is governed by strict laws. Discover how to stay 100% compliant with the Reserve Bank of Australia.',
@@ -963,7 +1089,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'July 5, 2026',
     category: 'Legality',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/blog1/800/500'
+    image: 'images/blog/1'
   },
   {
     id: 'lighting-prop-money-camera',
@@ -973,7 +1099,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'June 28, 2026',
     category: 'Production Tips',
     readTime: '4 min read',
-    image: 'https://picsum.photos/seed/blog2/800/500'
+    image: 'images/blog/2'
   },
   {
     id: 'aged-money-tutorial',
@@ -983,7 +1109,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'June 15, 2026',
     category: 'Set Design',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/blog3/800/500'
+    image: 'images/blog/3'
   },
   {
     id: 'crime-drama-props',
@@ -993,7 +1119,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'June 02, 2026',
     category: 'Industry Insights',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/blog4/800/500'
+    image: 'images/blog/4'
   },
   {
     id: 'evolution-of-prop-money',
@@ -1003,7 +1129,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'May 20, 2026',
     category: 'Cinema History',
     readTime: '7 min read',
-    image: 'https://picsum.photos/seed/blog5/800/500'
+    image: 'images/blog/5'
   },
   {
     id: 'theatre-stage-props-cash',
@@ -1013,7 +1139,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'May 08, 2026',
     category: 'Stagecraft',
     readTime: '4 min read',
-    image: 'https://picsum.photos/seed/blog6/800/500'
+    image: 'images/blog/6'
   },
   {
     id: 'safe-staging-heist-scenes',
@@ -1023,7 +1149,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'April 25, 2026',
     category: 'Production Tips',
     readTime: '8 min read',
-    image: 'https://picsum.photos/seed/blog7/800/500'
+    image: 'images/blog/7'
   },
   {
     id: 'digital-sensors-vs-props',
@@ -1033,7 +1159,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'April 11, 2026',
     category: 'Technical Guides',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/blog8/800/500'
+    image: 'images/blog/8'
   },
   {
     id: 'music-video-prop-tips',
@@ -1043,17 +1169,17 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'March 29, 2026',
     category: 'Creative Direction',
     readTime: '4 min read',
-    image: 'https://picsum.photos/seed/blog9/800/500'
+    image: 'images/blog/9'
   },
   {
     id: 'prop-weathering-guide',
     title: 'A Prop Master Guide to Weathering and Distressing Paper Currency',
-    excerpt: 'An inside look at the techniques prop stylists use to turn crisp printed sheets into gritty, street-worn banknotes.',
+    excerpt: 'An inside look at the techniques prop stylists use to turn candy printed sheets into gritty, street-worn banknotes.',
     content: 'Weathering cash is a complex art form. You can’t just crumple bills. To achieve street-grade wear, stylists soak the bills in custom diluted walnut or black tea baths to stain the white fibers. Once dried, sandpaper is applied to corners to split the paper fibers, simulating heavy circulation. For extreme scenes, soot dust or water warping is applied. At Australian Prop Money, our in-house stylists do all this by hand to save productions hours of setup.',
     date: 'March 14, 2026',
     category: 'DIY Props',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/blog10/800/500'
+    image: 'images/blog/10'
   },
   {
     id: 'creative-editorial-photography',
@@ -1063,7 +1189,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'February 28, 2026',
     category: 'Photography Tips',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/blog11/800/500'
+    image: 'images/blog/11'
   },
   {
     id: 'rba-compliance-details',
@@ -1073,7 +1199,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'February 10, 2026',
     category: 'Legality',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/blog12/800/500'
+    image: 'images/blog/12'
   },
   {
     id: 'training-currency-benefits',
@@ -1083,7 +1209,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'January 25, 2026',
     category: 'Business Training',
     readTime: '4 min read',
-    image: 'https://picsum.photos/seed/blog13/800/500'
+    image: 'images/blog/13'
   },
   {
     id: 'briefcase-requisition-design',
@@ -1093,7 +1219,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'January 11, 2026',
     category: 'Set Design',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/blog14/800/500'
+    image: 'images/blog/14'
   },
   {
     id: 'budgeting-wholesale-prop-packs',
@@ -1103,7 +1229,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: 'January 02, 2026',
     category: 'Indie Filmmaking',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/blog15/800/500'
+    image: 'images/blog/15'
   }
 ];
 

@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
       images: [
         {
-          url: product.image,
+          url: product.image.startsWith('http') ? product.image : `${cleanBase}/${product.image.startsWith('/') ? product.image.slice(1) : product.image}`,
           width: 800,
           height: 800,
           alt: product.name,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: product.seoTitle,
       description: product.metaDescription,
-      images: [product.image],
+      images: [product.image.startsWith('http') ? product.image : `${cleanBase}/${product.image.startsWith('/') ? product.image.slice(1) : product.image}`],
     }
   };
 }

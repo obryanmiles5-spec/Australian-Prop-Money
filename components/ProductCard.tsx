@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ShoppingCart, Eye, Star, Check, Heart } from 'lucide-react';
 import { Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
+import { getImageUrl } from '@/lib/imagekit';
 
 interface ProductCardProps {
   product: Product;
@@ -44,7 +45,7 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
       {/* Product Image & Tags */}
       <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
         <Image
-          src={product.image}
+          src={getImageUrl(product.image)}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

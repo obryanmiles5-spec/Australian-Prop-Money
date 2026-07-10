@@ -11,6 +11,7 @@ import {
 import { PRODUCTS, Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
 import ProductCard from '@/components/ProductCard';
+import { getImageUrl } from '@/lib/imagekit';
 
 interface UserReview {
   id: string;
@@ -107,12 +108,14 @@ export default function ProductDetailClient({ productId }: { productId: string }
   }
 
   // Dynamic Image Gallery setup
-  const galleryImages = [
-    product.image,
-    `https://picsum.photos/seed/${product.id}-alt1/600/450`,
-    `https://picsum.photos/seed/${product.id}-alt2/600/450`,
-    `https://picsum.photos/seed/${product.id}-alt3/600/450`
-  ];
+  const galleryImages = product.gallery && product.gallery.length > 0
+    ? [product.image, ...product.gallery]
+    : [
+        product.image,
+        `https://picsum.photos/seed/${product.id}-alt1/600/450`,
+        `https://picsum.photos/seed/${product.id}-alt2/600/450`,
+        `https://picsum.photos/seed/${product.id}-alt3/600/450`
+      ];
 
   // Price Calculation depending on selections
   const calculatePricing = () => {
@@ -227,7 +230,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
           {/* Main Visual Display */}
           <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden border border-gray-100 rounded-3xl group">
             <Image 
-              src={galleryImages[activeImageIdx]} 
+              src={getImageUrl(galleryImages[activeImageIdx])} 
               alt={`${product.name} View`} 
               fill
               sizes="(max-width: 1024px) 100vw, 600px"
@@ -259,7 +262,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
                 id={`thumb-btn-${idx}`}
               >
                 <Image 
-                  src={img} 
+                  src={getImageUrl(img)} 
                   alt="Prop view thumbnail" 
                   fill
                   sizes="150px"
@@ -742,7 +745,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
                 >
                   <div className="relative w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 border border-gray-100">
                     <Image 
-                      src={p.image} 
+                      src={getImageUrl(p.image)} 
                       alt={p.name} 
                       fill
                       sizes="48px"

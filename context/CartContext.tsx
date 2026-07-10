@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { Product } from '@/lib/products';
 
 export interface CartItem {
@@ -265,14 +265,18 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   // Recently viewed helpers
-  const addToRecentlyViewed = (product: Product) => {
-    let newRecent = [...recentlyViewed].filter((p) => p.id !== product.id);
-    newRecent.unshift(product);
-    // Keep maximum 4 items
-    newRecent = newRecent.slice(0, 4);
-    setRecentlyViewed(newRecent);
-    localStorage.setItem('amp_recently_viewed', JSON.stringify(newRecent));
-  };
+  const addToRecentlyViewed = useCallback((product: Product) => {
+    setRecentlyViewed((prev) => {
+      if (prev.length > 0 && prev[0].id === product.id) {
+        return prev;
+      }
+      let newRecent = prev.filter((p) => p.id !== product.id);
+      newRecent.unshift(product);
+      newRecent = newRecent.slice(0, 4);
+      localStorage.setItem('amp_recently_viewed', JSON.stringify(newRecent));
+      return newRecent;
+    });
+  }, []);
 
   // Dynamic calculations based on option pricing
   const activeDiscountPercentage = (couponCode === 'PROPMONEYAU' && paymentMethod === 'crypto') 

@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { label: 'Wholesale', href: '/wholesale' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Videos', href: '/videos' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ];

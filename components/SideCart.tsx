@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { X, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Heart, ShoppingBag, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { PRODUCTS } from '@/lib/products';
+import { getImageUrl } from '@/lib/imagekit';
 
 export default function SideCart() {
   const router = useRouter();
@@ -140,7 +141,7 @@ export default function SideCart() {
                         {/* Image */}
                         <div className="relative w-20 h-20 bg-gray-50 rounded-xs overflow-hidden shrink-0 border border-gray-100">
                           <Image
-                            src={item.product.image}
+                            src={getImageUrl(item.product.image)}
                             alt={item.product.name}
                             fill
                             sizes="80px"
@@ -237,7 +238,7 @@ export default function SideCart() {
                         {/* Image */}
                         <div className="relative w-16 h-16 bg-gray-50 rounded-xs overflow-hidden shrink-0 border border-gray-100">
                           <Image
-                            src={product.image}
+                            src={getImageUrl(product.image)}
                             alt={product.name}
                             fill
                             sizes="64px"

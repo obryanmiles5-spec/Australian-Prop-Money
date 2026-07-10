@@ -23,15 +23,23 @@ function ShopContent() {
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('default');
 
-  // Sync state with URL query parameter
+  // Sync state with URL query parameters
   useEffect(() => {
-    if (categoryParam) {
-      const timer = setTimeout(() => {
+    const timer = setTimeout(() => {
+      if (categoryParam) {
         setActiveCategory(categoryParam);
-      }, 0);
-      return () => clearTimeout(timer);
-    }
-  }, [categoryParam]);
+      }
+      const denomParam = searchParams.get('denom') || 'all';
+      if (denomParam) {
+        setSelectedDenom(denomParam);
+      }
+      const searchParam = searchParams.get('search') || '';
+      if (searchParam) {
+        setSearchQuery(searchParam);
+      }
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [categoryParam, searchParams]);
 
   // Compute filtered & sorted products dynamically during render phase to keep component pure
   const processedProducts = PRODUCTS.filter((p) => {
@@ -140,7 +148,7 @@ function ShopContent() {
               { id: 'tv-production-props', label: 'TV Props' },
               { id: 'photography-props', label: 'Photography Props' },
               { id: 'training-currency', label: 'Training Currency' },
-              { id: 'wholesale-packs', label: 'Wholesale Packs' }
+              { id: 'bundle-packs', label: 'Bundle Packs' }
             ].map((cat) => (
               <button
                 key={cat.id}

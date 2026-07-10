@@ -9,8 +9,10 @@ import {
 } from 'lucide-react';
 import { PRODUCTS, BLOG_POSTS, FAQS, REVIEWS, Product, BlogPost } from '@/lib/products';
 import TrustSection from '@/components/TrustSection';
+import CreativeIndustryCarousel from '@/components/CreativeIndustryCarousel';
 import ProductCard from '@/components/ProductCard';
 import ProductDetailsModal from '@/components/ProductDetailsModal';
+import { getImageUrl } from '@/lib/imagekit';
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -37,7 +39,7 @@ export default function HomePage() {
         {/* Background Image with Dark & Gold Overlays */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&q=80"
+            src={getImageUrl('images/hero/hero.webp')}
             alt="Cinematic prop money background"
             fill
             priority
@@ -91,6 +93,9 @@ export default function HomePage() {
       {/* SECTION 2: TRUST CARDS SECTION */}
       <TrustSection />
 
+      {/* SECTION 2.5: CREATIVE INDUSTRY CAROUSEL */}
+      <CreativeIndustryCarousel />
+
       {/* SECTION 3: FEATURED CATEGORIES (BENTO GRID) */}
       <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16" id="featured-categories">
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -134,12 +139,12 @@ export default function HomePage() {
           <div className="bg-white p-8 border border-gray-100 flex flex-col justify-between h-80 relative overflow-hidden group hover:border-gold transition-all duration-300">
             <div className="space-y-3 relative z-10">
               <span className="text-gold text-[10px] font-bold uppercase tracking-[0.2em] block">Production Packs</span>
-              <h3 className="text-lg font-light text-black leading-tight" style={{ fontFamily: 'Georgia, serif' }}>Wholesale Packs</h3>
+              <h3 className="text-lg font-light text-black leading-tight" style={{ fontFamily: 'Georgia, serif' }}>Bundle Packs</h3>
               <p className="text-[11px] text-gray-500 leading-relaxed font-sans">
                 Saves over 20% on prop cases and multi-note stacks. Curated specifically for ransom drops and safehouse layouts.
               </p>
             </div>
-            <Link href="/shop?category=wholesale-packs" className="text-[10px] font-bold uppercase tracking-widest text-black hover:text-gold flex items-center gap-1.5 transition-all" id="category-link-bundles">
+            <Link href="/shop?category=bundle-packs" className="text-[10px] font-bold uppercase tracking-widest text-black hover:text-gold flex items-center gap-1.5 transition-all" id="category-link-bundles">
               Browse Wholesale <ChevronRight className="w-3.5 h-3.5 text-gold" />
             </Link>
           </div>
@@ -167,6 +172,97 @@ export default function HomePage() {
               onViewDetails={handleViewProduct} 
               
             />
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 4.5: SHOP BY DENOMINATION */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16" id="shop-by-denomination">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block mb-4">Precision Selection</span>
+          <h2 className="text-3xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>Shop by Denomination</h2>
+          <div className="w-12 h-[1px] bg-gold mx-auto mt-6 mb-4"></div>
+          <p className="text-xs sm:text-sm text-gray-500">
+            Browse our RBA-compliant prop series by individual denomination. Optimized for screen clarity and authentic color profiles.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              denom: '100',
+              title: '$100 Australian Prop Money',
+              desc: 'Premium Australian $100 prop notes for film, television, photography and creative productions.',
+              btnText: 'Shop $100 Notes',
+              image: 'images/products/Australian Notes/New-Notes/100 AUD/100-aud-front',
+              colorTheme: 'hover:border-emerald-500/50',
+              badgeColor: 'bg-emerald-50 text-emerald-800 border-emerald-200/50',
+              accentText: 'text-emerald-600',
+              btnHover: 'hover:bg-emerald-600 hover:text-white',
+            },
+            {
+              denom: '50',
+              title: '$50 Australian Prop Money',
+              desc: 'Professional Australian $50 replica notes suitable for production, theatre and media projects.',
+              btnText: 'Shop $50 Notes',
+              image: 'images/products/Australian Notes/New-Notes/50 AUD/50-aud-front',
+              colorTheme: 'hover:border-amber-500/50',
+              badgeColor: 'bg-amber-50 text-amber-800 border-amber-200/50',
+              accentText: 'text-amber-600',
+              btnHover: 'hover:bg-amber-600 hover:text-white',
+            },
+            {
+              denom: '20',
+              title: '$20 Australian Prop Money',
+              desc: 'High-quality Australian $20 prop notes designed for film sets, advertising and training purposes.',
+              btnText: 'Shop $20 Notes',
+              image: 'images/products/Australian Notes/New-Notes/20 AUD/20-aud-front',
+              colorTheme: 'hover:border-red-500/50',
+              badgeColor: 'bg-red-50 text-red-800 border-red-200/50',
+              accentText: 'text-red-600',
+              btnHover: 'hover:bg-red-600 hover:text-white',
+            },
+          ].map((card) => (
+            <div 
+              key={card.denom}
+              className={`bg-white border border-gray-100 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col hover:shadow-lg ${card.colorTheme} group`}
+              id={`denom-card-${card.denom}`}
+            >
+              {/* Card Image using getImageUrl to support future ImageKit integration */}
+              <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden shrink-0 border-b border-gray-100">
+                <Image
+                  src={getImageUrl(card.image)}
+                  alt={card.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  referrerPolicy="no-referrer"
+                  className="object-cover group-hover:scale-102 transition-transform duration-500"
+                />
+                <span className={`absolute top-4 left-4 text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded-full border ${card.badgeColor}`}>
+                  {card.denom} AUD
+                </span>
+              </div>
+
+              {/* Card Body */}
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                <div className="space-y-3">
+                  <h3 className="font-serif font-bold text-lg text-black leading-snug group-hover:text-gold transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-sans">
+                    {card.desc}
+                  </p>
+                </div>
+
+                <Link
+                  href={`/shop?denom=${card.denom}`}
+                  className={`w-full py-3.5 px-6 rounded-xl border border-gray-200 text-xs font-bold uppercase tracking-widest text-center transition-all duration-300 block ${card.btnHover} text-gray-700 bg-white shadow-xs`}
+                  id={`btn-shop-denom-${card.denom}`}
+                >
+                  {card.btnText}
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -227,7 +323,7 @@ export default function HomePage() {
               <div>
                 <div className="relative aspect-video bg-gray-100 overflow-hidden">
                   <Image
-                    src={post.image}
+                    src={getImageUrl(post.image)}
                     alt={post.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
