@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { getImageUrl } from '@/lib/imagekit';
 import { 
   ChevronLeft, ChevronRight, Film, Tv, Camera, 
