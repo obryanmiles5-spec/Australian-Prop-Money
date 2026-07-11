@@ -1,0 +1,49 @@
+Testing ImageKit URLs...
+[FAIL] 404 - images/hero/hero.webp
+[FAIL] 404 - images/hero/hero
+[FAIL] 404 - images/categories/Australian Notes.webp
+[FAIL] 404 - images/categories/Australian Notes.jpg
+[FAIL] 404 - images/categories/Australian Notes
+[FAIL] 404 - images/categories/Bundle Packs.jpg
+[FAIL] 404 - images/categories/Bundle Packs.webp
+[FAIL] 404 - images/categories/Bundle Packs
+[FAIL] 404 - images/categories/Movie-Prop-Money.jpg
+[FAIL] 404 - images/categories/Movie-Prop-Money.webp
+[FAIL] 404 - images/categories/Movie-Prop-Money
+[FAIL] 404 - images/categories/Photography Props.jpg
+[FAIL] 404 - images/categories/Photography Props.webp
+[FAIL] 404 - images/categories/Photography Props
+[FAIL] 404 - images/categories/Training Currency.jpg
+[FAIL] 404 - images/categories/Training Currency.webp
+[FAIL] 404 - images/categories/Training Currency
+[FAIL] 404 - images/categories/TV Props.jpg
+[FAIL] 404 - images/categories/TV Props.webp
+[FAIL] 404 - images/categories/TV Props
+[FAIL] 404 - images/blog/1
+[FAIL] 404 - images/blog/1.jpg
+[FAIL] 404 - images/blog/1.webp
+[FAIL] 404 - images/blog/1.png
+[FAIL] 404 - images/blog/2
+[FAIL] 404 - images/blog/2.jpg
+[FAIL] 404 - images/blog/2.webp
+[FAIL] 404 - images/products/Australian Notes/New-Notes/100 AUD/100-aud-stack
+[FAIL] 404 - images/products/Australian Notes/New-Notes/100 AUD/100-aud-stack.jpg
+[FAIL] 404 - images/products/Australian Notes/New-Notes/100 AUD/100-aud-stack.webp
+[FAIL] 404 - images/products/Australian Notes/New-Notes/100 AUD/100-aud-front
+[FAIL] 404 - images/products/Australian Notes/New-Notes/100 AUD/100-aud-front.webp
+[FAIL] 404 - images/products/Australian Notes/New-Notes/100 AUD/100-aud-front.jpg
+[FAIL] 404 - images/products/Movie-Prop-Money/Action-Heist-Weathered-$100-Stack
+[FAIL] 404 - images/products/Movie-Prop-Money/Action-Heist-Weathered-$100-Stack.jpg
+[FAIL] 404 - images/products/Movie-Prop-Money/Action-Heist-Weathered-$100-Stack.webp
+[FAIL] 404 - images/products/TV-Props/Broadcaster-Quality-$20-Prop-Stack
+[FAIL] 404 - images/products/TV-Props/Broadcaster-Quality-$20-Prop-Stack.jpg
+[FAIL] 404 - images/products/TV-Props/Broadcaster-Quality-$20-Prop-Stack.webp
+[FAIL] 404 - images/products/Photography-Props/Studio-Grade-High-Contrast-$100-Prop-Stack
+[FAIL] 404 - images/products/Photography-Props/Studio-Grade-High-Contrast-$100-Prop-Stack.jpg
+[FAIL] 404 - images/products/Photography-Props/Studio-Grade-High-Contrast-$100-Prop-Stack.webp
+[FAIL] 404 - images/products/Training-Currency/Bank-Teller-Training-Starter-Bundle
+[FAIL] 404 - images/products/Training-Currency/Bank-Teller-Training-Starter-Bundle.jpg
+[FAIL] 404 - images/products/Training-Currency/Bank-Teller-Training-Starter-Bundle.webp
+[FAIL] 404 - images/products/Bundle-Packs/The-Millionaire-Heist-Master-Crate-(100 Stacks)
+[FAIL] 404 - images/products/Bundle-Packs/The-Millionaire-Heist-Master-Crate-(100 Stacks).jpg
+[FAIL] 404 - images/products/Bundle-Packs/The-Millionaire-Heist-Master-Crate-(100 Stacks).webp

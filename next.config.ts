@@ -9,24 +9,16 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   images: {
-    loader: 'custom',
-    loaderFile: './lib/imagekitLoader.ts',
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**', // This allows any path under the hostname
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
+        hostname: 'ik.imagekit.io',
         port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'ik.imagekit.io',
+        hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
       },
@@ -35,7 +27,7 @@ const nextConfig: NextConfig = {
   output: 'standalone',
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
-    // Do not modify—file watching is disabled to prevent flickering during agent edits.
+    // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
     if (dev && process.env.DISABLE_HMR === 'true') {
       config.watchOptions = {
         ignored: /.*/,

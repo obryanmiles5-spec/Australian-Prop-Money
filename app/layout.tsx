@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&q=80&w=1200',
+        url: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp',
         width: 1200,
         height: 630,
         alt: 'Australian Prop Money Film Replicas',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
     description: 'Premium Australian prop money replica notes for film, television, theatre, photography, and training. Conforming to RBA guidelines.',
-    images: ['https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&q=80&w=1200'],
+    images: ['https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp'],
   },
 };
 
@@ -83,7 +83,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   'name': 'Australian Prop Money',
-  'image': 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&q=80&w=1200',
+  'image': 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp',
   '@id': `${cleanBaseUrl}/#localbusiness`,
   'url': cleanBaseUrl,
   'telephone': '+61400000000',
