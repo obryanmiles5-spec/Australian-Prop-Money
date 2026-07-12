@@ -7,19 +7,19 @@ const base = 'https://ik.imagekit.io/ukpeptides/australianpropmoney';
 const code = fs.readFileSync('lib/products.ts', 'utf8');
 
 // Use regex to find all image strings
-const imgMatches = code.match(/image:\s*'([^']+)'/g);
-const galleryMatches = code.match(/'images\/products\/[^']+'/g);
+const imgMatches = code.match(/"image":\s*"([^"]+)"/g);
+const galleryMatches = code.match(/"images\/products\/[^"]+"/g);
 
 const imageRefs = new Set();
 if (imgMatches) {
   imgMatches.forEach(m => {
-    const clean = m.match(/image:\s*'([^']+)'/)[1];
+    const clean = m.match(/"image":\s*"([^"]+)"/)[1];
     imageRefs.add(clean);
   });
 }
 if (galleryMatches) {
   galleryMatches.forEach(m => {
-    const clean = m.slice(1, -1);
+    const clean = m.match(/"(images\/products\/[^"]+)"/)[1];
     imageRefs.add(clean);
   });
 }

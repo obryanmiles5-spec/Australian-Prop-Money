@@ -7,9 +7,23 @@ interface ImageLoaderProps {
 }
 
 export default function imageKitLoader({ src, width, quality }: ImageLoaderProps) {
-  // If the src is already an absolute external URL, return it directly
+  // If the src is already an absolute external URL, ensure it implements width
   if (src.startsWith('http://') || src.startsWith('https://')) {
-    return src;
+    try {
+      const urlObj = new URL(src);
+      if (src.includes('ik.imagekit.io')) {
+        urlObj.searchParams.set('tr', `w-${width},q-${quality || 80}`);
+      } else {
+        urlObj.searchParams.set('w', width.toString());
+        if (quality) {
+          urlObj.searchParams.set('q', quality.toString());
+        }
+      }
+      return urlObj.toString();
+    } catch {
+      const separator = src.includes('?') ? '&' : '?';
+      return `${src}${separator}tr=w-${width},q-${quality || 80}`;
+    }
   }
 
   // Import dynamically or refer to our imagekit utility to format the URL perfectly.
@@ -145,9 +159,13 @@ export default function imageKitLoader({ src, width, quality }: ImageLoaderProps
   const baseUrl = 'https://ik.imagekit.io/ukpeptides/australianpropmoney';
   let url = `${baseUrl}/${finalRelPath}`;
 
-  // Apply real-time ImageKit transformation for width if provided
+  // Apply real-time ImageKit transformation for width and quality
+  const q = quality || 80;
+  const separator = url.includes('?') ? '&' : '?';
   if (width) {
-    url += `?tr=w-${width}`;
+    url += `${separator}tr=w-${width},q-${q}`;
+  } else {
+    url += `${separator}tr=q-${q}`;
   }
 
   return url;

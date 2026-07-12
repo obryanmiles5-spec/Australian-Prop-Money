@@ -141,14 +141,7 @@ export function getImageUrl(src: string, width?: number, height?: number): strin
     finalRelPath = `Images/${relPath}`;
   }
 
-  // Read dynamic ImageKit Base endpoint from env
-  let baseUrl = (process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT || 'https://ik.imagekit.io/ukpeptides').replace(/\/+$/, '');
-  
-  // Ensure we append australianpropmoney if baseUrl is the default or matches the user's base without the subfolder
-  if (baseUrl.includes('ik.imagekit.io/ukpeptides') && !baseUrl.includes('australianpropmoney')) {
-    baseUrl += '/australianpropmoney';
-  }
-
+  const baseUrl = 'https://ik.imagekit.io/ukpeptides/australianpropmoney';
   let url = `${baseUrl}/${finalRelPath}`;
 
   // Apply ImageKit real-time transformations if width or height are specified
