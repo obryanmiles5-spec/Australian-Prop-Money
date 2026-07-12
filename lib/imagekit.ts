@@ -1,27 +1,27 @@
 const VERIFIED_BLOGS: Record<number, string> = {
-  1: 'Images/Blog/1.jpg',
-  2: 'Images/Blog/2.webp',
-  5: 'Images/Blog/5.webp',
-  7: 'Images/Blog/7.jpg',
-  11: 'Images/Blog/11.jpg',
-  12: 'Images/Blog/12.jpg',
-  13: 'Images/Blog/13.jpg',
-  14: 'Images/Blog/14.jpg',
-  15: 'Images/Blog/15.jpg',
+  1: 'images/blog/1.jpg',
+  2: 'images/blog/2.webp',
+  5: 'images/blog/5.webp',
+  7: 'images/blog/7.jpg',
+  11: 'images/blog/11.jpg',
+  12: 'images/blog/12.jpg',
+  13: 'images/blog/13.jpg',
+  14: 'images/blog/14.jpg',
+  15: 'images/blog/15.jpg',
 };
 
 const VERIFIED_CATEGORIES: Record<string, string> = {
-  'australian notes': 'Images/Categories/Australian Notes.webp',
-  'bundle packs': 'Images/Categories/Bundle Packs.jpg',
-  'tv props': 'Images/Categories/TV Props.webp',
-  'tv-props': 'Images/Categories/TV Props.webp',
-  'tv production props': 'Images/Categories/TV Props.webp',
-  'photography props': 'Images/Categories/Photography Props.jpg',
-  'photography-props': 'Images/Categories/Photography Props.jpg',
-  'training currency': 'Images/Categories/Training Currency.jpg',
-  'training-currency': 'Images/Categories/Training Currency.jpg',
-  'movie prop money': 'Images/Categories/TV Props.webp',
-  'movie-prop-money': 'Images/Categories/TV Props.webp',
+  'australian notes': 'images/categories/Australian Notes.webp',
+  'bundle packs': 'images/categories/Bundle Packs.jpg',
+  'tv props': 'images/categories/TV Props.webp',
+  'tv-props': 'images/categories/TV Props.webp',
+  'tv production props': 'images/categories/TV Props.webp',
+  'photography props': 'images/categories/Photography Props.jpg',
+  'photography-props': 'images/categories/Photography Props.jpg',
+  'training currency': 'images/categories/Training Currency.jpg',
+  'training-currency': 'images/categories/Training Currency.jpg',
+  'movie prop money': 'images/categories/TV Props.webp',
+  'movie-prop-money': 'images/categories/TV Props.webp',
 };
 
 const VERIFIED_PRODUCTS: Record<string, string> = {
@@ -86,7 +86,7 @@ export function getImageUrl(src: string, width?: number, height?: number): strin
 
   // 1. Hero handling
   if (lowerRel.startsWith('hero/')) {
-    finalRelPath = 'Images/Hero/hero.webp';
+    finalRelPath = 'images/hero/hero.webp';
   }
   // 2. Blog handling
   else if (lowerRel.startsWith('blog/')) {
@@ -107,7 +107,7 @@ export function getImageUrl(src: string, width?: number, height?: number): strin
     if (VERIFIED_CATEGORIES[cleanCatName]) {
       finalRelPath = VERIFIED_CATEGORIES[cleanCatName];
     } else {
-      finalRelPath = 'Images/Categories/TV Props.webp';
+      finalRelPath = 'images/categories/TV Props.webp';
     }
   }
   // 4. Product handling

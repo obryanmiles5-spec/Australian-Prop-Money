@@ -3,9 +3,32 @@
 import React from 'react';
 import Script from 'next/script';
 
+function cleanGaId(id: string | undefined): string {
+  if (!id) return '';
+  const urlMatch = id.match(/googletagmanager\.com\/gtag\/js\?id=([a-zA-Z0-9\-]+)/);
+  if (urlMatch) return urlMatch[1];
+  const configMatch = id.match(/gtag\(['"]config['"],\s*['"]([a-zA-Z0-9\-]+)['"]/);
+  if (configMatch) return configMatch[1];
+  return id.replace(/<[^>]*>/g, '').trim();
+}
+
+function cleanClarityId(id: string | undefined): string {
+  if (!id) return '';
+  const urlMatch = id.match(/clarity\.ms\/tag\/([a-zA-Z0-9]+)/);
+  if (urlMatch) return urlMatch[1];
+  const fnMatchDouble = id.match(/"clarity",\s*"script",\s*"([a-zA-Z0-9]+)"/);
+  if (fnMatchDouble) return fnMatchDouble[1];
+  const fnMatchSingle = id.match(/'clarity',\s*'script',\s*'([a-zA-Z0-9]+)'/);
+  if (fnMatchSingle) return fnMatchSingle[1];
+  return id.replace(/<[^>]*>/g, '').trim();
+}
+
 export default function AnalyticsScripts() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
-  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID?.trim();
+  const rawGaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+  const rawClarityId = process.env.NEXT_PUBLIC_CLARITY_ID?.trim();
+
+  const gaId = cleanGaId(rawGaId);
+  const clarityId = cleanClarityId(rawClarityId);
 
   const hasGa = !!(gaId && gaId !== 'undefined' && gaId !== 'null' && gaId !== '');
   const hasClarity = !!(clarityId && clarityId !== 'undefined' && clarityId !== 'null' && clarityId !== '');
