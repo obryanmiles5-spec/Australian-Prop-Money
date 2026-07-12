@@ -10,7 +10,7 @@ export default function WhatsAppChat() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [messageText, setMessageText] = useState('Hi, I need assistance with prop money for my upcoming production.');
 
-  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER);
+  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61400000000');
 
   useEffect(() => {
     if (!whatsappNumber) return;
@@ -33,7 +33,7 @@ export default function WhatsAppChat() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none" id="whatsapp-widget-container">
+    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end pointer-events-none" id="whatsapp-widget-container">
       {/* Expanded Chat Box */}
       <AnimatePresence>
         {isOpen && (

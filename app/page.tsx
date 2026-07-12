@@ -10,6 +10,7 @@ import {
 import { PRODUCTS, BLOG_POSTS, FAQS, REVIEWS, Product, BlogPost } from '@/lib/products';
 import TrustSection from '@/components/TrustSection';
 import CreativeIndustryCarousel from '@/components/CreativeIndustryCarousel';
+import EntertainmentLogosCarousel from '@/components/EntertainmentLogosCarousel';
 import ProductCard from '@/components/ProductCard';
 import ProductDetailsModal from '@/components/ProductDetailsModal';
 import { getImageUrl } from '@/lib/imagekit';
@@ -97,6 +98,9 @@ export default function HomePage() {
 
       {/* SECTION 2.5: CREATIVE INDUSTRY CAROUSEL */}
       <CreativeIndustryCarousel />
+
+      {/* SECTION 2.8: ENTERTAINMENT LOGO CAROUSEL */}
+      <EntertainmentLogosCarousel />
 
       {/* SECTION 3: FEATURED CATEGORIES (BENTO GRID) */}
       <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16" id="featured-categories">

@@ -11,20 +11,20 @@ const VERIFIED_BLOGS: Record<number, string> = {
 };
 
 const VERIFIED_CATEGORIES: Record<string, string> = {
-  'australian notes': 'images/categories/australian-notes.webp',
-  'australian-notes': 'images/categories/australian-notes.webp',
-  'bundle packs': 'images/categories/bundle-packs.jpg',
-  'bundle-packs': 'images/categories/bundle-packs.jpg',
-  'tv props': 'images/categories/tv-props.webp',
-  'tv-props': 'images/categories/tv-props.webp',
-  'tv production props': 'images/categories/tv-props.webp',
-  'tv-production-props': 'images/categories/tv-props.webp',
-  'photography props': 'images/categories/photography-props.jpg',
-  'photography-props': 'images/categories/photography-props.jpg',
-  'training currency': 'images/categories/training-currency.jpg',
-  'training-currency': 'images/categories/training-currency.jpg',
-  'movie prop money': 'images/categories/tv-props.webp',
-  'movie-prop-money': 'images/categories/tv-props.webp',
+  'australian notes': 'images/categories/Australian Notes.webp',
+  'australian-notes': 'images/categories/Australian Notes.webp',
+  'bundle packs': 'images/categories/Bundle Packs.jpg',
+  'bundle-packs': 'images/categories/Bundle Packs.jpg',
+  'tv props': 'images/categories/TV Props.webp',
+  'tv-props': 'images/categories/TV Props.webp',
+  'tv production props': 'images/categories/TV Props.webp',
+  'tv-production-props': 'images/categories/TV Props.webp',
+  'photography props': 'images/categories/Photography Props.jpg',
+  'photography-props': 'images/categories/Photography Props.jpg',
+  'training currency': 'images/categories/Training Currency.jpg',
+  'training-currency': 'images/categories/Training Currency.jpg',
+  'movie prop money': 'images/categories/TV Props.webp',
+  'movie-prop-money': 'images/categories/TV Props.webp',
 };
 
 const VERIFIED_PRODUCTS: Record<string, string> = {
@@ -47,6 +47,8 @@ const VERIFIED_PRODUCTS: Record<string, string> = {
   'training-currency/security-transport-cash-handler-trainer': 'images/products/training-currency/security-transport-cash-handler-trainer.jpg',
   'training-currency/gaming-club-croupier-practice-currency': 'images/products/training-currency/gaming-club-croupier-practice-currency.jpg',
   'training-currency/retail-cash-register-training-kit': 'images/products/training-currency/retail-cash-register-training-kit.jpg',
+  'training-currency/classroom-finance-education-play-pack': 'images/products/training-currency/bank-teller-training-starter-bundle.png',
+  'bundle-packs/the-millionaire-heist-master-crate-(100-stacks)': 'images/products/bundle-packs/production-supply-wholesaler-mega-box.png',
   'bundle-packs/high-stakes-ransom-briefcase-pro-(20-stacks)': 'images/products/bundle-packs/high-stakes-ransom-briefcase-pro-(20-stacks).png',
   'bundle-packs/commercial-producer-bulk-reserve-(50-stacks)': 'images/products/bundle-packs/commercial-producer-bulk-reserve-(50-stacks).png',
   'bundle-packs/production-supply-wholesaler-mega-box': 'images/products/bundle-packs/production-supply-wholesaler-mega-box.png',
@@ -134,33 +136,37 @@ export function getImageUrl(src: string, width?: number, height?: number): strin
     if (VERIFIED_CATEGORIES[cleanCatName]) {
       finalRelPath = VERIFIED_CATEGORIES[cleanCatName];
     } else {
-      finalRelPath = 'images/categories/tv-props.webp';
+      finalRelPath = 'images/categories/TV Props.webp';
     }
   }
   // 4. Product handling
   else if (lowerRel.startsWith('products/')) {
-    const productKey = lowerRel.replace(/^products\//, '');
-    const normalizedKey = productKey
-      .replace(/%20/g, '-')
-      .replace(/ /g, '-')
-      .replace(/\(/g, '')
-      .replace(/\)/g, '')
-      .replace(/--+/g, '-');
-      
-    const matched = Object.keys(VERIFIED_PRODUCTS).find(k => {
-      const normalizedK = k
+    if (lowerRel.includes('australian-notes')) {
+      finalRelPath = 'images/categories/Australian Notes.webp';
+    } else {
+      const productKey = lowerRel.replace(/^products\//, '');
+      const normalizedKey = productKey
         .replace(/%20/g, '-')
         .replace(/ /g, '-')
         .replace(/\(/g, '')
         .replace(/\)/g, '')
         .replace(/--+/g, '-');
-      return normalizedKey.includes(normalizedK) || normalizedK.includes(normalizedKey);
-    });
+        
+      const matched = Object.keys(VERIFIED_PRODUCTS).find(k => {
+        const normalizedK = k
+          .replace(/%20/g, '-')
+          .replace(/ /g, '-')
+          .replace(/\(/g, '')
+          .replace(/\)/g, '')
+          .replace(/--+/g, '-');
+        return normalizedKey.includes(normalizedK) || normalizedK.includes(normalizedKey);
+      });
 
-    if (matched) {
-      finalRelPath = VERIFIED_PRODUCTS[matched];
-    } else {
-      finalRelPath = getDeterministicProductImage(lowerRel);
+      if (matched) {
+        finalRelPath = VERIFIED_PRODUCTS[matched];
+      } else {
+        finalRelPath = getDeterministicProductImage(lowerRel);
+      }
     }
   }
   // 5. Fallback

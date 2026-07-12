@@ -8,13 +8,11 @@ import { useCart } from '@/context/CartContext';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/' },
-  { label: 'Shop', href: '/shop' },
-  { label: 'Wholesale', href: '/wholesale' },
   { label: 'About', href: '/about' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Videos', href: '/videos' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'Shop', href: '/shop' },
   { label: 'Contact', href: '/contact' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Blog', href: '/blog' },
 ];
 
 export default function Header() {
