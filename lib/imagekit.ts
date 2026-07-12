@@ -11,43 +11,58 @@ const VERIFIED_BLOGS: Record<number, string> = {
 };
 
 const VERIFIED_CATEGORIES: Record<string, string> = {
-  'australian notes': 'images/categories/Australian Notes.webp',
-  'bundle packs': 'images/categories/Bundle Packs.jpg',
-  'tv props': 'images/categories/TV Props.webp',
-  'tv-props': 'images/categories/TV Props.webp',
-  'tv production props': 'images/categories/TV Props.webp',
-  'photography props': 'images/categories/Photography Props.jpg',
-  'photography-props': 'images/categories/Photography Props.jpg',
-  'training currency': 'images/categories/Training Currency.jpg',
-  'training-currency': 'images/categories/Training Currency.jpg',
-  'movie prop money': 'images/categories/TV Props.webp',
-  'movie-prop-money': 'images/categories/TV Props.webp',
+  'australian notes': 'images/categories/australian-notes.webp',
+  'australian-notes': 'images/categories/australian-notes.webp',
+  'bundle packs': 'images/categories/bundle-packs.jpg',
+  'bundle-packs': 'images/categories/bundle-packs.jpg',
+  'tv props': 'images/categories/tv-props.webp',
+  'tv-props': 'images/categories/tv-props.webp',
+  'tv production props': 'images/categories/tv-props.webp',
+  'tv-production-props': 'images/categories/tv-props.webp',
+  'photography props': 'images/categories/photography-props.jpg',
+  'photography-props': 'images/categories/photography-props.jpg',
+  'training currency': 'images/categories/training-currency.jpg',
+  'training-currency': 'images/categories/training-currency.jpg',
+  'movie prop money': 'images/categories/tv-props.webp',
+  'movie-prop-money': 'images/categories/tv-props.webp',
 };
 
 const VERIFIED_PRODUCTS: Record<string, string> = {
-  'movie-prop-money/action-heist-weathered-$50-stack': 'Movie Prop Money/Action-Heist-Weathered-$50-Stack.png',
-  'movie-prop-money/crimson-stained-$100-prop-note-stack': 'Movie Prop Money/Crimson-Stained-$100-Prop-Note-Stack.png',
-  'tv-props/cop-show-evidence-sealed-cash-bag': 'TV Props/Cop-Show-Evidence-Sealed-Cash-Bag.png',
-  'tv-props/drug-bust-luxury-briefcase-layout': 'TV Props/Drug-Bust-Luxury-Briefcase-Layout.png',
-  'tv-props/telenovela-wealth-cartel-brick': 'TV Props/Telenovela-Wealth-Cartel-Brick.png',
-  'photography-props/studio-grade-high-contrast-$100-prop-stack': 'Photography Props/Studio-Grade-High-Contrast-$100-Prop-Stack.png',
-  'photography-props/hip-hop-video-multi-denom-rain-pack': 'Photography Props/Hip-Hop-Video-Multi-Denom-Rain-Pack.jpg',
-  'training-currency/bank-teller-training-starter-bundle': 'Training Currency/Bank-Teller-Training-Starter-Bundle.png',
-  'bundle-packs/high-stakes-ransom-briefcase-pro-(20-stacks)': 'Bundle Packs/High-Stakes-Ransom-Briefcase-Pro-(20 Stacks).png',
-  'bundle-packs/commercial-producer-bulk-reserve-(50-stacks)': 'Bundle Packs/Commercial-Producer-Bulk-Reserve-(50 Stacks).png',
-  'bundle-packs/production-supply-wholesaler-mega-box': 'Bundle Packs/Production-Supply-Wholesaler-Mega-Box.png'
+  'movie-prop-money/action-heist-weathered-$50-stack': 'images/products/movie-prop-money/action-heist-weathered-$50-stack.png',
+  'movie-prop-money/crimson-stained-$100-prop-note-stack': 'images/products/movie-prop-money/crimson-stained-$100-prop-note-stack.png',
+  'movie-prop-money/action-heist-weathered-$100-stack': 'images/products/movie-prop-money/action-heist-weathered-$100-stack.png',
+  'movie-prop-money/charred-&-singed-$50-prop-note-stack': 'images/products/movie-prop-money/charred-&-singed-$50-prop-note-stack.png',
+  'movie-prop-money/water-logged-underworld-cash-stack': 'images/products/movie-prop-money/water-logged-underworld-cash-stack.png',
+  'tv-props/cop-show-evidence-sealed-cash-bag': 'images/products/tv-props/cop-show-evidence-sealed-cash-bag.png',
+  'tv-props/drug-bust-luxury-briefcase-layout': 'images/products/tv-props/drug-bust-luxury-briefcase-layout.png',
+  'tv-props/telenovela-wealth-cartel-brick': 'images/products/tv-props/telenovela-wealth-cartel-brick.png',
+  'tv-props/broadcaster-quality-$20-prop-stack': 'images/products/tv-props/broadcaster-quality-$20-prop-stack.png',
+  'tv-props/game-show-grand-prize-jumbo-cash-pile': 'images/products/tv-props/game-show-grand-prize-jumbo-cash-pile.png',
+  'photography-props/studio-grade-high-contrast-$100-prop-stack': 'images/products/photography-props/studio-grade-high-contrast-$100-prop-stack.png',
+  'photography-props/hip-hop-video-multi-denom-rain-pack': 'images/products/photography-props/hip-hop-video-multi-denom-rain-pack.jpg',
+  'photography-props/aesthetic-flatlay-loose-prop-currency-fan': 'images/products/photography-props/aesthetic-flatlay-loose-prop-currency-fan.jpg',
+  'photography-props/instagram-influencer-luxury-cash-roll': 'images/products/photography-props/instagram-influencer-luxury-cash-roll.jpg',
+  'photography-props/hyper-matte-close-up-macro-prop-stack': 'images/products/photography-props/hyper-matte-close-up-macro-prop-stack.jpg',
+  'training-currency/bank-teller-training-starter-bundle': 'images/products/training-currency/bank-teller-training-starter-bundle.png',
+  'training-currency/security-transport-cash-handler-trainer': 'images/products/training-currency/security-transport-cash-handler-trainer.jpg',
+  'training-currency/gaming-club-croupier-practice-currency': 'images/products/training-currency/gaming-club-croupier-practice-currency.jpg',
+  'training-currency/retail-cash-register-training-kit': 'images/products/training-currency/retail-cash-register-training-kit.jpg',
+  'bundle-packs/high-stakes-ransom-briefcase-pro-(20-stacks)': 'images/products/bundle-packs/high-stakes-ransom-briefcase-pro-(20-stacks).png',
+  'bundle-packs/commercial-producer-bulk-reserve-(50-stacks)': 'images/products/bundle-packs/commercial-producer-bulk-reserve-(50-stacks).png',
+  'bundle-packs/production-supply-wholesaler-mega-box': 'images/products/bundle-packs/production-supply-wholesaler-mega-box.png',
+  'bundle-packs/indie-film-crew-full-range-pack-(10-stacks)': 'images/products/bundle-packs/indie-film-crew-full-range-pack-(10-stacks).png'
 };
 
 const PRODUCT_POOL = [
-  'Images/Products/Movie Prop Money/Action-Heist-Weathered-$50-Stack.png',
-  'Images/Products/TV Props/Cop-Show-Evidence-Sealed-Cash-Bag.png',
-  'Images/Products/TV Props/Drug-Bust-Luxury-Briefcase-Layout.png',
-  'Images/Products/TV Props/Telenovela-Wealth-Cartel-Brick.png',
-  'Images/Products/Photography Props/Hip-Hop-Video-Multi-Denom-Rain-Pack.jpg',
-  'Images/Products/Training Currency/Bank-Teller-Training-Starter-Bundle.png',
-  'Images/Products/Bundle Packs/High-Stakes-Ransom-Briefcase-Pro-(20 Stacks).png',
-  'Images/Products/Bundle Packs/Commercial-Producer-Bulk-Reserve-(50 Stacks).png',
-  'Images/Products/Bundle Packs/Production-Supply-Wholesaler-Mega-Box.png'
+  'images/products/movie-prop-money/action-heist-weathered-$50-stack.png',
+  'images/products/tv-props/cop-show-evidence-sealed-cash-bag.png',
+  'images/products/tv-props/drug-bust-luxury-briefcase-layout.png',
+  'images/products/tv-props/telenovela-wealth-cartel-brick.png',
+  'images/products/photography-props/hip-hop-video-multi-denom-rain-pack.jpg',
+  'images/products/training-currency/bank-teller-training-starter-bundle.png',
+  'images/products/bundle-packs/high-stakes-ransom-briefcase-pro-(20-stacks).png',
+  'images/products/bundle-packs/commercial-producer-bulk-reserve-(50-stacks).png',
+  'images/products/bundle-packs/production-supply-wholesaler-mega-box.png'
 ];
 
 function getDeterministicProductImage(path: string): string {
@@ -73,7 +88,19 @@ export function getImageUrl(src: string, width?: number, height?: number): strin
 
   // Remove any prepended australianpropmoney if present
   clean = clean.replace(/^australianpropmoney\//i, '');
-  clean = clean.replace(/^\/?Images\//i, 'images/');
+  
+  // Normalize images prefix to lowercase
+  if (clean.toLowerCase().startsWith('images/')) {
+    clean = 'images/' + clean.slice(7);
+  } else if (clean.toLowerCase().startsWith('products/')) {
+    clean = 'images/products/' + clean.slice(9);
+  } else if (clean.toLowerCase().startsWith('categories/')) {
+    clean = 'images/categories/' + clean.slice(11);
+  } else if (clean.toLowerCase().startsWith('blog/')) {
+    clean = 'images/blog/' + clean.slice(5);
+  } else if (clean.toLowerCase().startsWith('hero/')) {
+    clean = 'images/hero/' + clean.slice(5);
+  }
 
   // Ensure we separate the relative path inside images/
   let relPath = clean;
@@ -107,7 +134,7 @@ export function getImageUrl(src: string, width?: number, height?: number): strin
     if (VERIFIED_CATEGORIES[cleanCatName]) {
       finalRelPath = VERIFIED_CATEGORIES[cleanCatName];
     } else {
-      finalRelPath = 'images/categories/TV Props.webp';
+      finalRelPath = 'images/categories/tv-props.webp';
     }
   }
   // 4. Product handling
@@ -131,14 +158,14 @@ export function getImageUrl(src: string, width?: number, height?: number): strin
     });
 
     if (matched) {
-      finalRelPath = `Images/Products/${VERIFIED_PRODUCTS[matched]}`;
+      finalRelPath = VERIFIED_PRODUCTS[matched];
     } else {
       finalRelPath = getDeterministicProductImage(lowerRel);
     }
   }
   // 5. Fallback
   else {
-    finalRelPath = `Images/${relPath}`;
+    finalRelPath = `images/${relPath}`;
   }
 
   const baseUrl = 'https://ik.imagekit.io/ukpeptides/australianpropmoney';
@@ -154,4 +181,3 @@ export function getImageUrl(src: string, width?: number, height?: number): strin
 
   return url;
 }
-

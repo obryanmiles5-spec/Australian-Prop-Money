@@ -29,13 +29,23 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 sm:h-20">
             
             {/* Logo */}
-            <Link href="/" className="flex flex-col leading-none select-none group" id="logo-link">
-              <span className="text-lg sm:text-xl font-black tracking-tighter font-serif text-black leading-none">
-                AUSTRALIAN
-              </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.3em] font-light text-gray-500 leading-none mt-1">
-                PROP MONEY
-              </span>
+            <Link href="/" className="flex items-center gap-2.5 select-none group" id="logo-link">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 bg-black text-gold rounded-xl flex items-center justify-center border border-gold/20 shadow-sm shrink-0 transition-transform duration-300 group-hover:scale-105">
+                <svg viewBox="0 0 100 100" className="w-6 h-6 fill-none stroke-current" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="50" cy="50" r="42" stroke="#D4AF37" strokeWidth="4"/>
+                  <circle cx="50" cy="50" r="36" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 2"/>
+                  <path d="M50 25 L53.5 35 L64 35 L55.5 41 L59 51 L50 45 L41 51 L44.5 41 L36 35 L46.5 35 Z" fill="#D4AF37" stroke="none"/>
+                  <path d="M32 60 H68 M35 65 H65" stroke="#D4AF37" strokeWidth="2.5"/>
+                </svg>
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className="text-md sm:text-lg font-black tracking-tighter font-serif text-black leading-none group-hover:text-gold transition-colors duration-300">
+                  AUSTRALIAN
+                </span>
+                <span className="text-[8px] sm:text-[9px] tracking-[0.3em] font-light text-gray-500 leading-none mt-1">
+                  PROP MONEY
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}

@@ -353,6 +353,21 @@ export default function SideCart() {
                 </div>
               </div>
 
+              {/* Minimum Order Warning */}
+              {subtotal < 150.00 && (
+                <div className="p-3 bg-red-50 border border-red-100 text-red-800 text-[10px] rounded-sm space-y-1">
+                  <p className="font-bold uppercase tracking-wider">⚠️ Minimum Order Alert</p>
+                  <p className="text-gray-600 leading-normal font-sans">
+                    Minimum order is <strong>$150.00 AUD</strong> for standard checkout, or <strong>$50.00 AUD</strong> for cryptocurrency checkout. 
+                    {subtotal < 50.00 ? (
+                      <span> Add at least <strong>${(50.00 - subtotal).toFixed(2)} AUD</strong> more to checkout.</span>
+                    ) : (
+                      <span> Add <strong>${(150.00 - subtotal).toFixed(2)} AUD</strong> more for standard, or proceed now using Crypto.</span>
+                    )}
+                  </p>
+                </div>
+              )}
+
               {/* Legal Disclaimer Box */}
               <div className="p-3 bg-white rounded-xs border border-gray-100 text-[9px] text-gray-400 italic leading-relaxed">
                 ⚖️ <strong>Compliance Disclaimer:</strong> All replica bills have RBA required markings. Not legal tender.
@@ -362,7 +377,12 @@ export default function SideCart() {
               <button
                 type="button"
                 onClick={handleProceedToCheckout}
-                className="w-full py-3.5 bg-black hover:bg-gold text-white hover:text-black font-bold text-[10px] uppercase tracking-widest transition-all duration-300 shadow-xs flex items-center justify-center gap-2"
+                disabled={subtotal < 50.00}
+                className={`w-full py-3.5 font-bold text-[10px] uppercase tracking-widest transition-all duration-300 shadow-xs flex items-center justify-center gap-2 ${
+                  subtotal < 50.00
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : 'bg-black hover:bg-gold text-white hover:text-black'
+                }`}
                 id="btn-cart-checkout-proceed"
               >
                 Secure Checkout
