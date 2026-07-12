@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, CheckCircle2, MessageSquare, Send, Clock, Sparkles } from 'lucide-react';
+import { cleanWhatsAppNumber } from '@/lib/utils';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -116,7 +117,7 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <span className="text-[10px] uppercase font-bold text-gray-400 block font-mono">WhatsApp Rapid Support</span>
                   <a 
-                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} 
+                    href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}`} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-sm font-bold text-black hover:text-gold transition-colors block"

@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send } from 'lucide-react';
+import { cleanWhatsAppNumber } from '@/lib/utils';
 
 export default function WhatsAppChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [messageText, setMessageText] = useState('Hi, I need assistance with prop money for my upcoming production.');
 
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER);
 
   useEffect(() => {
     if (!whatsappNumber) return;

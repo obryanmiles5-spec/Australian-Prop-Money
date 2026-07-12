@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { HelpCircle, ChevronRight, MessageSquare, Sparkles, AlertCircle } from 'lucide-react';
 import { FAQS } from '@/lib/products';
 import JsonLd from '@/components/JsonLd';
+import { cleanWhatsAppNumber } from '@/lib/utils';
 
 export default function FAQPage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -144,7 +145,7 @@ export default function FAQPage() {
           </Link>
           {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
             <a 
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} 
+              href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="bg-white/5 hover:bg-white/10 text-white border border-white/15 py-3 px-5 rounded-lg text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-1.5 flex-1"

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, ShieldAlert, CheckCircle2, Send, MessageSquare } from 'lucide-react';
+import { cleanWhatsAppNumber } from '@/lib/utils';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -89,7 +90,7 @@ export default function Footer() {
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
                 <span className="text-[9px] uppercase font-bold text-gold tracking-widest block">WhatsApp Rapid Desk</span>
                 <a 
-                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} 
+                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center gap-1.5 text-xs text-white hover:text-gold font-bold transition-colors"

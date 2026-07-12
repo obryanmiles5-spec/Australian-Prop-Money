@@ -4,13 +4,16 @@ import React from 'react';
 import Script from 'next/script';
 
 export default function AnalyticsScripts() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
+  const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID?.trim();
+
+  const hasGa = !!(gaId && gaId !== 'undefined' && gaId !== 'null' && gaId !== '');
+  const hasClarity = !!(clarityId && clarityId !== 'undefined' && clarityId !== 'null' && clarityId !== '');
 
   return (
     <>
       {/* Google Analytics 4 */}
-      {gaId && (
+      {hasGa ? (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
@@ -27,10 +30,10 @@ export default function AnalyticsScripts() {
             `}
           </Script>
         </>
-      )}
+      ) : null}
 
       {/* Microsoft Clarity */}
-      {clarityId && (
+      {hasClarity ? (
         <Script id="microsoft-clarity-init" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -40,7 +43,7 @@ export default function AnalyticsScripts() {
             })(window, document, "clarity", "script", "${clarityId}");
           `}
         </Script>
-      )}
+      ) : null}
     </>
   );
 }

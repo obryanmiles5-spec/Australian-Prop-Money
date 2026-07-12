@@ -3,6 +3,7 @@
 import React from 'react';
 import { Package, ShieldAlert, Truck, Sparkles, MessageSquare } from 'lucide-react';
 import WholesaleForm from '@/components/WholesaleForm';
+import { cleanWhatsAppNumber } from '@/lib/utils';
 
 export default function WholesalePage() {
   return (
@@ -91,7 +92,7 @@ export default function WholesalePage() {
                 Have a rush scene starting tomorrow or need customized distressing references (burned edges, blood splatters, water damage)? Connect instantly on our verified WhatsApp line.
               </p>
               <a 
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} 
+                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-full bg-white text-black hover:bg-gold hover:text-black py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-center transition-all flex items-center justify-center gap-2"

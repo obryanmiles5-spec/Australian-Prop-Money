@@ -8,6 +8,8 @@ import {
   Send, ExternalLink, HelpCircle, ChevronLeft, CreditCard 
 } from 'lucide-react';
 import { useCart, ShippingInfo } from '@/context/CartContext';
+import { cleanWhatsAppNumber } from '@/lib/utils';
+
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -391,7 +393,7 @@ Please confirm receipt of this order and reply with tracking details once transf
             {/* WhatsApp verification checkout */}
             {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${generateWhatsAppMessage()}`}
+                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}?text=${generateWhatsAppMessage()}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#20ba59] text-white py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 text-center focus:outline-none"

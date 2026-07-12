@@ -13,6 +13,8 @@ import CreativeIndustryCarousel from '@/components/CreativeIndustryCarousel';
 import ProductCard from '@/components/ProductCard';
 import ProductDetailsModal from '@/components/ProductDetailsModal';
 import { getImageUrl } from '@/lib/imagekit';
+import { cleanWhatsAppNumber } from '@/lib/utils';
+
 
 export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -293,7 +295,7 @@ export default function HomePage() {
               </Link>
               {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
                 <a 
-                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} 
+                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center justify-center gap-2 border border-white/30 text-white hover:bg-white hover:text-black px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-center transition-all"
