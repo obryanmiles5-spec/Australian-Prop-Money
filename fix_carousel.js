@@ -1,5 +1,10 @@
 const fs = require('fs');
 let code = fs.readFileSync('components/CreativeIndustryCarousel.tsx', 'utf8');
-code = code.replace(/import \{ getImageUrl \} from '@\/lib\/imagekit';\n/, '');
-code = code.replace(/getImageUrl\(([^)]+)\)/g, "$1");
-fs.writeFileSync('components/CreativeIndustryCarousel.tsx', code);
+
+code = code.replace(/imageUrl:\s*'([^']+)'/g, (match, oldImage) => {
+    if (oldImage.includes('string')) return match;
+    
+    // We want the image to be named after the title
+    // Wait, let's just replace all 'images/categories/xxx.ext' with 'images/Title.ext'
+    return match; // I'll use a replacer function
+});

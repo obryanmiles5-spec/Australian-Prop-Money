@@ -23,42 +23,42 @@ const CAROUSEL_ITEMS: CarouselItem[] = [
     title: 'Film Production',
     category: 'CINEMA & FEATURE FILMS',
     description: 'Supplying legal, color-calibrated and non-glare prop cash stacks for cinematic productions, independent dramas, and blockbusters.',
-    imageUrl: 'images/categories/film-production.png',
+    imageUrl: 'images/Film Production.png',
     icon: Film
   },
   {
     title: 'Photography',
     category: 'EDITORIAL & FLATLAY',
     description: 'Ultra-matte, reflection-free individual bills and pre-fanned prop bundles for luxury, fashion, and commercial product photography.',
-    imageUrl: 'images/categories/photography.png',
+    imageUrl: 'images/Photography.png',
     icon: Camera
   },
   {
     title: 'Theatre',
     category: 'STAGE & LIVE PERFORMANCE',
     description: 'Pre-softened, cotton-bond replica notes offering durable handling, clear stage acoustics, and zero spotlight blinding glare.',
-    imageUrl: 'images/categories/theatre.jpg',
+    imageUrl: 'images/Theatre.png',
     icon: Layers
   },
   {
     title: 'Content Creation',
     category: 'SOCIAL MEDIA & WEB',
     description: 'High-quality props customized for digital content creators, online videos, and viral social media branding campaigns.',
-    imageUrl: 'images/categories/content-creation.jpg',
+    imageUrl: 'images/Content Creation.png',
     icon: Smartphone
   },
   {
     title: 'Video Production',
     category: 'MUSIC CLIPS & PROMO',
     description: 'Specially engineered loose floating banknotes and weathered currency stacks designed for music videos and dynamic camera pans.',
-    imageUrl: 'images/categories/video-production.jpg',
+    imageUrl: 'images/Video Production.png',
     icon: Video
   },
   {
     title: 'Commercial Advertising',
     category: 'BRANDS & MARKETING',
     description: 'Premium, photorealistic replica currency stacks styled for commercial ads, high-end promotional shoots, and billboard imagery.',
-    imageUrl: 'images/categories/commercial-advertising.jpg',
+    imageUrl: 'images/Commercial Advertising.png',
     icon: Sparkles
   }
 ];

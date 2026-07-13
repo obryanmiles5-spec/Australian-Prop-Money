@@ -69,9 +69,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "10-AUD-CLASSIC-NOTES-FRONT",
     "seoTitle": "$10 AUD Classic Notes Front | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity $10 AUD Classic Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/10-aud/10-aud-front.jpg",
+    "image": "images/$10 AUD Classic Notes.jpg",
     "gallery": [
-      "images/products/australian-notes/classic-notes/10-aud/10-aud-front.jpg"
+      "images/$10 AUD Classic Notes.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -102,9 +102,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "20-AUD-CLASSIC-NOTES-FRONT",
     "seoTitle": "$20 AUD Classic Notes Front | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity $20 AUD Classic Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/20-aud/20-aud-front.png",
+    "image": "images/$20 AUD Classic Notes.png",
     "gallery": [
-      "images/products/australian-notes/classic-notes/20-aud/20-aud-front.png"
+      "images/$20 AUD Classic Notes.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -135,9 +135,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "50-AUD-CLASSIC-NOTES-FRONT",
     "seoTitle": "$50 AUD Classic Notes Front | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity $50 AUD Classic Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/50-aud/50-aud-front.jpg",
+    "image": "images/$50 AUD Classic Notes.jpg",
     "gallery": [
-      "images/products/australian-notes/classic-notes/50-aud/50-aud-front.jpg"
+      "images/$50 AUD Classic Notes.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -169,9 +169,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "100-AUD-CLASSIC-NOTES-FRONT",
     "seoTitle": "$100 AUD Classic Notes Front | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity $100 AUD Classic Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/100-aud/100-aud-front.jpg",
+    "image": "images/$100 AUD Classic Notes.jpg",
     "gallery": [
-      "images/products/australian-notes/classic-notes/100-aud/100-aud-front.jpg"
+      "images/$100 AUD Classic Notes.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -203,9 +203,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "10-AUD-NEW-NOTES-FRONT",
     "seoTitle": "$10 AUD New Notes Front | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity $10 AUD New Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/10-aud/10-aud-front.jpg",
+    "image": "images/$10 AUD New Notes.jpg",
     "gallery": [
-      "images/products/australian-notes/new-notes/10-aud/10-aud-front.jpg"
+      "images/$10 AUD New Notes.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -237,9 +237,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "20-AUD-NEW-NOTES-FRONT",
     "seoTitle": "$20 AUD New Notes Front | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity $20 AUD New Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/20-aud/20-aud-front.jpg",
+    "image": "images/$20 AUD New Notes.jpg",
     "gallery": [
-      "images/products/australian-notes/new-notes/20-aud/20-aud-front.jpg"
+      "images/$20 AUD New Notes.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -271,9 +271,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "50-AUD-NEW-NOTES-FRONT",
     "seoTitle": "$50 AUD New Notes Front | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity $50 AUD New Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/50-aud/50-aud-front.jpg",
+    "image": "images/$50 AUD New Notes.jpg",
     "gallery": [
-      "images/products/australian-notes/new-notes/50-aud/50-aud-front.jpg"
+      "images/$50 AUD New Notes.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -305,9 +305,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "100-AUD-NEW-NOTES-FRONT",
     "seoTitle": "$100 AUD New Notes Front | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity $100 AUD New Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/100-aud/100-aud-front.jpg",
+    "image": "images/$100 AUD New Notes.jpg",
     "gallery": [
-      "images/products/australian-notes/new-notes/100-aud/100-aud-front.jpg"
+      "images/$100 AUD New Notes.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -339,9 +339,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "ACTION-HEIST-WEATHERED-100-STACK",
     "seoTitle": "Action Heist Weathered $100 Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Action Heist Weathered $100 Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/movie-prop-money/action-heist-weathered-$100-stack.png",
+    "image": "images/Action Heist Weathered $100 Stack.png",
     "gallery": [
-      "images/products/movie-prop-money/action-heist-weathered-$100-stack.png"
+      "images/Action Heist Weathered $100 Stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -373,9 +373,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "ACTION-HEIST-WEATHERED-50-STACK",
     "seoTitle": "Action Heist Weathered $50 Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Action Heist Weathered $50 Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/movie-prop-money/action-heist-weathered-$50-stack.png",
+    "image": "images/Action Heist Weathered $50 Stack.png",
     "gallery": [
-      "images/products/movie-prop-money/action-heist-weathered-$50-stack.png"
+      "images/Action Heist Weathered $50 Stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -407,9 +407,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "CRIMSON-STAINED-100-PROP-NOTE-STACK",
     "seoTitle": "Crimson Stained $100 Prop Note Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Crimson Stained $100 Prop Note Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/movie-prop-money/crimson-stained-$100-prop-note-stack.png",
+    "image": "images/Crimson Stained $100 Prop Note Stack.png",
     "gallery": [
-      "images/products/movie-prop-money/crimson-stained-$100-prop-note-stack.png"
+      "images/Crimson Stained $100 Prop Note Stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -441,9 +441,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "CHARRED-AND-SINGED-50-PROP-NOTE-STACK",
     "seoTitle": "Charred & Singed $50 Prop Note Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Charred & Singed $50 Prop Note Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/movie-prop-money/charred-&-singed-$50-prop-note-stack.png",
+    "image": "images/Charred & Singed $50 Prop Note Stack.png",
     "gallery": [
-      "images/products/movie-prop-money/charred-&-singed-$50-prop-note-stack.png"
+      "images/Charred & Singed $50 Prop Note Stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -475,9 +475,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "WATER-LOGGED-UNDERWORLD-CASH-STACK",
     "seoTitle": "Water Logged Underworld Cash Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Water Logged Underworld Cash Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/movie-prop-money/water-logged-underworld-cash-stack.png",
+    "image": "images/Water Logged Underworld Cash Stack.png",
     "gallery": [
-      "images/products/movie-prop-money/water-logged-underworld-cash-stack.png"
+      "images/Water Logged Underworld Cash Stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -509,9 +509,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "COP-SHOW-EVIDENCE-SEALED-CASH-BAG",
     "seoTitle": "Cop Show Evidence Sealed Cash Bag | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Cop Show Evidence Sealed Cash Bag for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/tv-props/cop-show-evidence-sealed-cash-bag.png",
+    "image": "images/Cop Show Evidence Sealed Cash Bag.png",
     "gallery": [
-      "images/products/tv-props/cop-show-evidence-sealed-cash-bag.png"
+      "images/Cop Show Evidence Sealed Cash Bag.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -540,9 +540,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "BROADCASTER-QUALITY-20-PROP-STACK",
     "seoTitle": "Broadcaster Quality $20 Prop Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Broadcaster Quality $20 Prop Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/tv-props/broadcaster-quality-$20-prop-stack.png",
+    "image": "images/Broadcaster Quality $20 Prop Stack.png",
     "gallery": [
-      "images/products/tv-props/broadcaster-quality-$20-prop-stack.png"
+      "images/Broadcaster Quality $20 Prop Stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -574,9 +574,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "DRUG-BUST-LUXURY-BRIEFCASE-LAYOUT",
     "seoTitle": "Drug Bust Luxury Briefcase Layout | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Drug Bust Luxury Briefcase Layout for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/tv-props/drug-bust-luxury-briefcase-layout.png",
+    "image": "images/Drug Bust Luxury Briefcase Layout.png",
     "gallery": [
-      "images/products/tv-props/drug-bust-luxury-briefcase-layout.png"
+      "images/Drug Bust Luxury Briefcase Layout.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -607,9 +607,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "GAME-SHOW-GRAND-PRIZE-JUMBO-CASH-PILE",
     "seoTitle": "Game show Grand Prize Jumbo Cash Pile | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Game show Grand Prize Jumbo Cash Pile for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/tv-props/game-show-grand-prize-jumbo-cash-pile.png",
+    "image": "images/Game show Grand Prize Jumbo Cash Pile.png",
     "gallery": [
-      "images/products/tv-props/game-show-grand-prize-jumbo-cash-pile.png"
+      "images/Game show Grand Prize Jumbo Cash Pile.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -638,9 +638,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "TELENOVELA-WEALTH-CARTEL-BRICK",
     "seoTitle": "Telenovela Wealth Cartel Brick | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Telenovela Wealth Cartel Brick for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/tv-props/telenovela-wealth-cartel-brick.png",
+    "image": "images/Telenovela Wealth Cartel Brick.png",
     "gallery": [
-      "images/products/tv-props/telenovela-wealth-cartel-brick.png"
+      "images/Telenovela Wealth Cartel Brick.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -669,9 +669,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "STUDIO-GRADE-HIGH-CONTRAST-100-PROP-STACK",
     "seoTitle": "Studio Grade High Contrast $100 Prop Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Studio Grade High Contrast $100 Prop Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/photography-props/studio-grade-high-contrast-$100-prop-stack.png",
+    "image": "images/Studio Grade High Contrast $100 Prop Stack.png",
     "gallery": [
-      "images/products/photography-props/studio-grade-high-contrast-$100-prop-stack.png"
+      "images/Studio Grade High Contrast $100 Prop Stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -703,9 +703,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "AESTHETIC-FLATLAY-LOOSE-PROP-CURRENCY-FAN",
     "seoTitle": "Aesthetic Flatlay Loose Prop Currency Fan | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Aesthetic Flatlay Loose Prop Currency Fan for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/photography-props/aesthetic-flatlay-loose-prop-currency-fan.jpg",
+    "image": "images/Aesthetic Flatlay Loose Prop Currency Fan.jpg",
     "gallery": [
-      "images/products/photography-props/aesthetic-flatlay-loose-prop-currency-fan.jpg"
+      "images/Aesthetic Flatlay Loose Prop Currency Fan.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -734,9 +734,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "INSTAGRAM-INFLUENCER-LUXURY-CASH-ROLL",
     "seoTitle": "Instagram Influencer Luxury Cash Roll | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Instagram Influencer Luxury Cash Roll for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/photography-props/instagram-influencer-luxury-cash-roll.png",
+    "image": "images/Instagram Influencer Luxury Cash Roll.png",
     "gallery": [
-      "images/products/photography-props/instagram-influencer-luxury-cash-roll.png"
+      "images/Instagram Influencer Luxury Cash Roll.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -765,9 +765,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "HYPER-MATTE-CLOSE-UP-MACRO-PROP-STACK",
     "seoTitle": "Hyper Matte Close Up Macro Prop Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Hyper Matte Close Up Macro Prop Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/photography-props/hyper-matte-close-up-macro-prop-stack.png",
+    "image": "images/Hyper Matte Close Up Macro Prop Stack.png",
     "gallery": [
-      "images/products/photography-props/hyper-matte-close-up-macro-prop-stack.png"
+      "images/Hyper Matte Close Up Macro Prop Stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -799,9 +799,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "HIP-HOP-VIDEO-MULTI-DENOM-RAIN-PACK",
     "seoTitle": "Hip Hop Video Multi Denom Rain Pack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Hip Hop Video Multi Denom Rain Pack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/photography-props/hip-hop-video-multi-denom-rain-pack.png",
+    "image": "images/Hip Hop Video Multi Denom Rain Pack.png",
     "gallery": [
-      "images/products/photography-props/hip-hop-video-multi-denom-rain-pack.png"
+      "images/Hip Hop Video Multi Denom Rain Pack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -830,9 +830,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "BANK-TELLER-TRAINING-STARTER-BUNDLE",
     "seoTitle": "Bank Teller Training Starter Bundle | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Bank Teller Training Starter Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/training-currency/bank-teller-training-starter-bundle.png",
+    "image": "images/Bank Teller Training Starter Bundle.png",
     "gallery": [
-      "images/products/training-currency/bank-teller-training-starter-bundle.png"
+      "images/Bank Teller Training Starter Bundle.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -864,9 +864,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "SECURITY-TRANSPORT-CASH-HANDLER-TRAINER",
     "seoTitle": "Security Transport Cash Handler Trainer | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Security Transport Cash Handler Trainer for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/training-currency/security-transport-cash-handler-trainer.png",
+    "image": "images/Security Transport Cash Handler Trainer.png",
     "gallery": [
-      "images/products/training-currency/security-transport-cash-handler-trainer.png"
+      "images/Security Transport Cash Handler Trainer.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -895,9 +895,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "GAMING-CLUB-CROUPIER-PRACTICE-CURRENCY",
     "seoTitle": "Gaming Club Croupier Practice Currency | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Gaming Club Croupier Practice Currency for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/training-currency/gaming-club-croupier-practice-currency.png",
+    "image": "images/Gaming Club Croupier Practice Currency.png",
     "gallery": [
-      "images/products/training-currency/gaming-club-croupier-practice-currency.png"
+      "images/Gaming Club Croupier Practice Currency.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -926,9 +926,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "RETAIL-CASH-REGISTER-TRAINING-KIT",
     "seoTitle": "Retail Cash Register Training Kit | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Retail Cash Register Training Kit for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/training-currency/retail-cash-register-training-kit.png",
+    "image": "images/Retail Cash Register Training Kit.png",
     "gallery": [
-      "images/products/training-currency/retail-cash-register-training-kit.png"
+      "images/Retail Cash Register Training Kit.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -959,9 +959,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "CLASSROOM-FINANCE-EDUCATION-PLAY-PACK",
     "seoTitle": "Classroom Finance Education Play Pack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Classroom Finance Education Play Pack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/training-currency/classroom-finance-education-play-pack.png",
+    "image": "images/Classroom Finance Education Play Pack.png",
     "gallery": [
-      "images/products/training-currency/classroom-finance-education-play-pack.png"
+      "images/Classroom Finance Education Play Pack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -992,9 +992,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "THE-MILLIONAIRE-HEIST-MASTER-CRATE-(100-STACKS)",
     "seoTitle": "The Millionaire Heist Master Crate (100 Stacks) | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity The Millionaire Heist Master Crate (100 Stacks) for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/bundle-packs/the-millionaire-heist-master-crate-(100-stacks).png",
+    "image": "images/The Millionaire Heist Master Crate (100 Stacks).png",
     "gallery": [
-      "images/products/bundle-packs/the-millionaire-heist-master-crate-(100-stacks).png"
+      "images/The Millionaire Heist Master Crate (100 Stacks).png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1026,9 +1026,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "INDIE-FILM-CREW-FULL-RANGE-PACK-(10-STACKS)",
     "seoTitle": "Indie Film Crew Full Range Pack (10 Stacks) | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Indie Film Crew Full Range Pack (10 Stacks) for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/bundle-packs/indie-film-crew-full-range-pack-(10-stacks).png",
+    "image": "images/Indie Film Crew Full Range Pack (10 Stacks).png",
     "gallery": [
-      "images/products/bundle-packs/indie-film-crew-full-range-pack-(10-stacks).png"
+      "images/Indie Film Crew Full Range Pack (10 Stacks).png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1060,9 +1060,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "HIGH-STAKES-RANSOM-BRIEFCASE-PRO-(20-STACKS)",
     "seoTitle": "High Stakes Ransom Briefcase Pro (20 Stacks) | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity High Stakes Ransom Briefcase Pro (20 Stacks) for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/bundle-packs/high-stakes-ransom-briefcase-pro-(20-stacks).png",
+    "image": "images/High Stakes Ransom Briefcase Pro (20 Stacks).png",
     "gallery": [
-      "images/products/bundle-packs/high-stakes-ransom-briefcase-pro-(20-stacks).png"
+      "images/High Stakes Ransom Briefcase Pro (20 Stacks).png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1094,9 +1094,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "COMMERCIAL-PRODUCER-BULK-RESERVE-(50-STACKS)",
     "seoTitle": "Commercial Producer Bulk Reserve (50 Stacks) | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Commercial Producer Bulk Reserve (50 Stacks) for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/bundle-packs/commercial-producer-bulk-reserve-(50-stacks).png",
+    "image": "images/Commercial Producer Bulk Reserve (50 Stacks).png",
     "gallery": [
-      "images/products/bundle-packs/commercial-producer-bulk-reserve-(50-stacks).png"
+      "images/Commercial Producer Bulk Reserve (50 Stacks).png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1128,9 +1128,9 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "PRODUCTION-SUPPLY-WHOLESALER-MEGA-BOX",
     "seoTitle": "Production Supply Wholesaler Mega Box | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Production Supply Wholesaler Mega Box for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/bundle-packs/production-supply-wholesaler-mega-box.png",
+    "image": "images/Production Supply Wholesaler Mega Box.png",
     "gallery": [
-      "images/products/bundle-packs/production-supply-wholesaler-mega-box.png"
+      "images/Production Supply Wholesaler Mega Box.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1161,9 +1161,10 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "ACC-CANVAS-BAG",
     "seoTitle": "Canvas Money Bag for Prop Money | Australian Prop Money",
     "metaDescription": "Authentic heavy-duty canvas money bag for realistic film and television banking scenes.",
-    "image": "images/products/accessories/canvas-money-bag.png",
+    "image": "images/products/accessories/canvas-money-bag-1.jpg",
     "gallery": [
-      "images/products/accessories/canvas-money-bag.png"
+      "images/products/accessories/canvas-money-bag-1.jpg",
+      "images/products/accessories/canvas-money-bag-2.webp"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1192,9 +1193,10 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "ACC-DUFFLE-BAG",
     "seoTitle": "Heist Duffle Bag for Prop Money | Australian Prop Money",
     "metaDescription": "Cinematic heist duffle bag designed for prop money transport in film and television.",
-    "image": "images/products/accessories/heist-duffle-bag.png",
+    "image": "images/products/accessories/duffel-bag-1-1.jpg",
     "gallery": [
-      "images/products/accessories/heist-duffle-bag.png"
+      "images/products/accessories/duffel-bag-1-1.jpg",
+      "images/products/accessories/duffle-bag-2-1.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1223,9 +1225,10 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "ACC-MONEY-COUNTER",
     "seoTitle": "Electronic Money Counter for Prop Money | Australian Prop Money",
     "metaDescription": "Working electronic money counter machine for dynamic film scenes and prop money handling.",
-    "image": "images/products/accessories/electronic-money-counter.png",
+    "image": "images/products/accessories/money-counter-1.webp",
     "gallery": [
-      "images/products/accessories/electronic-money-counter.png"
+      "images/products/accessories/money-counter-1.webp",
+      "images/products/accessories/money-counter-2.webp"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1254,9 +1257,10 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "ACC-MONEY-GUN",
     "seoTitle": "Prop Money Dispenser Gun | Australian Prop Money",
     "metaDescription": "High-speed prop money shooter gun for music videos, parties, and dynamic film shots.",
-    "image": "images/products/accessories/prop-money-gun.png",
+    "image": "images/products/accessories/prop-money-gun-1.jpg",
     "gallery": [
-      "images/products/accessories/prop-money-gun.png"
+      "images/products/accessories/prop-money-gun-1.jpg",
+      "images/products/accessories/prop-money-gun-2.jpg"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1285,9 +1289,11 @@ const RAW_PRODUCTS: Product[] = [
     "sku": "ACC-SILVER-CASE",
     "seoTitle": "Silver Aluminium Briefcase for Prop Money | Australian Prop Money",
     "metaDescription": "Cinematic silver aluminium briefcase for prop money reveals, ransom drops, and deals.",
-    "image": "images/products/accessories/silver-aluminium-briefcase.png",
+    "image": "images/products/accessories/silver-aluminum-briefcase1.jpg",
     "gallery": [
-      "images/products/accessories/silver-aluminium-briefcase.png"
+      "images/products/accessories/silver-aluminum-briefcase1.jpg",
+      "images/products/accessories/silver-aluminum-briefcase2.jpg",
+      "images/products/accessories/silver-aluminum-briefcase3.webp"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [

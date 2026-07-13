@@ -7,6 +7,11 @@ export default function imageKitLoader({ src, width, quality }) {
     src = src.slice(1);
   }
   
+  // Bypass imagekit for local newly uploaded accessories images
+  if (src.startsWith('images/products/accessories/')) {
+    return `/${src}`;
+  }
+  
   const params = [`w-${width}`];
   if (quality) {
     params.push(`q-${quality}`);
@@ -20,5 +25,5 @@ export default function imageKitLoader({ src, width, quality }) {
     urlEndpoint = urlEndpoint.slice(0, -1);
   }
   
-  return `${urlEndpoint}/${src}?tr=${paramsString}`;
+  return `${urlEndpoint}/${encodeURI(src)}?tr=${paramsString}`;
 }

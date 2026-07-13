@@ -1,0 +1,6 @@
+BLANK: images/Film Production.png (404)
+BLANK: images/Photography.png (404)
+BLANK: images/Theatre.jpg (404)
+BLANK: images/Content Creation.jpg (404)
+BLANK: images/Video Production.jpg (404)
+BLANK: images/Commercial Advertising.jpg (404)
