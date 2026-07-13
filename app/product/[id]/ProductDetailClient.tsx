@@ -11,7 +11,6 @@ import {
 import { PRODUCTS, Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
 import ProductCard from '@/components/ProductCard';
-import { getImageUrl } from '@/lib/imagekit';
 
 interface UserReview {
   id: string;
@@ -223,7 +222,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
           {/* Main Visual Display */}
           <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden border border-gray-100 rounded-3xl group">
             <Image 
-              src={getImageUrl(galleryImages[activeImageIdx])} 
+              src={galleryImages[activeImageIdx]} 
               alt={`${product.name} View`} 
               fill
               sizes="(max-width: 1024px) 100vw, 600px"
@@ -255,7 +254,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
                 id={`thumb-btn-${idx}`}
               >
                 <Image 
-                  src={getImageUrl(img)} 
+                  src={img} 
                   alt="Prop view thumbnail" 
                   fill
                   sizes="150px"
@@ -738,7 +737,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
                 >
                   <div className="relative w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 border border-gray-100">
                     <Image 
-                      src={getImageUrl(p.image)} 
+                      src={p.image} 
                       alt={p.name} 
                       fill
                       sizes="48px"

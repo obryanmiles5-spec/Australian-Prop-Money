@@ -10,7 +10,7 @@ export default function WhatsAppChat() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [messageText, setMessageText] = useState('Hi, I need assistance with prop money for my upcoming production.');
 
-  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61400000000');
+  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682');
 
   useEffect(() => {
     if (!whatsappNumber) return;

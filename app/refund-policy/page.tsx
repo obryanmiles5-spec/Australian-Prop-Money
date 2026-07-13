@@ -60,7 +60,7 @@ export default function RefundPolicyPage() {
 
         <div className="bg-gray-50 p-5 rounded-2xl border text-center space-y-2">
           <p className="font-bold text-xs text-black uppercase tracking-wider">Need to Initiate a Refund Request?</p>
-          <p className="text-xs text-gray-500">Please email your order reference ID and photos of the unopened stacks to <a href="mailto:returns@australianpropmoney.org" className="underline hover:text-gold transition-colors font-bold">returns@australianpropmoney.org</a>.</p>
+          <p className="text-xs text-gray-500">Please email your order reference ID and photos of the unopened stacks to <a href="mailto:info@australianpropmoney.org" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.org</a>.</p>
         </div>
 
       </div>

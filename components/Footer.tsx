@@ -100,7 +100,7 @@ export default function Footer() {
               <div className="p-2 rounded-lg bg-white/[0.02] border border-white/5 space-y-0.5">
                 <span className="text-[8.5px] uppercase font-bold text-gold tracking-widest block">WhatsApp Rapid Desk</span>
                 <a 
-                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61400000000')}`} 
+                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682')}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center gap-1 text-[11px] text-white hover:text-gold font-bold transition-colors"

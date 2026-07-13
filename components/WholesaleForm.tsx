@@ -177,7 +177,7 @@ export default function WholesaleForm() {
                 Submit Another Request
               </button>
               <a
-                href="https://wa.me/61400000000"
+                href="https://wa.me/61480852682"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-black hover:bg-gold text-white hover:text-black px-6 py-3 rounded-lg text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-2"

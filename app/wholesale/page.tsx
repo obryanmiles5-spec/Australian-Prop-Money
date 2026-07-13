@@ -78,7 +78,7 @@ export default function WholesalePage() {
           </div>
 
           {/* Box 3: WhatsApp Support */}
-          {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
+          {true && (
             <div className="bg-[#0D0D0D] text-white p-6 rounded-2xl border border-gold/15 space-y-4">
               <div className="space-y-1">
                 <span className="text-gold uppercase font-mono tracking-widest text-[9px] font-bold block">
@@ -92,7 +92,7 @@ export default function WholesalePage() {
                 Have a rush scene starting tomorrow or need customized distressing references (burned edges, blood splatters, water damage)? Connect instantly on our verified WhatsApp line.
               </p>
               <a 
-                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}`} 
+                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682")}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-full bg-white text-black hover:bg-gold hover:text-black py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-center transition-all flex items-center justify-center gap-2"

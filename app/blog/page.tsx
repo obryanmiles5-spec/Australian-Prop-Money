@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Calendar, Clock, BookOpen, ChevronRight, X, Sparkles } from 'lucide-react';
 import { BLOG_POSTS, BlogPost } from '@/lib/products';
 import JsonLd from '@/components/JsonLd';
-import { getImageUrl } from '@/lib/imagekit';
 
 export default function BlogPage() {
   const [activeArticle, setActiveArticle] = useState<BlogPost | null>(null);
@@ -85,7 +84,7 @@ export default function BlogPage() {
               {/* Image banner */}
               <div className="relative aspect-video bg-gray-50 overflow-hidden">
                 <Image
-                  src={getImageUrl(post.image)}
+                  src={post.image}
                   alt={post.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -159,7 +158,7 @@ export default function BlogPage() {
             {/* Image header */}
             <div className="relative h-60 bg-gray-100 shrink-0">
               <Image
-                src={getImageUrl(activeArticle.image)}
+                src={activeArticle.image}
                 alt={activeArticle.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 600px"

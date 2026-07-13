@@ -4,7 +4,7 @@ export interface Product {
   price: number;
   description: string;
   longDescription: string;
-  category: 'australian-notes' | 'movie-prop-money' | 'tv-production-props' | 'photography-props' | 'training-currency' | 'bundle-packs';
+  category: 'australian-notes' | 'movie-prop-money' | 'tv-production-props' | 'photography-props' | 'training-currency' | 'bundle-packs' | 'accessories';
   sku: string;
   seoTitle: string;
   metaDescription: string;
@@ -53,15 +53,16 @@ export function getCategoryLabel(cat: string): string {
     case 'photography-props': return 'Photography Props';
     case 'training-currency': return 'Training Currency';
     case 'bundle-packs': return 'Bundle Packs';
+    case 'accessories': return 'Accessories';
     default: return 'Prop Money';
   }
 }
 
 const RAW_PRODUCTS: Product[] = [
   {
-    "id": "10-aud-classic-notes-front",
-    "name": "$10 AUD Classic Notes Front",
-    "price": 15,
+    "id": "australian-notes/classic-notes/10-aud",
+    "name": "$10 AUD Classic Notes",
+    "price": 55,
     "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
     "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
     "category": "australian-notes",
@@ -74,9 +75,8 @@ const RAW_PRODUCTS: Product[] = [
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
-      "20-aud-classic-notes-back",
-      "100-aud-new-notes-bundle",
-      "20-aud-classic-notes-bundle"
+      "australian-notes/classic-notes/20-aud",
+      "australian-notes/new-notes/100-aud"
     ],
     "features": [
       "Dual-side matched high-resolution scanning",
@@ -93,111 +93,9 @@ const RAW_PRODUCTS: Product[] = [
     }
   },
   {
-    "id": "10-aud-classic-notes-back",
-    "name": "$10 AUD Classic Notes Back",
-    "price": 15,
-    "description": "Premium single-sided replica representing the back (reverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "10-AUD-CLASSIC-NOTES-BACK",
-    "seoTitle": "$10 AUD Classic Notes Back | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $10 AUD Classic Notes Back for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/10-aud/10-aud-back.jpg",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/10-aud/10-aud-back.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "100-aud-classic-notes-stack",
-      "100-aud-classic-notes-front",
-      "50-aud-classic-notes-front"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Reverse Side Only",
-      "Dimensions": "137mm x 65mm"
-    }
-  },
-  {
-    "id": "10-aud-classic-notes-bundle",
-    "name": "$10 AUD Classic Notes Bundle",
-    "price": 45,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "australian-notes",
-    "sku": "10-AUD-CLASSIC-NOTES-BUNDLE",
-    "seoTitle": "$10 AUD Classic Notes Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $10 AUD Classic Notes Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/10-aud/10-aud-bundle.png",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/10-aud/10-aud-bundle.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "10-aud-new-notes-front",
-      "100-aud-classic-notes-stack",
-      "50-aud-new-notes-stack"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "10-aud-classic-notes-stack",
-    "name": "$10 AUD Classic Notes Stack",
-    "price": 55,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "australian-notes",
-    "sku": "10-AUD-CLASSIC-NOTES-STACK",
-    "seoTitle": "$10 AUD Classic Notes Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $10 AUD Classic Notes Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/10-aud/10-aud-stack.png",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/10-aud/10-aud-stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "100-aud-classic-notes-stack",
-      "100-aud-new-notes-back",
-      "50-aud-classic-notes-bundle"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "20-aud-classic-notes-front",
-    "name": "$20 AUD Classic Notes Front",
-    "price": 15,
+    "id": "australian-notes/classic-notes/20-aud",
+    "name": "$20 AUD Classic Notes",
+    "price": 75,
     "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
     "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
     "category": "australian-notes",
@@ -210,9 +108,8 @@ const RAW_PRODUCTS: Product[] = [
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
-      "10-aud-classic-notes-bundle",
-      "10-aud-classic-notes-back",
-      "20-aud-new-notes-bundle"
+      "australian-notes/classic-notes/10-aud",
+      "australian-notes/new-notes/20-aud"
     ],
     "features": [
       "Dual-side matched high-resolution scanning",
@@ -229,111 +126,9 @@ const RAW_PRODUCTS: Product[] = [
     }
   },
   {
-    "id": "20-aud-classic-notes-back",
-    "name": "$20 AUD Classic Notes Back",
-    "price": 15,
-    "description": "Premium single-sided replica representing the back (reverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "20-AUD-CLASSIC-NOTES-BACK",
-    "seoTitle": "$20 AUD Classic Notes Back | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $20 AUD Classic Notes Back for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/20-aud/20-aud-back.jpg",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/20-aud/20-aud-back.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "100-aud-classic-notes-front",
-      "10-aud-classic-notes-stack",
-      "20-aud-classic-notes-front"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Reverse Side Only",
-      "Dimensions": "144mm x 65mm"
-    }
-  },
-  {
-    "id": "20-aud-classic-notes-bundle",
-    "name": "$20 AUD Classic Notes Bundle",
-    "price": 45,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "australian-notes",
-    "sku": "20-AUD-CLASSIC-NOTES-BUNDLE",
-    "seoTitle": "$20 AUD Classic Notes Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $20 AUD Classic Notes Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/20-aud/20-aud-bundle.png",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/20-aud/20-aud-bundle.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "50-aud-classic-notes-front",
-      "10-aud-classic-notes-stack",
-      "10-aud-new-notes-bundle"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "20-aud-classic-notes-stack",
-    "name": "$20 AUD Classic Notes Stack",
-    "price": 55,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "australian-notes",
-    "sku": "20-AUD-CLASSIC-NOTES-STACK",
-    "seoTitle": "$20 AUD Classic Notes Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $20 AUD Classic Notes Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/20-aud/20-aud-stack.png",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/20-aud/20-aud-stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "50-aud-new-notes-back",
-      "20-aud-classic-notes-front",
-      "20-aud-classic-notes-bundle"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "50-aud-classic-notes-front",
-    "name": "$50 AUD Classic Notes Front",
-    "price": 15,
+    "id": "australian-notes/classic-notes/50-aud",
+    "name": "$50 AUD Classic Notes",
+    "price": 95,
     "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
     "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
     "category": "australian-notes",
@@ -346,9 +141,9 @@ const RAW_PRODUCTS: Product[] = [
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
-      "10-aud-new-notes-stack",
-      "20-aud-new-notes-stack",
-      "100-aud-new-notes-back"
+      "australian-notes/new-notes/10-aud",
+      "australian-notes/new-notes/20-aud",
+      "australian-notes/new-notes/100-aud"
     ],
     "features": [
       "Dual-side matched high-resolution scanning",
@@ -365,111 +160,9 @@ const RAW_PRODUCTS: Product[] = [
     }
   },
   {
-    "id": "50-aud-classic-notes-back",
-    "name": "$50 AUD Classic Notes Back",
-    "price": 15,
-    "description": "Premium single-sided replica representing the back (reverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "50-AUD-CLASSIC-NOTES-BACK",
-    "seoTitle": "$50 AUD Classic Notes Back | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $50 AUD Classic Notes Back for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/50-aud/50-aud-back.jpg",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/50-aud/50-aud-back.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "20-aud-classic-notes-front",
-      "100-aud-new-notes-back",
-      "50-aud-new-notes-back"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Reverse Side Only",
-      "Dimensions": "151mm x 65mm"
-    }
-  },
-  {
-    "id": "50-aud-classic-notes-bundle",
-    "name": "$50 AUD Classic Notes Bundle",
-    "price": 45,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "australian-notes",
-    "sku": "50-AUD-CLASSIC-NOTES-BUNDLE",
-    "seoTitle": "$50 AUD Classic Notes Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $50 AUD Classic Notes Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/50-aud/50-aud-bundle.jpg",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/50-aud/50-aud-bundle.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "50-aud-new-notes-stack",
-      "10-aud-classic-notes-stack",
-      "50-aud-classic-notes-back"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "50-aud-classic-notes-stack",
-    "name": "$50 AUD Classic Notes Stack",
-    "price": 55,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "australian-notes",
-    "sku": "50-AUD-CLASSIC-NOTES-STACK",
-    "seoTitle": "$50 AUD Classic Notes Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $50 AUD Classic Notes Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/50-aud/50-aud-stack.jpg",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/50-aud/50-aud-stack.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "100-aud-classic-notes-front",
-      "20-aud-new-notes-back",
-      "50-aud-new-notes-stack"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "100-aud-classic-notes-front",
-    "name": "$100 AUD Classic Notes Front",
-    "price": 15,
+    "id": "australian-notes/classic-notes/100-aud",
+    "name": "$100 AUD Classic Notes",
+    "price": 150,
     "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
     "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
     "category": "australian-notes",
@@ -482,9 +175,9 @@ const RAW_PRODUCTS: Product[] = [
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
-      "50-aud-new-notes-stack",
-      "10-aud-classic-notes-stack",
-      "100-aud-new-notes-back"
+      "australian-notes/new-notes/50-aud",
+      "australian-notes/classic-notes/10-aud",
+      "australian-notes/new-notes/100-aud"
     ],
     "features": [
       "Dual-side matched high-resolution scanning",
@@ -501,111 +194,9 @@ const RAW_PRODUCTS: Product[] = [
     }
   },
   {
-    "id": "100-aud-classic-notes-back",
-    "name": "$100 AUD Classic Notes Back",
-    "price": 15,
-    "description": "Premium single-sided replica representing the back (reverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "100-AUD-CLASSIC-NOTES-BACK",
-    "seoTitle": "$100 AUD Classic Notes Back | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $100 AUD Classic Notes Back for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/100-aud/100-aud-back.jpg",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/100-aud/100-aud-back.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "50-aud-classic-notes-stack",
-      "50-aud-new-notes-back",
-      "10-aud-classic-notes-front"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Reverse Side Only",
-      "Dimensions": "158mm x 65mm"
-    }
-  },
-  {
-    "id": "100-aud-classic-notes-bundle",
-    "name": "$100 AUD Classic Notes Bundle",
-    "price": 45,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "australian-notes",
-    "sku": "100-AUD-CLASSIC-NOTES-BUNDLE",
-    "seoTitle": "$100 AUD Classic Notes Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $100 AUD Classic Notes Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/100-aud/100-aud-bundle.jpg",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/100-aud/100-aud-bundle.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "20-aud-classic-notes-back",
-      "100-aud-new-notes-bundle",
-      "20-aud-new-notes-back"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "100-aud-classic-notes-stack",
-    "name": "$100 AUD Classic Notes Stack",
-    "price": 55,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "australian-notes",
-    "sku": "100-AUD-CLASSIC-NOTES-STACK",
-    "seoTitle": "$100 AUD Classic Notes Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $100 AUD Classic Notes Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/classic-notes/100-aud/100-aud-stack.jpg",
-    "gallery": [
-      "images/products/australian-notes/classic-notes/100-aud/100-aud-stack.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "50-aud-new-notes-bundle",
-      "20-aud-new-notes-front",
-      "50-aud-new-notes-back"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "10-aud-new-notes-front",
-    "name": "$10 AUD New Notes Front",
-    "price": 15,
+    "id": "australian-notes/new-notes/10-aud",
+    "name": "$10 AUD New Notes",
+    "price": 70,
     "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
     "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
     "category": "australian-notes",
@@ -618,9 +209,9 @@ const RAW_PRODUCTS: Product[] = [
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
-      "10-aud-classic-notes-front",
-      "10-aud-new-notes-stack",
-      "100-aud-new-notes-stack"
+      "australian-notes/classic-notes/10-aud",
+      "australian-notes/new-notes/10-aud",
+      "australian-notes/new-notes/100-aud"
     ],
     "features": [
       "Dual-side matched high-resolution scanning",
@@ -637,111 +228,9 @@ const RAW_PRODUCTS: Product[] = [
     }
   },
   {
-    "id": "10-aud-new-notes-back",
-    "name": "$10 AUD New Notes Back",
-    "price": 15,
-    "description": "Premium single-sided replica representing the back (reverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "10-AUD-NEW-NOTES-BACK",
-    "seoTitle": "$10 AUD New Notes Back | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $10 AUD New Notes Back for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/10-aud/10-aud-back.jpg",
-    "gallery": [
-      "images/products/australian-notes/new-notes/10-aud/10-aud-back.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "50-aud-new-notes-stack",
-      "100-aud-classic-notes-bundle",
-      "50-aud-classic-notes-back"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Reverse Side Only",
-      "Dimensions": "137mm x 65mm"
-    }
-  },
-  {
-    "id": "10-aud-new-notes-bundle",
-    "name": "$10 AUD New Notes Bundle",
-    "price": 45,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "australian-notes",
-    "sku": "10-AUD-NEW-NOTES-BUNDLE",
-    "seoTitle": "$10 AUD New Notes Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $10 AUD New Notes Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/10-aud/10-aud-bundle.webp",
-    "gallery": [
-      "images/products/australian-notes/new-notes/10-aud/10-aud-bundle.webp"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "20-aud-new-notes-back",
-      "10-aud-classic-notes-bundle",
-      "100-aud-new-notes-stack"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "10-aud-new-notes-stack",
-    "name": "$10 AUD New Notes Stack",
-    "price": 55,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "australian-notes",
-    "sku": "10-AUD-NEW-NOTES-STACK",
-    "seoTitle": "$10 AUD New Notes Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $10 AUD New Notes Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/10-aud/10-aud-stack.jpg",
-    "gallery": [
-      "images/products/australian-notes/new-notes/10-aud/10-aud-stack.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "20-aud-classic-notes-back",
-      "50-aud-new-notes-front",
-      "50-aud-classic-notes-bundle"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "20-aud-new-notes-front",
-    "name": "$20 AUD New Notes Front",
-    "price": 15,
+    "id": "australian-notes/new-notes/20-aud",
+    "name": "$20 AUD New Notes",
+    "price": 90,
     "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
     "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
     "category": "australian-notes",
@@ -754,9 +243,9 @@ const RAW_PRODUCTS: Product[] = [
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
-      "100-aud-classic-notes-front",
-      "10-aud-classic-notes-front",
-      "100-aud-new-notes-bundle"
+      "australian-notes/classic-notes/100-aud",
+      "australian-notes/classic-notes/10-aud",
+      "australian-notes/new-notes/100-aud"
     ],
     "features": [
       "Dual-side matched high-resolution scanning",
@@ -773,111 +262,9 @@ const RAW_PRODUCTS: Product[] = [
     }
   },
   {
-    "id": "20-aud-new-notes-back",
-    "name": "$20 AUD New Notes Back",
-    "price": 15,
-    "description": "Premium single-sided replica representing the back (reverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "20-AUD-NEW-NOTES-BACK",
-    "seoTitle": "$20 AUD New Notes Back | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $20 AUD New Notes Back for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/20-aud/20-aud-back.jpg",
-    "gallery": [
-      "images/products/australian-notes/new-notes/20-aud/20-aud-back.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "10-aud-new-notes-stack",
-      "100-aud-classic-notes-bundle",
-      "10-aud-classic-notes-front"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Reverse Side Only",
-      "Dimensions": "144mm x 65mm"
-    }
-  },
-  {
-    "id": "20-aud-new-notes-bundle",
-    "name": "$20 AUD New Notes Bundle",
-    "price": 45,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "australian-notes",
-    "sku": "20-AUD-NEW-NOTES-BUNDLE",
-    "seoTitle": "$20 AUD New Notes Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $20 AUD New Notes Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/20-aud/20-aud-bundle.webp",
-    "gallery": [
-      "images/products/australian-notes/new-notes/20-aud/20-aud-bundle.webp"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "100-aud-new-notes-front",
-      "50-aud-classic-notes-bundle",
-      "10-aud-classic-notes-back"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "20-aud-new-notes-stack",
-    "name": "$20 AUD New Notes Stack",
-    "price": 55,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "australian-notes",
-    "sku": "20-AUD-NEW-NOTES-STACK",
-    "seoTitle": "$20 AUD New Notes Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $20 AUD New Notes Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/20-aud/20-aud-stack.jpg",
-    "gallery": [
-      "images/products/australian-notes/new-notes/20-aud/20-aud-stack.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "10-aud-classic-notes-bundle",
-      "50-aud-new-notes-bundle",
-      "20-aud-classic-notes-front"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "50-aud-new-notes-front",
-    "name": "$50 AUD New Notes Front",
-    "price": 15,
+    "id": "australian-notes/new-notes/50-aud",
+    "name": "$50 AUD New Notes",
+    "price": 120,
     "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
     "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
     "category": "australian-notes",
@@ -890,9 +277,9 @@ const RAW_PRODUCTS: Product[] = [
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
-      "10-aud-classic-notes-back",
-      "100-aud-new-notes-back",
-      "20-aud-classic-notes-front"
+      "australian-notes/classic-notes/10-aud",
+      "australian-notes/new-notes/100-aud",
+      "australian-notes/classic-notes/20-aud"
     ],
     "features": [
       "Dual-side matched high-resolution scanning",
@@ -909,111 +296,9 @@ const RAW_PRODUCTS: Product[] = [
     }
   },
   {
-    "id": "50-aud-new-notes-back",
-    "name": "$50 AUD New Notes Back",
-    "price": 15,
-    "description": "Premium single-sided replica representing the back (reverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "50-AUD-NEW-NOTES-BACK",
-    "seoTitle": "$50 AUD New Notes Back | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $50 AUD New Notes Back for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/50-aud/50-aud-back.jpg",
-    "gallery": [
-      "images/products/australian-notes/new-notes/50-aud/50-aud-back.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "50-aud-new-notes-stack",
-      "20-aud-classic-notes-bundle",
-      "20-aud-new-notes-stack"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Reverse Side Only",
-      "Dimensions": "151mm x 65mm"
-    }
-  },
-  {
-    "id": "50-aud-new-notes-bundle",
-    "name": "$50 AUD New Notes Bundle",
-    "price": 45,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "australian-notes",
-    "sku": "50-AUD-NEW-NOTES-BUNDLE",
-    "seoTitle": "$50 AUD New Notes Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $50 AUD New Notes Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/50-aud/50-aud-bundle.jpg",
-    "gallery": [
-      "images/products/australian-notes/new-notes/50-aud/50-aud-bundle.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "10-aud-classic-notes-bundle",
-      "10-aud-new-notes-stack",
-      "10-aud-new-notes-back"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "50-aud-new-notes-stack",
-    "name": "$50 AUD New Notes Stack",
-    "price": 55,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "australian-notes",
-    "sku": "50-AUD-NEW-NOTES-STACK",
-    "seoTitle": "$50 AUD New Notes Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $50 AUD New Notes Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/50-aud/50-aud-stack.jpg",
-    "gallery": [
-      "images/products/australian-notes/new-notes/50-aud/50-aud-stack.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "100-aud-new-notes-bundle",
-      "10-aud-classic-notes-front",
-      "20-aud-new-notes-stack"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "100-aud-new-notes-front",
-    "name": "$100 AUD New Notes Front",
-    "price": 15,
+    "id": "australian-notes/new-notes/100-aud",
+    "name": "$100 AUD New Notes",
+    "price": 200,
     "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
     "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
     "category": "australian-notes",
@@ -1026,9 +311,9 @@ const RAW_PRODUCTS: Product[] = [
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
-      "20-aud-classic-notes-stack",
-      "10-aud-classic-notes-front",
-      "100-aud-new-notes-bundle"
+      "australian-notes/classic-notes/20-aud",
+      "australian-notes/classic-notes/10-aud",
+      "australian-notes/new-notes/100-aud"
     ],
     "features": [
       "Dual-side matched high-resolution scanning",
@@ -1045,111 +330,9 @@ const RAW_PRODUCTS: Product[] = [
     }
   },
   {
-    "id": "100-aud-new-notes-back",
-    "name": "$100 AUD New Notes Back",
-    "price": 15,
-    "description": "Premium single-sided replica representing the back (reverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "100-AUD-NEW-NOTES-BACK",
-    "seoTitle": "$100 AUD New Notes Back | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $100 AUD New Notes Back for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/100-aud/100-aud-back.webp",
-    "gallery": [
-      "images/products/australian-notes/new-notes/100-aud/100-aud-back.webp"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "10-aud-new-notes-bundle",
-      "50-aud-new-notes-front",
-      "10-aud-new-notes-stack"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Reverse Side Only",
-      "Dimensions": "158mm x 65mm"
-    }
-  },
-  {
-    "id": "100-aud-new-notes-bundle",
-    "name": "$100 AUD New Notes Bundle",
-    "price": 45,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "australian-notes",
-    "sku": "100-AUD-NEW-NOTES-BUNDLE",
-    "seoTitle": "$100 AUD New Notes Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $100 AUD New Notes Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/100-aud/100-aud-bundle.jpg",
-    "gallery": [
-      "images/products/australian-notes/new-notes/100-aud/100-aud-bundle.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "20-aud-classic-notes-stack",
-      "20-aud-classic-notes-front",
-      "10-aud-new-notes-stack"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "100-aud-new-notes-stack",
-    "name": "$100 AUD New Notes Stack",
-    "price": 55,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "australian-notes",
-    "sku": "100-AUD-NEW-NOTES-STACK",
-    "seoTitle": "$100 AUD New Notes Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $100 AUD New Notes Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/australian-notes/new-notes/100-aud/100-aud-stack.png",
-    "gallery": [
-      "images/products/australian-notes/new-notes/100-aud/100-aud-stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "100-aud-new-notes-back",
-      "50-aud-new-notes-front",
-      "10-aud-classic-notes-front"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
     "id": "action-heist-weathered-100-stack",
     "name": "Action Heist Weathered $100 Stack",
-    "price": 65,
+    "price": 200,
     "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
     "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
     "category": "movie-prop-money",
@@ -1183,7 +366,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "action-heist-weathered-50-stack",
     "name": "Action Heist Weathered $50 Stack",
-    "price": 65,
+    "price": 200,
     "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
     "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
     "category": "movie-prop-money",
@@ -1217,7 +400,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "crimson-stained-100-prop-note-stack",
     "name": "Crimson Stained $100 Prop Note Stack",
-    "price": 65,
+    "price": 200,
     "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
     "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
     "category": "movie-prop-money",
@@ -1251,7 +434,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "charred-and-singed-50-prop-note-stack",
     "name": "Charred & Singed $50 Prop Note Stack",
-    "price": 65,
+    "price": 200,
     "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
     "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
     "category": "movie-prop-money",
@@ -1285,7 +468,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "water-logged-underworld-cash-stack",
     "name": "Water Logged Underworld Cash Stack",
-    "price": 65,
+    "price": 200,
     "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
     "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
     "category": "movie-prop-money",
@@ -1319,7 +502,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "cop-show-evidence-sealed-cash-bag",
     "name": "Cop Show Evidence Sealed Cash Bag",
-    "price": 35,
+    "price": 500,
     "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
     "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
     "category": "tv-production-props",
@@ -1350,7 +533,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "broadcaster-quality-20-prop-stack",
     "name": "Broadcaster Quality $20 Prop Stack",
-    "price": 55,
+    "price": 300,
     "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
     "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
     "category": "tv-production-props",
@@ -1384,7 +567,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "drug-bust-luxury-briefcase-layout",
     "name": "Drug Bust Luxury Briefcase Layout",
-    "price": 195,
+    "price": 950,
     "description": "Cinematic, fully loaded luxury briefcase layout of replica cash stacks. Ready-to-shoot prop layout designed for high-profile ransom and heist scenes.",
     "longDescription": "Perfect for directors looking for a turn-key solution, this professional briefcase is meticulously packed with stacked premium replica cash. Every stack is bank-wrapped and features a non-glare finish to guarantee professional results under studio strobes. It delivers the ultimate visual impact on screen.",
     "category": "tv-production-props",
@@ -1417,7 +600,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "game-show-grand-prize-jumbo-cash-pile",
     "name": "Game show Grand Prize Jumbo Cash Pile",
-    "price": 35,
+    "price": 1500,
     "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
     "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
     "category": "tv-production-props",
@@ -1448,7 +631,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "telenovela-wealth-cartel-brick",
     "name": "Telenovela Wealth Cartel Brick",
-    "price": 35,
+    "price": 350,
     "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
     "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
     "category": "tv-production-props",
@@ -1479,7 +662,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "studio-grade-high-contrast-100-prop-stack",
     "name": "Studio Grade High Contrast $100 Prop Stack",
-    "price": 55,
+    "price": 150,
     "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
     "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
     "category": "photography-props",
@@ -1513,7 +696,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "aesthetic-flatlay-loose-prop-currency-fan",
     "name": "Aesthetic Flatlay Loose Prop Currency Fan",
-    "price": 35,
+    "price": 300,
     "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
     "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
     "category": "photography-props",
@@ -1544,16 +727,16 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "instagram-influencer-luxury-cash-roll",
     "name": "Instagram Influencer Luxury Cash Roll",
-    "price": 35,
+    "price": 500,
     "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
     "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
     "category": "photography-props",
     "sku": "INSTAGRAM-INFLUENCER-LUXURY-CASH-ROLL",
     "seoTitle": "Instagram Influencer Luxury Cash Roll | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Instagram Influencer Luxury Cash Roll for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/photography-props/instagram-influencer-luxury-cash-roll.jpg",
+    "image": "images/products/photography-props/instagram-influencer-luxury-cash-roll.png",
     "gallery": [
-      "images/products/photography-props/instagram-influencer-luxury-cash-roll.jpg"
+      "images/products/photography-props/instagram-influencer-luxury-cash-roll.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1575,16 +758,16 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "hyper-matte-close-up-macro-prop-stack",
     "name": "Hyper Matte Close Up Macro Prop Stack",
-    "price": 55,
+    "price": 150,
     "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
     "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
     "category": "photography-props",
     "sku": "HYPER-MATTE-CLOSE-UP-MACRO-PROP-STACK",
     "seoTitle": "Hyper Matte Close Up Macro Prop Stack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Hyper Matte Close Up Macro Prop Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/photography-props/hyper-matte-close-up-macro-prop-stack.jpg",
+    "image": "images/products/photography-props/hyper-matte-close-up-macro-prop-stack.png",
     "gallery": [
-      "images/products/photography-props/hyper-matte-close-up-macro-prop-stack.jpg"
+      "images/products/photography-props/hyper-matte-close-up-macro-prop-stack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1609,16 +792,16 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "hip-hop-video-multi-denom-rain-pack",
     "name": "Hip Hop Video Multi Denom Rain Pack",
-    "price": 35,
+    "price": 1500,
     "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
     "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
     "category": "photography-props",
     "sku": "HIP-HOP-VIDEO-MULTI-DENOM-RAIN-PACK",
     "seoTitle": "Hip Hop Video Multi Denom Rain Pack | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Hip Hop Video Multi Denom Rain Pack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/photography-props/hip-hop-video-multi-denom-rain-pack.jpg",
+    "image": "images/products/photography-props/hip-hop-video-multi-denom-rain-pack.png",
     "gallery": [
-      "images/products/photography-props/hip-hop-video-multi-denom-rain-pack.jpg"
+      "images/products/photography-props/hip-hop-video-multi-denom-rain-pack.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1640,7 +823,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "bank-teller-training-starter-bundle",
     "name": "Bank Teller Training Starter Bundle",
-    "price": 45,
+    "price": 500,
     "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
     "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
     "category": "training-currency",
@@ -1674,16 +857,16 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "security-transport-cash-handler-trainer",
     "name": "Security Transport Cash Handler Trainer",
-    "price": 35,
+    "price": 1000,
     "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
     "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
     "category": "training-currency",
     "sku": "SECURITY-TRANSPORT-CASH-HANDLER-TRAINER",
     "seoTitle": "Security Transport Cash Handler Trainer | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Security Transport Cash Handler Trainer for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/training-currency/security-transport-cash-handler-trainer.jpg",
+    "image": "images/products/training-currency/security-transport-cash-handler-trainer.png",
     "gallery": [
-      "images/products/training-currency/security-transport-cash-handler-trainer.jpg"
+      "images/products/training-currency/security-transport-cash-handler-trainer.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1705,16 +888,16 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "gaming-club-croupier-practice-currency",
     "name": "Gaming Club Croupier Practice Currency",
-    "price": 35,
+    "price": 700,
     "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
     "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
     "category": "training-currency",
     "sku": "GAMING-CLUB-CROUPIER-PRACTICE-CURRENCY",
     "seoTitle": "Gaming Club Croupier Practice Currency | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Gaming Club Croupier Practice Currency for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/training-currency/gaming-club-croupier-practice-currency.jpg",
+    "image": "images/products/training-currency/gaming-club-croupier-practice-currency.png",
     "gallery": [
-      "images/products/training-currency/gaming-club-croupier-practice-currency.jpg"
+      "images/products/training-currency/gaming-club-croupier-practice-currency.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1736,16 +919,16 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "retail-cash-register-training-kit",
     "name": "Retail Cash Register Training Kit",
-    "price": 45,
+    "price": 200,
     "description": "Educational and training currency set. Perfect for classroom finance lessons, cashier/teller simulations, and cash management training.",
     "longDescription": "Designed for educational institutions and financial training, this kit offers replica bills that represent realistic dimensions and handling textures. Perfect for teaching cash handling, cash register operations, and security protocols in a safe, risk-free environment.",
     "category": "training-currency",
     "sku": "RETAIL-CASH-REGISTER-TRAINING-KIT",
     "seoTitle": "Retail Cash Register Training Kit | Realistic Prop Money Replicas",
     "metaDescription": "High-fidelity Retail Cash Register Training Kit for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/products/training-currency/retail-cash-register-training-kit.jpg",
+    "image": "images/products/training-currency/retail-cash-register-training-kit.png",
     "gallery": [
-      "images/products/training-currency/retail-cash-register-training-kit.jpg"
+      "images/products/training-currency/retail-cash-register-training-kit.png"
     ],
     "stockStatus": "in-stock",
     "relatedProducts": [
@@ -1769,7 +952,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "classroom-finance-education-play-pack",
     "name": "Classroom Finance Education Play Pack",
-    "price": 25,
+    "price": 150,
     "description": "Educational and training currency set. Perfect for classroom finance lessons, cashier/teller simulations, and cash management training.",
     "longDescription": "Designed for educational institutions and financial training, this kit offers replica bills that represent realistic dimensions and handling textures. Perfect for teaching cash handling, cash register operations, and security protocols in a safe, risk-free environment.",
     "category": "training-currency",
@@ -1802,7 +985,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "the-millionaire-heist-master-crate-(100-stacks)",
     "name": "The Millionaire Heist Master Crate (100 Stacks)",
-    "price": 55,
+    "price": 2500,
     "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
     "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
     "category": "bundle-packs",
@@ -1836,7 +1019,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "indie-film-crew-full-range-pack-(10-stacks)",
     "name": "Indie Film Crew Full Range Pack (10 Stacks)",
-    "price": 55,
+    "price": 1000,
     "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
     "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
     "category": "bundle-packs",
@@ -1870,7 +1053,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "high-stakes-ransom-briefcase-pro-(20-stacks)",
     "name": "High Stakes Ransom Briefcase Pro (20 Stacks)",
-    "price": 55,
+    "price": 1500,
     "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
     "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
     "category": "bundle-packs",
@@ -1904,7 +1087,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "commercial-producer-bulk-reserve-(50-stacks)",
     "name": "Commercial Producer Bulk Reserve (50 Stacks)",
-    "price": 55,
+    "price": 800,
     "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
     "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
     "category": "bundle-packs",
@@ -1938,7 +1121,7 @@ const RAW_PRODUCTS: Product[] = [
   {
     "id": "production-supply-wholesaler-mega-box",
     "name": "Production Supply Wholesaler Mega Box",
-    "price": 345,
+    "price": 2500,
     "description": "Ultimate bulk prop money reserve for large productions. Packed with multiple premium currency stacks, perfect for bank vault and high-stakes heist scenes.",
     "longDescription": "The ultimate collection for professional set designers, this bulk pack supplies ample currency to populate background safes, duffel bags, or bank vaults. Features highly realistic, double-sided color-balanced bills bound with bank wrappers. All notes possess a modern non-gloss texture to eliminate studio lights bounce.",
     "category": "bundle-packs",
@@ -1966,6 +1149,161 @@ const RAW_PRODUCTS: Product[] = [
       "Packaging": "Heavy-Duty Production Crate/Box",
       "Contents": "Cinematic Stacks of Diverse Denominations",
       "Scale": "1:1 Standard Dimension Replica"
+    }
+  },
+  {
+    "id": "canvas-bag",
+    "name": "Canvas Money Bag",
+    "price": 99,
+    "description": "Heavy-duty canvas bag for securely transporting prop money on set. Authentic bank-style design.",
+    "longDescription": "This authentic-looking canvas money bag features a durable, heavy-weight cotton construction, brass zipper, and reinforced stitching. Ideal for staging secure transport scenes, bank drop-offs, or classic heist sequences. Looks and feels exactly like genuine banking transport bags.",
+    "category": "accessories",
+    "sku": "ACC-CANVAS-BAG",
+    "seoTitle": "Canvas Money Bag for Prop Money | Australian Prop Money",
+    "metaDescription": "Authentic heavy-duty canvas money bag for realistic film and television banking scenes.",
+    "image": "images/products/accessories/canvas-money-bag.png",
+    "gallery": [
+      "images/products/accessories/canvas-money-bag.png"
+    ],
+    "stockStatus": "in-stock",
+    "relatedProducts": [
+      "duffle-bag",
+      "silver-aluminium-briefcase"
+    ],
+    "features": [
+      "Heavy-weight durable canvas",
+      "Authentic banking design",
+      "Brass zipper closure",
+      "Perfect for heist and transport scenes"
+    ],
+    "specifications": {
+      "Material": "Heavy-weight Cotton Canvas",
+      "Color": "Natural / Off-White",
+      "Closure": "Heavy-duty Brass Zipper"
+    }
+  },
+  {
+    "id": "duffle-bag",
+    "name": "Heist Duffle Bag",
+    "price": 120,
+    "description": "Large cinematic duffle bag perfect for bank robbery or ransom scenes.",
+    "longDescription": "Designed specifically for high-stakes cinematic moments, this rugged duffle bag is the classic choice for bank heists, ransom drops, and illicit cash transport scenes. Made from thick, dark nylon canvas with reinforced straps to handle the weight of large prop money bundles.",
+    "category": "accessories",
+    "sku": "ACC-DUFFLE-BAG",
+    "seoTitle": "Heist Duffle Bag for Prop Money | Australian Prop Money",
+    "metaDescription": "Cinematic heist duffle bag designed for prop money transport in film and television.",
+    "image": "images/products/accessories/heist-duffle-bag.png",
+    "gallery": [
+      "images/products/accessories/heist-duffle-bag.png"
+    ],
+    "stockStatus": "in-stock",
+    "relatedProducts": [
+      "canvas-bag",
+      "silver-aluminium-briefcase"
+    ],
+    "features": [
+      "Large capacity for bulk prop money",
+      "Rugged dark nylon material",
+      "Reinforced carrying straps",
+      "Classic cinematic look"
+    ],
+    "specifications": {
+      "Material": "Durable Nylon Canvas",
+      "Color": "Tactical Black",
+      "Style": "Classic Duffle"
+    }
+  },
+  {
+    "id": "money-counter",
+    "name": "Electronic Money Counter",
+    "price": 150,
+    "description": "Functioning electronic money counter for dynamic counting scenes.",
+    "longDescription": "Add authentic motion to your scenes with this fully functional electronic money counter. It smoothly processes all our prop money denominations at high speed, complete with LED displays and counting sound effects. A must-have for counting room, cartel, or casino sets.",
+    "category": "accessories",
+    "sku": "ACC-MONEY-COUNTER",
+    "seoTitle": "Electronic Money Counter for Prop Money | Australian Prop Money",
+    "metaDescription": "Working electronic money counter machine for dynamic film scenes and prop money handling.",
+    "image": "images/products/accessories/electronic-money-counter.png",
+    "gallery": [
+      "images/products/accessories/electronic-money-counter.png"
+    ],
+    "stockStatus": "in-stock",
+    "relatedProducts": [
+      "silver-aluminium-briefcase",
+      "prop-money-gun"
+    ],
+    "features": [
+      "High-speed counting action",
+      "Compatible with all prop notes",
+      "Authentic LED displays",
+      "Realistic counting sounds"
+    ],
+    "specifications": {
+      "Power": "Standard AC Wall Plug",
+      "Speed": "1000 notes per minute",
+      "Display": "Digital LED"
+    }
+  },
+  {
+    "id": "prop-money-gun",
+    "name": "Prop Money Gun",
+    "price": 65,
+    "description": "High-speed prop money dispenser for music videos and parties.",
+    "longDescription": "Create the ultimate 'making it rain' effect instantly. This battery-operated prop money gun shoots out bills at a rapid rate, perfect for music videos, club scenes, and celebratory shots. Lightweight, easy to load, and designed to work flawlessly with our prop currency.",
+    "category": "accessories",
+    "sku": "ACC-MONEY-GUN",
+    "seoTitle": "Prop Money Dispenser Gun | Australian Prop Money",
+    "metaDescription": "High-speed prop money shooter gun for music videos, parties, and dynamic film shots.",
+    "image": "images/products/accessories/prop-money-gun.png",
+    "gallery": [
+      "images/products/accessories/prop-money-gun.png"
+    ],
+    "stockStatus": "in-stock",
+    "relatedProducts": [
+      "money-counter",
+      "duffle-bag"
+    ],
+    "features": [
+      "Rapid fire money dispensing",
+      "Easy top-loading design",
+      "Lightweight and portable",
+      "Perfect for music videos"
+    ],
+    "specifications": {
+      "Power": "Battery Operated",
+      "Material": "Durable ABS Plastic",
+      "Capacity": "Up to 100 notes per load"
+    }
+  },
+  {
+    "id": "silver-aluminium-briefcase",
+    "name": "Silver Aluminium Briefcase",
+    "price": 200,
+    "description": "Classic silver aluminium briefcase with foam inserts for dramatic cash reveals.",
+    "longDescription": "The quintessential cinematic prop for high-value transactions. This sleek silver aluminium briefcase features dual combination locks and customisable foam inserts to perfectly display stacks of prop money. Engineered for the classic 'opening the case' reveal shot.",
+    "category": "accessories",
+    "sku": "ACC-SILVER-CASE",
+    "seoTitle": "Silver Aluminium Briefcase for Prop Money | Australian Prop Money",
+    "metaDescription": "Cinematic silver aluminium briefcase for prop money reveals, ransom drops, and deals.",
+    "image": "images/products/accessories/silver-aluminium-briefcase.png",
+    "gallery": [
+      "images/products/accessories/silver-aluminium-briefcase.png"
+    ],
+    "stockStatus": "in-stock",
+    "relatedProducts": [
+      "duffle-bag",
+      "money-counter"
+    ],
+    "features": [
+      "Sleek silver aluminium finish",
+      "Dual combination locks",
+      "Customisable interior foam",
+      "Perfect for cinematic reveal shots"
+    ],
+    "specifications": {
+      "Material": "Aluminium Alloy",
+      "Color": "Brushed Silver",
+      "Security": "Dual Combination Locks"
     }
   }
 ];
@@ -2006,7 +1344,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'July 5, 2026',
     category: 'Legality',
     readTime: '5 min read',
-    image: 'images/blog/1'
+    image: 'images/blog/1.jpg'
   },
   {
     id: 'lighting-prop-money-camera',
@@ -2032,7 +1370,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'June 28, 2026',
     category: 'Production Tips',
     readTime: '4 min read',
-    image: 'images/blog/2'
+    image: 'images/blog/2.jpg'
   },
   {
     id: 'aged-money-tutorial',
@@ -2058,7 +1396,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'June 15, 2026',
     category: 'Set Design',
     readTime: '6 min read',
-    image: 'images/blog/3'
+    image: 'images/blog/3.jpg'
   },
   {
     id: 'crime-drama-props',
@@ -2084,7 +1422,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'June 02, 2026',
     category: 'Industry Insights',
     readTime: '5 min read',
-    image: 'images/blog/4'
+    image: 'images/blog/4.jpg'
   },
   {
     id: 'evolution-of-prop-money',
@@ -2110,7 +1448,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'May 20, 2026',
     category: 'Cinema History',
     readTime: '7 min read',
-    image: 'images/blog/5'
+    image: 'images/blog/5.jpg'
   },
   {
     id: 'theatre-stage-props-cash',
@@ -2136,7 +1474,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'May 08, 2026',
     category: 'Stagecraft',
     readTime: '4 min read',
-    image: 'images/blog/6'
+    image: 'images/blog/6.jpg'
   },
   {
     id: 'safe-staging-heist-scenes',
@@ -2162,7 +1500,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'April 25, 2026',
     category: 'Production Tips',
     readTime: '8 min read',
-    image: 'images/blog/7'
+    image: 'images/blog/7.jpg'
   },
   {
     id: 'digital-sensors-vs-props',
@@ -2188,7 +1526,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'April 11, 2026',
     category: 'Technical Guides',
     readTime: '5 min read',
-    image: 'images/blog/8'
+    image: 'images/blog/8.jpg'
   },
   {
     id: 'music-video-prop-tips',
@@ -2214,7 +1552,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'March 29, 2026',
     category: 'Creative Direction',
     readTime: '4 min read',
-    image: 'images/blog/9'
+    image: 'images/blog/9.jpg'
   },
   {
     id: 'prop-weathering-guide',
@@ -2240,7 +1578,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'March 14, 2026',
     category: 'DIY Props',
     readTime: '6 min read',
-    image: 'images/blog/10'
+    image: 'images/blog/10.jpg'
   },
   {
     id: 'creative-editorial-photography',
@@ -2266,7 +1604,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'February 28, 2026',
     category: 'Photography Tips',
     readTime: '5 min read',
-    image: 'images/blog/11'
+    image: 'images/blog/11.jpg'
   },
   {
     id: 'rba-compliance-details',
@@ -2292,7 +1630,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'February 10, 2026',
     category: 'Legality',
     readTime: '6 min read',
-    image: 'images/blog/12'
+    image: 'images/blog/12.jpg'
   },
   {
     id: 'training-currency-benefits',
@@ -2318,7 +1656,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'January 25, 2026',
     category: 'Business Training',
     readTime: '4 min read',
-    image: 'images/blog/13'
+    image: 'images/blog/13.jpg'
   },
   {
     id: 'briefcase-requisition-design',
@@ -2344,7 +1682,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'January 11, 2026',
     category: 'Set Design',
     readTime: '5 min read',
-    image: 'images/blog/14'
+    image: 'images/blog/14.jpg'
   },
   {
     id: 'budgeting-wholesale-prop-packs',
@@ -2370,7 +1708,7 @@ Our products at <a href="/" class="text-gold underline hover:text-black">Austral
     date: 'January 02, 2026',
     category: 'Indie Filmmaking',
     readTime: '6 min read',
-    image: 'images/blog/15'
+    image: 'images/blog/15.jpg'
   }
 ];
 

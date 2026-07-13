@@ -25,6 +25,7 @@ const playfair = Playfair_Display({
 
 const baseUrl = process.env.APP_URL || 'https://australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
+const defaultHeroImage = 'images/hero/hero.webp';
 
 export const metadata: Metadata = {
   title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp',
+        url: defaultHeroImage,
         width: 1200,
         height: 630,
         alt: 'Australian Prop Money Film Replicas',
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
     description: 'Premium Australian prop money replica notes for film, television, theatre, photography, and training. Conforming to RBA guidelines.',
-    images: ['https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp'],
+    images: [defaultHeroImage],
   },
 };
 
@@ -68,7 +69,7 @@ const organizationSchema = {
   'logo': `${cleanBaseUrl}/logo.png`,
   'contactPoint': {
     '@type': 'ContactPoint',
-    'telephone': '+61-400-000-000',
+    'telephone': '+61 480 852 682',
     'contactType': 'customer service',
     'email': 'info@australianpropmoney.org',
     'availableLanguage': 'en'
@@ -83,10 +84,10 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   'name': 'Australian Prop Money',
-  'image': 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp',
+  'image': defaultHeroImage,
   '@id': `${cleanBaseUrl}/#localbusiness`,
   'url': cleanBaseUrl,
-  'telephone': '+61400000000',
+  'telephone': '+61480852682',
   'priceRange': '$$',
   'address': {
     '@type': 'PostalAddress',

@@ -3,7 +3,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { Play } from 'lucide-react';
-import { getImageUrl } from '@/lib/imagekit';
 
 const VIDEOS = [
   {
@@ -53,7 +52,7 @@ export default function VideosPage() {
       {/* Featured Video */}
       <div className="relative aspect-video sm:aspect-21/9 bg-black rounded-3xl overflow-hidden shadow-xl border border-gray-100 max-w-5xl mx-auto group cursor-pointer">
         <Image
-          src={getImageUrl(VIDEOS[0].thumbnail)}
+          src={VIDEOS[0].thumbnail}
           alt={VIDEOS[0].title}
           fill
           priority
@@ -88,7 +87,7 @@ export default function VideosPage() {
           <div key={video.id} className="group cursor-pointer flex flex-col">
             <div className="relative aspect-video bg-black rounded-2xl overflow-hidden mb-4 border border-gray-100 shadow-sm">
               <Image
-                src={getImageUrl(video.thumbnail)}
+                src={video.thumbnail}
                 alt={video.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

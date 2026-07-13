@@ -310,7 +310,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     } else if (paymentMethod === 'payid') {
       paymentInstructions = `
         PayID Type: Email
-        PayID Address: payments@australianpropmoney.org
+        PayID Address: info@australianpropmoney.org
         Registered Name: Australian Prop Money Pty Ltd
         Reference: ${orderId}
       `;

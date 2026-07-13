@@ -109,7 +109,7 @@ export default function ContactPage() {
             </div>
 
             {/* Detail 2: WhatsApp */}
-            {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
+            {true && (
               <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-start gap-4">
                 <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center shrink-0 border border-gold/15">
                   <MessageSquare className="w-5 h-5 text-gold" />
@@ -117,13 +117,13 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <span className="text-[10px] uppercase font-bold text-gray-400 block font-mono">WhatsApp Rapid Support</span>
                   <a 
-                    href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}`} 
+                    href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682')}`} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-sm font-bold text-black hover:text-gold transition-colors block"
                     id="contact-whatsapp-link-box"
                   >
-                    {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
+                    {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+61 480 852 682'}
                   </a>
                   <span className="text-[10px] text-emerald-600 font-semibold block">Available 24/7 for creative sets</span>
                 </div>

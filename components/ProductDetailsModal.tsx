@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { X, ShoppingCart, Check, Star, ShieldCheck, HelpCircle } from 'lucide-react';
 import { Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
-import { getImageUrl } from '@/lib/imagekit';
 
 interface ProductDetailsModalProps {
   product: Product | null;
@@ -64,7 +63,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
         {/* Left Side: Product Image & Compliance Watermark */}
         <div className="relative w-full md:w-1/2 aspect-4/3 md:aspect-auto md:min-h-[450px] bg-gray-50">
           <Image
-            src={getImageUrl(product.image)}
+            src={product.image}
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, 400px"

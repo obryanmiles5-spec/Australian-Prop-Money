@@ -13,7 +13,6 @@ import CreativeIndustryCarousel from '@/components/CreativeIndustryCarousel';
 import EntertainmentLogosCarousel from '@/components/EntertainmentLogosCarousel';
 import ProductCard from '@/components/ProductCard';
 import ProductDetailsModal from '@/components/ProductDetailsModal';
-import { getImageUrl } from '@/lib/imagekit';
 import { cleanWhatsAppNumber } from '@/lib/utils';
 
 
@@ -42,7 +41,7 @@ export default function HomePage() {
         {/* Background Image with Dark & Gold Overlays */}
         <div className="absolute inset-0 z-0">
           <Image
-            src={getImageUrl('images/hero/hero.webp')}
+            src={'images/hero/hero.webp'}
             alt="Cinematic prop money background"
             fill
             priority
@@ -237,7 +236,7 @@ export default function HomePage() {
               {/* Card Image using getImageUrl to support future ImageKit integration */}
               <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden shrink-0 border-b border-gray-100">
                 <Image
-                  src={getImageUrl(card.image)}
+                  src={card.image}
                   alt={card.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -297,9 +296,9 @@ export default function HomePage() {
               >
                 Request Custom Bulk Quote
               </Link>
-              {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
+              {true && (
                 <a 
-                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}`} 
+                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682")}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center justify-center gap-2 border border-white/30 text-white hover:bg-white hover:text-black px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-center transition-all"
@@ -329,7 +328,7 @@ export default function HomePage() {
               <div>
                 <div className="relative aspect-video bg-gray-100 overflow-hidden">
                   <Image
-                    src={getImageUrl(post.image)}
+                    src={post.image}
                     alt={post.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

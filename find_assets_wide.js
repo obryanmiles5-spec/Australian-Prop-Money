@@ -1,0 +1,47 @@
+const https = require('https');
+const prefixes = [
+  "images/",
+  "images/creative-industry/",
+  "images/industry/",
+  "images/industries/",
+  "images/categories/",
+  "images/carousel/",
+  "creative-industry/",
+  "industry/",
+  "carousel/"
+];
+const names = [
+  "commercial-advertising.jpg",
+  "video-production.jpg",
+  "content-creation.jpg",
+  "film-production.png",
+  "photography.png",
+  "theatre.jpg"
+];
+
+function checkUrl(url) {
+  return new Promise((resolve) => {
+    https.request(url, { method: 'HEAD' }, (res) => {
+      resolve({ url, status: res.statusCode });
+    }).on('error', () => resolve({ url, status: 0 })).end();
+  });
+}
+
+async function run() {
+  for (const name of names) {
+    let found = false;
+    for (const prefix of prefixes) {
+      const url = `https://ik.imagekit.io/ukpeptides/australianpropmoney/${prefix}${name}`;
+      const res = await checkUrl(url);
+      if (res.status === 200) {
+        console.log(`FOUND: ${url}`);
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      console.log(`MISSING: ${name}`);
+    }
+  }
+}
+run();

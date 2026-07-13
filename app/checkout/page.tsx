@@ -311,8 +311,8 @@ Please confirm receipt of this order and reply with tracking details once transf
                 <div className="flex justify-between border-b pb-1.5 border-gray-100">
                   <span className="text-gray-400">PayID Address:</span>
                   <div className="flex gap-1.5 items-center">
-                    <span className="text-black font-bold">payments@australianpropmoney.org</span>
-                    <button onClick={() => handleCopy('payments@australianpropmoney.org', 'PayID')} className="text-gold hover:underline p-0.5">
+                    <span className="text-black font-bold">info@australianpropmoney.org</span>
+                    <button onClick={() => handleCopy('info@australianpropmoney.org', 'PayID')} className="text-gold hover:underline p-0.5">
                       {copiedState === 'PayID' ? 'Copied' : <Copy className="w-3.5 h-3.5" />}
                     </button>
                   </div>
@@ -388,12 +388,12 @@ Please confirm receipt of this order and reply with tracking details once transf
             Since prop orders are handled off-grid, we strongly recommend sending a copy of your transaction receipt and order summary directly to our sales coordinator. Click one of the buttons below to instantly draft your verification report:
           </p>
 
-          <div className={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ? "grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2" : "grid grid-cols-1 gap-4 pt-2"}>
+          <div className={"grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2"}>
             
             {/* WhatsApp verification checkout */}
-            {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
+            {true && (
               <a
-                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}?text=${generateWhatsAppMessage()}`}
+                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682")}?text=${generateWhatsAppMessage()}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#20ba59] text-white py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 text-center focus:outline-none"
@@ -406,7 +406,7 @@ Please confirm receipt of this order and reply with tracking details once transf
 
             {/* Email verification checkout */}
             <a
-              href={`mailto:orders@australianpropmoney.org?subject=${encodeURIComponent(generateEmailSubject())}&body=${encodeURIComponent(generateEmailBody())}`}
+              href={`mailto:info@australianpropmoney.org?subject=${encodeURIComponent(generateEmailSubject())}&body=${encodeURIComponent(generateEmailBody())}`}
               className="bg-black hover:bg-gold text-white hover:text-black py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 text-center"
               id="btn-checkout-email"
             >

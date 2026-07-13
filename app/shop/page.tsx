@@ -148,7 +148,8 @@ function ShopContent() {
               { id: 'tv-production-props', label: 'TV Props' },
               { id: 'photography-props', label: 'Photography Props' },
               { id: 'training-currency', label: 'Training Currency' },
-              { id: 'bundle-packs', label: 'Bundle Packs' }
+              { id: 'bundle-packs', label: 'Bundle Packs' },
+              { id: 'accessories', label: 'Accessories' }
             ].map((cat) => (
               <button
                 key={cat.id}
