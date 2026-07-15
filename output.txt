@@ -1,0 +1,6 @@
+[200] images/categories/Australian Notes.webp
+[200] images/categories/australian-notes.webp
+[404] images/products/Australian Notes/New-Notes/100 AUD/100-aud-front.jpg
+[404] images/products/australian-notes/new-notes/100-aud/100-aud-front.jpg
+[404] images/products/Australian-Notes/New-Notes/100-AUD/100-aud-front.jpg
+[404] images/products/australian-notes/classic-notes/10-aud/10-aud-front.jpg

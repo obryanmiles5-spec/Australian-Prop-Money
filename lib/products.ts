@@ -4,13 +4,12 @@ export interface Product {
   price: number;
   description: string;
   longDescription: string;
-  category: 'australian-notes' | 'movie-prop-money' | 'tv-production-props' | 'photography-props' | 'training-currency' | 'bundle-packs' | 'accessories';
+  category: string;
   sku: string;
   seoTitle: string;
   metaDescription: string;
   image: string;
-  gallery: string[];
-  stockStatus: 'in-stock' | 'low-stock' | 'out-of-stock';
+    stockStatus: 'in-stock' | 'low-stock' | 'out-of-stock';
   relatedProducts: string[];
   features: string[];
   specifications: {
@@ -46,1732 +45,404 @@ export interface Review {
 }
 
 export function getCategoryLabel(cat: string): string {
-  switch (cat) {
-    case 'australian-notes': return 'Australian Notes';
-    case 'movie-prop-money': return 'Movie Prop Money';
-    case 'tv-production-props': return 'TV Production Props';
-    case 'photography-props': return 'Photography Props';
-    case 'training-currency': return 'Training Currency';
-    case 'bundle-packs': return 'Bundle Packs';
-    case 'accessories': return 'Accessories';
-    default: return 'Prop Money';
-  }
+  return cat;
 }
 
-const RAW_PRODUCTS: Product[] = [
+export const PRODUCTS: Product[] = [
   {
-    "id": "australian-notes/classic-notes/10-aud",
-    "name": "$10 AUD Classic Notes",
-    "price": 55,
-    "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "10-AUD-CLASSIC-NOTES-FRONT",
-    "seoTitle": "$10 AUD Classic Notes Front | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $10 AUD Classic Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/$10 AUD Classic Notes.jpg",
-    "gallery": [
-      "images/$10 AUD Classic Notes.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "australian-notes/classic-notes/20-aud",
-      "australian-notes/new-notes/100-aud"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Obverse Side Only",
-      "Dimensions": "137mm x 65mm"
+    id: 'buy-counterfeit-$10-aud-old',
+    name: 'Buy Counterfeit $10 AUD (Old Design)',
+    price: 150.00,
+    description: 'High-fidelity replica $10 AUD banknote (classic design), engineered to match look and dimensions for film sets.',
+    longDescription: 'This replica $10 AUD banknote captures the classic pre-2016 design elements. Meticulously designed for cinematic sets, it features correct color matching and matte non-reflective inks to prevent studio light flares, ensuring total realism on camera.',
+    category: 'australian-notes',
+    sku: 'AUD-10-OLD',
+    seoTitle: 'Buy Counterfeit $10 AUD Old Design Prop | Australian Prop Money',
+    metaDescription: 'High-quality $10 AUD classic design prop banknotes for film and television productions.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['buy-counterfeit-$20-aud-old', 'buy-counterfeit-$50-aud-old'],
+    features: ['Matte non-glare ink', 'Double-sided crisp paper bond', 'Exact dimension matching', 'RBA guideline compliant marking'],
+    specifications: {
+      'Denomination': '$10 AUD',
+      'Series': 'Classic (Old)',
+      'Material': 'Premium Double-Calendered Matte Paper',
+      'Compliance': 'NOT LEGAL TENDER watermark'
     }
   },
   {
-    "id": "australian-notes/classic-notes/20-aud",
-    "name": "$20 AUD Classic Notes",
-    "price": 75,
-    "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "20-AUD-CLASSIC-NOTES-FRONT",
-    "seoTitle": "$20 AUD Classic Notes Front | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $20 AUD Classic Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/$20 AUD Classic Notes.png",
-    "gallery": [
-      "images/$20 AUD Classic Notes.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "australian-notes/classic-notes/10-aud",
-      "australian-notes/new-notes/20-aud"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Obverse Side Only",
-      "Dimensions": "144mm x 65mm"
+    id: 'buy-counterfeit-$20-aud-old',
+    name: 'Buy Counterfeit $20 AUD (Old Design)',
+    price: 150.00,
+    description: 'Highly accurate $20 AUD prop bank note in the vintage pre-2016 style, optimized for realistic set dressing.',
+    longDescription: 'This classic $20 AUD prop banknote is crafted specifically for action scenes, heist themes, and television dramas. It delivers high-resolution visual performance under direct studio key-lights without any artificial shine.',
+    category: 'australian-notes',
+    sku: 'AUD-20-OLD',
+    seoTitle: 'Buy Counterfeit $20 AUD Old Design Prop | Australian Prop Money',
+    metaDescription: 'Vintage style $20 AUD replica prop banknote printed on professional non-glare paper.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['buy-counterfeit-$10-aud-old', 'buy-counterfeit-$50-aud-old'],
+    features: ['Professional lithographic style print', 'Perfect size matching', 'Zero-glare under high-intensity lights', 'RBA-compliant disclaimers'],
+    specifications: {
+      'Denomination': '$20 AUD',
+      'Series': 'Classic (Old)',
+      'Material': 'Premium Double-Calendered Matte Paper',
+      'Compliance': 'NOT LEGAL TENDER watermark'
     }
   },
   {
-    "id": "australian-notes/classic-notes/50-aud",
-    "name": "$50 AUD Classic Notes",
-    "price": 95,
-    "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "50-AUD-CLASSIC-NOTES-FRONT",
-    "seoTitle": "$50 AUD Classic Notes Front | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $50 AUD Classic Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/$50 AUD Classic Notes.jpg",
-    "gallery": [
-      "images/$50 AUD Classic Notes.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "australian-notes/new-notes/10-aud",
-      "australian-notes/new-notes/20-aud",
-      "australian-notes/new-notes/100-aud"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Obverse Side Only",
-      "Dimensions": "151mm x 65mm"
+    id: 'buy-counterfeit-$50-aud-old',
+    name: 'Buy Counterfeit $50 AUD (Old Design)',
+    price: 150.00,
+    description: 'Perfect replica of the classic $50 AUD polymer note, printed on non-glare prop paper.',
+    longDescription: 'Our classic $50 AUD banknote replica is one of our most popular prop pieces. Printed with custom matte organic inks on high-density paper, it mimics the hand-feel and crisp sound of paper currency while remaining 100% compliant with national laws.',
+    category: 'australian-notes',
+    sku: 'AUD-50-OLD',
+    seoTitle: 'Buy Counterfeit $50 AUD Old Design Prop | Australian Prop Money',
+    metaDescription: 'Prisinte $50 AUD classic design prop banknotes. Ideal for stacks, bags, and close-ups.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['buy-counterfeit-$20-aud-old', 'buy-counterfeit-$100-aud-old'],
+    features: ['Vibrant color replication', 'Heavy matte finish', 'Double-sided high-DPI print', '100% legal RBA compliance'],
+    specifications: {
+      'Denomination': '$50 AUD',
+      'Series': 'Classic (Old)',
+      'Material': 'Premium Double-Calendered Matte Paper',
+      'Compliance': 'NOT LEGAL TENDER watermark'
     }
   },
   {
-    "id": "australian-notes/classic-notes/100-aud",
-    "name": "$100 AUD Classic Notes",
-    "price": 150,
-    "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "100-AUD-CLASSIC-NOTES-FRONT",
-    "seoTitle": "$100 AUD Classic Notes Front | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $100 AUD Classic Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/$100 AUD Classic Notes.jpg",
-    "gallery": [
-      "images/$100 AUD Classic Notes.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "australian-notes/new-notes/50-aud",
-      "australian-notes/classic-notes/10-aud",
-      "australian-notes/new-notes/100-aud"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Obverse Side Only",
-      "Dimensions": "158mm x 65mm"
+    id: 'buy-counterfeit-$100-aud-old',
+    name: 'Buy Counterfeit $100 AUD (Old Design)',
+    price: 200.00,
+    description: 'High-denomination $100 AUD classic note prop. Elegant double-sided printing on premium matte bond.',
+    longDescription: 'Make a lasting impression in luxury scenes, ransom setups, or poker games. This classic $100 AUD prop bank note features meticulous detail on every millimetre, perfectly adapted for sharp cinematic focus.',
+    category: 'australian-notes',
+    sku: 'AUD-100-OLD',
+    seoTitle: 'Buy Counterfeit $100 AUD Old Design Prop | Australian Prop Money',
+    metaDescription: 'High-denomination classic $100 AUD replica banknotes. Perfect for high-stakes scenes.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['buy-counterfeit-$50-aud-old', 'buy-counterfeit-$100-new'],
+    features: ['Rich high-contrast inks', 'Realistic visual depth', 'Authentic weight and handling', 'Clear prop markings'],
+    specifications: {
+      'Denomination': '$100 AUD',
+      'Series': 'Classic (Old)',
+      'Material': 'Premium Double-Calendered Matte Paper',
+      'Compliance': 'NOT LEGAL TENDER watermark'
     }
   },
   {
-    "id": "australian-notes/new-notes/10-aud",
-    "name": "$10 AUD New Notes",
-    "price": 70,
-    "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "10-AUD-NEW-NOTES-FRONT",
-    "seoTitle": "$10 AUD New Notes Front | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $10 AUD New Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/$10 AUD New Notes.jpg",
-    "gallery": [
-      "images/$10 AUD New Notes.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "australian-notes/classic-notes/10-aud",
-      "australian-notes/new-notes/10-aud",
-      "australian-notes/new-notes/100-aud"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Obverse Side Only",
-      "Dimensions": "137mm x 65mm"
+    id: 'buy-counterfeit-$10-aud-new',
+    name: 'Buy Counterfeit $10 AUD (New Design)',
+    price: 150.00,
+    description: 'The modern-style $10 AUD note replica featuring correct color matching for high-definition close-up shots.',
+    longDescription: 'This replica represents the latest generation of Australian $10 banknotes. Designed to mimic the vibrant colors and signature layout of the modern series, it is optimized for high-resolution 4K and 8K cinematic lenses.',
+    category: 'australian-notes',
+    sku: 'AUD-10-NEW',
+    seoTitle: 'Buy Counterfeit $10 AUD New Design Prop | Australian Prop Money',
+    metaDescription: 'Next-generation style $10 AUD prop banknotes with precise color matching.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['buy-counterfeit-$20-aud-new', 'buy-counterfeit-$50-aud-new'],
+    features: ['Next-gen design layout', 'High fidelity color match', 'Thick organic paper base', 'Clear compliant disclaimer'],
+    specifications: {
+      'Denomination': '$10 AUD',
+      'Series': 'Modern (New)',
+      'Material': 'Premium Double-Calendered Matte Paper',
+      'Compliance': 'NOT LEGAL TENDER watermark'
     }
   },
   {
-    "id": "australian-notes/new-notes/20-aud",
-    "name": "$20 AUD New Notes",
-    "price": 90,
-    "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "20-AUD-NEW-NOTES-FRONT",
-    "seoTitle": "$20 AUD New Notes Front | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $20 AUD New Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/$20 AUD New Notes.jpg",
-    "gallery": [
-      "images/$20 AUD New Notes.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "australian-notes/classic-notes/100-aud",
-      "australian-notes/classic-notes/10-aud",
-      "australian-notes/new-notes/100-aud"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Obverse Side Only",
-      "Dimensions": "144mm x 65mm"
+    id: 'buy-counterfeit-$20-aud-new',
+    name: 'Buy Counterfeit $20 AUD (New Design)',
+    price: 150.00,
+    description: 'New-generation $20 AUD design prop note. Features matte non-reflective inks designed for modern film sensors.',
+    longDescription: 'Optimized for modern camera sensors, this $20 AUD replica mimics the bold red hues of the contemporary Australian series. It is perfect for fast cash counts, wallet scene fillers, or dynamic action-packed close-ups.',
+    category: 'australian-notes',
+    sku: 'AUD-20-NEW',
+    seoTitle: 'Buy Counterfeit $20 AUD New Design Prop | Australian Prop Money',
+    metaDescription: 'Contemporary style $20 AUD replica prop banknotes. Meticulous detail for modern film.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['buy-counterfeit-$10-aud-new', 'buy-counterfeit-$50-aud-new'],
+    features: ['Bold new-series colors', 'Strict dimension compliance', 'Zero camera reflections', 'NOT LEGAL TENDER printed'],
+    specifications: {
+      'Denomination': '$20 AUD',
+      'Series': 'Modern (New)',
+      'Material': 'Premium Double-Calendered Matte Paper',
+      'Compliance': 'NOT LEGAL TENDER watermark'
     }
   },
   {
-    "id": "australian-notes/new-notes/50-aud",
-    "name": "$50 AUD New Notes",
-    "price": 120,
-    "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "50-AUD-NEW-NOTES-FRONT",
-    "seoTitle": "$50 AUD New Notes Front | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $50 AUD New Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/$50 AUD New Notes.jpg",
-    "gallery": [
-      "images/$50 AUD New Notes.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "australian-notes/classic-notes/10-aud",
-      "australian-notes/new-notes/100-aud",
-      "australian-notes/classic-notes/20-aud"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Obverse Side Only",
-      "Dimensions": "151mm x 65mm"
+    id: 'buy-counterfeit-$50-aud-new',
+    name: 'Buy Counterfeit $50 AUD (New Design)',
+    price: 150.00,
+    description: 'Next-gen $50 AUD prop note. Meticulously designed according to Reserve Bank of Australia compliance guidelines.',
+    longDescription: 'Bring extreme accuracy to your heist, corporate boardroom, or luxury sets with the modern-style $50 AUD banknote replica. This high-demand prop utilizes deep yellow-gold pigments formulated strictly to avoid yellow flare under harsh flashes.',
+    category: 'australian-notes',
+    sku: 'AUD-50-NEW',
+    seoTitle: 'Buy Counterfeit $50 AUD New Design Prop | Australian Prop Money',
+    metaDescription: 'Modern style $50 AUD prop notes. Vibrant yellow-gold hues for beautiful set staging.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['buy-counterfeit-$20-aud-new', 'buy-counterfeit-$100-aud-new'],
+    features: ['Vibrant next-gen graphics', 'Excellent hand-handling properties', 'Anti-reflective surface finish', 'Compliant disclaimer lettering'],
+    specifications: {
+      'Denomination': '$50 AUD',
+      'Series': 'Modern (New)',
+      'Material': 'Premium Double-Calendered Matte Paper',
+      'Compliance': 'NOT LEGAL TENDER watermark'
     }
   },
   {
-    "id": "australian-notes/new-notes/100-aud",
-    "name": "$100 AUD New Notes",
-    "price": 200,
-    "description": "Premium single-sided replica representing the front (obverse) of the Australian banknote. Specially formulated for high-definition close-up studio shots.",
-    "longDescription": "Designed to comply fully with the Reserve Bank of Australia (RBA) guidelines, this specimen bill features ultra-high-definition, single-sided, non-reflective printing. Printed on high-density bond paper with organic matte ink, it eliminates camera lens flare and looks identical to genuine currency on film. Ideal for detailed insert shots, crime scene reconstructions, and training purposes.",
-    "category": "australian-notes",
-    "sku": "100-AUD-NEW-NOTES-FRONT",
-    "seoTitle": "$100 AUD New Notes Front | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity $100 AUD New Notes Front for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/$100 AUD New Notes.jpg",
-    "gallery": [
-      "images/$100 AUD New Notes.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "australian-notes/classic-notes/20-aud",
-      "australian-notes/classic-notes/10-aud",
-      "australian-notes/new-notes/100-aud"
-    ],
-    "features": [
-      "Dual-side matched high-resolution scanning",
-      "Non-reflective organic matte inks preventing studio glare",
-      "Standard scale and dimensions",
-      "Legal \"SPECIMEN\" markings compliant with federal laws",
-      "Crisp heavyweight paper feel"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Bond",
-      "Ink Type": "Color-Calibrated Studio Inks",
-      "Note Type": "Obverse Side Only",
-      "Dimensions": "158mm x 65mm"
+    id: 'buy-counterfeit-$100-aud-new',
+    name: 'Buy Counterfeit $100 AUD (New Design)',
+    price: 200.00,
+    description: 'Our highest denomination $100 AUD prop bank note (new series), perfect for cinematic high-stakes reveals.',
+    longDescription: 'Complete your high-stakes narrative with the supreme next-generation $100 AUD replica note. Expertly color-graded for optimal video presence, it is the ideal prop for suitcases, safes, and detailed foreground counts.',
+    category: 'australian-notes',
+    sku: 'AUD-100-NEW',
+    seoTitle: 'Buy Counterfeit $100 AUD New Design Prop | Australian Prop Money',
+    metaDescription: 'Modern series $100 AUD prop banknotes. Ultimate cash prop for film masterclasses.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['buy-counterfeit-$50-aud-new', 'buy-counterfeit-$100-aud-old'],
+    features: ['Flawless digital replication', 'Unparalleled color depth', 'Double-sided precision mapping', 'RBA-compliant markings'],
+    specifications: {
+      'Denomination': '$100 AUD',
+      'Series': 'Modern (New)',
+      'Material': 'Premium Double-Calendered Matte Paper',
+      'Compliance': 'NOT LEGAL TENDER watermark'
     }
   },
   {
-    "id": "action-heist-weathered-100-stack",
-    "name": "Action Heist Weathered $100 Stack",
-    "price": 200,
-    "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
-    "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
-    "category": "movie-prop-money",
-    "sku": "ACTION-HEIST-WEATHERED-100-STACK",
-    "seoTitle": "Action Heist Weathered $100 Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Action Heist Weathered $100 Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Action Heist Weathered $100 Stack.png",
-    "gallery": [
-      "images/Action Heist Weathered $100 Stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "water-logged-underworld-cash-stack",
-      "charred-and-singed-50-prop-note-stack",
-      "crimson-stained-100-prop-note-stack"
-    ],
-    "features": [
-      "Artisan-weathered for realistic grit",
-      "Double-sided non-reflective premium print",
-      "Includes 100 distressed bills and a custom bank strap",
-      "Safe and non-toxic treatment processes",
-      "Highly recommended for action, cartel, and heist movies"
-    ],
-    "specifications": {
-      "Process": "Artisanal Hand-Weathering & Aging",
-      "Count": "100 Replica Bills",
-      "Strap": "Aged Kraft Bank Strap",
-      "Inks": "Smudge-Resistant Organic Inks"
+    id: 'commercial-producer-bulk-reserve-50-stacks',
+    name: 'Commercial Producer Bulk Reserve (50 Stacks)',
+    price: 350.00,
+    description: 'Bulk reserve set featuring 50 full stacks of high-fidelity replica currency for commercial productions.',
+    longDescription: 'Engineered specifically for commercial film production, this bulk reserve set delivers 50 premium paper-bond cash stacks. Hand-secured with heavy-duty paper bands, they provide realistic volume and movement for large-scale camera pans.',
+    category: 'bundle-packs',
+    sku: 'BND-CP-050',
+    seoTitle: 'Commercial Producer Bulk Reserve 50 Stacks | Australian Prop Money',
+    metaDescription: 'Bulk prop money set containing 50 cash stacks for cinematic production sets.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['film-producer-pack', 'millionaire-heist-master-crate-100-stacks'],
+    features: ['50 complete cash stacks', 'Matte non-glare ink technology', 'Compliant markings on every note', 'Pre-banded and ready for set'],
+    specifications: {
+      'Total Stacks': '50 Stacks',
+      'Currency Match': 'Mixed AUD Denominations',
+      'Material': 'Premium Matte Cotton Bond',
+      'Compliance': 'RBA Distinguishable Standard'
     }
   },
   {
-    "id": "action-heist-weathered-50-stack",
-    "name": "Action Heist Weathered $50 Stack",
-    "price": 200,
-    "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
-    "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
-    "category": "movie-prop-money",
-    "sku": "ACTION-HEIST-WEATHERED-50-STACK",
-    "seoTitle": "Action Heist Weathered $50 Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Action Heist Weathered $50 Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Action Heist Weathered $50 Stack.png",
-    "gallery": [
-      "images/Action Heist Weathered $50 Stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "crimson-stained-100-prop-note-stack",
-      "action-heist-weathered-100-stack",
-      "water-logged-underworld-cash-stack"
-    ],
-    "features": [
-      "Artisan-weathered for realistic grit",
-      "Double-sided non-reflective premium print",
-      "Includes 100 distressed bills and a custom bank strap",
-      "Safe and non-toxic treatment processes",
-      "Highly recommended for action, cartel, and heist movies"
-    ],
-    "specifications": {
-      "Process": "Artisanal Hand-Weathering & Aging",
-      "Count": "100 Replica Bills",
-      "Strap": "Aged Kraft Bank Strap",
-      "Inks": "Smudge-Resistant Organic Inks"
+    id: 'film-producer-pack',
+    name: 'Film Producer Pack',
+    price: 900.00,
+    description: 'The ultimate production bundle, including mixed denomination stacks for premium narrative and dramatic scenes.',
+    longDescription: 'Specially curated for feature films, television shows, and streaming series, the Film Producer Pack offers a comprehensive mix of new and old design denominations. Fully optimized for ultra-high-resolution digital cinema cameras.',
+    category: 'bundle-packs',
+    sku: 'BND-FP-100',
+    seoTitle: 'Film Producer Pack Prop Cash | Australian Prop Money',
+    metaDescription: 'Ultimate cinematic prop money bundle designed specifically for feature-length productions.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['commercial-producer-bulk-reserve-50-stacks', 'millionaire-heist-master-crate-100-stacks'],
+    features: ['High-DPI offset lithography printing', 'Mixed modern & classic styles', 'Authentic weight & paper thickness', 'Non-glare anti-flare coatings'],
+    specifications: {
+      'Bundle Contents': 'Premium Selection of High-Denomination Stacks',
+      'Paper Type': '100% Cotton-blend Double-Calendered',
+      'Dimensions': 'Strictly scale-matched',
+      'Compliance': 'Legal tender alternative markings'
     }
   },
   {
-    "id": "crimson-stained-100-prop-note-stack",
-    "name": "Crimson Stained $100 Prop Note Stack",
-    "price": 200,
-    "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
-    "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
-    "category": "movie-prop-money",
-    "sku": "CRIMSON-STAINED-100-PROP-NOTE-STACK",
-    "seoTitle": "Crimson Stained $100 Prop Note Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Crimson Stained $100 Prop Note Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Crimson Stained $100 Prop Note Stack.png",
-    "gallery": [
-      "images/Crimson Stained $100 Prop Note Stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "water-logged-underworld-cash-stack",
-      "charred-and-singed-50-prop-note-stack",
-      "action-heist-weathered-50-stack"
-    ],
-    "features": [
-      "Artisan-weathered for realistic grit",
-      "Double-sided non-reflective premium print",
-      "Includes 100 distressed bills and a custom bank strap",
-      "Safe and non-toxic treatment processes",
-      "Highly recommended for action, cartel, and heist movies"
-    ],
-    "specifications": {
-      "Process": "Artisanal Hand-Weathering & Aging",
-      "Count": "100 Replica Bills",
-      "Strap": "Aged Kraft Bank Strap",
-      "Inks": "Smudge-Resistant Organic Inks"
+    id: 'millionaire-heist-master-crate-100-stacks',
+    name: 'Millionaire Heist Master Crate (100 Stacks)',
+    price: 2500.00,
+    description: 'A massive industrial prop crate containing 100 complete stacks of pristine replica cash.',
+    longDescription: 'Designed for high-intensity heist, vault, and major ransom scenes, the Millionaire Heist Master Crate provides unparalleled visual scale. Complete with 100 fully-wrapped prop stacks, this set is the crown jewel of professional prop houses.',
+    category: 'bundle-packs',
+    sku: 'BND-MH-100',
+    seoTitle: 'Millionaire Heist Master Crate 100 Stacks | Australian Prop Money',
+    metaDescription: 'Ultimate vault set containing 100 premium prop money stacks in an industrial presentation.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['film-producer-pack', 'wholesale-pack'],
+    features: ['100 high-fidelity cash stacks', 'Premium heavy-duty presentation', 'Zero-glare under direct studio spots', 'RBA compliant detailing'],
+    specifications: {
+      'Total Stacks': '100 Stacks',
+      'Acoustic Feel': 'Crisp currency-grade rustle',
+      'Weight': 'Fully packed visual weight',
+      'Compliance': 'Watermark and edge-mark compliant'
     }
   },
   {
-    "id": "charred-and-singed-50-prop-note-stack",
-    "name": "Charred & Singed $50 Prop Note Stack",
-    "price": 200,
-    "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
-    "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
-    "category": "movie-prop-money",
-    "sku": "CHARRED-AND-SINGED-50-PROP-NOTE-STACK",
-    "seoTitle": "Charred & Singed $50 Prop Note Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Charred & Singed $50 Prop Note Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Charred & Singed $50 Prop Note Stack.png",
-    "gallery": [
-      "images/Charred & Singed $50 Prop Note Stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "water-logged-underworld-cash-stack",
-      "crimson-stained-100-prop-note-stack",
-      "action-heist-weathered-50-stack"
-    ],
-    "features": [
-      "Artisan-weathered for realistic grit",
-      "Double-sided non-reflective premium print",
-      "Includes 100 distressed bills and a custom bank strap",
-      "Safe and non-toxic treatment processes",
-      "Highly recommended for action, cartel, and heist movies"
-    ],
-    "specifications": {
-      "Process": "Artisanal Hand-Weathering & Aging",
-      "Count": "100 Replica Bills",
-      "Strap": "Aged Kraft Bank Strap",
-      "Inks": "Smudge-Resistant Organic Inks"
+    id: 'photography-studio-pack',
+    name: 'Photography Studio Pack',
+    price: 500.00,
+    description: 'Custom selection of crisp prop notes designed for macro lens focus, editorial, and flatlay photography.',
+    longDescription: 'A custom prop selection designed for high-resolution photographers. With rich color saturation, perfect registration, and matte paper, this bundle is the perfect foreground or background backdrop for editorial layouts and creative advertising.',
+    category: 'bundle-packs',
+    sku: 'BND-PS-080',
+    seoTitle: 'Photography Studio Pack Prop Currency | Australian Prop Money',
+    metaDescription: 'Superb macro-ready prop money bundle designed for studio photographers and artists.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['commercial-producer-bulk-reserve-50-stacks', 'film-producer-pack'],
+    features: ['Macro close-up ready details', 'Rich pigments without reflection', 'Individually selected pristine notes', 'Compliant borders & markings'],
+    specifications: {
+      'Focus Grade': 'Ultra-fine high-DPI macro',
+      'Material': 'Professional heavy-weight cotton matte paper',
+      'Count': 'Multi-stack selection',
+      'Compliance': 'Legal markings included'
     }
   },
   {
-    "id": "water-logged-underworld-cash-stack",
-    "name": "Water Logged Underworld Cash Stack",
-    "price": 200,
-    "description": "Bespoke weathered and distressed prop money stack of 100 bills. Artistically aged to add realistic grit and suspense to heist, action, or crime scene filming.",
-    "longDescription": "Handcrafted by professional scenic artists, our aged stacks bring cinematic depth to your production. Each stack is distressed using customized non-toxic treatments to simulate grime, water exposure, burns, or underworld wear. Includes 100 double-sided notes wrapped in a realistic currency band. Extremely convincing in close-up high-definition shots.",
-    "category": "movie-prop-money",
-    "sku": "WATER-LOGGED-UNDERWORLD-CASH-STACK",
-    "seoTitle": "Water Logged Underworld Cash Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Water Logged Underworld Cash Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Water Logged Underworld Cash Stack.png",
-    "gallery": [
-      "images/Water Logged Underworld Cash Stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "action-heist-weathered-100-stack",
-      "charred-and-singed-50-prop-note-stack",
-      "action-heist-weathered-50-stack"
-    ],
-    "features": [
-      "Artisan-weathered for realistic grit",
-      "Double-sided non-reflective premium print",
-      "Includes 100 distressed bills and a custom bank strap",
-      "Safe and non-toxic treatment processes",
-      "Highly recommended for action, cartel, and heist movies"
-    ],
-    "specifications": {
-      "Process": "Artisanal Hand-Weathering & Aging",
-      "Count": "100 Replica Bills",
-      "Strap": "Aged Kraft Bank Strap",
-      "Inks": "Smudge-Resistant Organic Inks"
+    id: 'wholesale-pack',
+    name: 'Wholesale Pack',
+    price: 1500.00,
+    description: 'Bulk wholesale package ideal for prop rental agencies, stunt crews, and recurring studio productions.',
+    longDescription: 'Perfect for rental houses or continuous film projects requiring a steady supply of camera-ready currency. The Wholesale Pack offers extensive mixed stacks at our most competitive pricing, backed by industrial production quality.',
+    category: 'bundle-packs',
+    sku: 'BND-WP-200',
+    seoTitle: 'Wholesale Prop Money Pack | Australian Prop Money',
+    metaDescription: 'Large-scale wholesale prop banknote pack for studio recurring supplies and prop houses.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: ['millionaire-heist-master-crate-100-stacks', 'film-producer-pack'],
+    features: ['Extremely durable construction', 'Easy to distressed and clean', 'Industry-trusted offset press quality', 'Fully legal reserve compliant'],
+    specifications: {
+      'Distribution Pack': 'Wholesale Volume',
+      'Styles Included': 'Full spectrum of AUD denominations',
+      'Format': 'Secured and banded packets',
+      'Compliance': 'Standard RBA non-circulation watermark'
     }
   },
   {
-    "id": "cop-show-evidence-sealed-cash-bag",
-    "name": "Cop Show Evidence Sealed Cash Bag",
-    "price": 500,
-    "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
-    "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
-    "category": "tv-production-props",
-    "sku": "COP-SHOW-EVIDENCE-SEALED-CASH-BAG",
-    "seoTitle": "Cop Show Evidence Sealed Cash Bag | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Cop Show Evidence Sealed Cash Bag for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Cop Show Evidence Sealed Cash Bag.png",
-    "gallery": [
-      "images/Cop Show Evidence Sealed Cash Bag.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "broadcaster-quality-20-prop-stack",
-      "drug-bust-luxury-briefcase-layout",
-      "game-show-grand-prize-jumbo-cash-pile"
-    ],
-    "features": [
-      "Non-glossy, camera-ready premium surface",
-      "Clean margins and professional scale",
-      "Provides perfect visual rhythm under lights",
-      "Fully compliant with reserve bank standards"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Matte Paper",
-      "Ink": "Non-Reflective Organic UV Ink"
+    id: 'canvas-money-bag',
+    name: 'Canvas Money Bag',
+    price: 19.99,
+    description: 'A classic canvas money bag with a printed dollar sign, perfect for props and storage.',
+    longDescription: 'This heavy-duty canvas money bag features a realistic design with a bold dollar sign. It is ideal for theatrical productions, film sets, or simply as a fun way to store your prop money.',
+    category: 'accessories',
+    sku: 'ACC-CMB-001',
+    seoTitle: 'Canvas Money Bag Prop | Australian Prop Money',
+    metaDescription: 'Buy a realistic canvas money bag prop. Perfect for film, TV, and photography.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: [],
+    features: ['Heavy-duty canvas material', 'Classic dollar sign print', 'Drawstring closure', 'Durable construction'],
+    specifications: {
+      'Material': 'Canvas',
+      'Dimensions': '11" x 17"',
+      'Color': 'Natural / Black print'
     }
   },
   {
-    "id": "broadcaster-quality-20-prop-stack",
-    "name": "Broadcaster Quality $20 Prop Stack",
-    "price": 300,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "tv-production-props",
-    "sku": "BROADCASTER-QUALITY-20-PROP-STACK",
-    "seoTitle": "Broadcaster Quality $20 Prop Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Broadcaster Quality $20 Prop Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Broadcaster Quality $20 Prop Stack.png",
-    "gallery": [
-      "images/Broadcaster Quality $20 Prop Stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "game-show-grand-prize-jumbo-cash-pile",
-      "drug-bust-luxury-briefcase-layout",
-      "telenovela-wealth-cartel-brick"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
+    id: 'duffle-bag',
+    name: 'Duffle Bag',
+    price: 49.99,
+    description: 'A large, durable duffle bag ideal for transporting large quantities of prop money.',
+    longDescription: 'Make your heist scene authentic with this sturdy duffle bag. Designed to look inconspicuous yet capable of holding bundles of prop currency, it is a staple for any crime or action production.',
+    category: 'accessories',
+    sku: 'ACC-DB-001',
+    seoTitle: 'Heist Duffle Bag Prop | Australian Prop Money',
+    metaDescription: 'Large duffle bag prop for transporting fake money. Ideal for action films and theater.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: [],
+    features: ['Large capacity', 'Durable nylon material', 'Reinforced handles', 'Heavy-duty zippers'],
+    specifications: {
+      'Material': 'Nylon',
+      'Dimensions': '24" x 12" x 12"',
+      'Color': 'Black'
     }
   },
   {
-    "id": "drug-bust-luxury-briefcase-layout",
-    "name": "Drug Bust Luxury Briefcase Layout",
-    "price": 950,
-    "description": "Cinematic, fully loaded luxury briefcase layout of replica cash stacks. Ready-to-shoot prop layout designed for high-profile ransom and heist scenes.",
-    "longDescription": "Perfect for directors looking for a turn-key solution, this professional briefcase is meticulously packed with stacked premium replica cash. Every stack is bank-wrapped and features a non-glare finish to guarantee professional results under studio strobes. It delivers the ultimate visual impact on screen.",
-    "category": "tv-production-props",
-    "sku": "DRUG-BUST-LUXURY-BRIEFCASE-LAYOUT",
-    "seoTitle": "Drug Bust Luxury Briefcase Layout | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Drug Bust Luxury Briefcase Layout for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Drug Bust Luxury Briefcase Layout.png",
-    "gallery": [
-      "images/Drug Bust Luxury Briefcase Layout.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "telenovela-wealth-cartel-brick",
-      "game-show-grand-prize-jumbo-cash-pile",
-      "broadcaster-quality-20-prop-stack"
-    ],
-    "features": [
-      "Includes professional metal briefcase",
-      "Packed with realistic bank-wrapped cash stacks",
-      "Ready-to-shoot out of the box",
-      "Double-sided non-reflective bills",
-      "Compliant with federal rules and guidelines"
-    ],
-    "specifications": {
-      "Briefcase Style": "Silver Brushed Aluminum / Black Leather",
-      "Stack Count": "10 Stacks Included",
-      "Replication": "RBA Compliant Double-Sided"
+    id: 'money-counter',
+    name: 'Money Counter',
+    price: 129.99,
+    description: 'A functional prop money counting machine that adds realism to your set.',
+    longDescription: 'Add a professional touch to your bank or casino scenes with this realistic money counting machine. It looks the part and even features realistic motorized action for genuine on-screen authenticity.',
+    category: 'accessories',
+    sku: 'ACC-MC-001',
+    seoTitle: 'Prop Money Counting Machine | Australian Prop Money',
+    metaDescription: 'Realistic money counting machine prop. Perfect for casino and bank scenes in film and TV.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: [],
+    features: ['Realistic appearance', 'Motorized action', 'Digital display', 'Standard plug'],
+    specifications: {
+      'Material': 'Plastic / Metal',
+      'Power': '110-240V',
+      'Dimensions': '11" x 10" x 8"'
     }
   },
   {
-    "id": "game-show-grand-prize-jumbo-cash-pile",
-    "name": "Game show Grand Prize Jumbo Cash Pile",
-    "price": 1500,
-    "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
-    "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
-    "category": "tv-production-props",
-    "sku": "GAME-SHOW-GRAND-PRIZE-JUMBO-CASH-PILE",
-    "seoTitle": "Game show Grand Prize Jumbo Cash Pile | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Game show Grand Prize Jumbo Cash Pile for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Game show Grand Prize Jumbo Cash Pile.png",
-    "gallery": [
-      "images/Game show Grand Prize Jumbo Cash Pile.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "drug-bust-luxury-briefcase-layout",
-      "broadcaster-quality-20-prop-stack",
-      "telenovela-wealth-cartel-brick"
-    ],
-    "features": [
-      "Non-glossy, camera-ready premium surface",
-      "Clean margins and professional scale",
-      "Provides perfect visual rhythm under lights",
-      "Fully compliant with reserve bank standards"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Matte Paper",
-      "Ink": "Non-Reflective Organic UV Ink"
+    id: 'prop-money-gun',
+    name: 'Prop Money Gun',
+    price: 34.99,
+    description: 'A fun and flashy money gun that shoots out prop bills rapidly.',
+    longDescription: 'Make it rain! This prop money gun is the ultimate accessory for music videos, parties, and promotional events. Simply load it with our prop currency and pull the trigger for a spectacular cascade of bills.',
+    category: 'accessories',
+    sku: 'ACC-PMG-001',
+    seoTitle: 'Prop Money Gun | Make It Rain | Australian Prop Money',
+    metaDescription: 'Buy a prop money gun to shoot fake bills. Perfect for music videos, parties, and events.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: [],
+    features: ['Rapid fire action', 'Easy to load', 'Battery operated', 'Includes sample bills'],
+    specifications: {
+      'Material': 'Plastic',
+      'Power': '4x AA Batteries (not included)',
+      'Capacity': 'Up to 100 bills'
     }
   },
   {
-    "id": "telenovela-wealth-cartel-brick",
-    "name": "Telenovela Wealth Cartel Brick",
-    "price": 350,
-    "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
-    "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
-    "category": "tv-production-props",
-    "sku": "TELENOVELA-WEALTH-CARTEL-BRICK",
-    "seoTitle": "Telenovela Wealth Cartel Brick | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Telenovela Wealth Cartel Brick for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Telenovela Wealth Cartel Brick.png",
-    "gallery": [
-      "images/Telenovela Wealth Cartel Brick.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "game-show-grand-prize-jumbo-cash-pile",
-      "drug-bust-luxury-briefcase-layout",
-      "broadcaster-quality-20-prop-stack"
-    ],
-    "features": [
-      "Non-glossy, camera-ready premium surface",
-      "Clean margins and professional scale",
-      "Provides perfect visual rhythm under lights",
-      "Fully compliant with reserve bank standards"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Matte Paper",
-      "Ink": "Non-Reflective Organic UV Ink"
-    }
-  },
-  {
-    "id": "studio-grade-high-contrast-100-prop-stack",
-    "name": "Studio Grade High Contrast $100 Prop Stack",
-    "price": 150,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "photography-props",
-    "sku": "STUDIO-GRADE-HIGH-CONTRAST-100-PROP-STACK",
-    "seoTitle": "Studio Grade High Contrast $100 Prop Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Studio Grade High Contrast $100 Prop Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Studio Grade High Contrast $100 Prop Stack.png",
-    "gallery": [
-      "images/Studio Grade High Contrast $100 Prop Stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "aesthetic-flatlay-loose-prop-currency-fan",
-      "hip-hop-video-multi-denom-rain-pack",
-      "instagram-influencer-luxury-cash-roll"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "aesthetic-flatlay-loose-prop-currency-fan",
-    "name": "Aesthetic Flatlay Loose Prop Currency Fan",
-    "price": 300,
-    "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
-    "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
-    "category": "photography-props",
-    "sku": "AESTHETIC-FLATLAY-LOOSE-PROP-CURRENCY-FAN",
-    "seoTitle": "Aesthetic Flatlay Loose Prop Currency Fan | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Aesthetic Flatlay Loose Prop Currency Fan for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Aesthetic Flatlay Loose Prop Currency Fan.jpg",
-    "gallery": [
-      "images/Aesthetic Flatlay Loose Prop Currency Fan.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "hyper-matte-close-up-macro-prop-stack",
-      "hip-hop-video-multi-denom-rain-pack",
-      "instagram-influencer-luxury-cash-roll"
-    ],
-    "features": [
-      "Non-glossy, camera-ready premium surface",
-      "Clean margins and professional scale",
-      "Provides perfect visual rhythm under lights",
-      "Fully compliant with reserve bank standards"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Matte Paper",
-      "Ink": "Non-Reflective Organic UV Ink"
-    }
-  },
-  {
-    "id": "instagram-influencer-luxury-cash-roll",
-    "name": "Instagram Influencer Luxury Cash Roll",
-    "price": 500,
-    "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
-    "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
-    "category": "photography-props",
-    "sku": "INSTAGRAM-INFLUENCER-LUXURY-CASH-ROLL",
-    "seoTitle": "Instagram Influencer Luxury Cash Roll | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Instagram Influencer Luxury Cash Roll for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Instagram Influencer Luxury Cash Roll.png",
-    "gallery": [
-      "images/Instagram Influencer Luxury Cash Roll.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "hip-hop-video-multi-denom-rain-pack",
-      "aesthetic-flatlay-loose-prop-currency-fan",
-      "studio-grade-high-contrast-100-prop-stack"
-    ],
-    "features": [
-      "Non-glossy, camera-ready premium surface",
-      "Clean margins and professional scale",
-      "Provides perfect visual rhythm under lights",
-      "Fully compliant with reserve bank standards"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Matte Paper",
-      "Ink": "Non-Reflective Organic UV Ink"
-    }
-  },
-  {
-    "id": "hyper-matte-close-up-macro-prop-stack",
-    "name": "Hyper Matte Close Up Macro Prop Stack",
-    "price": 150,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "photography-props",
-    "sku": "HYPER-MATTE-CLOSE-UP-MACRO-PROP-STACK",
-    "seoTitle": "Hyper Matte Close Up Macro Prop Stack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Hyper Matte Close Up Macro Prop Stack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Hyper Matte Close Up Macro Prop Stack.png",
-    "gallery": [
-      "images/Hyper Matte Close Up Macro Prop Stack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "studio-grade-high-contrast-100-prop-stack",
-      "aesthetic-flatlay-loose-prop-currency-fan",
-      "instagram-influencer-luxury-cash-roll"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "hip-hop-video-multi-denom-rain-pack",
-    "name": "Hip Hop Video Multi Denom Rain Pack",
-    "price": 1500,
-    "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
-    "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
-    "category": "photography-props",
-    "sku": "HIP-HOP-VIDEO-MULTI-DENOM-RAIN-PACK",
-    "seoTitle": "Hip Hop Video Multi Denom Rain Pack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Hip Hop Video Multi Denom Rain Pack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Hip Hop Video Multi Denom Rain Pack.png",
-    "gallery": [
-      "images/Hip Hop Video Multi Denom Rain Pack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "studio-grade-high-contrast-100-prop-stack",
-      "hyper-matte-close-up-macro-prop-stack",
-      "aesthetic-flatlay-loose-prop-currency-fan"
-    ],
-    "features": [
-      "Non-glossy, camera-ready premium surface",
-      "Clean margins and professional scale",
-      "Provides perfect visual rhythm under lights",
-      "Fully compliant with reserve bank standards"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Matte Paper",
-      "Ink": "Non-Reflective Organic UV Ink"
-    }
-  },
-  {
-    "id": "bank-teller-training-starter-bundle",
-    "name": "Bank Teller Training Starter Bundle",
-    "price": 500,
-    "description": "A loose, pre-arranged collection of replica banknotes. Perfectly styled and packaged for dynamic fanning, casting, or cash-counting camera shots.",
-    "longDescription": "Make your production value stand out with our premium prop bundle. Designed specifically for active fanning and count-outs, each note features realistic color grading, crisp textures, and zero lighting reflections. It offers the authentic snapping noise of real cash when handled by production talents. Fully RBA-compliant and perfect for 4K/8K filming.",
-    "category": "training-currency",
-    "sku": "BANK-TELLER-TRAINING-STARTER-BUNDLE",
-    "seoTitle": "Bank Teller Training Starter Bundle | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Bank Teller Training Starter Bundle for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Bank Teller Training Starter Bundle.png",
-    "gallery": [
-      "images/Bank Teller Training Starter Bundle.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "retail-cash-register-training-kit",
-      "gaming-club-croupier-practice-currency",
-      "classroom-finance-education-play-pack"
-    ],
-    "features": [
-      "Pre-fanned and arranged for quick setup",
-      "Matte finish for clear focus under professional lighting",
-      "Excellent handle crispness and sound signature",
-      "Complies fully with reserve bank specifications",
-      "Perfect for close-ups, counting, and throwing shots"
-    ],
-    "specifications": {
-      "Paper Type": "High-Density Crisp Bond",
-      "Ink Type": "Reflective-Neutral Studio Ink",
-      "Style": "Fanned & Strapped Bundle",
-      "Dimensions": "Standard scale matching real currency"
-    }
-  },
-  {
-    "id": "security-transport-cash-handler-trainer",
-    "name": "Security Transport Cash Handler Trainer",
-    "price": 1000,
-    "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
-    "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
-    "category": "training-currency",
-    "sku": "SECURITY-TRANSPORT-CASH-HANDLER-TRAINER",
-    "seoTitle": "Security Transport Cash Handler Trainer | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Security Transport Cash Handler Trainer for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Security Transport Cash Handler Trainer.png",
-    "gallery": [
-      "images/Security Transport Cash Handler Trainer.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "retail-cash-register-training-kit",
-      "gaming-club-croupier-practice-currency",
-      "bank-teller-training-starter-bundle"
-    ],
-    "features": [
-      "Non-glossy, camera-ready premium surface",
-      "Clean margins and professional scale",
-      "Provides perfect visual rhythm under lights",
-      "Fully compliant with reserve bank standards"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Matte Paper",
-      "Ink": "Non-Reflective Organic UV Ink"
-    }
-  },
-  {
-    "id": "gaming-club-croupier-practice-currency",
-    "name": "Gaming Club Croupier Practice Currency",
-    "price": 700,
-    "description": "A beautiful, high-quality prop money item designed to enrich photography, TV productions, and cinematic storytelling.",
-    "longDescription": "Optimized for professional imaging, this prop currency combines rich color profiles with a non-reflective matte finish. Ideal for background atmosphere, commercial flats, and actor interaction. Fully compliant with guidelines and legal standards.",
-    "category": "training-currency",
-    "sku": "GAMING-CLUB-CROUPIER-PRACTICE-CURRENCY",
-    "seoTitle": "Gaming Club Croupier Practice Currency | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Gaming Club Croupier Practice Currency for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Gaming Club Croupier Practice Currency.png",
-    "gallery": [
-      "images/Gaming Club Croupier Practice Currency.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "classroom-finance-education-play-pack",
-      "bank-teller-training-starter-bundle",
-      "security-transport-cash-handler-trainer"
-    ],
-    "features": [
-      "Non-glossy, camera-ready premium surface",
-      "Clean margins and professional scale",
-      "Provides perfect visual rhythm under lights",
-      "Fully compliant with reserve bank standards"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Matte Paper",
-      "Ink": "Non-Reflective Organic UV Ink"
-    }
-  },
-  {
-    "id": "retail-cash-register-training-kit",
-    "name": "Retail Cash Register Training Kit",
-    "price": 200,
-    "description": "Educational and training currency set. Perfect for classroom finance lessons, cashier/teller simulations, and cash management training.",
-    "longDescription": "Designed for educational institutions and financial training, this kit offers replica bills that represent realistic dimensions and handling textures. Perfect for teaching cash handling, cash register operations, and security protocols in a safe, risk-free environment.",
-    "category": "training-currency",
-    "sku": "RETAIL-CASH-REGISTER-TRAINING-KIT",
-    "seoTitle": "Retail Cash Register Training Kit | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Retail Cash Register Training Kit for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Retail Cash Register Training Kit.png",
-    "gallery": [
-      "images/Retail Cash Register Training Kit.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "gaming-club-croupier-practice-currency",
-      "security-transport-cash-handler-trainer",
-      "bank-teller-training-starter-bundle"
-    ],
-    "features": [
-      "Highly realistic feel and standard scale",
-      "Excellent for cash register and security simulations",
-      "Durable, tear-resistant paper composition",
-      "Clearly marked as play/training money for safety",
-      "Recommended for hospitality, retail, and security courses"
-    ],
-    "specifications": {
-      "Use Case": "Teller and Cashier Practice",
-      "Denominations": "Full Australian Range",
-      "Paper Weight": "90gsm Uncoated Bond"
-    }
-  },
-  {
-    "id": "classroom-finance-education-play-pack",
-    "name": "Classroom Finance Education Play Pack",
-    "price": 150,
-    "description": "Educational and training currency set. Perfect for classroom finance lessons, cashier/teller simulations, and cash management training.",
-    "longDescription": "Designed for educational institutions and financial training, this kit offers replica bills that represent realistic dimensions and handling textures. Perfect for teaching cash handling, cash register operations, and security protocols in a safe, risk-free environment.",
-    "category": "training-currency",
-    "sku": "CLASSROOM-FINANCE-EDUCATION-PLAY-PACK",
-    "seoTitle": "Classroom Finance Education Play Pack | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Classroom Finance Education Play Pack for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Classroom Finance Education Play Pack.png",
-    "gallery": [
-      "images/Classroom Finance Education Play Pack.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "gaming-club-croupier-practice-currency",
-      "security-transport-cash-handler-trainer",
-      "bank-teller-training-starter-bundle"
-    ],
-    "features": [
-      "Highly realistic feel and standard scale",
-      "Excellent for cash register and security simulations",
-      "Durable, tear-resistant paper composition",
-      "Clearly marked as play/training money for safety",
-      "Recommended for hospitality, retail, and security courses"
-    ],
-    "specifications": {
-      "Use Case": "Teller and Cashier Practice",
-      "Denominations": "Full Australian Range",
-      "Paper Weight": "90gsm Uncoated Bond"
-    }
-  },
-  {
-    "id": "the-millionaire-heist-master-crate-(100-stacks)",
-    "name": "The Millionaire Heist Master Crate (100 Stacks)",
-    "price": 2500,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "bundle-packs",
-    "sku": "THE-MILLIONAIRE-HEIST-MASTER-CRATE-(100-STACKS)",
-    "seoTitle": "The Millionaire Heist Master Crate (100 Stacks) | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity The Millionaire Heist Master Crate (100 Stacks) for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/The Millionaire Heist Master Crate (100 Stacks).png",
-    "gallery": [
-      "images/The Millionaire Heist Master Crate (100 Stacks).png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "production-supply-wholesaler-mega-box",
-      "indie-film-crew-full-range-pack-(10-stacks)",
-      "high-stakes-ransom-briefcase-pro-(20-stacks)"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "indie-film-crew-full-range-pack-(10-stacks)",
-    "name": "Indie Film Crew Full Range Pack (10 Stacks)",
-    "price": 1000,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "bundle-packs",
-    "sku": "INDIE-FILM-CREW-FULL-RANGE-PACK-(10-STACKS)",
-    "seoTitle": "Indie Film Crew Full Range Pack (10 Stacks) | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Indie Film Crew Full Range Pack (10 Stacks) for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Indie Film Crew Full Range Pack (10 Stacks).png",
-    "gallery": [
-      "images/Indie Film Crew Full Range Pack (10 Stacks).png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "high-stakes-ransom-briefcase-pro-(20-stacks)",
-      "the-millionaire-heist-master-crate-(100-stacks)",
-      "commercial-producer-bulk-reserve-(50-stacks)"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "high-stakes-ransom-briefcase-pro-(20-stacks)",
-    "name": "High Stakes Ransom Briefcase Pro (20 Stacks)",
-    "price": 1500,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "bundle-packs",
-    "sku": "HIGH-STAKES-RANSOM-BRIEFCASE-PRO-(20-STACKS)",
-    "seoTitle": "High Stakes Ransom Briefcase Pro (20 Stacks) | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity High Stakes Ransom Briefcase Pro (20 Stacks) for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/High Stakes Ransom Briefcase Pro (20 Stacks).png",
-    "gallery": [
-      "images/High Stakes Ransom Briefcase Pro (20 Stacks).png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "the-millionaire-heist-master-crate-(100-stacks)",
-      "indie-film-crew-full-range-pack-(10-stacks)",
-      "commercial-producer-bulk-reserve-(50-stacks)"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "commercial-producer-bulk-reserve-(50-stacks)",
-    "name": "Commercial Producer Bulk Reserve (50 Stacks)",
-    "price": 800,
-    "description": "A bank-wrapped stack of 100 double-sided replica prop banknotes. Held together by a realistic currency band for high-stakes counting scenes.",
-    "longDescription": "Our standard prop cash stacks provide the ultimate visual realism on screen. Each stack contains 100 double-sided replica bills printed with non-reflective matte inks. The crisp texture, accurate weight representation, and professional bank wrapping ensure authentic handling by actors. Formulated for high-contrast digital sensors.",
-    "category": "bundle-packs",
-    "sku": "COMMERCIAL-PRODUCER-BULK-RESERVE-(50-STACKS)",
-    "seoTitle": "Commercial Producer Bulk Reserve (50 Stacks) | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Commercial Producer Bulk Reserve (50 Stacks) for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Commercial Producer Bulk Reserve (50 Stacks).png",
-    "gallery": [
-      "images/Commercial Producer Bulk Reserve (50 Stacks).png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "the-millionaire-heist-master-crate-(100-stacks)",
-      "indie-film-crew-full-range-pack-(10-stacks)",
-      "high-stakes-ransom-briefcase-pro-(20-stacks)"
-    ],
-    "features": [
-      "Includes 100 double-sided replica banknotes",
-      "Secure bank-style paper wrapper",
-      "Non-glare matte finish optimized for film sets",
-      "Realistic weight and crisp snap",
-      "Fully compliant with reserve bank specimen regulations"
-    ],
-    "specifications": {
-      "Paper Type": "Premium Heavyweight Matte Paper",
-      "Note Count": "100 Notes per Stack",
-      "Ink Type": "Reflective-Neutral Organic Inks",
-      "Strap": "Standard Paper Currency Strap"
-    }
-  },
-  {
-    "id": "production-supply-wholesaler-mega-box",
-    "name": "Production Supply Wholesaler Mega Box",
-    "price": 2500,
-    "description": "Ultimate bulk prop money reserve for large productions. Packed with multiple premium currency stacks, perfect for bank vault and high-stakes heist scenes.",
-    "longDescription": "The ultimate collection for professional set designers, this bulk pack supplies ample currency to populate background safes, duffel bags, or bank vaults. Features highly realistic, double-sided color-balanced bills bound with bank wrappers. All notes possess a modern non-gloss texture to eliminate studio lights bounce.",
-    "category": "bundle-packs",
-    "sku": "PRODUCTION-SUPPLY-WHOLESALER-MEGA-BOX",
-    "seoTitle": "Production Supply Wholesaler Mega Box | Realistic Prop Money Replicas",
-    "metaDescription": "High-fidelity Production Supply Wholesaler Mega Box for film, theatre, television, and cash-handling training. 100% RBA compliant specimen.",
-    "image": "images/Production Supply Wholesaler Mega Box.png",
-    "gallery": [
-      "images/Production Supply Wholesaler Mega Box.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "commercial-producer-bulk-reserve-(50-stacks)",
-      "the-millionaire-heist-master-crate-(100-stacks)",
-      "high-stakes-ransom-briefcase-pro-(20-stacks)"
-    ],
-    "features": [
-      "Cinematic volume and scale",
-      "Multiple wrapped stacks for bulk background dressing",
-      "Non-glare matte finish perfect for wide or tracking shots",
-      "Realistic weight and cardboard shipping box",
-      "100% legal specimen prop currency"
-    ],
-    "specifications": {
-      "Packaging": "Heavy-Duty Production Crate/Box",
-      "Contents": "Cinematic Stacks of Diverse Denominations",
-      "Scale": "1:1 Standard Dimension Replica"
-    }
-  },
-  {
-    "id": "canvas-bag",
-    "name": "Canvas Money Bag",
-    "price": 99,
-    "description": "Heavy-duty canvas bag for securely transporting prop money on set. Authentic bank-style design.",
-    "longDescription": "This authentic-looking canvas money bag features a durable, heavy-weight cotton construction, brass zipper, and reinforced stitching. Ideal for staging secure transport scenes, bank drop-offs, or classic heist sequences. Looks and feels exactly like genuine banking transport bags.",
-    "category": "accessories",
-    "sku": "ACC-CANVAS-BAG",
-    "seoTitle": "Canvas Money Bag for Prop Money | Australian Prop Money",
-    "metaDescription": "Authentic heavy-duty canvas money bag for realistic film and television banking scenes.",
-    "image": "images/products/accessories/canvas-money-bag-1.jpg",
-    "gallery": [
-      "images/products/accessories/canvas-money-bag-1.jpg",
-      "images/products/accessories/canvas-money-bag-2.webp"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "duffle-bag",
-      "silver-aluminium-briefcase"
-    ],
-    "features": [
-      "Heavy-weight durable canvas",
-      "Authentic banking design",
-      "Brass zipper closure",
-      "Perfect for heist and transport scenes"
-    ],
-    "specifications": {
-      "Material": "Heavy-weight Cotton Canvas",
-      "Color": "Natural / Off-White",
-      "Closure": "Heavy-duty Brass Zipper"
-    }
-  },
-  {
-    "id": "duffle-bag",
-    "name": "Heist Duffle Bag",
-    "price": 120,
-    "description": "Large cinematic duffle bag perfect for bank robbery or ransom scenes.",
-    "longDescription": "Designed specifically for high-stakes cinematic moments, this rugged duffle bag is the classic choice for bank heists, ransom drops, and illicit cash transport scenes. Made from thick, dark nylon canvas with reinforced straps to handle the weight of large prop money bundles.",
-    "category": "accessories",
-    "sku": "ACC-DUFFLE-BAG",
-    "seoTitle": "Heist Duffle Bag for Prop Money | Australian Prop Money",
-    "metaDescription": "Cinematic heist duffle bag designed for prop money transport in film and television.",
-    "image": "images/products/accessories/duffel-bag-1-1.jpg",
-    "gallery": [
-      "images/products/accessories/duffel-bag-1-1.jpg",
-      "images/products/accessories/duffle-bag-2-1.png"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "canvas-bag",
-      "silver-aluminium-briefcase"
-    ],
-    "features": [
-      "Large capacity for bulk prop money",
-      "Rugged dark nylon material",
-      "Reinforced carrying straps",
-      "Classic cinematic look"
-    ],
-    "specifications": {
-      "Material": "Durable Nylon Canvas",
-      "Color": "Tactical Black",
-      "Style": "Classic Duffle"
-    }
-  },
-  {
-    "id": "money-counter",
-    "name": "Electronic Money Counter",
-    "price": 150,
-    "description": "Functioning electronic money counter for dynamic counting scenes.",
-    "longDescription": "Add authentic motion to your scenes with this fully functional electronic money counter. It smoothly processes all our prop money denominations at high speed, complete with LED displays and counting sound effects. A must-have for counting room, cartel, or casino sets.",
-    "category": "accessories",
-    "sku": "ACC-MONEY-COUNTER",
-    "seoTitle": "Electronic Money Counter for Prop Money | Australian Prop Money",
-    "metaDescription": "Working electronic money counter machine for dynamic film scenes and prop money handling.",
-    "image": "images/products/accessories/money-counter-1.webp",
-    "gallery": [
-      "images/products/accessories/money-counter-1.webp",
-      "images/products/accessories/money-counter-2.webp"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "silver-aluminium-briefcase",
-      "prop-money-gun"
-    ],
-    "features": [
-      "High-speed counting action",
-      "Compatible with all prop notes",
-      "Authentic LED displays",
-      "Realistic counting sounds"
-    ],
-    "specifications": {
-      "Power": "Standard AC Wall Plug",
-      "Speed": "1000 notes per minute",
-      "Display": "Digital LED"
-    }
-  },
-  {
-    "id": "prop-money-gun",
-    "name": "Prop Money Gun",
-    "price": 65,
-    "description": "High-speed prop money dispenser for music videos and parties.",
-    "longDescription": "Create the ultimate 'making it rain' effect instantly. This battery-operated prop money gun shoots out bills at a rapid rate, perfect for music videos, club scenes, and celebratory shots. Lightweight, easy to load, and designed to work flawlessly with our prop currency.",
-    "category": "accessories",
-    "sku": "ACC-MONEY-GUN",
-    "seoTitle": "Prop Money Dispenser Gun | Australian Prop Money",
-    "metaDescription": "High-speed prop money shooter gun for music videos, parties, and dynamic film shots.",
-    "image": "images/products/accessories/prop-money-gun-1.jpg",
-    "gallery": [
-      "images/products/accessories/prop-money-gun-1.jpg",
-      "images/products/accessories/prop-money-gun-2.jpg"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "money-counter",
-      "duffle-bag"
-    ],
-    "features": [
-      "Rapid fire money dispensing",
-      "Easy top-loading design",
-      "Lightweight and portable",
-      "Perfect for music videos"
-    ],
-    "specifications": {
-      "Power": "Battery Operated",
-      "Material": "Durable ABS Plastic",
-      "Capacity": "Up to 100 notes per load"
-    }
-  },
-  {
-    "id": "silver-aluminium-briefcase",
-    "name": "Silver Aluminium Briefcase",
-    "price": 200,
-    "description": "Classic silver aluminium briefcase with foam inserts for dramatic cash reveals.",
-    "longDescription": "The quintessential cinematic prop for high-value transactions. This sleek silver aluminium briefcase features dual combination locks and customisable foam inserts to perfectly display stacks of prop money. Engineered for the classic 'opening the case' reveal shot.",
-    "category": "accessories",
-    "sku": "ACC-SILVER-CASE",
-    "seoTitle": "Silver Aluminium Briefcase for Prop Money | Australian Prop Money",
-    "metaDescription": "Cinematic silver aluminium briefcase for prop money reveals, ransom drops, and deals.",
-    "image": "images/products/accessories/silver-aluminum-briefcase1.jpg",
-    "gallery": [
-      "images/products/accessories/silver-aluminum-briefcase1.jpg",
-      "images/products/accessories/silver-aluminum-briefcase2.jpg",
-      "images/products/accessories/silver-aluminum-briefcase3.webp"
-    ],
-    "stockStatus": "in-stock",
-    "relatedProducts": [
-      "duffle-bag",
-      "money-counter"
-    ],
-    "features": [
-      "Sleek silver aluminium finish",
-      "Dual combination locks",
-      "Customisable interior foam",
-      "Perfect for cinematic reveal shots"
-    ],
-    "specifications": {
-      "Material": "Aluminium Alloy",
-      "Color": "Brushed Silver",
-      "Security": "Dual Combination Locks"
+    id: 'silver-aluminium-briefcase',
+    name: 'Silver Aluminium Briefcase',
+    price: 89.99,
+    description: 'A classic silver aluminium briefcase, the quintessential prop for carrying cash.',
+    longDescription: 'The iconic silver briefcase, synonymous with high-stakes deals and dramatic reveals. This durable aluminium case is foam-lined and perfect for securely (and stylishly) presenting bundles of prop money on screen.',
+    category: 'accessories',
+    sku: 'ACC-SAB-001',
+    seoTitle: 'Silver Aluminium Prop Briefcase | Australian Prop Money',
+    metaDescription: 'Classic silver aluminium briefcase for prop money. Essential for cinematic high-stakes deals.',
+    image: '',
+    stockStatus: 'in-stock',
+    relatedProducts: [],
+    features: ['Durable aluminium exterior', 'Secure locking mechanism', 'Foam-lined interior', 'Classic cinematic look'],
+    specifications: {
+      'Material': 'Aluminium',
+      'Dimensions': '18" x 13" x 4.5"',
+      'Weight': '4.5 lbs'
     }
   }
 ];
-
-export const PRODUCTS: Product[] = RAW_PRODUCTS.map(p => ({
-  ...p,
-  price: p.price < 55 ? 55 : p.price
-}));
-
-export const BLOG_POSTS: BlogPost[] = [
-{
-    id: 'prop-money-legality-australia',
-    title: 'The Legality of Prop Money in Australia: What Filmmakers Need to Know',
-    excerpt: 'Using fake currency for film and TV in Australia is governed by strict laws. Discover how to stay 100% compliant with the Reserve Bank of Australia.',
-    content: `Filming in Australia with replica currency is highly regulated. The Reserve Bank of Australia (RBA) sets strict rules to prevent counterfeit confusion while still allowing creative productions to thrive. 
-
-<br><br>
-<h3>Key RBA Guidelines</h3>
-<ul>
-<li>Must be significantly larger or smaller than genuine notes</li>
-<li>Must clearly display words like "SPECIMEN" or "PROP ONLY"</li>
-<li>Must be single-sided if true-to-size</li>
-</ul>
-<br>
-Our products at <a href="/" class="text-gold underline hover:text-black">Australian Prop Money</a> are meticulously designed to ensure they are 100% RBA-compliant. 
-
-<br><br>
-<div class="bg-gray-50 p-4 border rounded my-4">
-  <h4 class="font-bold mb-2">Need Compliant Props for your Next Shoot?</h4>
-  <p class="mb-3">Explore our RBA-compliant <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a>.</p>
-  <a href="/shop" class="bg-black text-white px-4 py-2 rounded text-xs font-bold uppercase">Shop Now</a>
-</div>
-
-<h3>Frequently Asked Questions</h3>
-<strong>Can I use these notes for close-up shots?</strong>
-<p>Yes! Our <a href="/?category=photography-props" class="text-gold underline">Photography Props</a> are designed specifically for high-detail close-ups without violating RBA guidelines.</p>
-`,
-    date: 'July 5, 2026',
-    category: 'Legality',
-    readTime: '5 min read',
-    image: 'images/blog/1.jpg'
+export const CATEGORIES: { id: string; name: string; description: string; image: string; }[] = [
+  {
+    id: 'australian-notes',
+    name: 'Australian Notes',
+    description: 'High-fidelity replica polymer notes designed to comply strictly with federal guidelines.',
+    image: ''
   },
   {
-    id: 'lighting-prop-money-camera',
-    title: 'How to Light and Shoot Prop Cash to Look 100% Realistic on Screen',
-    excerpt: 'Are your prop bills looking fake on camera? Our lead set designer shares professional lighting and camera angle techniques for high-end results.',
-    content: `Lighting paper props is a subtle art. One of the biggest giveaways of low-quality prop money is the "plastic shine" or paper glare caused by high-powered studio lights. Genuine bills have a very specific matte, fibrous look. When shooting scenes involving prop stacks, avoid direct, hard key-lights that create reflections. Instead, use soft diffusers, indirect bounce boards, or backlighting to accentuate the paper texture. Our prop bills are manufactured with heavy matte non-glare ink which absorbs light rather than bouncing it back. Another trick is to angle the stacks slightly away from the lens and use a shallow depth of field (low f-stop like f/2.8 or f/1.8) to keep focus sharp on the character handling the money while keeping the background stacks beautifully soft, adding instant cinematic value to your frame. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Need Bulk Props for a Feature Film?</h4>
-    <p class="text-sm text-gray-600 mb-4">We offer heavy discounts on <a href="/wholesale" class="text-gold underline hover:text-black transition-colors">Wholesale Orders</a> for major productions.</p>
-    <a href="/wholesale" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Request a Quote</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'June 28, 2026',
-    category: 'Production Tips',
-    readTime: '4 min read',
-    image: 'images/blog/2.jpg'
+    id: 'bundle-packs',
+    name: 'Bundle Packs',
+    description: 'Premium pre-packaged stacks and mixed bundle packs for bulk prop scenes.',
+    image: ''
   },
   {
-    id: 'aged-money-tutorial',
-    title: 'Aged vs. Crisp: Choosing the Right Prop Aesthetic for Your Character',
-    excerpt: 'The condition of a character’s money tells a rich story. Learn how to align your prop money selection with your film’s narrative arc.',
-    content: `Every prop on set should contribute to character development. If your scene involves a wealthy executive opening a bank vault, crisp, perfectly banded, fresh-looking New Series stacks are appropriate. However, if your scene involves a street-level transaction, a ransom drop-off, or a cash stash hidden under floorboards, brand-new crisp notes will look artificial and ruin the suspension of disbelief. Heavily weathered, creased, and custom-stained prop bills tell the viewer that the cash has a history, that it has passed through dirty hands, and that it represents a gritty, high-stakes situation. At Australian Prop Money, we offer professional hand-aged options that use real pigment washes and manual distressing to give directors that tactile, lived-in cinematic reality. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Perfect for Music Videos</h4>
-    <p class="text-sm text-gray-600 mb-4">Get the perfect money rain effect with our <a href="/?category=bundle-packs" class="text-gold underline hover:text-black transition-colors">Bundle Packs</a>.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">View Bundles</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'June 15, 2026',
-    category: 'Set Design',
-    readTime: '6 min read',
-    image: 'images/blog/3.jpg'
-  },
-  {
-    id: 'crime-drama-props',
-    title: 'Behind the Scenes: Sourcing Authentic Props for Australian Crime Dramas',
-    excerpt: 'From police records to stacks of cash, see how Aussie crime drama art directors build tension and realism on set.',
-    content: `Aussie crime dramas have a unique, gritty look. Building realism requires more than just throwing items together. Props like cash stacks are central to heist plots, and they must appear completely natural. Art directors work closely with our local Sydney warehouse to procure custom-worn cash blocks, sealed cop evidence bags, and drug-deal briefcases. Using local prop manufacturers ensures all shipping is secure, bypassing the risk of customs intercepts that occur with cheap overseas replicas. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Upgrade Your Production Value</h4>
-    <p class="text-sm text-gray-600 mb-4">Discover our <a href="/?category=movie-prop-money" class="text-gold underline hover:text-black transition-colors">Cinematic Prop Money Stacks</a> designed specifically for 4K cameras.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Shop The Collection</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'June 02, 2026',
-    category: 'Industry Insights',
-    readTime: '5 min read',
-    image: 'images/blog/4.jpg'
-  },
-  {
-    id: 'evolution-of-prop-money',
-    title: 'The Evolution of Currency Props in Modern Cinema History',
-    excerpt: 'A history of how Hollywood and Australian studios transitioned from mock paper drawings to high-fidelity compliant camera-ready currency props.',
-    content: `In the early days of cinema, background bills were often crude photocopies or simplified illustrations. As camera resolutions scaled to high-definition digital formats, background details could no longer be hidden with blur. Studios had to pivot toward color-calibrated, texture-rich replica props. In Australia, the introduction of unique polymer banknotes in 1992 created a unique design challenge. Standard papers would look fake next to the translucent polymer, forcing local prop designers to develop specialty calendered matte bonds that replicate polymer colors under intense studio lights while ensuring legal compliance. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Need Bulk Props for a Feature Film?</h4>
-    <p class="text-sm text-gray-600 mb-4">We offer heavy discounts on <a href="/wholesale" class="text-gold underline hover:text-black transition-colors">Wholesale Orders</a> for major productions.</p>
-    <a href="/wholesale" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Request a Quote</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'May 20, 2026',
-    category: 'Cinema History',
-    readTime: '7 min read',
-    image: 'images/blog/5.jpg'
-  },
-  {
-    id: 'theatre-stage-props-cash',
-    title: 'How Theatre Prop Masters Manage Cash on Stage Under Spotlight',
-    excerpt: 'Live theatre demands high tactile durability and zero light reflection. We look at the prop requirements of modern stage performance.',
-    content: `Live theatre represents a high-stress arena for props. Unlike films, there are no retakes if a bill is dropped or tear occurs. Actors need props that behave naturally. Theatre prop directors favor pre-softened, cotton-bond cash props that offer high tactile compliance and distinct "crisp" sounds when counted under live acoustics. The non-reflective surface prevents blinding high-beam spot glare from disrupting front-row seating. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Perfect for Music Videos</h4>
-    <p class="text-sm text-gray-600 mb-4">Get the perfect money rain effect with our <a href="/?category=bundle-packs" class="text-gold underline hover:text-black transition-colors">Bundle Packs</a>.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">View Bundles</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'May 08, 2026',
-    category: 'Stagecraft',
-    readTime: '4 min read',
-    image: 'images/blog/6.jpg'
-  },
-  {
-    id: 'safe-staging-heist-scenes',
-    title: 'Best Practices for Staging High-Volume Cash Heist Scenes Safely',
-    excerpt: 'Tips on managing massive piles of replica cash on public streets during film shoots to avoid public alarm and stay compliant.',
-    content: `Staging bank vaults or ransom deliveries on open streets can lead to major public panic and police responses. First, clear all necessary permits with your municipal council. When filming open cash scenes, keep all currency props safely contained in marked boxes until the camera is active. Always work with licensed prop managers who carry compliance checklists demonstrating that all materials strictly carry RBA spec disclaimers. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Upgrade Your Production Value</h4>
-    <p class="text-sm text-gray-600 mb-4">Discover our <a href="/?category=movie-prop-money" class="text-gold underline hover:text-black transition-colors">Cinematic Prop Money Stacks</a> designed specifically for 4K cameras.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Shop The Collection</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'April 25, 2026',
-    category: 'Production Tips',
-    readTime: '8 min read',
-    image: 'images/blog/7.jpg'
-  },
-  {
-    id: 'digital-sensors-vs-props',
-    title: 'Why High-Resolution Digital Cameras Demand Better Film Props',
-    excerpt: 'How 4K and 8K digital camera sensors expose poor quality set props, and why professional printing is required to hold cinematic immersion.',
-    content: `Digital cameras like RED, ARRI, and Sony Venice capture micro-details at levels never seen before. Standard printed fakes with grainy, low-DPI dots will instantly pixelate and break immersion. Modern prop makers utilize micro-plate lithography presses that print at 1200 DPI on specialized cotton art paper, ensuring that the currency retains pristine lines even in extreme macro lens configurations. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Need Bulk Props for a Feature Film?</h4>
-    <p class="text-sm text-gray-600 mb-4">We offer heavy discounts on <a href="/wholesale" class="text-gold underline hover:text-black transition-colors">Wholesale Orders</a> for major productions.</p>
-    <a href="/wholesale" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Request a Quote</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'April 11, 2026',
-    category: 'Technical Guides',
-    readTime: '5 min read',
-    image: 'images/blog/8.jpg'
-  },
-  {
-    id: 'music-video-prop-tips',
-    title: 'Top 5 Music Video Prop Disasters (And How to Avoid Them)',
-    excerpt: 'From reflections to lost notes, here are five critical mistakes hip-hop and commercial video directors make with cash props.',
-    content: `Music videos are fast-paced and high-energy. However, many indie directors buy low-quality fakes from random sellers, only to discover they cause severe camera glare or reflect blue and purple hues under RGB lighting. Always use specialized non-glare prop cash, budget for loose floating paper options if doing cash rain shots, and ensure you have secure lockboxes on set to prevent real-world theft of your premium prop bundles. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Perfect for Music Videos</h4>
-    <p class="text-sm text-gray-600 mb-4">Get the perfect money rain effect with our <a href="/?category=bundle-packs" class="text-gold underline hover:text-black transition-colors">Bundle Packs</a>.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">View Bundles</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'March 29, 2026',
-    category: 'Creative Direction',
-    readTime: '4 min read',
-    image: 'images/blog/9.jpg'
-  },
-  {
-    id: 'prop-weathering-guide',
-    title: 'A Prop Master Guide to Weathering and Distressing Paper Currency',
-    excerpt: 'An inside look at the techniques prop stylists use to turn candy printed sheets into gritty, street-worn banknotes.',
-    content: `Weathering cash is a complex art form. You can’t just crumple bills. To achieve street-grade wear, stylists soak the bills in custom diluted walnut or black tea baths to stain the white fibers. Once dried, sandpaper is applied to corners to split the paper fibers, simulating heavy circulation. For extreme scenes, soot dust or water warping is applied. At Australian Prop Money, our in-house stylists do all this by hand to save productions hours of setup. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Upgrade Your Production Value</h4>
-    <p class="text-sm text-gray-600 mb-4">Discover our <a href="/?category=movie-prop-money" class="text-gold underline hover:text-black transition-colors">Cinematic Prop Money Stacks</a> designed specifically for 4K cameras.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Shop The Collection</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'March 14, 2026',
-    category: 'DIY Props',
-    readTime: '6 min read',
-    image: 'images/blog/10.jpg'
-  },
-  {
-    id: 'creative-editorial-photography',
-    title: 'Creative Photography: Elevating Editorial Shots with Props',
-    excerpt: 'How to use replica notes to build high-end visual concepts in fashion, sneaker, and luxury lifestyle photography.',
-    content: `Fashion and product photography are all about story and status. Using replica money as flatlay backgrounds can add a high-end luxury touch. To shoot cash rolls or stacks cleanly under hard camera strobe flashes, choose specialized high-contrast extra-matte papers. This ensures the design pop-out beautifully without throwing reflections back into your lens. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Need Bulk Props for a Feature Film?</h4>
-    <p class="text-sm text-gray-600 mb-4">We offer heavy discounts on <a href="/wholesale" class="text-gold underline hover:text-black transition-colors">Wholesale Orders</a> for major productions.</p>
-    <a href="/wholesale" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Request a Quote</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'February 28, 2026',
-    category: 'Photography Tips',
-    readTime: '5 min read',
-    image: 'images/blog/11.jpg'
-  },
-  {
-    id: 'rba-compliance-details',
-    title: 'Understanding RBA Compliance: The Fine Line of Prop Replicas',
-    excerpt: 'A deep dive into the legal requirements set by the Reserve Bank of Australia to ensure your production props are fully compliant and safe.',
-    content: `The Crimes (Currency) Act 1981 sets severe penalties for reproducing currency. To protect your film crew and avoid legal issues, your prop money must be easily distinguishable from genuine money. It must be significantly larger or smaller (at least 25% difference), printed on one side, or contain prominent, non-removable specimen banners. Standard paper bond must be used (never polymer), and all bills must carry "PROP MONEY ONLY" watermarks. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Perfect for Music Videos</h4>
-    <p class="text-sm text-gray-600 mb-4">Get the perfect money rain effect with our <a href="/?category=bundle-packs" class="text-gold underline hover:text-black transition-colors">Bundle Packs</a>.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">View Bundles</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'February 10, 2026',
-    category: 'Legality',
-    readTime: '6 min read',
-    image: 'images/blog/12.jpg'
-  },
-  {
-    id: 'training-currency-benefits',
-    title: 'How Training Currency Improves Teller and Cash-Handler Training Speeds',
-    excerpt: 'Why real banks and retail outlets are swapping to professional, slip-coated training money to reduce teller cash-handling mistakes.',
-    content: `Using real cash to train employees carries significant theft risks and is legally impractical. In contrast, training currency allows cashiers, casino croupiers, and armored transport crews to master cash sorting, counting, and register balancing in a safe environment. Slip-coated training bills mimic the touch and weight of actual polymer banknotes, speeding up muscle memory development. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Upgrade Your Production Value</h4>
-    <p class="text-sm text-gray-600 mb-4">Discover our <a href="/?category=movie-prop-money" class="text-gold underline hover:text-black transition-colors">Cinematic Prop Money Stacks</a> designed specifically for 4K cameras.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Shop The Collection</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'January 25, 2026',
-    category: 'Business Training',
-    readTime: '4 min read',
-    image: 'images/blog/13.jpg'
-  },
-  {
-    id: 'briefcase-requisition-design',
-    title: 'Briefcase Requisition Layouts: Designing the Perfect Ransom Drop Prop',
-    excerpt: 'The design secrets behind locking cash briefcases. How to calculate stack volume and pack foam for spectacular opening shots.',
-    content: `A classic movie shot: the villain slides open a heavy metal briefcase, revealing rows of green bills. To get this shot right, prop master use specialized flat foam inserts. A standard brief case holds exactly 20 flat-nested stacks of AUD notes ($200,000 face value). Pre-cut velvet foam prevents stacks from tumbling when the case is held upright by characters. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Need Bulk Props for a Feature Film?</h4>
-    <p class="text-sm text-gray-600 mb-4">We offer heavy discounts on <a href="/wholesale" class="text-gold underline hover:text-black transition-colors">Wholesale Orders</a> for major productions.</p>
-    <a href="/wholesale" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">Request a Quote</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'January 11, 2026',
-    category: 'Set Design',
-    readTime: '5 min read',
-    image: 'images/blog/14.jpg'
-  },
-  {
-    id: 'budgeting-wholesale-prop-packs',
-    title: 'Budgeting for Indie Films: When to Buy Bulk Wholesale Prop Packs',
-    excerpt: 'Indie filmmakers must optimize every dollar. We look at when buying bulk prop packs makes more financial sense than rental prop rooms.',
-    content: `Indie films have tight budgets. When filming scenes with bank vaults, ransom briefcases, or street heists, renting cash from prop rooms can be costly due to daily rates and security bonds. Buying bulk wholesale crates or indie pack bundles is often much more economical. Our wholesale flight cases are permanent assets that can be repurposed across multiple film scenes or sold to other crews post-production. <br><br> <div class="bg-gray-50 p-6 border border-gray-200 rounded-xl my-6">
-    <h4 class="font-serif font-bold text-lg mb-2">Perfect for Music Videos</h4>
-    <p class="text-sm text-gray-600 mb-4">Get the perfect money rain effect with our <a href="/?category=bundle-packs" class="text-gold underline hover:text-black transition-colors">Bundle Packs</a>.</p>
-    <a href="/shop" class="inline-block bg-black text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-gold transition-colors">View Bundles</a>
-  </div> 
-<h3 class="font-serif font-bold text-xl mt-8 mb-4 border-b pb-2">Frequently Asked Questions</h3>
-<div class="space-y-4">
-  <div>
-    <strong class="block text-black mb-1">Are these notes legal to use in Australia?</strong>
-    <p class="text-gray-600 text-sm">Yes, all our <a href="/?category=australian-notes" class="text-gold underline">Australian Notes</a> strictly follow RBA guidelines.</p>
-  </div>
-  <div>
-    <strong class="block text-black mb-1">Do you ship Australia-wide?</strong>
-    <p class="text-gray-600 text-sm">Yes! We offer fast dispatch and secure shipping across all states.</p>
-  </div>
-</div>
-`,
-    date: 'January 02, 2026',
-    category: 'Indie Filmmaking',
-    readTime: '6 min read',
-    image: 'images/blog/15.jpg'
+    id: 'accessories',
+    name: 'Accessories',
+    description: 'Essential props, bags, and high-fidelity money counters to perfect your scene.',
+    image: ''
   }
 ];
-
-export const FAQS: FAQItem[] = [
-  {
-    category: 'legality',
-    question: 'Are your prop money stacks legal to own and use in Australia?',
-    answer: 'Yes, 100%. All of our prop money products are designed to strictly comply with the Reserve Bank of Australia (RBA) regulations and the Crimes (Currency) Act 1981. They feature prominent, non-removable legal disclaimers stating "PROP ONLY" and "NOT LEGAL TENDER", utilize specific scale adjustments, and are printed on premium paper (not polymer) so they can never be mistaken for real currency. They are strictly intended for film, TV, photography, and creative productions.'
-  },
-  {
-    category: 'shipping',
-    question: 'How fast do you ship within Australia?',
-    answer: 'We provide super-fast shipping nationwide from our warehouse in Australia. Orders are processed within 24-48 hours. Standard shipping takes 3-5 business days, while Express Post delivery is available at checkout and usually takes 1-2 business days to major metropolitan areas (Sydney, Melbourne, Brisbane, Adelaide, Perth).'
-  },
-  {
-    category: 'ordering',
-    question: 'What is your minimum order amount?',
-    answer: 'To maintain our high production standards and offer free or highly subsidized shipping, we enforce a minimum order value of AUD $150 across our website. This makes our service perfect for independent films, theater companies, and professional production studios.'
-  },
-  {
-    category: 'custom',
-    question: 'Do you offer custom aging, weathered stacks, or custom packaging?',
-    answer: 'Yes! We have a dedicated in-house prop team that specializes in custom requests. Whether you need burned stacks, blood-stained bills, briefcase layouts, or extremely distressed cash bundles for high-action film scenes, we can accommodate. Contact us via our Wholesale page or Contact form with your production script details.'
-  },
-  {
-    category: 'ordering',
-    question: 'What payment methods do you accept, and is there a discount for Crypto?',
-    answer: 'We accept direct Bank Transfer (EFT), PayID, and major Cryptocurrencies (Bitcoin, Ethereum, USDT). To promote fast, low-friction digital payments, we offer an exclusive 30% discount on your first checkout when paying with Cryptocurrency. Use Coupon Code "PROPMONEYAU" during checkout.'
-  }
-];
-
-export const REVIEWS: Review[] = [
-  {
-    id: 'rev-1',
-    name: 'David Jenkins',
-    role: 'Lead Set Decorator',
-    production: 'Crimson Sky Films',
-    rating: 5,
-    comment: 'The quality of the hand-aged $100 stacks is unmatched. They looked incredibly realistic under 4K camera close-ups. Saved us hours of distress work in post-production. Will absolutely use Australian Prop Money for all our future feature films.',
-    date: 'June 18, 2026'
-  },
-  {
-    id: 'rev-2',
-    name: 'Sarah Lin',
-    role: 'Executive Producer',
-    production: 'Sydney Creative Group',
-    rating: 5,
-    comment: 'Exceptional service and extremely fast shipping. We had a sudden script change requiring a full ransom briefcase, and their customer service assembled a custom pack and had it delivered within 24 hours. The RBA compliance markings are subtle but clear, keeping our legal team happy.',
-    date: 'July 1, 2026'
-  },
-  {
-    id: 'rev-3',
-    name: 'Marcus Vance',
-    role: 'Commercial Photographer',
-    production: 'Vance Studio',
-    rating: 5,
-    comment: 'Absolutely perfect for high-fashion photoshoots. The matte paper means zero reflection from our direct strobe lights. Highly recommended!',
-    date: 'May 12, 2026'
-  }
-];
+export const BLOG_POSTS: BlogPost[] = [];
+export const FAQS: FAQItem[] = [];
+export const REVIEWS: Review[] = [];

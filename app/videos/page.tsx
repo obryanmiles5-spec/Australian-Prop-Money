@@ -4,33 +4,34 @@ import React from 'react';
 import Image from 'next/image';
 import { Play } from 'lucide-react';
 
+
 const VIDEOS = [
   {
     id: 'vid-1',
     title: 'Prop Money on Set: The Ultimate Guide',
     duration: '05:24',
-    thumbnail: 'images/categories/Movie-Prop-Money.jpg',
+    thumbnail: '/images/categories/Movie-Prop-Money.jpg',
     description: 'Learn how our prop money looks under various cinematic lighting setups, including harsh daylight and moody studio lights.',
   },
   {
     id: 'vid-2',
     title: 'The Making of Australian Prop Money',
     duration: '03:45',
-    thumbnail: 'images/categories/TV Props.jpg',
+    thumbnail: '/images/categories/TV Props.jpg',
     description: 'Take a behind-the-scenes look at our production process, from design compliance to printing and cutting.',
   },
   {
     id: 'vid-3',
     title: 'Music Video Masterclass with Prop Money',
     duration: '07:12',
-    thumbnail: 'images/categories/Photography Props.jpg',
+    thumbnail: '/images/categories/Photography Props.jpg',
     description: 'Watch how professional directors use our prop money in high-energy music video shoots and slow-motion money rain scenes.',
   },
   {
     id: 'vid-4',
     title: 'RBA Compliance & Legal Guidelines Explained',
     duration: '04:18',
-    thumbnail: 'images/categories/Australian Notes.webp',
+    thumbnail: '/images/categories/Australian Notes.webp',
     description: 'A comprehensive guide on the legal requirements for using prop money in Australia and how our products meet all federal regulations.',
   },
 ];

@@ -1,0 +1,3 @@
+[200] https://ik.imagekit.io/ukpeptides/images/blog/1.jpg
+[200] https://ik.imagekit.io/ukpeptides/images/hero/hero.webp
+[200] https://ik.imagekit.io/ukpeptides/images/blog/2.webp

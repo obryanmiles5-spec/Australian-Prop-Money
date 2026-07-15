@@ -1,0 +1,15 @@
+[200] images/hero/hero.webp -> https://ik.imagekit.io/ukpeptides/images/hero/hero.webp
+[200] images/categories/Australian Notes.webp -> https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp
+[200] images/categories/Australian Notes.jpg -> https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp
+[200] images/categories/Bundle Packs.jpg -> https://ik.imagekit.io/ukpeptides/images/categories/bundle-packs.jpg
+[200] images/categories/Movie-Prop-Money.jpg -> https://ik.imagekit.io/ukpeptides/images/categories/tv-props.webp
+[200] images/categories/Photography Props.jpg -> https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp
+[200] images/categories/Training Currency.jpg -> https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp
+[200] images/categories/TV Props.jpg -> https://ik.imagekit.io/ukpeptides/images/categories/tv-props.webp
+[404] images/blog/1 -> https://ik.imagekit.io/ukpeptides/images/blog/1
+[200] images/products/Australian Notes/New-Notes/100 AUD/100-aud-stack -> https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp
+[200] images/products/Movie-Prop-Money/Action-Heist-Weathered-$100-Stack -> https://ik.imagekit.io/ukpeptides/images/categories/tv-props.webp
+[200] images/products/TV-Props/Broadcaster-Quality-$20-Prop-Stack -> https://ik.imagekit.io/ukpeptides/images/categories/tv-props.webp
+[200] images/products/Photography-Props/Studio-Grade-High-Contrast-$100-Prop-Stack -> https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp
+[200] images/products/Training-Currency/Bank-Teller-Training-Starter-Bundle -> https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp
+[200] images/products/Bundle-Packs/The-Millionaire-Heist-Master-Crate-(100 Stacks) -> https://ik.imagekit.io/ukpeptides/images/categories/bundle-packs.jpg

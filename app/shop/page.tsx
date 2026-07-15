@@ -144,10 +144,6 @@ function ShopContent() {
             {[
               { id: 'all', label: 'All Props' },
               { id: 'australian-notes', label: 'Australian Notes' },
-              { id: 'movie-prop-money', label: 'Movie Prop Money' },
-              { id: 'tv-production-props', label: 'TV Props' },
-              { id: 'photography-props', label: 'Photography Props' },
-              { id: 'training-currency', label: 'Training Currency' },
               { id: 'bundle-packs', label: 'Bundle Packs' },
               { id: 'accessories', label: 'Accessories' }
             ].map((cat) => (

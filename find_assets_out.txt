@@ -1,6 +1,0 @@
-MISSING: commercial-advertising.jpg
-MISSING: video-production.jpg
-MISSING: content-creation.jpg
-MISSING: film-production.png
-MISSING: photography.png
-MISSING: theatre.jpg

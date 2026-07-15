@@ -7,6 +7,7 @@ import { ShoppingCart, Eye, Star, Check, Heart } from 'lucide-react';
 import { Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
 
+
 interface ProductCardProps {
   product: Product;
   onViewDetails: (product: Product) => void;
@@ -43,14 +44,21 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
     >
       {/* Product Image & Tags */}
       <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          referrerPolicy="no-referrer"
-          className="object-cover group-hover:scale-102 transition-transform duration-500"
-        />
+        {product.image && product.image.trim() !== '' ? (
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            referrerPolicy="no-referrer"
+            className="object-cover group-hover:scale-102 transition-transform duration-500"
+          />
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 text-gray-400 p-4 border border-dashed border-gray-200">
+            <span className="text-[10px] tracking-wider uppercase font-mono text-gray-500 font-bold mb-1">Image Pending</span>
+            <span className="text-[8px] tracking-tight uppercase font-mono text-gray-400">Ready for upload</span>
+          </div>
+        )}
         
         {/* Category Tag */}
         <span className="absolute top-3 left-3 bg-black/90 text-white text-[9px] uppercase font-bold tracking-[0.2em] px-3 py-1 rounded-xs">

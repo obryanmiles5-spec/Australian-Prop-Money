@@ -6,6 +6,7 @@ import { Calendar, Clock, BookOpen, ChevronRight, X, Sparkles } from 'lucide-rea
 import { BLOG_POSTS, BlogPost } from '@/lib/products';
 import JsonLd from '@/components/JsonLd';
 
+
 export default function BlogPage() {
   const [activeArticle, setActiveArticle] = useState<BlogPost | null>(null);
 

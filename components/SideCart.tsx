@@ -8,6 +8,7 @@ import { X, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Heart, ShoppingBag, Sh
 import { useCart } from '@/context/CartContext';
 import { PRODUCTS } from '@/lib/products';
 
+
 export default function SideCart() {
   const router = useRouter();
   const {

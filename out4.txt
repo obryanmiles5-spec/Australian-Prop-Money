@@ -1,0 +1,2 @@
+[200] images/categories/bundle-packs.jpg
+[200] images/categories/tv-props.webp

@@ -12,6 +12,7 @@ import { PRODUCTS, Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
 import ProductCard from '@/components/ProductCard';
 
+
 interface UserReview {
   id: string;
   name: string;
@@ -35,7 +36,6 @@ export default function ProductDetailClient({ productId }: { productId: string }
   const [serialText, setSerialText] = useState('');
   
   const [quantity, setQuantity] = useState(1);
-  const [activeImageIdx, setActiveImageIdx] = useState(0);
   const [added, setAdded] = useState(false);
   const [activeTab, setActiveTab] = useState<'specs' | 'compliance'>('specs');
 
@@ -105,9 +105,6 @@ export default function ProductDetailClient({ productId }: { productId: string }
       </div>
     );
   }
-
-  // Dynamic Image Gallery setup
-  const galleryImages = product.gallery && product.gallery.length > 0 ? [product.image, ...product.gallery] : [product.image];
 
   // Price Calculation depending on selections
   const calculatePricing = () => {
@@ -216,53 +213,34 @@ export default function ProductDetailClient({ productId }: { productId: string }
       {/* Main Grid: Left Gallery, Right Options */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        {/* Left: Image Gallery (Grid-Span 6) */}
+        {/* Left: Image Display (Grid-Span 6) */}
         <div className="lg:col-span-6 space-y-4">
           
           {/* Main Visual Display */}
           <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden border border-gray-100 rounded-3xl group">
-            <Image 
-              src={galleryImages[activeImageIdx]} 
-              alt={`${product.name} View`} 
-              fill
-              sizes="(max-width: 1024px) 100vw, 600px"
-              priority
-              referrerPolicy="no-referrer"
-              className="object-cover"
-              id="main-product-gallery-img"
-            />
+            {product.image && product.image.trim() !== '' ? (
+              <Image 
+                src={product.image} 
+                alt={`${product.name} View`} 
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                priority
+                referrerPolicy="no-referrer"
+                className="object-cover"
+                id="main-product-gallery-img"
+              />
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 text-gray-400 p-8 border border-dashed border-gray-200">
+                <span className="text-xs uppercase tracking-widest font-bold text-gray-500 font-mono mb-2">IMAGE PENDING</span>
+                <span className="text-[10px] text-gray-400">Ready for URL update</span>
+              </div>
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 md:p-8">
               <span className="text-[10px] uppercase font-bold tracking-widest text-gold font-mono block">Reserve Bank of Australia Compliance</span>
               <p className="text-[10px] text-gray-300 italic leading-relaxed mt-1">
                 Conforms strictly to federal legal limits. Printed double-sided on non-glare fine matte paper. Includes required &quot;NOT LEGAL TENDER&quot; watermarks.
               </p>
             </div>
-          </div>
-
-          {/* Gallery Thumbnails */}
-          <div className="grid grid-cols-4 gap-3" id="gallery-thumbnails">
-            {galleryImages.map((img, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => setActiveImageIdx(idx)}
-                className={`relative aspect-[4/3] bg-gray-50 border overflow-hidden rounded-xl transition-all duration-300 ${
-                  activeImageIdx === idx 
-                    ? 'border-gold ring-1 ring-gold shadow-xs' 
-                    : 'border-gray-100 hover:border-gray-400'
-                }`}
-                id={`thumb-btn-${idx}`}
-              >
-                <Image 
-                  src={img} 
-                  alt="Prop view thumbnail" 
-                  fill
-                  sizes="150px"
-                  referrerPolicy="no-referrer"
-                  className="object-cover"
-                />
-              </button>
-            ))}
           </div>
 
         </div>
@@ -735,15 +713,19 @@ export default function ProductDetailClient({ productId }: { productId: string }
                   className="bg-white border border-gray-100 p-3 rounded-2xl hover:border-gold hover:shadow-xs transition-all flex gap-3 items-center group cursor-pointer"
                   id={`recent-link-${p.id}`}
                 >
-                  <div className="relative w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 border border-gray-100">
-                    <Image 
-                      src={p.image} 
-                      alt={p.name} 
-                      fill
-                      sizes="48px"
-                      referrerPolicy="no-referrer"
-                      className="object-cover"
-                    />
+                  <div className="relative w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 border border-gray-100 flex items-center justify-center">
+                    {p.image && p.image.trim() !== '' ? (
+                      <Image 
+                        src={p.image} 
+                        alt={p.name} 
+                        fill
+                        sizes="48px"
+                        referrerPolicy="no-referrer"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <span className="text-[8px] font-mono font-bold text-gray-400">NO IMG</span>
+                    )}
                   </div>
                   <div className="min-w-0">
                     <h4 className="font-serif font-bold text-xs text-black line-clamp-1 group-hover:text-gold transition-colors">

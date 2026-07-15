@@ -6,6 +6,7 @@ import { X, ShoppingCart, Check, Star, ShieldCheck, HelpCircle } from 'lucide-re
 import { Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
 
+
 interface ProductDetailsModalProps {
   product: Product | null;
   isOpen: boolean;
@@ -62,14 +63,21 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
 
         {/* Left Side: Product Image & Compliance Watermark */}
         <div className="relative w-full md:w-1/2 aspect-4/3 md:aspect-auto md:min-h-[450px] bg-gray-50">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 768px) 100vw, 400px"
-            referrerPolicy="no-referrer"
-            className="object-cover"
-          />
+          {product.image && product.image.trim() !== '' ? (
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              sizes="(max-width: 768px) 100vw, 400px"
+              referrerPolicy="no-referrer"
+              className="object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 text-gray-400 p-6 border border-dashed border-gray-200">
+              <span className="text-xs uppercase tracking-widest font-bold text-gray-500 font-mono mb-2">IMAGE PENDING</span>
+              <span className="text-[10px] text-gray-400">Ready for URL update</span>
+            </div>
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent flex flex-col justify-end p-6">
             <span className="text-[10px] uppercase font-bold tracking-widest text-gold font-mono">
               Reserve Bank Compliant

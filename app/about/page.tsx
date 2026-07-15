@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+
 import { ShieldCheck, HelpCircle, Eye, Scale, Users, Award, Landmark } from 'lucide-react';
 
 export default function AboutPage() {
@@ -22,7 +23,7 @@ export default function AboutPage() {
       {/* Cinematic Image banner */}
       <div className="relative aspect-21/9 bg-black rounded-3xl overflow-hidden shadow-xl border border-gray-100 max-w-5xl mx-auto">
         <Image
-          src={'images/categories/Movie-Prop-Money.jpg'}
+          src={'/images/categories/Movie-Prop-Money.jpg'}
           alt="Behind the scenes on a film set with cameras"
           fill
           priority

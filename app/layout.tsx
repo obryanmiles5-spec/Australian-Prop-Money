@@ -11,6 +11,7 @@ import AnalyticsScripts from '@/components/AnalyticsScripts';
 import WhatsAppChat from '@/components/WhatsAppChat';
 import JsonLd from '@/components/JsonLd';
 
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
@@ -25,7 +26,7 @@ const playfair = Playfair_Display({
 
 const baseUrl = process.env.APP_URL || 'https://australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
-const defaultHeroImage = 'images/hero/hero.webp';
+const defaultHeroImage = 'https://picsum.photos/seed/hero/1920/1080';
 
 export const metadata: Metadata = {
   title: 'Australian Prop Money | Professional Replica Currency for Film & TV',

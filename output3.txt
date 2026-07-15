@@ -1,0 +1,4 @@
+[404] images/products/australian-notes.webp
+[404] images/products/australian-notes.jpg
+[200] images/categories/australian-notes.webp
+[404] images/categories/Bundle Packs.webp
