@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul className="space-y-2 pl-4 list-disc">
             <li><strong>• Private Banking Logs:</strong> Payments made via Direct EFT Bank Transfer or PayID are processed securely on private Australian bank servers and are never logged on third-party aggregators.</li>
-            <li><strong>• Crypto Privacy:</strong> Cryptocurrency payments (BTC, ETH, USDT) are completed peer-to-peer, maintaining the highest levels of digital privacy and security.</li>
+            <li><strong>• Crypto Privacy:</strong> Cryptocurrency payments (BTC) are completed peer-to-peer, maintaining the highest levels of digital privacy and security.</li>
             <li><strong>• Zero Selling of Data:</strong> We never sell, rent, trade, or share your contact info, email addresses, or shipping details with other marketing or prop bureaus.</li>
           </ul>
         </section>

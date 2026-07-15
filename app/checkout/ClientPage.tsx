@@ -296,30 +296,11 @@ Please confirm receipt of this order and reply with tracking details once transf
 
             {/* Render exact details */}
             {details.paymentMethod === 'bank' && (
-              <div className="bg-gray-50 p-5 rounded-2xl space-y-3 font-mono text-[11px] border">
-                <div className="flex justify-between border-b pb-1.5 border-gray-100">
-                  <span className="text-gray-400">Account Name:</span>
-                  <span className="text-black font-semibold">Australian Prop Money Pty Ltd</span>
-                </div>
-                <div className="flex justify-between border-b pb-1.5 border-gray-100">
-                  <span className="text-gray-400">BSB (CBA Bank):</span>
-                  <div className="flex gap-1.5 items-center">
-                    <span className="text-black font-bold">062-900</span>
-                    <button onClick={() => handleCopy('062900', 'BSB')} className="text-gold hover:underline p-0.5">
-                      {copiedState === 'BSB' ? 'Copied' : <Copy className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-                </div>
-                <div className="flex justify-between border-b pb-1.5 border-gray-100">
-                  <span className="text-gray-400">Account Number:</span>
-                  <div className="flex gap-1.5 items-center">
-                    <span className="text-black font-bold">1048 3922</span>
-                    <button onClick={() => handleCopy('10483922', 'Account')} className="text-gold hover:underline p-0.5">
-                      {copiedState === 'Account' ? 'Copied' : <Copy className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-                </div>
-                <div className="flex justify-between text-gold-dark">
+              <div className="bg-gray-50 p-5 rounded-2xl space-y-3 font-mono text-[11px] border text-center">
+                <p className="text-gray-600 font-sans">
+                  We have received your order. An administrator will email you the bank transfer details shortly.
+                </p>
+                <div className="flex justify-between text-gold-dark mt-4 border-t pt-3 border-gray-100">
                   <span>REQUIRED REFERENCE:</span>
                   <div className="flex gap-1.5 items-center font-bold">
                     <span>{details.orderId}</span>
@@ -332,25 +313,11 @@ Please confirm receipt of this order and reply with tracking details once transf
             )}
 
             {details.paymentMethod === 'payid' && (
-              <div className="bg-gray-50 p-5 rounded-2xl space-y-3 font-mono text-[11px] border">
-                <div className="flex justify-between border-b pb-1.5 border-gray-100">
-                  <span className="text-gray-400">PayID Type:</span>
-                  <span className="text-black font-semibold">Email Link</span>
-                </div>
-                <div className="flex justify-between border-b pb-1.5 border-gray-100">
-                  <span className="text-gray-400">PayID Address:</span>
-                  <div className="flex gap-1.5 items-center">
-                    <span className="text-black font-bold">info@australianpropmoney.com.au</span>
-                    <button onClick={() => handleCopy('info@australianpropmoney.com.au', 'PayID')} className="text-gold hover:underline p-0.5">
-                      {copiedState === 'PayID' ? 'Copied' : <Copy className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-                </div>
-                <div className="flex justify-between border-b pb-1.5 border-gray-100">
-                  <span className="text-gray-400">Registered Recipient:</span>
-                  <span className="text-black font-semibold">Australian Prop Money Pty Ltd</span>
-                </div>
-                <div className="flex justify-between text-gold-dark">
+              <div className="bg-gray-50 p-5 rounded-2xl space-y-3 font-mono text-[11px] border text-center">
+                <p className="text-gray-600 font-sans">
+                  We have received your order. An administrator will email you the PayID details shortly.
+                </p>
+                <div className="flex justify-between text-gold-dark mt-4 border-t pt-3 border-gray-100">
                   <span>REQUIRED REFERENCE:</span>
                   <div className="flex gap-1.5 items-center font-bold">
                     <span>{details.orderId}</span>
@@ -365,26 +332,17 @@ Please confirm receipt of this order and reply with tracking details once transf
             {isCrypto && (
               <div className="bg-gray-50 p-5 rounded-2xl space-y-3 font-mono text-[10px] border leading-normal">
                 <p className="text-emerald-700 bg-emerald-50 p-2.5 rounded mb-2 leading-relaxed">
-                  💡 <strong>Cryptocurrency Match:</strong> Standard USDT/BTC/ETH value has been converted to USD based on the standard parity rate (1.50).
+                  💡 <strong>Cryptocurrency Match:</strong> Standard BTC value has been converted to USD based on the standard parity rate (1.50).
                 </p>
                 <div className="flex justify-between border-b pb-1.5 border-gray-100 text-[11px]">
                   <span className="text-gray-400">Required USD Value:</span>
                   <span className="text-emerald-600 font-bold font-sans">${(details.total / 1.5).toFixed(2)} USD</span>
                 </div>
                 <div className="space-y-1.5 border-b pb-2 border-gray-100">
-                  <span className="text-gray-400 block font-bold uppercase tracking-wider text-[8px]">USDT Address (TRC-20 Network only!)</span>
-                  <div className="flex gap-2 items-center bg-white p-2 rounded border justify-between">
-                    <span className="text-black font-semibold select-all break-all">TXYz89aXyZ89qRwX19BcdEfGhIjKlMnOpQ</span>
-                    <button onClick={() => handleCopy('TXYz89aXyZ89qRwX19BcdEfGhIjKlMnOpQ', 'USDT')} className="text-gold hover:underline p-1 shrink-0 bg-gray-50 rounded">
-                      {copiedState === 'USDT' ? 'Copied' : <Copy className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-                </div>
-                <div className="space-y-1.5 border-b pb-2 border-gray-100">
                   <span className="text-gray-400 block font-bold uppercase tracking-wider text-[8px]">Bitcoin (BTC) Wallet Address</span>
                   <div className="flex gap-2 items-center bg-white p-2 rounded border justify-between">
-                    <span className="text-black font-semibold select-all break-all">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfJH7</span>
-                    <button onClick={() => handleCopy('bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfJH7', 'BTC')} className="text-gold hover:underline p-1 shrink-0 bg-gray-50 rounded">
+                    <span className="text-black font-semibold select-all break-all">bc1qz0u5ctpj9v2fnn9mj5dlfsma9f533jjse9sxpa</span>
+                    <button onClick={() => handleCopy('bc1qz0u5ctpj9v2fnn9mj5dlfsma9f533jjse9sxpa', 'BTC')} className="text-gold hover:underline p-1 shrink-0 bg-gray-50 rounded">
                       {copiedState === 'BTC' ? 'Copied' : <Copy className="w-3.5 h-3.5" />}
                     </button>
                   </div>
@@ -894,7 +852,7 @@ Please confirm receipt of this order and reply with tracking details once transf
                   className="mt-1 text-black focus:ring-0 focus:outline-none focus:ring-offset-0 focus:ring-transparent focus:border-transparent cursor-pointer"
                 />
                 <div className="text-xs">
-                  <span className="font-bold text-black block">Cryptocurrency (USDT/BTC/ETH)</span>
+                  <span className="font-bold text-black block">Cryptocurrency (BTC)</span>
                   <p className="text-gray-400 mt-0.5 leading-tight text-[10px]">Secure, fast, and completely anonymous. We offer an extra 30% discount on Crypto transfers with coupon <strong>PROPMONEYAU</strong>.</p>
                 </div>
               </label>
