@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { X, ShoppingCart, Check, Star, ShieldCheck, HelpCircle } from 'lucide-react';
 import { Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
@@ -61,29 +60,32 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
           <X className="w-5 h-5" />
         </button>
 
-        {/* Left Side: Product Image & Compliance Watermark */}
-        <div className="relative w-full md:w-1/2 aspect-4/3 md:aspect-auto md:min-h-[450px] bg-gray-50">
-          {product.image && product.image.trim() !== '' ? (
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              sizes="(max-width: 768px) 100vw, 400px"
-              referrerPolicy="no-referrer"
-              className="object-cover"
-            />
-          ) : (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 text-gray-400 p-6 border border-dashed border-gray-200">
-              <span className="text-xs uppercase tracking-widest font-bold text-gray-500 font-mono mb-2">IMAGE PENDING</span>
-              <span className="text-[10px] text-gray-400">Ready for URL update</span>
+        {/* Left Side: Compliance & Quality Shield */}
+        <div className="relative w-full md:w-1/2 aspect-4/3 md:aspect-auto md:min-h-[450px] bg-gradient-to-br from-zinc-950 via-zinc-900 to-black p-8 flex flex-col justify-between text-white border-r border-zinc-800">
+          <div className="space-y-6 pt-10">
+            <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+              <ShieldCheck className="w-6 h-6 text-gold" />
             </div>
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent flex flex-col justify-end p-6">
-            <span className="text-[10px] uppercase font-bold tracking-widest text-gold font-mono">
-              Reserve Bank Compliant
-            </span>
-            <p className="text-[10px] text-gray-300 italic leading-relaxed mt-1">
-              &quot;PROP MONEY ONLY — NOT LEGAL TENDER&quot; printed clearly on each dual-sided note.
+            <div className="space-y-2">
+              <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-gold font-mono block">
+                Official Prop Registry
+              </span>
+              <h4 className="text-xl font-serif font-light tracking-wide text-zinc-100">
+                Premium Cinema Grade
+              </h4>
+            </div>
+            <p className="text-xs text-zinc-400 leading-relaxed">
+              Meticulously designed replica notes. Features double-sided printing, premium heavy-bond calendered matte paper, precise dimension scaling, and legal RBA compliant marking.
+            </p>
+          </div>
+
+          <div className="space-y-4 border-t border-zinc-800/80 pt-6">
+            <div className="flex items-center gap-3">
+              <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-bold">RBA Compliance Certified</span>
+            </div>
+            <p className="text-[10px] text-zinc-500 italic leading-relaxed">
+              &quot;PROP MONEY ONLY — NOT LEGAL TENDER&quot; is printed with high-contrast legibility across all replica notes.
             </p>
           </div>
         </div>

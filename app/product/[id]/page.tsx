@@ -34,20 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: product.metaDescription,
       url: productUrl,
       type: 'website',
-      images: [
-        {
-          url: product.image.startsWith('http') ? product.image : `${cleanBase}/${product.image.startsWith('/') ? product.image.slice(1) : product.image}`,
-          width: 800,
-          height: 800,
-          alt: product.name,
-        }
-      ]
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       title: product.seoTitle,
       description: product.metaDescription,
-      images: [product.image.startsWith('http') ? product.image : `${cleanBase}/${product.image.startsWith('/') ? product.image.slice(1) : product.image}`],
     }
   };
 }
@@ -69,7 +60,6 @@ export default async function ProductPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Product',
     'name': product.name,
-    'image': product.image,
     'description': product.longDescription,
     'sku': product.sku,
     'mpn': product.sku,

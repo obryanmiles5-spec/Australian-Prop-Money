@@ -24,19 +24,22 @@ export default function HomePage() {
       
       {/* SECTION 1: CINEMATIC HERO BANNER */}
       <section className="relative h-[500px] sm:h-[600px] flex items-center bg-gray-900 overflow-hidden" id="homepage-hero">
-        {/* Hero Cover Background Image */}
-        <div className="absolute inset-0 z-0">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <Image
-            src="https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp"
-            alt="Australian Prop Bank Notes"
+            src="https://drive.google.com/thumbnail?id=18Lkpjp0VSgrZ2CHuB0Yo_gK-1pHbP-hU&sz=w1920"
+            alt="Australian Prop Money Cinematic Hero Banner"
             fill
-            className="object-cover"
             priority
             referrerPolicy="no-referrer"
+            className="object-cover object-center opacity-40 mix-blend-luminosity"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
+        
+        {/* Cinematic Gradient Background */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-slate-950 via-zinc-900/80 to-black/90 opacity-95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent z-15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-15" />
 
         {/* Content Container */}
         <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full text-left">
@@ -90,19 +93,6 @@ export default function HomePage() {
             <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block mb-4">The Process</span>
             <h2 className="text-3xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>From Press to Production</h2>
             <div className="w-12 h-[1px] bg-gold mx-auto mt-6 mb-4"></div>
-          </div>
-
-          {/* Uploaded Prop Money Image */}
-          <div className="relative w-full max-w-4xl mx-auto mb-16 h-[250px] sm:h-[400px] overflow-hidden rounded-3xl border border-gray-100 shadow-lg">
-            <Image
-              src="/prop-money-image.jpg"
-              alt="Prop money on production set"
-              fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
-              sizes="(max-w-1024px) 100vw, 1024px"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

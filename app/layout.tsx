@@ -26,7 +26,6 @@ const playfair = Playfair_Display({
 
 const baseUrl = process.env.APP_URL || 'https://australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
-const defaultHeroImage = 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp';
 
 export const metadata: Metadata = {
   title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
@@ -44,20 +43,11 @@ export const metadata: Metadata = {
     siteName: 'Australian Prop Money',
     locale: 'en_AU',
     type: 'website',
-    images: [
-      {
-        url: defaultHeroImage,
-        width: 1200,
-        height: 630,
-        alt: 'Australian Prop Money Film Replicas',
-      },
-    ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
     description: 'Premium Australian prop money replica notes for film, television, theatre, photography, and training. Conforming to RBA guidelines.',
-    images: [defaultHeroImage],
   },
 };
 
@@ -67,7 +57,6 @@ const organizationSchema = {
   'name': 'Australian Prop Money',
   'alternateName': 'APM Prop Studios',
   'url': cleanBaseUrl,
-  'logo': `${cleanBaseUrl}/logo.png`,
   'contactPoint': {
     '@type': 'ContactPoint',
     'telephone': '+61 480 852 682',
@@ -85,7 +74,6 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   'name': 'Australian Prop Money',
-  'image': defaultHeroImage,
   '@id': `${cleanBaseUrl}/#localbusiness`,
   'url': cleanBaseUrl,
   'telephone': '+61480852682',

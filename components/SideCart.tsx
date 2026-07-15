@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { X, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Heart, ShoppingBag, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
@@ -138,16 +137,10 @@ export default function SideCart() {
                   <div className="space-y-4 divide-y divide-gray-100">
                     {cart.map((item, index) => (
                       <div key={`${item.id || item.product?.id || 'cart-item'}-${index}`} className="flex gap-4 pt-4 first:pt-0" id={`cart-item-${item.id || index}`}>
-                        {/* Image */}
-                        <div className="relative w-20 h-20 bg-gray-50 rounded-xs overflow-hidden shrink-0 border border-gray-100">
-                          <Image
-                            src={item.product.image}
-                            alt={item.product.name}
-                            fill
-                            sizes="80px"
-                            referrerPolicy="no-referrer"
-                            className="object-cover"
-                          />
+                        {/* Custom Currency Icon Badge */}
+                        <div className="w-20 h-20 bg-zinc-950 rounded-xs flex flex-col items-center justify-center border border-zinc-800 shrink-0 font-mono text-white p-2">
+                          <span className="text-gold font-bold text-xs tracking-wide">PROP</span>
+                          <span className="text-[8px] text-zinc-500 uppercase tracking-tight">Replica</span>
                         </div>
 
                         {/* Info */}
@@ -235,16 +228,10 @@ export default function SideCart() {
                   <div className="space-y-4 divide-y divide-gray-100">
                     {wishlistedProducts.map((product, index) => (
                       <div key={`${product.id || 'wishlist-item'}-${index}`} className="flex gap-4 pt-4 first:pt-0" id={`wishlist-item-${product.id || index}`}>
-                        {/* Image */}
-                        <div className="relative w-16 h-16 bg-gray-50 rounded-xs overflow-hidden shrink-0 border border-gray-100">
-                          <Image
-                            src={product.image}
-                            alt={product.name}
-                            fill
-                            sizes="64px"
-                            referrerPolicy="no-referrer"
-                            className="object-cover"
-                          />
+                        {/* Custom Currency Icon Badge */}
+                        <div className="w-16 h-16 bg-zinc-950 rounded-xs flex flex-col items-center justify-center border border-zinc-800 shrink-0 font-mono text-white p-1">
+                          <span className="text-gold font-bold text-[10px] tracking-wide">PROP</span>
+                          <span className="text-[7px] text-zinc-500 uppercase tracking-tight">Replica</span>
                         </div>
 
                         {/* Info */}

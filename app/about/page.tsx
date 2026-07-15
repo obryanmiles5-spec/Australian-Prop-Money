@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 
 import { ShieldCheck, HelpCircle, Eye, Scale, Users, Award, Landmark } from 'lucide-react';
 
@@ -20,17 +19,10 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* Cinematic Image banner */}
-      <div className="relative aspect-21/9 bg-black rounded-3xl overflow-hidden shadow-xl border border-gray-100 max-w-5xl mx-auto">
-        <Image
-          src={'/images/categories/Movie-Prop-Money.jpg'}
-          alt="Behind the scenes on a film set with cameras"
-          fill
-          priority
-          referrerPolicy="no-referrer"
-          className="object-cover opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 sm:p-10">
+      {/* Cinematic CSS banner */}
+      <div className="relative aspect-21/9 bg-gradient-to-tr from-zinc-950 via-zinc-900 to-slate-900 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 max-w-5xl mx-auto flex items-end p-6 sm:p-10">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent pointer-events-none" />
+        <div className="relative z-10">
           <span className="text-gold font-mono uppercase tracking-widest text-[10px] sm:text-xs font-bold">Industry Standard Props</span>
           <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-white max-w-xl mt-1">
             Engineered for high-definition digital lenses and 4K cameras.

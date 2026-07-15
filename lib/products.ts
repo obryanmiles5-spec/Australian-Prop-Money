@@ -8,8 +8,7 @@ export interface Product {
   sku: string;
   seoTitle: string;
   metaDescription: string;
-  image: string;
-    stockStatus: 'in-stock' | 'low-stock' | 'out-of-stock';
+  stockStatus: 'in-stock' | 'low-stock' | 'out-of-stock';
   relatedProducts: string[];
   features: string[];
   specifications: {
@@ -25,8 +24,7 @@ export interface BlogPost {
   date: string;
   category: string;
   readTime: string;
-  image: string;
-}
+  }
 
 export interface FAQItem {
   question: string;
@@ -59,7 +57,6 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-10-OLD',
     seoTitle: 'Buy Counterfeit $10 AUD Old Design Prop | Australian Prop Money',
     metaDescription: 'High-quality $10 AUD classic design prop banknotes for film and television productions.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp',
     stockStatus: 'in-stock',
     relatedProducts: ['buy-counterfeit-$20-aud-old', 'buy-counterfeit-$50-aud-old'],
     features: ['Matte non-glare ink', 'Double-sided crisp paper bond', 'Exact dimension matching', 'RBA guideline compliant marking'],
@@ -80,7 +77,6 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-20-OLD',
     seoTitle: 'Buy Counterfeit $20 AUD Old Design Prop | Australian Prop Money',
     metaDescription: 'Vintage style $20 AUD replica prop banknote printed on professional non-glare paper.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp',
     stockStatus: 'in-stock',
     relatedProducts: ['buy-counterfeit-$10-aud-old', 'buy-counterfeit-$50-aud-old'],
     features: ['Professional lithographic style print', 'Perfect size matching', 'Zero-glare under high-intensity lights', 'RBA-compliant disclaimers'],
@@ -101,7 +97,6 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-50-OLD',
     seoTitle: 'Buy Counterfeit $50 AUD Old Design Prop | Australian Prop Money',
     metaDescription: 'Prisinte $50 AUD classic design prop banknotes. Ideal for stacks, bags, and close-ups.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp',
     stockStatus: 'in-stock',
     relatedProducts: ['buy-counterfeit-$20-aud-old', 'buy-counterfeit-$100-aud-old'],
     features: ['Vibrant color replication', 'Heavy matte finish', 'Double-sided high-DPI print', '100% legal RBA compliance'],
@@ -122,7 +117,6 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-100-OLD',
     seoTitle: 'Buy Counterfeit $100 AUD Old Design Prop | Australian Prop Money',
     metaDescription: 'High-denomination classic $100 AUD replica banknotes. Perfect for high-stakes scenes.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp',
     stockStatus: 'in-stock',
     relatedProducts: ['buy-counterfeit-$50-aud-old', 'buy-counterfeit-$100-new'],
     features: ['Rich high-contrast inks', 'Realistic visual depth', 'Authentic weight and handling', 'Clear prop markings'],
@@ -143,7 +137,6 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-10-NEW',
     seoTitle: 'Buy Counterfeit $10 AUD New Design Prop | Australian Prop Money',
     metaDescription: 'Next-generation style $10 AUD prop banknotes with precise color matching.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp',
     stockStatus: 'in-stock',
     relatedProducts: ['buy-counterfeit-$20-aud-new', 'buy-counterfeit-$50-aud-new'],
     features: ['Next-gen design layout', 'High fidelity color match', 'Thick organic paper base', 'Clear compliant disclaimer'],
@@ -164,7 +157,6 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-20-NEW',
     seoTitle: 'Buy Counterfeit $20 AUD New Design Prop | Australian Prop Money',
     metaDescription: 'Contemporary style $20 AUD replica prop banknotes. Meticulous detail for modern film.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp',
     stockStatus: 'in-stock',
     relatedProducts: ['buy-counterfeit-$10-aud-new', 'buy-counterfeit-$50-aud-new'],
     features: ['Bold new-series colors', 'Strict dimension compliance', 'Zero camera reflections', 'NOT LEGAL TENDER printed'],
@@ -185,7 +177,6 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-50-NEW',
     seoTitle: 'Buy Counterfeit $50 AUD New Design Prop | Australian Prop Money',
     metaDescription: 'Modern style $50 AUD prop notes. Vibrant yellow-gold hues for beautiful set staging.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp',
     stockStatus: 'in-stock',
     relatedProducts: ['buy-counterfeit-$20-aud-new', 'buy-counterfeit-$100-aud-new'],
     features: ['Vibrant next-gen graphics', 'Excellent hand-handling properties', 'Anti-reflective surface finish', 'Compliant disclaimer lettering'],
@@ -206,7 +197,6 @@ export const PRODUCTS: Product[] = [
     sku: 'AUD-100-NEW',
     seoTitle: 'Buy Counterfeit $100 AUD New Design Prop | Australian Prop Money',
     metaDescription: 'Modern series $100 AUD prop banknotes. Ultimate cash prop for film masterclasses.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp',
     stockStatus: 'in-stock',
     relatedProducts: ['buy-counterfeit-$50-aud-new', 'buy-counterfeit-$100-aud-old'],
     features: ['Flawless digital replication', 'Unparalleled color depth', 'Double-sided precision mapping', 'RBA-compliant markings'],
@@ -227,7 +217,6 @@ export const PRODUCTS: Product[] = [
     sku: 'BND-CP-050',
     seoTitle: 'Commercial Producer Bulk Reserve 50 Stacks | Australian Prop Money',
     metaDescription: 'Bulk prop money set containing 50 cash stacks for cinematic production sets.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Bundle%20Packs.jpg',
     stockStatus: 'in-stock',
     relatedProducts: ['film-producer-pack', 'millionaire-heist-master-crate-100-stacks'],
     features: ['50 complete cash stacks', 'Matte non-glare ink technology', 'Compliant markings on every note', 'Pre-banded and ready for set'],
@@ -248,7 +237,6 @@ export const PRODUCTS: Product[] = [
     sku: 'BND-FP-100',
     seoTitle: 'Film Producer Pack Prop Cash | Australian Prop Money',
     metaDescription: 'Ultimate cinematic prop money bundle designed specifically for feature-length productions.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Bundle%20Packs.jpg',
     stockStatus: 'in-stock',
     relatedProducts: ['commercial-producer-bulk-reserve-50-stacks', 'millionaire-heist-master-crate-100-stacks'],
     features: ['High-DPI offset lithography printing', 'Mixed modern & classic styles', 'Authentic weight & paper thickness', 'Non-glare anti-flare coatings'],
@@ -269,7 +257,6 @@ export const PRODUCTS: Product[] = [
     sku: 'BND-MH-100',
     seoTitle: 'Millionaire Heist Master Crate 100 Stacks | Australian Prop Money',
     metaDescription: 'Ultimate vault set containing 100 premium prop money stacks in an industrial presentation.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Bundle%20Packs.jpg',
     stockStatus: 'in-stock',
     relatedProducts: ['film-producer-pack', 'wholesale-pack'],
     features: ['100 high-fidelity cash stacks', 'Premium heavy-duty presentation', 'Zero-glare under direct studio spots', 'RBA compliant detailing'],
@@ -290,7 +277,6 @@ export const PRODUCTS: Product[] = [
     sku: 'BND-PS-080',
     seoTitle: 'Photography Studio Pack Prop Currency | Australian Prop Money',
     metaDescription: 'Superb macro-ready prop money bundle designed for studio photographers and artists.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Bundle%20Packs.jpg',
     stockStatus: 'in-stock',
     relatedProducts: ['commercial-producer-bulk-reserve-50-stacks', 'film-producer-pack'],
     features: ['Macro close-up ready details', 'Rich pigments without reflection', 'Individually selected pristine notes', 'Compliant borders & markings'],
@@ -311,7 +297,6 @@ export const PRODUCTS: Product[] = [
     sku: 'BND-WP-200',
     seoTitle: 'Wholesale Prop Money Pack | Australian Prop Money',
     metaDescription: 'Large-scale wholesale prop banknote pack for studio recurring supplies and prop houses.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Bundle%20Packs.jpg',
     stockStatus: 'in-stock',
     relatedProducts: ['millionaire-heist-master-crate-100-stacks', 'film-producer-pack'],
     features: ['Extremely durable construction', 'Easy to distressed and clean', 'Industry-trusted offset press quality', 'Fully legal reserve compliant'],
@@ -332,7 +317,6 @@ export const PRODUCTS: Product[] = [
     sku: 'ACC-CMB-001',
     seoTitle: 'Canvas Money Bag Prop | Australian Prop Money',
     metaDescription: 'Buy a realistic canvas money bag prop. Perfect for film, TV, and photography.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/TV%20Props.webp',
     stockStatus: 'in-stock',
     relatedProducts: [],
     features: ['Heavy-duty canvas material', 'Classic dollar sign print', 'Drawstring closure', 'Durable construction'],
@@ -352,7 +336,6 @@ export const PRODUCTS: Product[] = [
     sku: 'ACC-DB-001',
     seoTitle: 'Heist Duffle Bag Prop | Australian Prop Money',
     metaDescription: 'Large duffle bag prop for transporting fake money. Ideal for action films and theater.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/TV%20Props.webp',
     stockStatus: 'in-stock',
     relatedProducts: [],
     features: ['Large capacity', 'Durable nylon material', 'Reinforced handles', 'Heavy-duty zippers'],
@@ -372,7 +355,6 @@ export const PRODUCTS: Product[] = [
     sku: 'ACC-MC-001',
     seoTitle: 'Prop Money Counting Machine | Australian Prop Money',
     metaDescription: 'Realistic money counting machine prop. Perfect for casino and bank scenes in film and TV.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/TV%20Props.webp',
     stockStatus: 'in-stock',
     relatedProducts: [],
     features: ['Realistic appearance', 'Motorized action', 'Digital display', 'Standard plug'],
@@ -392,7 +374,6 @@ export const PRODUCTS: Product[] = [
     sku: 'ACC-PMG-001',
     seoTitle: 'Prop Money Gun | Make It Rain | Australian Prop Money',
     metaDescription: 'Buy a prop money gun to shoot fake bills. Perfect for music videos, parties, and events.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/TV%20Props.webp',
     stockStatus: 'in-stock',
     relatedProducts: [],
     features: ['Rapid fire action', 'Easy to load', 'Battery operated', 'Includes sample bills'],
@@ -412,7 +393,6 @@ export const PRODUCTS: Product[] = [
     sku: 'ACC-SAB-001',
     seoTitle: 'Silver Aluminium Prop Briefcase | Australian Prop Money',
     metaDescription: 'Classic silver aluminium briefcase for prop money. Essential for cinematic high-stakes deals.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/TV%20Props.webp',
     stockStatus: 'in-stock',
     relatedProducts: [],
     features: ['Durable aluminium exterior', 'Secure locking mechanism', 'Foam-lined interior', 'Classic cinematic look'],
@@ -423,24 +403,21 @@ export const PRODUCTS: Product[] = [
     }
   }
 ];
-export const CATEGORIES: { id: string; name: string; description: string; image: string; }[] = [
+export const CATEGORIES: { id: string; name: string; description: string; }[] = [
   {
     id: 'australian-notes',
     name: 'Australian Notes',
     description: 'High-fidelity replica polymer notes designed to comply strictly with federal guidelines.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp'
   },
   {
     id: 'bundle-packs',
     name: 'Bundle Packs',
     description: 'Premium pre-packaged stacks and mixed bundle packs for bulk prop scenes.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Bundle%20Packs.jpg'
   },
   {
     id: 'accessories',
     name: 'Accessories',
     description: 'Essential props, bags, and high-fidelity money counters to perfect your scene.',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/TV%20Props.webp'
   }
 ];
 export const BLOG_POSTS: BlogPost[] = [
@@ -452,7 +429,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2025-12-05',
     category: 'Production',
     readTime: '3 min read',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/blog/1.jpg'
   },
   {
     id: 'blog-2',
@@ -462,7 +438,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2026-03-10',
     category: 'Legal',
     readTime: '5 min read',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/blog/2.webp'
   },
   {
     id: 'blog-3',
@@ -472,7 +447,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2026-06-22',
     category: 'Tutorial',
     readTime: '4 min read',
-    image: 'https://ik.imagekit.io/ukpeptides/australianpropmoney/images/categories/Australian%20Notes.webp'
   }
 ];
 

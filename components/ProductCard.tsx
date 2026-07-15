@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { ShoppingCart, Eye, Star, Check, Heart } from 'lucide-react';
 import { Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
@@ -42,63 +41,57 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
       onClick={handleCardClick}
       id={`product-card-${product.id}`}
     >
-      {/* Product Image & Tags */}
-      <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
-        {product.image && product.image.trim() !== '' ? (
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            referrerPolicy="no-referrer"
-            className="object-cover group-hover:scale-102 transition-transform duration-500"
-          />
-        ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 text-gray-400 p-4 border border-dashed border-gray-200">
-            <span className="text-[10px] tracking-wider uppercase font-mono text-gray-500 font-bold mb-1">Image Pending</span>
-            <span className="text-[8px] tracking-tight uppercase font-mono text-gray-400">Ready for upload</span>
-          </div>
-        )}
+      {/* Compliance & Badge Header (No Images) */}
+      <div className="relative aspect-[4/2] bg-gradient-to-br from-zinc-950 via-zinc-900 to-slate-900 flex flex-col justify-between p-4 overflow-hidden border-b border-zinc-800">
+        <div className="flex items-center justify-between">
+          <span className="bg-gold/10 text-gold text-[8px] uppercase font-bold tracking-[0.2em] px-2.5 py-1 rounded-sm border border-gold/20">
+            {getCategoryLabel(product.category)}
+          </span>
+          <span className="text-[9px] font-mono text-zinc-500 font-semibold">{product.sku}</span>
+        </div>
+        <div>
+          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-400 font-mono block">
+            Replica Currency
+          </span>
+          <span className="text-[8px] tracking-widest text-zinc-500 block uppercase font-mono mt-0.5">
+            RBA COMPLIANT
+          </span>
+        </div>
         
-        {/* Category Tag */}
-        <span className="absolute top-3 left-3 bg-black/90 text-white text-[9px] uppercase font-bold tracking-[0.2em] px-3 py-1 rounded-xs">
-          {getCategoryLabel(product.category)}
-        </span>
-
         {/* Wishlist Button (Heart) */}
         <button
           type="button"
           onClick={handleWishlistToggle}
-          className="absolute top-3 right-3 z-10 bg-white/90 hover:bg-white text-black hover:text-red-500 p-2 rounded-full transition-all duration-300 shadow-xs focus:outline-none"
+          className="absolute top-3 right-3 z-10 bg-zinc-800/80 hover:bg-zinc-800 text-white hover:text-red-500 p-2 rounded-full transition-all duration-300 shadow-xs focus:outline-none"
           aria-label={isFavorited ? "Remove from Wishlist" : "Add to Wishlist"}
           id={`btn-wishlist-toggle-${product.id}`}
         >
-          <Heart className={`w-3.5 h-3.5 ${isFavorited ? 'fill-red-500 text-red-500' : 'text-gray-600 hover:text-red-500'}`} />
+          <Heart className={`w-3 h-3 ${isFavorited ? 'fill-red-500 text-red-500' : 'text-gray-400 hover:text-red-500'}`} />
         </button>
 
         {/* Quick View Button overlay on hover */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               onViewDetails(product);
             }}
-            className="bg-white hover:bg-gold text-black p-3 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0"
+            className="bg-white hover:bg-gold text-black p-2.5 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0"
             title="Quick View Specs"
             id={`btn-product-quickview-${product.id}`}
           >
-            <Eye className="w-4 h-4" />
+            <Eye className="w-3.5 h-3.5" />
           </button>
           
           <button
             type="button"
             onClick={handleAddToCart}
-            className="bg-black hover:bg-gold-dark text-white hover:text-black p-3 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0"
+            className="bg-black hover:bg-gold-dark text-white hover:text-black p-2.5 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0"
             title="Add to Shopping Bag"
             id={`btn-product-add-overlay-${product.id}`}
           >
-            {added ? <Check className="w-4 h-4 text-emerald-500" /> : <ShoppingCart className="w-4 h-4" />}
+            {added ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <ShoppingCart className="w-3.5 h-3.5" />}
           </button>
         </div>
       </div>

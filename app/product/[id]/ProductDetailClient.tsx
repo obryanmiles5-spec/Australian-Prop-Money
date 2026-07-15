@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   ChevronLeft, Star, Heart, Check, ShoppingCart, 
   Plus, Minus, ShieldCheck, HelpCircle, ArrowRight, MessageSquare 
@@ -218,25 +217,25 @@ export default function ProductDetailClient({ productId }: { productId: string }
         <div className="lg:col-span-6 space-y-4">
           
           {/* Main Visual Display */}
-          <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden border border-gray-100 rounded-3xl group">
-            {product.image && product.image.trim() !== '' ? (
-              <Image 
-                src={product.image} 
-                alt={`${product.name} View`} 
-                fill
-                sizes="(max-width: 1024px) 100vw, 600px"
-                priority
-                referrerPolicy="no-referrer"
-                className="object-cover"
-                id="main-product-gallery-img"
-              />
-            ) : (
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 text-gray-400 p-8 border border-dashed border-gray-200">
-                <span className="text-xs uppercase tracking-widest font-bold text-gray-500 font-mono mb-2">IMAGE PENDING</span>
-                <span className="text-[10px] text-gray-400">Ready for URL update</span>
+          <div className="relative aspect-[4/3] bg-gradient-to-br from-zinc-950 via-zinc-900 to-black overflow-hidden border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between text-white">
+            <div className="space-y-6 pt-6">
+              <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+                <ShieldCheck className="w-7 h-7 text-gold animate-pulse" />
               </div>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 md:p-8">
+              <div className="space-y-2">
+                <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-gold font-mono block">
+                  Prop Master Certified
+                </span>
+                <h4 className="text-2xl font-serif font-light tracking-wide text-zinc-100">
+                  RBA Compliant Replica
+                </h4>
+              </div>
+              <p className="text-xs text-zinc-400 leading-relaxed max-w-md">
+                This item represents professional-grade Australian replica prop money engineered for film, television, theatre, and high-stakes media productions. Printed double-sided on custom calendered non-glare matte paper.
+              </p>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent p-6 md:p-8">
               <span className="text-[10px] uppercase font-bold tracking-widest text-gold font-mono block">Reserve Bank of Australia Compliance</span>
               <p className="text-[10px] text-gray-300 italic leading-relaxed mt-1">
                 Conforms strictly to federal legal limits. Printed double-sided on non-glare fine matte paper. Includes required &quot;NOT LEGAL TENDER&quot; watermarks.
@@ -714,19 +713,8 @@ export default function ProductDetailClient({ productId }: { productId: string }
                   className="bg-white border border-gray-100 p-3 rounded-2xl hover:border-gold hover:shadow-xs transition-all flex gap-3 items-center group cursor-pointer"
                   id={`recent-link-${p.id}`}
                 >
-                  <div className="relative w-12 h-12 bg-gray-50 rounded-lg overflow-hidden shrink-0 border border-gray-100 flex items-center justify-center">
-                    {p.image && p.image.trim() !== '' ? (
-                      <Image 
-                        src={p.image} 
-                        alt={p.name} 
-                        fill
-                        sizes="48px"
-                        referrerPolicy="no-referrer"
-                        className="object-cover"
-                      />
-                    ) : (
-                      <span className="text-[8px] font-mono font-bold text-gray-400">NO IMG</span>
-                    )}
+                  <div className="w-12 h-12 bg-zinc-950 rounded-lg flex items-center justify-center border border-zinc-800 shrink-0 font-mono text-white">
+                    <span className="text-gold font-bold text-[9px]">PROP</span>
                   </div>
                   <div className="min-w-0">
                     <h4 className="font-serif font-bold text-xs text-black line-clamp-1 group-hover:text-gold transition-colors">

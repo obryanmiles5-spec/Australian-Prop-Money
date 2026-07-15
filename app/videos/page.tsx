@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { Play } from 'lucide-react';
 
 
@@ -10,28 +9,24 @@ const VIDEOS = [
     id: 'vid-1',
     title: 'Prop Money on Set: The Ultimate Guide',
     duration: '05:24',
-    thumbnail: '/images/categories/Movie-Prop-Money.jpg',
     description: 'Learn how our prop money looks under various cinematic lighting setups, including harsh daylight and moody studio lights.',
   },
   {
     id: 'vid-2',
     title: 'The Making of Australian Prop Money',
     duration: '03:45',
-    thumbnail: '/images/categories/TV Props.jpg',
     description: 'Take a behind-the-scenes look at our production process, from design compliance to printing and cutting.',
   },
   {
     id: 'vid-3',
     title: 'Music Video Masterclass with Prop Money',
     duration: '07:12',
-    thumbnail: '/images/categories/Photography Props.jpg',
     description: 'Watch how professional directors use our prop money in high-energy music video shoots and slow-motion money rain scenes.',
   },
   {
     id: 'vid-4',
     title: 'RBA Compliance & Legal Guidelines Explained',
     duration: '04:18',
-    thumbnail: '/images/categories/Australian Notes.webp',
     description: 'A comprehensive guide on the legal requirements for using prop money in Australia and how our products meet all federal regulations.',
   },
 ];
@@ -51,15 +46,8 @@ export default function VideosPage() {
       </div>
 
       {/* Featured Video */}
-      <div className="relative aspect-video sm:aspect-21/9 bg-black rounded-3xl overflow-hidden shadow-xl border border-gray-100 max-w-5xl mx-auto group cursor-pointer">
-        <Image
-          src={VIDEOS[0].thumbnail}
-          alt={VIDEOS[0].title}
-          fill
-          priority
-          referrerPolicy="no-referrer"
-          className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
-        />
+      <div className="relative aspect-video sm:aspect-21/9 bg-gradient-to-tr from-zinc-950 via-zinc-900 to-slate-900 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 max-w-5xl mx-auto group cursor-pointer">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
         
         {/* Play Button Overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
@@ -86,19 +74,10 @@ export default function VideosPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {VIDEOS.slice(1).map((video) => (
           <div key={video.id} className="group cursor-pointer flex flex-col">
-            <div className="relative aspect-video bg-black rounded-2xl overflow-hidden mb-4 border border-gray-100 shadow-sm">
-              <Image
-                src={video.thumbnail}
-                alt={video.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                referrerPolicy="no-referrer"
-                className="object-cover opacity-80 group-hover:opacity-60 group-hover:scale-105 transition-all duration-500"
-              />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40">
-                  <Play className="w-5 h-5 text-white fill-white ml-0.5" />
-                </div>
+            <div className="relative aspect-video bg-gradient-to-tr from-zinc-950 via-zinc-900 to-black rounded-2xl overflow-hidden mb-4 border border-zinc-800 shadow-sm flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+              <div className="relative z-10 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300">
+                <Play className="w-5 h-5 text-white fill-white ml-0.5" />
               </div>
               <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white font-mono text-[9px] px-1.5 py-0.5 rounded">
                 {video.duration}
