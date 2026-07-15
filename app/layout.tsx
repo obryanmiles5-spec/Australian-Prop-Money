@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css'; // Global styles
 import { CartProvider } from '@/context/CartContext';
 import AnnouncementBar from '@/components/AnnouncementBar';
@@ -9,6 +10,7 @@ import Footer from '@/components/Footer';
 import NewsletterPopup from '@/components/NewsletterPopup';
 import AnalyticsScripts from '@/components/AnalyticsScripts';
 import WhatsAppChat from '@/components/WhatsAppChat';
+import SaleNotification from '@/components/SaleNotification';
 import JsonLd from '@/components/JsonLd';
 
 
@@ -43,9 +45,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: cleanBaseUrl,
   },
-  verification: searchConsoleId ? {
-    google: searchConsoleId,
-  } : undefined,
+  verification: {
+    google: searchConsoleId || 'rrCPhA4xaJmRhlVmKy3oo6aKP4rYE3Wa5QLwS3SEV04',
+  },
   openGraph: {
     title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
     description: 'Premium Australian prop money replica notes for film, television, theatre, photography, and training. Realistic size, dual-sided premium prints conforming to RBA legal rules.',
@@ -118,6 +120,21 @@ const localBusinessSchema = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZWRWC5Z63W" 
+          strategy="afterInteractive" 
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZWRWC5Z63W');
+          `}
+        </Script>
+      </head>
       <body suppressHydrationWarning className="bg-white text-black min-h-screen flex flex-col">
         <CartProvider>
           <JsonLd schema={organizationSchema} />
@@ -131,6 +148,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <SideCart />
           <NewsletterPopup />
           <WhatsAppChat />
+          <SaleNotification />
           <Footer />
         </CartProvider>
       </body>

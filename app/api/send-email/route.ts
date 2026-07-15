@@ -175,6 +175,12 @@ export async function POST(req: NextRequest) {
               <td style="padding: 8px 0; border-bottom: 1px solid #fafafa; color: #666;"><strong>Subject:</strong></td>
               <td style="padding: 8px 0; border-bottom: 1px solid #fafafa; color: #111;">${subject || 'General Inquiry'}</td>
             </tr>
+            ${details?.requisitionMethod ? `
+            <tr>
+              <td style="padding: 8px 0; border-bottom: 1px solid #fafafa; color: #666;"><strong>Dispatch Channel:</strong></td>
+              <td style="padding: 8px 0; border-bottom: 1px solid #fafafa; color: #111; font-weight: bold; color: ${details.requisitionMethod === 'whatsapp' ? '#25D366' : '#d4af37'}; text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em;">${details.requisitionMethod}</td>
+            </tr>
+            ` : ''}
           </tbody>
         </table>
 

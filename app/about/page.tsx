@@ -21,12 +21,13 @@ export default function AboutPage() {
       </div>
 
       {/* Cinematic banner */}
-      <div className="relative aspect-21/9 bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 max-w-5xl mx-auto flex items-end p-6 sm:p-10">
+      <div className="relative aspect-[16/10] md:aspect-[21/9] min-h-[300px] md:min-h-[400px] bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 max-w-5xl mx-auto flex items-end p-6 sm:p-10">
         <Image
           src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1200"
           alt="Engineered for high-definition digital lenses and 4K cameras"
           fill
           priority
+          unoptimized={true}
           sizes="(max-width: 1024px) 100vw, 1024px"
           className="object-cover object-center opacity-60"
           referrerPolicy="no-referrer"

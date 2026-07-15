@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { 
   ArrowRight, ShieldCheck, CheckCircle2, Copy, 
-  Send, ExternalLink, HelpCircle, ChevronLeft, CreditCard 
+  Send, ExternalLink, HelpCircle, ChevronLeft, CreditCard,
+  X, MessageSquare, Mail
 } from 'lucide-react';
 import { useCart, ShippingInfo } from '@/context/CartContext';
 import { cleanWhatsAppNumber } from '@/lib/utils';
@@ -53,6 +54,7 @@ export default function CheckoutPage() {
   const [copiedState, setCopiedState] = useState<string | null>(null);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showGatewaySelector, setShowGatewaySelector] = useState(false);
 
   // Determine current minimum limit depending on payment method
   const currentMinLimit = paymentMethod === 'crypto' ? 50.00 : 150.00;
@@ -117,12 +119,26 @@ export default function CheckoutPage() {
       return;
     }
 
+    // Instead of immediately submitting, show the Gateway Selector Modal!
+    setShowGatewaySelector(true);
+  };
+
+  const handleConfirmSubmit = async (method: 'email' | 'whatsapp') => {
+    setShowGatewaySelector(false);
     setIsSubmitting(true);
+    setFormErrors([]);
+
     try {
-      const result = await submitOrder(form);
+      const result = await submitOrder(form, method);
       if (!result.success) {
-        setFormErrors([result.error || 'Failed to dispatch order email.']);
+        setFormErrors([result.error || 'Failed to dispatch order requisition.']);
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (method === 'whatsapp' && result.details) {
+        // Automatically try to open WhatsApp in a new tab
+        const waText = generateWhatsAppMessage(result.details);
+        const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682");
+        const waUrl = `https://wa.me/${waNum}?text=${waText}`;
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
       }
     } catch (err: any) {
       setFormErrors([err.message || 'An error occurred during order dispatch.']);
@@ -133,9 +149,9 @@ export default function CheckoutPage() {
   };
 
   // GENERATE WHATSAPP MESSAGE FORMATTING
-  const generateWhatsAppMessage = () => {
-    if (!simulatedOrderDetails) return '';
-    const details = simulatedOrderDetails;
+  const generateWhatsAppMessage = (customDetails?: any) => {
+    const details = customDetails || simulatedOrderDetails;
+    if (!details) return '';
     
     let itemsStr = details.items.map((item: any) => {
       let optionsList = [];
@@ -451,6 +467,89 @@ Please confirm receipt of this order and reply with tracking details once transf
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 animate-fade-in" id="checkout-main-container">
       
+      {/* Choice Modal overlay */}
+      {showGatewaySelector && (
+        <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6" id="gateway-choice-modal">
+          {/* Backdrop */}
+          <div 
+            onClick={() => setShowGatewaySelector(false)}
+            className="fixed inset-0 bg-black/70 transition-opacity backdrop-blur-xs"
+          />
+
+          {/* Modal Content */}
+          <div className="relative bg-white rounded-3xl overflow-hidden max-w-md w-full shadow-2xl border border-gray-100 p-6 sm:p-8 space-y-6 animate-scale-in text-center z-10">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowGatewaySelector(false)}
+              className="absolute top-4 right-4 bg-gray-50 hover:bg-gray-100 text-gray-500 hover:text-black p-1.5 rounded-full transition-colors focus:outline-none"
+              aria-label="Close Gateway Selector"
+              id="btn-gateway-close"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="space-y-2">
+              <div className="mx-auto w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 mb-2">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-black">Requisition Submission</h2>
+              <p className="text-xs text-gray-500 leading-relaxed px-2">
+                Choose how you would like to transmit your offline replica currency requisition to our production coordinator.
+              </p>
+            </div>
+
+            <div className="space-y-3.5 pt-2">
+              {/* Option 1: Email Dispatch */}
+              <button
+                type="button"
+                onClick={() => handleConfirmSubmit('email')}
+                className="w-full p-4 border border-gray-100 rounded-2xl flex items-start gap-3.5 transition-all duration-200 text-left hover:bg-zinc-50 hover:border-black hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-black cursor-pointer"
+                id="btn-choose-email"
+              >
+                <div className="bg-amber-100/50 text-amber-600 rounded-xl p-2.5 shrink-0">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div className="space-y-0.5">
+                  <span className="block font-bold text-xs sm:text-sm text-black">Secure Email Dispatch</span>
+                  <span className="block text-[10px] sm:text-xs text-gray-400 font-light leading-relaxed">
+                    Sends invoice directly to our dispatch desk via Zoho SMTP server for automated tracking. (Recommended)
+                  </span>
+                </div>
+              </button>
+
+              {/* Option 2: WhatsApp Dispatch */}
+              <button
+                type="button"
+                onClick={() => handleConfirmSubmit('whatsapp')}
+                className="w-full p-4 border border-gray-100 rounded-2xl flex items-start gap-3.5 transition-all duration-200 text-left hover:bg-emerald-50/10 hover:border-[#25D366] hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-[#25D366] cursor-pointer"
+                id="btn-choose-whatsapp"
+              >
+                <div className="bg-emerald-100/50 text-[#25D366] rounded-xl p-2.5 shrink-0">
+                  <MessageSquare className="w-5 h-5" />
+                </div>
+                <div className="space-y-0.5">
+                  <span className="block font-bold text-xs sm:text-sm text-black">WhatsApp Live Coordinator</span>
+                  <span className="block text-[10px] sm:text-xs text-gray-400 font-light leading-relaxed">
+                    Pre-fills and formats your complete invoice order details directly into WhatsApp to start a direct secure chat.
+                  </span>
+                </div>
+              </button>
+            </div>
+
+            <div className="text-center pt-2">
+              <button
+                type="button"
+                onClick={() => setShowGatewaySelector(false)}
+                className="text-xs text-gray-400 hover:text-black hover:underline focus:outline-none cursor-pointer"
+                id="btn-cancel-gateway"
+              >
+                Cancel and Review Information
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div className="space-y-2 border-b pb-5">
         <Link href="/shop" className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold text-gray-400 hover:text-black mb-2 transition-colors">

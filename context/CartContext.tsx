@@ -51,7 +51,7 @@ interface CartContextType {
   total: number;
   isOrderSimulated: boolean;
   simulatedOrderDetails: any | null;
-  submitOrder: (shippingInfo: ShippingInfo) => Promise<{ success: boolean; error?: string }>;
+  submitOrder: (shippingInfo: ShippingInfo, method?: 'email' | 'whatsapp') => Promise<{ success: boolean; error?: string; details?: any }>;
   resetOrderSimulation: () => void;
   minOrderRequired: number;
   
@@ -289,7 +289,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const shippingCost = subtotal >= 200 ? 0 : 15.00; // Free shipping over $200, else $15 Express
   const total = subtotal - discountAmount + shippingCost;
 
-  const submitOrder = async (shippingInfo: ShippingInfo): Promise<{ success: boolean; error?: string }> => {
+  const submitOrder = async (shippingInfo: ShippingInfo, method: 'email' | 'whatsapp' = 'email'): Promise<{ success: boolean; error?: string; details?: any }> => {
     const orderId = `AMP-${Math.floor(100000 + Math.random() * 900000)}`;
     const orderDate = new Date().toLocaleDateString('en-AU', {
       year: 'numeric',
@@ -336,7 +336,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       total,
       paymentMethod,
       paymentInstructions,
-      couponCode: activeDiscountPercentage > 0 ? couponCode : ''
+      couponCode: activeDiscountPercentage > 0 ? couponCode : '',
+      requisitionMethod: method
     };
 
     try {
@@ -366,7 +367,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       setCart([]);
       localStorage.removeItem('amp_cart');
 
-      return { success: true };
+      return { success: true, details };
     } catch (err: any) {
       console.error('❌ Network error during order submission:', err);
       return { success: false, error: err.message || 'Network error occurred. Please try again.' };

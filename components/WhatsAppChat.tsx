@@ -32,6 +32,7 @@ export default function WhatsAppChat() {
     setIsOpen(false);
   };
 
+  // Trigger circle button only without unrequested tooltip/text
   return (
     <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end pointer-events-none" id="whatsapp-widget-container">
       {/* Expanded Chat Box */}
@@ -103,39 +104,10 @@ export default function WhatsAppChat() {
 
       {/* Floating Action Button */}
       <div className="flex items-center gap-3 pointer-events-auto">
-        {/* Help Tooltip */}
-        <AnimatePresence>
-          {showTooltip && !isOpen && (
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              className="bg-black text-white text-[11px] font-sans px-4 py-2 rounded-2xl shadow-xl border border-gold/15 flex items-center gap-2 shrink-0 relative"
-              id="whatsapp-invitation-tooltip"
-            >
-              <span className="w-1.5 h-1.5 bg-[#25d366] rounded-full animate-pulse" />
-              <span>Need rapid prop help? <strong>Chat now!</strong></span>
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setShowTooltip(false);
-                }} 
-                className="text-gray-400 hover:text-white ml-1.5 transition-colors"
-                id="btn-close-whatsapp-tooltip"
-              >
-                <X className="w-3 h-3" />
-              </button>
-              {/* Tooltip Arrow */}
-              <div className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[6px] border-l-black" />
-            </motion.div>
-          )}
-        </AnimatePresence>
-
         {/* The Trigger Circle Button */}
         <motion.button
           onClick={() => {
             setIsOpen(!isOpen);
-            setShowTooltip(false);
           }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}

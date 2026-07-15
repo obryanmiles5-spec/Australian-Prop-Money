@@ -44,6 +44,7 @@ export default function HomePage() {
             alt="Australian Prop Money Cinematic Hero Banner"
             fill
             priority
+            unoptimized={true}
             referrerPolicy="no-referrer"
             className="object-cover object-center opacity-85 transition-opacity duration-700"
           />
@@ -180,6 +181,7 @@ export default function HomePage() {
                       src={cat.image}
                       alt={`${cat.title} Category Preview`}
                       fill
+                      unoptimized={true}
                       sizes="(max-width: 768px) 100vw, 33vw"
                       referrerPolicy="no-referrer"
                       className="object-cover object-center opacity-60 group-hover:opacity-85 group-hover:scale-105 transition-all duration-700 ease-out"
@@ -226,7 +228,7 @@ export default function HomePage() {
 
       {/* CINEMATIC PROPS VISUAL SHOWCASE */}
       <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16" id="cinematic-showcase">
-        <div className="relative aspect-21/9 bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 flex items-end p-6 sm:p-10 md:p-12">
+        <div className="relative aspect-[16/10] md:aspect-[21/9] min-h-[340px] md:min-h-[420px] bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 flex items-end p-6 sm:p-10 md:p-12">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -234,6 +236,7 @@ export default function HomePage() {
               alt="Engineered for high-definition digital lenses and 4K cameras"
               fill
               priority
+              unoptimized={true}
               sizes="(max-width: 1024px) 100vw, 1024px"
               className="object-cover object-center opacity-70 transition-transform duration-700 hover:scale-[1.02]"
               referrerPolicy="no-referrer"
@@ -279,6 +282,7 @@ export default function HomePage() {
             src="https://drive.google.com/thumbnail?id=1ce6RMCnovIG5nM9Uj2ulENR6OcaNnWg8&sz=w1920"
             alt="From Press to Production Background"
             fill
+            unoptimized={true}
             sizes="100vw"
             referrerPolicy="no-referrer"
             className="object-cover object-center opacity-80"
