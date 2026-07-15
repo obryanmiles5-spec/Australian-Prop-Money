@@ -11,7 +11,8 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const product = PRODUCTS.find((p) => p.id === id);
+  const decodedId = decodeURIComponent(id);
+  const product = PRODUCTS.find((p) => p.id === id || p.id === decodedId);
   if (!product) {
     return {
       title: 'Product Not Found | Australian Prop Money',
@@ -53,7 +54,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProductPage({ params }: Props) {
   const { id } = await params;
-  const product = PRODUCTS.find((p) => p.id === id);
+  const decodedId = decodeURIComponent(id);
+  const product = PRODUCTS.find((p) => p.id === id || p.id === decodedId);
 
   if (!product) {
     notFound();

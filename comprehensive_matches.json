@@ -1,0 +1,30 @@
+{
+  "accessories": [],
+  "australian_notes": [],
+  "bundle_packs": [],
+  "blog": [
+    {
+      "file": "1.jpg",
+      "url": "https://ik.imagekit.io/ukpeptides/images/blog/1.jpg",
+      "path": "images/blog/1.jpg"
+    },
+    {
+      "file": "2.webp",
+      "url": "https://ik.imagekit.io/ukpeptides/images/blog/2.webp",
+      "path": "images/blog/2.webp"
+    }
+  ],
+  "categories": [
+    {
+      "file": "australian-notes.webp",
+      "url": "https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp",
+      "path": "images/categories/australian-notes.webp"
+    },
+    {
+      "file": "bundle-packs.jpg",
+      "url": "https://ik.imagekit.io/ukpeptides/images/categories/bundle-packs.jpg",
+      "path": "images/categories/bundle-packs.jpg"
+    }
+  ],
+  "hero": []
+}

@@ -27,7 +27,7 @@ export default function HomePage() {
         {/* Hero Cover Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/australian-bank-notes.jpg"
+            src="https://ik.imagekit.io/ukpeptides/australianpropmoney/images/hero/hero.webp"
             alt="Australian Prop Bank Notes"
             fill
             className="object-cover"

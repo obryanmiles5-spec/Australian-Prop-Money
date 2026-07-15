@@ -27,7 +27,8 @@ export default function ProductDetailClient({ productId }: { productId: string }
   const router = useRouter();
   const { addToCart, toggleWishlist, isInWishlist, addToRecentlyViewed, recentlyViewed } = useCart();
   
-  const product = PRODUCTS.find((p) => p.id === productId);
+  const decodedProductId = decodeURIComponent(productId);
+  const product = PRODUCTS.find((p) => p.id === productId || p.id === decodedProductId);
 
   // Options State
   const [agingOption, setAgingOption] = useState('Standard Clean');

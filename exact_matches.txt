@@ -1,0 +1,12 @@
+[
+  {
+    "group": "blog",
+    "path": "images/blog/1.jpg",
+    "url": "https://ik.imagekit.io/ukpeptides/images/blog/1.jpg"
+  },
+  {
+    "group": "categories_webp",
+    "path": "images/categories/australian-notes.webp",
+    "url": "https://ik.imagekit.io/ukpeptides/images/categories/australian-notes.webp"
+  }
+]

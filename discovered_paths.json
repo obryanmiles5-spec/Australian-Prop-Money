@@ -1,0 +1,16 @@
+[
+  {
+    "root": "images",
+    "subdir": "blog",
+    "file": "2.webp",
+    "url": "https://ik.imagekit.io/ukpeptides/images/blog/2.webp",
+    "fullPath": "images/blog/2.webp"
+  },
+  {
+    "root": "images",
+    "subdir": "categories",
+    "file": "bundle-packs.jpg",
+    "url": "https://ik.imagekit.io/ukpeptides/images/categories/bundle-packs.jpg",
+    "fullPath": "images/categories/bundle-packs.jpg"
+  }
+]
