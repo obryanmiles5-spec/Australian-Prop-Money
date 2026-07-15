@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const baseUrl = process.env.APP_URL || 'https://australianpropmoney.org';
+  const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
   const cleanBase = baseUrl.replace(/\/$/, '');
   const productUrl = `${cleanBase}/product/${product.id}`;
 
@@ -52,7 +52,7 @@ export default async function ProductPage({ params }: Props) {
     notFound();
   }
 
-  const baseUrl = process.env.APP_URL || 'https://australianpropmoney.org';
+  const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
   const cleanBase = baseUrl.replace(/\/$/, '');
 
   // Dynamic Product JSON-LD Schema

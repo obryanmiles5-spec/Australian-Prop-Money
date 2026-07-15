@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { PRODUCTS } from '@/lib/products';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.APP_URL || 'https://australianpropmoney.org';
+  const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
   const cleanBase = baseUrl.replace(/\/$/, '');
 
   // Static routes across the website

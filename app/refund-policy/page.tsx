@@ -1,5 +1,19 @@
 import React from 'react';
 import { RefreshCw, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { Metadata } from 'next';
+
+const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
+const cleanBaseUrl = baseUrl.replace(/\/$/, '');
+
+export const metadata: Metadata = {
+  title: 'Refund Policy | Australian Prop Money',
+  description: 'Read our refund and return policy for prop money au and prop australian money purchases.',
+  alternates: {
+    canonical: `${cleanBaseUrl}/refund-policy`,
+  }
+};
+
+
 
 export default function RefundPolicyPage() {
   return (
@@ -60,7 +74,7 @@ export default function RefundPolicyPage() {
 
         <div className="bg-gray-50 p-5 rounded-2xl border text-center space-y-2">
           <p className="font-bold text-xs text-black uppercase tracking-wider">Need to Initiate a Refund Request?</p>
-          <p className="text-xs text-gray-500">Please email your order reference ID and photos of the unopened stacks to <a href="mailto:info@australianpropmoney.org" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.org</a>.</p>
+          <p className="text-xs text-gray-500">Please email your order reference ID and photos of the unopened stacks to <a href="mailto:info@australianpropmoney.com.au" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.com.au</a>.</p>
         </div>
 
       </div>

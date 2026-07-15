@@ -33,15 +33,27 @@ function cleanSearchConsoleId(id: string | undefined): string {
   return id.replace(/<[^>]*>/g, '').trim();
 }
 
-const baseUrl = process.env.APP_URL || 'https://australianpropmoney.org';
+const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
 
 const rawSearchConsoleId = process.env.NEXT_PUBLIC_SEARCH_CONSOLE_ID;
 const searchConsoleId = rawSearchConsoleId ? cleanSearchConsoleId(rawSearchConsoleId) : undefined;
 
 export const metadata: Metadata = {
-  title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
-  description: 'Premium Australian prop money replica notes for film, television, theatre, photography, and training. Realistic size, dual-sided premium prints conforming to RBA legal rules.',
+  title: 'Australian Prop Money | Professional Prop Money Australia for Film & TV',
+  description: 'Premium Australian prop money and fake australian money prop notes for film, television, theatre, photography, and training. Realistic size, dual-sided premium prints conforming to RBA legal rules.',
+  keywords: [
+    'australian prop money',
+    'prop money australia',
+    'prop money',
+    'au prop money',
+    'fake australian money prop',
+    'prop australian money',
+    'prop money au',
+    'prop american money',
+    'aus prop money',
+    'australia prop money',
+  ],
   alternates: {
     canonical: cleanBaseUrl,
   },
@@ -49,8 +61,8 @@ export const metadata: Metadata = {
     google: searchConsoleId || 'rrCPhA4xaJmRhlVmKy3oo6aKP4rYE3Wa5QLwS3SEV04',
   },
   openGraph: {
-    title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
-    description: 'Premium Australian prop money replica notes for film, television, theatre, photography, and training. Realistic size, dual-sided premium prints conforming to RBA legal rules.',
+    title: 'Australian Prop Money | Professional Prop Money Australia for Film & TV',
+    description: 'Premium Australian prop money and fake australian money prop notes for film, television, theatre, photography, and training. Realistic size, dual-sided premium prints conforming to RBA legal rules.',
     url: cleanBaseUrl,
     siteName: 'Australian Prop Money',
     locale: 'en_AU',
@@ -58,8 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
-    description: 'Premium Australian prop money replica notes for film, television, theatre, photography, and training. Conforming to RBA guidelines.',
+    title: 'Australian Prop Money | Professional Prop Money Australia',
+    description: 'Premium Australian prop money and fake australian money prop notes for film, television, theatre, photography, and training. Conforming to RBA guidelines.',
   },
 };
 
@@ -73,13 +85,25 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     'telephone': '+61 480 852 682',
     'contactType': 'customer service',
-    'email': 'info@australianpropmoney.org',
+    'email': 'info@australianpropmoney.com.au',
     'availableLanguage': 'en'
   },
   'sameAs': [
     'https://www.facebook.com/australianpropmoney',
     'https://www.instagram.com/australianpropmoney'
   ]
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  'name': 'Australian Prop Money',
+  'url': cleanBaseUrl,
+  'potentialAction': {
+    '@type': 'SearchAction',
+    'target': `${cleanBaseUrl}/shop?q={search_term_string}`,
+    'query-input': 'required name=search_term_string'
+  }
 };
 
 const localBusinessSchema = {
@@ -139,6 +163,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <CartProvider>
           <JsonLd schema={organizationSchema} />
           <JsonLd schema={localBusinessSchema} />
+          <JsonLd schema={websiteSchema} />
           <AnalyticsScripts />
           <AnnouncementBar />
           <Header />
