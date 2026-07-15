@@ -218,9 +218,9 @@ export default function ProductDetailClient({ productId }: { productId: string }
         <div className="lg:col-span-6 space-y-4">
           
           {/* Main Visual Display */}
-          <div className="relative aspect-[4/3] bg-gradient-to-br from-zinc-950 via-zinc-900 to-black overflow-hidden border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between text-white">
-            {product.image && (
-              <div className="absolute inset-0 z-0 select-none pointer-events-none">
+          <div className="relative aspect-[4/3] bg-zinc-950 overflow-hidden border border-zinc-800 rounded-3xl flex items-center justify-center">
+            {product.image ? (
+              <div className="absolute inset-0 z-0">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -228,35 +228,12 @@ export default function ProductDetailClient({ productId }: { productId: string }
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   referrerPolicy="no-referrer"
-                  className="object-cover object-center opacity-45"
+                  className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30 z-1" />
               </div>
+            ) : (
+              <div className="text-zinc-500 font-mono text-xs">No Image Available</div>
             )}
-            
-            <div className="relative z-10 space-y-6 pt-6">
-              <div className="w-14 h-14 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center backdrop-blur-xs">
-                <ShieldCheck className="w-7 h-7 text-gold animate-pulse" />
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-gold font-mono block">
-                  Prop Master Certified
-                </span>
-                <h4 className="text-2xl font-serif font-light tracking-wide text-zinc-100">
-                  RBA Compliant Replica
-                </h4>
-              </div>
-              <p className="text-xs text-zinc-300 leading-relaxed max-w-md font-light">
-                This item represents professional-grade Australian replica prop money engineered for film, television, theatre, and high-stakes media productions. Printed double-sided on custom calendered non-glare matte paper.
-              </p>
-            </div>
-
-            <div className="relative z-10 bg-black/40 backdrop-blur-xs p-6 rounded-2xl border border-white/5 mt-auto">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-gold font-mono block">Reserve Bank of Australia Compliance</span>
-              <p className="text-[10px] text-gray-300 italic leading-relaxed mt-1 font-light">
-                Conforms strictly to federal legal limits. Printed double-sided on non-glare fine matte paper. Includes required &quot;NOT LEGAL TENDER&quot; watermarks.
-              </p>
-            </div>
           </div>
 
         </div>

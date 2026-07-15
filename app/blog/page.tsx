@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Calendar, Clock, BookOpen, ChevronRight, X, Sparkles } from 'lucide-react';
 import { BLOG_POSTS, BlogPost } from '@/lib/products';
 import JsonLd from '@/components/JsonLd';
@@ -80,10 +81,21 @@ export default function BlogPage() {
           >
             <div>
               {/* Cover Graphic Card */}
-              <div className="relative aspect-video bg-gradient-to-tr from-zinc-950 via-zinc-900 to-black overflow-hidden flex items-center justify-center border-b border-zinc-800">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
-                <BookOpen className="w-8 h-8 text-gold opacity-50 group-hover:scale-110 transition-transform duration-300" />
-                <span className="absolute top-3 left-3 bg-black text-gold text-[9px] uppercase font-bold tracking-widest px-2.5 py-1 rounded border border-gold/15">
+              <div className="relative aspect-video bg-zinc-900 overflow-hidden flex items-center justify-center border-b border-zinc-800">
+                {post.image ? (
+                  <Image 
+                    src={post.image} 
+                    alt={post.title} 
+                    fill 
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <BookOpen className="w-8 h-8 text-gold opacity-50 group-hover:scale-110 transition-transform duration-300" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10 pointer-events-none" />
+                <span className="absolute top-3 left-3 bg-black/85 backdrop-blur-xs text-gold text-[9px] uppercase font-bold tracking-widest px-2.5 py-1 rounded border border-gold/15 z-10">
                   {post.category}
                 </span>
               </div>
@@ -148,10 +160,20 @@ export default function BlogPage() {
             </button>
 
             {/* Dark gradient header */}
-            <div className="relative h-60 bg-gradient-to-tr from-zinc-950 via-zinc-900 to-black shrink-0 p-6 flex flex-col justify-end border-b border-zinc-800">
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent pointer-events-none" />
+            <div className="relative h-60 bg-zinc-950 shrink-0 p-6 flex flex-col justify-end border-b border-zinc-800 overflow-hidden">
+              {activeArticle.image && (
+                <Image 
+                  src={activeArticle.image} 
+                  alt={activeArticle.title} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 640px"
+                  className="object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/20 pointer-events-none" />
               <div className="relative z-10">
-                <span className="text-[9px] uppercase tracking-widest font-bold text-gold font-mono bg-gold/10 px-2 py-0.5 rounded-md inline-block w-fit mb-2">
+                <span className="text-[9px] uppercase tracking-widest font-bold text-gold font-mono bg-black/80 border border-gold/15 px-2 py-0.5 rounded-md inline-block w-fit mb-2">
                   {activeArticle.category}
                 </span>
                 <h2 className="font-serif font-bold text-lg sm:text-xl text-white leading-tight">

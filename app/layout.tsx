@@ -24,8 +24,18 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
+function cleanSearchConsoleId(id: string | undefined): string {
+  if (!id) return '';
+  const match = id.match(/content=["']([a-zA-Z0-9_\-]+)["']/);
+  if (match) return match[1];
+  return id.replace(/<[^>]*>/g, '').trim();
+}
+
 const baseUrl = process.env.APP_URL || 'https://australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
+
+const rawSearchConsoleId = process.env.NEXT_PUBLIC_SEARCH_CONSOLE_ID;
+const searchConsoleId = rawSearchConsoleId ? cleanSearchConsoleId(rawSearchConsoleId) : undefined;
 
 export const metadata: Metadata = {
   title: 'Australian Prop Money | Professional Replica Currency for Film & TV',
@@ -33,8 +43,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: cleanBaseUrl,
   },
-  verification: process.env.NEXT_PUBLIC_SEARCH_CONSOLE_ID ? {
-    google: process.env.NEXT_PUBLIC_SEARCH_CONSOLE_ID,
+  verification: searchConsoleId ? {
+    google: searchConsoleId,
   } : undefined,
   openGraph: {
     title: 'Australian Prop Money | Professional Replica Currency for Film & TV',

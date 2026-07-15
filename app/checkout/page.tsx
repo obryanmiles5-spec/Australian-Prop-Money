@@ -52,6 +52,7 @@ export default function CheckoutPage() {
   const [formErrors, setFormErrors] = useState<string[]>([]);
   const [copiedState, setCopiedState] = useState<string | null>(null);
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Determine current minimum limit depending on payment method
   const currentMinLimit = paymentMethod === 'crypto' ? 50.00 : 150.00;
@@ -80,7 +81,7 @@ export default function CheckoutPage() {
     setTimeout(() => setCopiedState(null), 2000);
   };
 
-  const handleCheckoutSubmit = (e: React.FormEvent) => {
+  const handleCheckoutSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormErrors([]);
 
@@ -116,7 +117,19 @@ export default function CheckoutPage() {
       return;
     }
 
-    submitOrder(form);
+    setIsSubmitting(true);
+    try {
+      const result = await submitOrder(form);
+      if (!result.success) {
+        setFormErrors([result.error || 'Failed to dispatch order email.']);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } catch (err: any) {
+      setFormErrors([err.message || 'An error occurred during order dispatch.']);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // GENERATE WHATSAPP MESSAGE FORMATTING
@@ -818,15 +831,15 @@ Please confirm receipt of this order and reply with tracking details once transf
             {/* PLACE ORDER SUBMIT BUTTON */}
             <button
               type="submit"
-              disabled={!isMinOrderMet || !termsAccepted}
+              disabled={!isMinOrderMet || !termsAccepted || isSubmitting}
               className={`w-full py-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-md flex items-center justify-center gap-2 ${
-                isMinOrderMet && termsAccepted
+                isMinOrderMet && termsAccepted && !isSubmitting
                   ? 'bg-black hover:bg-gold text-white hover:text-black cursor-pointer' 
                   : 'bg-gray-300 text-gray-400 cursor-not-allowed shadow-none'
               }`}
               id="btn-place-prop-order"
             >
-              Place Offline Requisition
+              {isSubmitting ? 'Processing Requisition...' : 'Place Offline Requisition'}
               <ArrowRight className="w-4 h-4" />
             </button>
 

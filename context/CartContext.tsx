@@ -51,7 +51,7 @@ interface CartContextType {
   total: number;
   isOrderSimulated: boolean;
   simulatedOrderDetails: any | null;
-  submitOrder: (shippingInfo: ShippingInfo) => void;
+  submitOrder: (shippingInfo: ShippingInfo) => Promise<{ success: boolean; error?: string }>;
   resetOrderSimulation: () => void;
   minOrderRequired: number;
   
@@ -289,7 +289,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const shippingCost = subtotal >= 200 ? 0 : 15.00; // Free shipping over $200, else $15 Express
   const total = subtotal - discountAmount + shippingCost;
 
-  const submitOrder = (shippingInfo: ShippingInfo) => {
+  const submitOrder = async (shippingInfo: ShippingInfo): Promise<{ success: boolean; error?: string }> => {
     const orderId = `AMP-${Math.floor(100000 + Math.random() * 900000)}`;
     const orderDate = new Date().toLocaleDateString('en-AU', {
       year: 'numeric',
@@ -339,12 +339,38 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       couponCode: activeDiscountPercentage > 0 ? couponCode : ''
     };
 
-    setSimulatedOrderDetails(details);
-    setIsOrderSimulated(true);
-    
-    // Clear cart
-    setCart([]);
-    localStorage.removeItem('amp_cart');
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${shippingInfo.firstName} ${shippingInfo.lastName}`,
+          email: shippingInfo.email,
+          phone: shippingInfo.phone,
+          subject: `Requisition Receipt ${orderId}`,
+          message: shippingInfo.specialNotes || '',
+          type: 'order',
+          details
+        })
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        return { success: false, error: data.error || 'Failed to dispatch order email' };
+      }
+
+      setSimulatedOrderDetails(details);
+      setIsOrderSimulated(true);
+      
+      // Clear cart
+      setCart([]);
+      localStorage.removeItem('amp_cart');
+
+      return { success: true };
+    } catch (err: any) {
+      console.error('❌ Network error during order submission:', err);
+      return { success: false, error: err.message || 'Network error occurred. Please try again.' };
+    }
   };
 
   const resetOrderSimulation = () => {

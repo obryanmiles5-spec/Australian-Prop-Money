@@ -104,7 +104,6 @@ export default function ContactPage() {
                 <a href="mailto:info@australianpropmoney.org" className="text-sm font-bold text-black hover:text-gold transition-colors block">
                   info@australianpropmoney.org
                 </a>
-                <span className="text-[10px] text-gray-400 font-mono block">Zoho Secure Email Server Integration</span>
               </div>
             </div>
 

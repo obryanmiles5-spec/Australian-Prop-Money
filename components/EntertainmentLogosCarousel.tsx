@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 interface LogoItem {
   name: string;
@@ -299,35 +300,48 @@ const DOUBLE_LOGOS = [...LOGO_ITEMS, ...LOGO_ITEMS];
 
 export default function EntertainmentLogosCarousel() {
   return (
-    <section className="bg-white py-16 sm:py-20 border-y border-gray-100 overflow-hidden" id="trusted-entertainment-section">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+    <section className="bg-zinc-950 py-20 sm:py-24 border-y border-zinc-800 overflow-hidden relative" id="trusted-entertainment-section">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        <Image
+          src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1920"
+          alt="Cinematic production backdrop"
+          fill
+          sizes="100vw"
+          className="object-cover object-center opacity-30"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/85 to-zinc-950 pointer-events-none" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block mb-4">
             Trusted Across Modern Entertainment
           </span>
-          <h2 className="text-3xl font-light text-black tracking-tight leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+          <h2 className="text-3xl font-light text-white tracking-tight leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
             A Grade Standards for Cinematic Production
           </h2>
           <div className="w-12 h-[1px] bg-gold mx-auto mt-6 mb-4"></div>
-          <p className="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed">
             Perfect for film productions, television, commercials, music videos, photography, streaming content and creative projects.
           </p>
         </div>
 
         {/* Disclaimer Above Slider */}
         <div className="text-center mb-8">
-          <span className="text-[10px] sm:text-[11px] text-gray-400 tracking-wider uppercase font-mono bg-gray-50/50 border border-gray-100/50 px-4 py-2 rounded-full">
+          <span className="text-[10px] sm:text-[11px] text-zinc-400 tracking-wider uppercase font-mono bg-zinc-900/45 backdrop-blur-xs border border-zinc-800/60 px-4 py-2 rounded-full">
             Suitable for productions similar to those seen across today&apos;s leading entertainment platforms.
           </span>
         </div>
 
         {/* Continuous Logo Scrolling Carousel Container */}
-        <div className="relative w-full overflow-hidden bg-gray-50/70 border border-gray-100 rounded-2xl p-8 sm:p-10 select-none">
+        <div className="relative w-full overflow-hidden bg-zinc-900/20 backdrop-blur-xs border border-zinc-800/80 rounded-2xl p-8 sm:p-10 select-none">
           {/* Subtle fade overlay on edges to blend in desktop view */}
-          <div className="absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
-          <div className="absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-zinc-950 to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-zinc-950 to-transparent pointer-events-none z-10" />
 
           {/* Scrolling wrapper */}
           <div className="flex w-max relative">
@@ -335,7 +349,7 @@ export default function EntertainmentLogosCarousel() {
               {DOUBLE_LOGOS.map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="group relative flex items-center justify-center w-28 sm:w-36 md:w-40 lg:w-44 h-12 text-gray-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                  className="group relative flex items-center justify-center w-28 sm:w-36 md:w-40 lg:w-44 h-12 text-zinc-400 hover:text-white transition-all duration-300 transform hover:scale-105"
                   title={logo.name}
                   id={`carousel-logo-${index}`}
                 >

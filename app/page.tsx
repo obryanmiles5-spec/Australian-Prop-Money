@@ -224,6 +224,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CINEMATIC PROPS VISUAL SHOWCASE */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16" id="cinematic-showcase">
+        <div className="relative aspect-21/9 bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 flex items-end p-6 sm:p-10 md:p-12">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1200"
+              alt="Engineered for high-definition digital lenses and 4K cameras"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover object-center opacity-70 transition-transform duration-700 hover:scale-[1.02]"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+          </div>
+          
+          <div className="relative z-10 max-w-xl text-white">
+            <span className="text-gold font-mono uppercase tracking-widest text-[10px] sm:text-xs font-bold block mb-2">
+              Industry Standard Props
+            </span>
+            <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-white leading-tight">
+              A Grade Standards for Cinematic Production
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-300 font-sans font-light leading-relaxed mt-2 sm:mt-3">
+              Engineered specifically for high-definition digital lenses and 4K cameras. Our replicas maintain pristine, non-glare visual clarity under intense studio lighting setups.
+            </p>
+            <div className="pt-4 sm:pt-6">
+              <Link 
+                href="/shop" 
+                className="inline-flex items-center gap-2 bg-white text-black hover:bg-gold hover:text-black px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-all duration-300 rounded"
+                id="showcase-cta-btn"
+              >
+                Explore Pro Series
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 2: TRUST CARDS SECTION */}
       <TrustSection />
 
@@ -231,11 +272,26 @@ export default function HomePage() {
       <EntertainmentLogosCarousel />
 
       {/* SECTION 5: HOW IT WORKS */}
-      <section className="bg-gray-50 py-24" id="how-it-works">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+      <section className="relative bg-black py-28 border-y border-zinc-900 overflow-hidden" id="how-it-works">
+        {/* Background Image with Cinematic Overlays */}
+        <div className="absolute inset-0 z-0 select-none pointer-events-none">
+          <Image
+            src="https://drive.google.com/thumbnail?id=1ce6RMCnovIG5nM9Uj2ulENR6OcaNnWg8&sz=w1920"
+            alt="From Press to Production Background"
+            fill
+            sizes="100vw"
+            referrerPolicy="no-referrer"
+            className="object-cover object-center opacity-80"
+          />
+          {/* Gradients to merge cleanly and guarantee high text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/85 z-1" />
+          <div className="absolute inset-0 bg-black/20 z-1" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block mb-4">The Process</span>
-            <h2 className="text-3xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>From Press to Production</h2>
+            <h2 className="text-3xl font-light text-white tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>From Press to Production</h2>
             <div className="w-12 h-[1px] bg-gold mx-auto mt-6 mb-4"></div>
           </div>
           
@@ -246,13 +302,13 @@ export default function HomePage() {
               { step: '03', title: 'Secure Dispatch', desc: 'All orders are packed securely in plain, unmarked boxes and dispatched within 24 hours Australia-wide.' },
               { step: '04', title: 'Action', desc: 'Receive cinematic-grade non-glare notes ready immediately for high-definition 4K camera lenses.' },
             ].map((item, idx) => (
-              <div key={idx} className="relative group p-6 bg-white border border-gray-100 hover:border-gold hover:shadow-lg transition-all duration-300 rounded-2xl">
-                <span className="text-4xl font-light text-gray-100 group-hover:text-gold/20 absolute top-4 right-6 transition-colors duration-300" style={{ fontFamily: 'Georgia, serif' }}>
+              <div key={idx} className="relative group p-6 bg-zinc-950/45 backdrop-blur-md border border-zinc-800/80 hover:border-gold/50 hover:bg-zinc-900/60 transition-all duration-500 rounded-2xl">
+                <span className="text-4xl font-light text-zinc-800 group-hover:text-gold/20 absolute top-4 right-6 transition-colors duration-500" style={{ fontFamily: 'Georgia, serif' }}>
                   {item.step}
                 </span>
                 <div className="space-y-4 pt-8">
-                  <h3 className="font-bold text-sm text-black uppercase tracking-wider">{item.title}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed font-sans">{item.desc}</p>
+                  <h3 className="font-bold text-sm text-white uppercase tracking-wider">{item.title}</h3>
+                  <p className="text-xs text-zinc-300 leading-relaxed font-sans">{item.desc}</p>
                 </div>
               </div>
             ))}

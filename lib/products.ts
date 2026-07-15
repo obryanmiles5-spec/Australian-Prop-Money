@@ -25,7 +25,8 @@ export interface BlogPost {
   date: string;
   category: string;
   readTime: string;
-  }
+  image?: string;
+}
 
 export interface FAQItem {
   question: string;
@@ -441,31 +442,170 @@ export const CATEGORIES: { id: string; name: string; description: string; }[] = 
 ];
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: 'blog-1',
-    title: 'Camera-Ready: Avoiding Light Reflection on Set',
-    excerpt: 'How our matte anti-glare finish solves common studio lighting issues when filming high-stakes cash scenes.',
-    content: `Filming cash stacks under intense studio key-lights can be a nightmare for cinematographers. Real polymer currency can bounce back extremely high specular reflections, creating ugly white highlights and ruining the exposure of your shot.\n\nOur custom-engineered paper prop money uses a calendered, ultra-matte bond. By utilizing non-reflective organic pigments, our replica notes scatter light evenly, ensuring that cash counts look absolutely pristine on high-dynamic-range camera sensors in 4K, 8K, and beyond.`,
-    date: '2025-12-05',
+    id: 'where-to-buy-realistic-australian-prop-money-film-photography',
+    title: 'Where to Buy Realistic Australian Prop Money for Film & Photography',
+    excerpt: 'Looking for camera-ready replica cash in Sydney, Melbourne, or Brisbane? Our guide covers what to look for and where to buy premium, fully-compliant prop banknotes.',
+    content: `Finding high-quality, realistic Australian prop money is a common challenge for independent filmmakers, commercial production companies, and photographers. When setting up a high-stakes scene or fashion shoot, the last thing you want is a fake bank note that looks like cheap photocopy paper or reflection-heavy plastic.
+
+### What Makes Prop Money Look Realistic on Camera?
+To achieve total immersion under 4K and 8K camera lenses, prop money must possess specific material and visual qualities:
+1. **Matte Paper Finish:** Real polymer notes bounce light back directly into the lens, causing exposure blowouts. Calendered matte paper scatters light evenly, which mimics how currency is viewed in natural studio setups.
+2. **Double-Sided Crisp Printing:** Stacks being handled by actors must look authentic from every single angle. Single-sided props quickly ruin the illusion if a note flips.
+3. **Precision Size Scaling:** Authentic look and feel require dimension ratios that feel natural in hand and match legal guidelines.
+
+### Where to Purchase Compliant Australian Props Online
+For fast, private dispatch across Sydney, Melbourne, Brisbane, and beyond, our store offers premium non-glare, RBA-compliant banknotes. From individual stacks of $100 AUD, $50 AUD, and vintage old-style designs, to wholesale master crates of 100 stacks, we supply the finest quality movie money in Australia.
+
+**Ready to dress your set?** Explore our [Australian Notes](/shop?category=australian-notes) and pre-arranged [Bundle Packs](/shop?category=bundle-packs) to secure high-fidelity props with overnight fast shipping options.`,
+    date: '2026-07-15',
     category: 'Production',
-    readTime: '3 min read',
-  },
-  {
-    id: 'blog-2',
-    title: 'Navigating RBA Compliance for Australian Media',
-    excerpt: 'An essential checklist for directors and production managers to keep prop currency strictly within legal limits.',
-    content: `The Crimes (Currency) Act of 1981 outlines strict regulations regarding reproduction of Australian banknotes. Violating these rules can result in severe federal penalties, halting your production entirely.\n\nTo keep your shoot safe, always verify that your props: (1) Use obvious non-polymer paper materials, (2) Display prominent NOT LEGAL TENDER disclaimers, and (3) Use modified colors or dimensions. Our notes are pre-approved to follow these RBA guidelines, offering peace of mind so you can focus on the story.`,
-    date: '2026-03-10',
-    category: 'Legal',
-    readTime: '5 min read',
-  },
-  {
-    id: 'blog-3',
-    title: 'Dressing the Scene: Briefcases, Bags, and Crates',
-    excerpt: 'Best practices for prop masters to arrange cash bundles for cinematic maximum visual scale.',
-    content: `When dressing a major heist or ransom scene, how you pack the bills is just as important as the quality of the notes themselves.\n\nTo make a briefcase or duffle bag look incredibly packed and heavy on camera: (1) Secure each stack with a premium heavy-duty paper band, (2) Stagger the stacks in a brick-style overlapping pattern to add texture, and (3) Place custom accessories like a functional motorized counter or an aluminium briefcase in the shot to heighten the dramatic value of the exchange.`,
-    date: '2026-06-22',
-    category: 'Tutorial',
     readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'legality-of-prop-money-australia-crimes-currency-act-1981-explained',
+    title: 'The Legality of Prop Money in Australia: Crimes (Currency) Act 1981 Explained',
+    excerpt: 'Is it legal to buy and use replica prop money in Australia? We break down the Crimes (Currency) Act 1981 and Reserve Bank guidelines to ensure your production stays 100% compliant.',
+    content: `Understanding the strict federal regulations surrounding replica currency in Australia is critical for every director, producer, and prop master. Reproducing currency incorrectly can lead to severe penalties, legal seizures, and production halts under the Crimes (Currency) Act 1981.
+
+### The Reserve Bank of Australia (RBA) Guidelines
+The RBA has set forth strict compliance standards to prevent confusion between artistic replicas and counterfeit legal tender. The core criteria include:
+- **Distinctive Materials:** Prop cash should never be printed on polymer (plastic) substrate. Instead, non-glossy, heavy-bond calendered matte paper must be used.
+- **Watermarks and Disclaimers:** All legal replicas must have prominent, high-contrast, easily readable markings. Our props feature the standard warning "PROP ONLY — NOT LEGAL TENDER" across both sides of the bills.
+- **Tactile Differences:** The paper hand-feel, thickness, and stiffness must instantly signal to any handler that the note is an artistic replica, not circulating currency.
+
+### Absolute Compliance for Peace of Mind
+Our entire inventory is designed from the ground up to comply strictly with the Crimes (Currency) Act 1981. We combine legal-distinguishing features with stunning high-fidelity visual accuracy on camera, giving you the perfect visual results without any of the legal risks.
+
+Keep your shoot safe and secure. Learn more about our compliance standards or browse our compliant [Australian Notes collections](/shop).`,
+    date: '2026-07-14',
+    category: 'Legal',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'real-polymer-vs-matte-prop-money-keeping-film-sets-flare-free',
+    title: 'Real Polymer vs. Matte Prop Money: Keeping Your Film Sets Flare-Free',
+    excerpt: 'Why do professional cinematographers refuse to use real polymer bills under studio key-lights? Discover how our matte paper finish eliminates glare and preserves perfect exposure.',
+    content: `In the era of high-dynamic-range (HDR) digital cinema cameras like the ARRI Alexa, RED V-Raptor, and Sony Venice, lighting reflections are a constant battle. Real polymer (plastic) Australian banknotes possess a high-gloss specular surface that is notoriously difficult to film under high-intensity studio key-lights.
+
+### The Problem with Real Banknotes
+- **Specular Highlights:** Under studio lighting, real polymer notes reflect intense white highlights directly into the camera sensor, washing out details and creating distracting flares.
+- **Color Distortion:** Plastic substrates shift under certain color temperatures, making real bills look unnaturally neon or plastic on digital screens.
+
+### The Solution: Double-Calendered Matte Paper
+Our prop notes are printed with organic matte inks on premium calendered, heavy-bond cotton matte paper. This creates a surface that:
+1. **Scatters Light:** Evenly distributes studio illumination, ensuring every bill in a stack retains its rich color gradients on screen.
+2. **Sounds Real:** Delivers the crisp, satisfying cash-rustle and tactile snap when counted by actors on camera.
+3. **Hides Imperfections:** Maintains a pristine look under tight macro close-ups.
+
+For professional results on your next television commercial or feature drama, invest in a premium [Film Producer Pack](/product/film-producer-pack) today.`,
+    date: '2026-07-13',
+    category: 'Production',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'how-to-style-high-stakes-heist-scenes-bulk-cash-stacks',
+    title: 'How to Style High-Stakes Heist Scenes with Bulk Prop Cash Stacks',
+    excerpt: 'Tips from seasoned industry prop masters on how to arrange, band, and present bulk cash bundles to maximize screen scale and dramatic tension.',
+    content: `A classic bank heist, ransom drop, or back-alley trade is a staple of action thrillers. But creating a visually convincing million-dollar exchange requires more than just piling bills. It requires expert styling, staging, and accessorizing.
+
+### 1. Build Layered Textures
+Instead of stacking cash in perfectly neat rows, stagger and overlap them in a "brick-style" overlapping pattern. This introduces shadows and highlights, giving the cash bundles a dramatic, heavy visual weight on camera.
+
+### 2. Use Premium Heavy-Duty Paper Bands
+Each bundle should be bound with structured, high-quality currency straps. Our pre-packaged bundles are secured with realistic bands that lock in the authentic shape, making handling and counting look fluid and convincing.
+
+### 3. Elevate with Authentic Accessories
+Frame your cash bundles with the right gear. Place an active [High-Fidelity Money Counter](/product/money-counter) in the background, or package your stacks inside our classic, foam-lined [Silver Aluminium Briefcase](/product/silver-aluminium-briefcase) or [Millionaire Heist Master Crate](/product/millionaire-heist-master-crate-100-stacks) for maximum dramatic effect.
+
+Want to achieve a massive visual scale for your heist? Save up to 25% by ordering our specialized [Wholesale Pack](/product/wholesale-pack) or [Commercial Producer Bulk Reserve (50 Stacks)](/product/commercial-producer-bulk-reserve-50-stacks).`,
+    date: '2026-07-12',
+    category: 'Tutorial',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'guide-to-rba-compliant-disclaimers-on-replica-australian-banknotes',
+    title: 'A Guide to RBA Compliant Disclaimers on Replica Australian Banknotes',
+    excerpt: 'What makes replica cash legally safe to print and use? Learn about the design regulations of watermark markings and legal disclaimers.',
+    content: `For prop buyers, distinguishing between "counterfeit" cash and "legal replica" props is critical. True counterfeit money attempts to deceive, whereas professional prop money is designed specifically for artistic representation with transparent, legally compliant markers.
+
+### Anatomy of a Compliant Replica Note
+To be safe for use in public film productions, theater, and corporate events, prop cash must contain obvious distinguishing factors:
+- **No Holographic Foils:** Real Australian notes use complex window foils; compliant props omit these to ensure they cannot pass as legal tender in physical transactions.
+- **Legal Tender Watermarks:** A bold, high-contrast disclaimer stating "PROP ONLY — NOT LEGAL TENDER" must be printed clearly on both sides of the note.
+- **Distinctive Hand-feel:** Polymer substrate is restricted by the government. Legal replicas are always printed on high-grade matte cotton paper, providing an immediate tactile difference.
+
+Our products meet all these benchmarks perfectly, protecting your shoot from legal complications while providing beautiful, camera-ready aesthetics.
+
+Ensure compliance on your next shoot. Browse our certified [Australian Notes](/shop?category=australian-notes) to buy securely.`,
+    date: '2026-07-11',
+    category: 'Legal',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'prop-money-guns-adding-dynamic-action-music-videos-events-australia',
+    title: 'Prop Money Guns: Adding Dynamic Action to Music Videos and Events in Australia',
+    excerpt: 'Want to make your next music video, night club event, or promo go viral? Discover how our Prop Money Gun adds high-octane visual flare.',
+    content: `If you are directing a rap music video, organizing a high-energy nightclub promotion, or staging a theatrical release, you need visuals that instantly grab attention. Nothing does this quite as dynamically as a cash rain effect.
+
+### The Ultimate Visual Accent: The Prop Money Gun
+Our motorized [Prop Money Gun](/product/prop-money-gun) is a highly reliable, high-speed device designed to spray prop notes smoothly and continuously without jamming. 
+
+### Essential Tips for a Flawless Cash Rain Shot
+- **Shoot in High Frame Rates (Slow-Motion):** Capture the falling cash at 120fps or 240fps. The slow-motion movement of our custom-sized bills gliding through the air creates an incredibly lavish and premium aesthetic.
+- **Use the Perfect Bill Size:** Standard paper is too heavy or too light. Our custom prop bills are optimized for the gun, gliding through the motorized mechanism smoothly up to 100 times in a row.
+- **Contrast with Dark Backdrops:** Stage your cash rain against deep charcoal or black backdrops under focused spotlights to make the gold and red AUD colors pop.
+
+Make a major impact on screen. Grab the [Prop Money Gun](/product/prop-money-gun) along with our specialized [Photography Studio Pack](/product/photography-studio-pack) for immediate, ready-to-shoot action.`,
+    date: '2026-07-10',
+    category: 'Promotion',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'how-prop-masters-manage-and-age-movie-money-vintage-grit',
+    title: 'How Prop Masters Manage and Age Movie Money for a Vintage Grit Aesthetic',
+    excerpt: 'Need worn, weathered, or vintage-looking cash for a gritty crime thriller? Learn these practical workshop techniques to age your prop money safely.',
+    content: `Fresh, crisp banknotes straight out of the printer are perfect for high-stakes corporate deals or pristine bank vault scenes. However, if your script involves a back-alley ransom, drug deal, or an old treasure chest, shiny new cash will ruin the gritty visual atmosphere.
+
+### The Workshop Guide to Aging Prop Money
+Professional prop masters use several simple, safe techniques to add decades of wear-and-tear to replica cash in minutes:
+1. **The Tea-Staining Bath:** Brew a strong batch of black tea. Lightly brush or dip individual prop bills in the tea, then let them air-dry. This adds a realistic, aged yellow-brown sepia tint.
+2. **The Crumple and Flat Technique:** Crumple the notes into tight balls, then carefully flatten them out. Repeating this breaks down the paper fibers, giving them a soft, worn, heavily-circulated texture.
+3. **Adding Sand & Dirt Textures:** Rub small amounts of fine gray charcoal powder or dry potting soil along the edges of the cash bundles. This replicates the grime that accumulates over years of circulation.
+
+**Note:** Because our prop cash is printed on durable, double-calendered heavy-bond paper (never flimsy office paper), it can withstand intensive aging techniques without tearing or falling apart.
+
+Get started on your gritty indie project with our flexible [Film Producer Pack](/product/film-producer-pack) and style your perfect scene.`,
+    date: '2026-07-09',
+    category: 'Tutorial',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'setting-up-realistic-bank-vault-scene-indie-budget',
+    title: 'Setting Up a Realistic Bank Vault Scene on an Indie Budget',
+    excerpt: 'Learn how to design and build an authentic bank vault set using smart camera angles, lighting, and our bulk prop cash stacks.',
+    content: `Staging a major bank heist scene on an independent budget can seem daunting. Building high-tech vaults and piles of secure safes can quickly drain your resources. However, with the right combination of tight camera angles, smart lighting, and high-quality bulk props, you can achieve a multi-million-dollar aesthetic on a modest budget.
+
+### 1. Control the Frame with Tight Focal Lengths
+You do not need to build an entire bank vault room. Focus the camera on a small, hyper-detailed corner of the set—such as a single security safe box or an open table. Using a telephoto lens with a shallow depth-of-field keeps the background beautifully blurred while drawing maximum attention to the cash bundles.
+
+### 2. Build Multi-Million Dollar Piles on a Budget
+Instead of buying individual notes, use pre-arranged [Bundle Packs](/shop?category=bundle-packs). Our bulk packs, such as the [Millionaire Heist Master Crate (100 Stacks)](/product/millionaire-heist-master-crate-100-stacks) or the [Commercial Producer Bulk Reserve (50 Stacks)](/product/commercial-producer-bulk-reserve-50-stacks), provide enough physical stacks to fill an entire suitcase, tabletop, or safe box, instantly selling the scale of the heist.
+
+### 3. Stage the Scene with Contextual Props
+Complete the banking atmosphere by placing our [Canvas Money Bag](/product/canvas-money-bag) or a motorized [Money Counter](/product/money-counter) in the frame. These small details signal "bank vault" instantly to the audience's brain, allowing you to spend less on set construction and more on performance.
+
+**Ready to build your set?** Check out our [Accessories collection](/shop?category=accessories) to discover high-fidelity tools that perfect your heist scene.`,
+    date: '2026-07-08',
+    category: 'Production',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
