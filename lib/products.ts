@@ -14,6 +14,7 @@ export interface Product {
   specifications: {
     [key: string]: string;
   };
+  image?: string;
 }
 
 export interface BlogPost {
@@ -65,7 +66,8 @@ export const PRODUCTS: Product[] = [
       'Series': 'Classic (Old)',
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1rFp5hvKCKqccY34q6GsFDDo9XiIA6s-a&sz=w1000'
   },
   {
     id: 'buy-counterfeit-$20-aud-old',
@@ -85,7 +87,8 @@ export const PRODUCTS: Product[] = [
       'Series': 'Classic (Old)',
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1h866VxjaoChlsMzU_Y8CcNUoCOPIJvYi&sz=w1000'
   },
   {
     id: 'buy-counterfeit-$50-aud-old',
@@ -105,7 +108,8 @@ export const PRODUCTS: Product[] = [
       'Series': 'Classic (Old)',
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1AXxLQYJ6jqjD4IHj7NmwKczTFN6sCYeF&sz=w1000'
   },
   {
     id: 'buy-counterfeit-$100-aud-old',
@@ -125,7 +129,8 @@ export const PRODUCTS: Product[] = [
       'Series': 'Classic (Old)',
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1J80lhZkLkQ5jYCMW2p-09rXptQL_22sr&sz=w1000'
   },
   {
     id: 'buy-counterfeit-$10-aud-new',
@@ -145,7 +150,8 @@ export const PRODUCTS: Product[] = [
       'Series': 'Modern (New)',
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1I4bmiTRbvzoBBlkxlc9zjQDtCyG6ptYn&sz=w1000'
   },
   {
     id: 'buy-counterfeit-$20-aud-new',
@@ -165,7 +171,8 @@ export const PRODUCTS: Product[] = [
       'Series': 'Modern (New)',
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1zdW0Ftk185yyt66l9hasBdXrlOrjpMMW&sz=w1000'
   },
   {
     id: 'buy-counterfeit-$50-aud-new',
@@ -185,7 +192,8 @@ export const PRODUCTS: Product[] = [
       'Series': 'Modern (New)',
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=113xEHLGgkJ8TO5IR5kmojH7YKf5aTOTk&sz=w1000'
   },
   {
     id: 'buy-counterfeit-$100-aud-new',
@@ -205,7 +213,8 @@ export const PRODUCTS: Product[] = [
       'Series': 'Modern (New)',
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1hsVMPSI2tt3UJs3czwqWPsfcI6xCT-Yz&sz=w1000'
   },
   {
     id: 'commercial-producer-bulk-reserve-50-stacks',
@@ -225,7 +234,8 @@ export const PRODUCTS: Product[] = [
       'Currency Match': 'Mixed AUD Denominations',
       'Material': 'Premium Matte Cotton Bond',
       'Compliance': 'RBA Distinguishable Standard'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1VK238Nx-VplE7DRgXu98TtW4aWM31jBg&sz=w1000'
   },
   {
     id: 'film-producer-pack',
@@ -245,7 +255,8 @@ export const PRODUCTS: Product[] = [
       'Paper Type': '100% Cotton-blend Double-Calendered',
       'Dimensions': 'Strictly scale-matched',
       'Compliance': 'Legal tender alternative markings'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1wAL_8HxdvUL6SBvLXA5C-wENTAyGi6FG&sz=w1000'
   },
   {
     id: 'millionaire-heist-master-crate-100-stacks',
@@ -265,7 +276,8 @@ export const PRODUCTS: Product[] = [
       'Acoustic Feel': 'Crisp currency-grade rustle',
       'Weight': 'Fully packed visual weight',
       'Compliance': 'Watermark and edge-mark compliant'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1svWNqggsBiasSCNQUIAEsVIexLdwLvfN&sz=w1000'
   },
   {
     id: 'photography-studio-pack',
@@ -285,7 +297,8 @@ export const PRODUCTS: Product[] = [
       'Material': 'Professional heavy-weight cotton matte paper',
       'Count': 'Multi-stack selection',
       'Compliance': 'Legal markings included'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1sWEhEnHT1cmhqmTCXFeYFCD3HnHjBDmm&sz=w1000'
   },
   {
     id: 'wholesale-pack',
@@ -305,7 +318,8 @@ export const PRODUCTS: Product[] = [
       'Styles Included': 'Full spectrum of AUD denominations',
       'Format': 'Secured and banded packets',
       'Compliance': 'Standard RBA non-circulation watermark'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1VIKhkT3NVbxgQr7SDbNt230BdaXDr8eT&sz=w1000'
   },
   {
     id: 'canvas-money-bag',
@@ -324,7 +338,8 @@ export const PRODUCTS: Product[] = [
       'Material': 'Canvas',
       'Dimensions': '11" x 17"',
       'Color': 'Natural / Black print'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1PFak1IeIeSNg1EVUzoBHLdSmsXAchp1L&sz=w1000'
   },
   {
     id: 'duffle-bag',
@@ -343,7 +358,8 @@ export const PRODUCTS: Product[] = [
       'Material': 'Nylon',
       'Dimensions': '24" x 12" x 12"',
       'Color': 'Black'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1bzAscynjnlNS4qQLuVHQVhGlXnqGxumB&sz=w1000'
   },
   {
     id: 'money-counter',
@@ -362,7 +378,8 @@ export const PRODUCTS: Product[] = [
       'Material': 'Plastic / Metal',
       'Power': '110-240V',
       'Dimensions': '11" x 10" x 8"'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1lvn9AP0XvQJfMmpnUWWZ4eVGjYjxEMSK&sz=w1000'
   },
   {
     id: 'prop-money-gun',
@@ -381,7 +398,8 @@ export const PRODUCTS: Product[] = [
       'Material': 'Plastic',
       'Power': '4x AA Batteries (not included)',
       'Capacity': 'Up to 100 bills'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=1B_iSRIb6JbBM_4drlmsYYeBbkCTsqvZD&sz=w1000'
   },
   {
     id: 'silver-aluminium-briefcase',
@@ -400,7 +418,8 @@ export const PRODUCTS: Product[] = [
       'Material': 'Aluminium',
       'Dimensions': '18" x 13" x 4.5"',
       'Weight': '4.5 lbs'
-    }
+    },
+    image: 'https://drive.google.com/thumbnail?id=14pqxvToRwY62wDCjXrNk1GXEMvJjRppo&sz=w1000'
   }
 ];
 export const CATEGORIES: { id: string; name: string; description: string; }[] = [

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { X, ShoppingCart, Check, Star, ShieldCheck, HelpCircle } from 'lucide-react';
 import { Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
@@ -61,9 +62,23 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
         </button>
 
         {/* Left Side: Compliance & Quality Shield */}
-        <div className="relative w-full md:w-1/2 aspect-4/3 md:aspect-auto md:min-h-[450px] bg-gradient-to-br from-zinc-950 via-zinc-900 to-black p-8 flex flex-col justify-between text-white border-r border-zinc-800">
-          <div className="space-y-6 pt-10">
-            <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+        <div className="relative w-full md:w-1/2 aspect-4/3 md:aspect-auto md:min-h-[450px] bg-gradient-to-br from-zinc-950 via-zinc-900 to-black p-8 flex flex-col justify-between text-white border-r border-zinc-800 overflow-hidden">
+          {product.image && (
+            <div className="absolute inset-0 z-0 select-none pointer-events-none">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                referrerPolicy="no-referrer"
+                className="object-cover object-center opacity-45"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30 z-1" />
+            </div>
+          )}
+          
+          <div className="relative z-10 space-y-6 pt-10">
+            <div className="w-12 h-12 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center backdrop-blur-xs">
               <ShieldCheck className="w-6 h-6 text-gold" />
             </div>
             <div className="space-y-2">
@@ -74,17 +89,17 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                 Premium Cinema Grade
               </h4>
             </div>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-zinc-300 leading-relaxed font-light">
               Meticulously designed replica notes. Features double-sided printing, premium heavy-bond calendered matte paper, precise dimension scaling, and legal RBA compliant marking.
             </p>
           </div>
 
-          <div className="space-y-4 border-t border-zinc-800/80 pt-6">
+          <div className="relative z-10 space-y-4 border-t border-zinc-800/80 pt-6">
             <div className="flex items-center gap-3">
               <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-bold">RBA Compliance Certified</span>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-300 font-bold">RBA Compliance Certified</span>
             </div>
-            <p className="text-[10px] text-zinc-500 italic leading-relaxed">
+            <p className="text-[10px] text-zinc-400 italic leading-relaxed">
               &quot;PROP MONEY ONLY — NOT LEGAL TENDER&quot; is printed with high-contrast legibility across all replica notes.
             </p>
           </div>

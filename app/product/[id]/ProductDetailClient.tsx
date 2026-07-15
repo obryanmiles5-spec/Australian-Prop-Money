@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ChevronLeft, Star, Heart, Check, ShoppingCart, 
   Plus, Minus, ShieldCheck, HelpCircle, ArrowRight, MessageSquare 
@@ -218,8 +219,23 @@ export default function ProductDetailClient({ productId }: { productId: string }
           
           {/* Main Visual Display */}
           <div className="relative aspect-[4/3] bg-gradient-to-br from-zinc-950 via-zinc-900 to-black overflow-hidden border border-zinc-800 rounded-3xl p-8 flex flex-col justify-between text-white">
-            <div className="space-y-6 pt-6">
-              <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+            {product.image && (
+              <div className="absolute inset-0 z-0 select-none pointer-events-none">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  referrerPolicy="no-referrer"
+                  className="object-cover object-center opacity-45"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30 z-1" />
+              </div>
+            )}
+            
+            <div className="relative z-10 space-y-6 pt-6">
+              <div className="w-14 h-14 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center backdrop-blur-xs">
                 <ShieldCheck className="w-7 h-7 text-gold animate-pulse" />
               </div>
               <div className="space-y-2">
@@ -230,14 +246,14 @@ export default function ProductDetailClient({ productId }: { productId: string }
                   RBA Compliant Replica
                 </h4>
               </div>
-              <p className="text-xs text-zinc-400 leading-relaxed max-w-md">
+              <p className="text-xs text-zinc-300 leading-relaxed max-w-md font-light">
                 This item represents professional-grade Australian replica prop money engineered for film, television, theatre, and high-stakes media productions. Printed double-sided on custom calendered non-glare matte paper.
               </p>
             </div>
 
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent p-6 md:p-8">
+            <div className="relative z-10 bg-black/40 backdrop-blur-xs p-6 rounded-2xl border border-white/5 mt-auto">
               <span className="text-[10px] uppercase font-bold tracking-widest text-gold font-mono block">Reserve Bank of Australia Compliance</span>
-              <p className="text-[10px] text-gray-300 italic leading-relaxed mt-1">
+              <p className="text-[10px] text-gray-300 italic leading-relaxed mt-1 font-light">
                 Conforms strictly to federal legal limits. Printed double-sided on non-glare fine matte paper. Includes required &quot;NOT LEGAL TENDER&quot; watermarks.
               </p>
             </div>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { ShoppingCart, Eye, Star, Check, Heart } from 'lucide-react';
 import { Product, getCategoryLabel } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
@@ -41,19 +42,34 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
       onClick={handleCardClick}
       id={`product-card-${product.id}`}
     >
-      {/* Compliance & Badge Header (No Images) */}
+      {/* Compliance & Badge Header (with Optional Image) */}
       <div className="relative aspect-[4/2] bg-gradient-to-br from-zinc-950 via-zinc-900 to-slate-900 flex flex-col justify-between p-4 overflow-hidden border-b border-zinc-800">
-        <div className="flex items-center justify-between">
-          <span className="bg-gold/10 text-gold text-[8px] uppercase font-bold tracking-[0.2em] px-2.5 py-1 rounded-sm border border-gold/20">
+        {product.image && (
+          <div className="absolute inset-0 z-0 select-none pointer-events-none">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              referrerPolicy="no-referrer"
+              className="object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500 z-0"
+            />
+            {/* Soft dark gradient overlays on the image to ensure high text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 z-1" />
+          </div>
+        )}
+        
+        <div className="relative z-10 flex items-center justify-between">
+          <span className="bg-gold/15 text-gold text-[8px] uppercase font-bold tracking-[0.2em] px-2.5 py-1 rounded-sm border border-gold/30 backdrop-blur-xs">
             {getCategoryLabel(product.category)}
           </span>
-          <span className="text-[9px] font-mono text-zinc-500 font-semibold">{product.sku}</span>
+          <span className="text-[9px] font-mono text-zinc-300 font-semibold bg-black/40 px-2 py-0.5 rounded backdrop-blur-xs">{product.sku}</span>
         </div>
-        <div>
-          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-400 font-mono block">
+        <div className="relative z-10">
+          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-200 font-mono block">
             Replica Currency
           </span>
-          <span className="text-[8px] tracking-widest text-zinc-500 block uppercase font-mono mt-0.5">
+          <span className="text-[8px] tracking-widest text-zinc-400 block uppercase font-mono mt-0.5">
             RBA COMPLIANT
           </span>
         </div>
@@ -62,7 +78,7 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
         <button
           type="button"
           onClick={handleWishlistToggle}
-          className="absolute top-3 right-3 z-10 bg-zinc-800/80 hover:bg-zinc-800 text-white hover:text-red-500 p-2 rounded-full transition-all duration-300 shadow-xs focus:outline-none"
+          className="absolute top-3 right-3 z-20 bg-zinc-800/80 hover:bg-zinc-800 text-white hover:text-red-500 p-2 rounded-full transition-all duration-300 shadow-xs focus:outline-none"
           aria-label={isFavorited ? "Remove from Wishlist" : "Add to Wishlist"}
           id={`btn-wishlist-toggle-${product.id}`}
         >
@@ -70,7 +86,7 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
         </button>
 
         {/* Quick View Button overlay on hover */}
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+        <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 z-20">
           <button
             type="button"
             onClick={(e) => {
