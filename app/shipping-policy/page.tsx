@@ -10,7 +10,19 @@ export const metadata: Metadata = {
   description: 'Fast, discreet shipping for your australian prop money orders. Learn about our dispatch times and delivery options across Australia.',
   alternates: {
     canonical: `${cleanBaseUrl}/shipping-policy`,
-  }
+  },
+  openGraph: {
+    title: 'Shipping Policy | Australian Prop Money',
+    description: 'Fast, discreet shipping for your australian prop money orders. Learn about our dispatch times and delivery options across Australia.',
+    url: `${cleanBaseUrl}/shipping-policy`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shipping Policy | Australian Prop Money',
+    description: 'Fast, discreet shipping for your australian prop money orders. Learn about our dispatch times and delivery options across Australia.',
+  },
+
 };
 
 

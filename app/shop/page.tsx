@@ -15,7 +15,14 @@ export const metadata: Metadata = {
     title: 'Shop Australian Prop Money | Best Fake Australian Money Prop',
     description: 'Shop our premium collection of australian prop money, au prop money, and aus prop money bundles. Engineered for 4K cameras and film productions.',
     url: `${cleanBaseUrl}/shop`,
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shop Australian Prop Money | Best Fake Australian Money Prop',
+    description: 'Shop our premium collection of australian prop money, au prop money, and aus prop money bundles. Engineered for 4K cameras and film productions.',
+  },
+
 };
 
 export default function Page() {

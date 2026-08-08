@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     title: 'Australian Prop Money | Best Fake Australian Money Prop & AU Prop Money',
     description: 'Buy premium Australian prop money, fake australian money prop notes, and prop bundles of money australia for film, TV, and photography. The most realistic au prop money conforming to RBA legal rules.',
     url: `${cleanBaseUrl}/`,
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Australian Prop Money | Best Fake Australian Money Prop & AU Prop Money',
+    description: 'Buy premium Australian prop money, fake australian money prop notes, and prop bundles of money australia for film, TV, and photography. The most realistic au prop money conforming to RBA legal rules.',
+  },
+
 };
 
 export default function Page() {

@@ -10,7 +10,19 @@ export const metadata: Metadata = {
   description: 'Terms of service and legal guidelines for purchasing and using our fake australian money prop products.',
   alternates: {
     canonical: `${cleanBaseUrl}/terms`,
-  }
+  },
+  openGraph: {
+    title: 'Terms of Service | Australian Prop Money',
+    description: 'Terms of service and legal guidelines for purchasing and using our fake australian money prop products.',
+    url: `${cleanBaseUrl}/terms`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | Australian Prop Money',
+    description: 'Terms of service and legal guidelines for purchasing and using our fake australian money prop products.',
+  },
+
 };
 
 

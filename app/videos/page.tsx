@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     title: 'Video Gallery | Australian Prop Money',
     description: 'Watch our premium prop money australia and fake australian money prop in action. See the high-definition quality of our replica notes on camera.',
     url: `${cleanBaseUrl}/videos`,
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Video Gallery | Australian Prop Money',
+    description: 'Watch our premium prop money australia and fake australian money prop in action. See the high-definition quality of our replica notes on camera.',
+  },
+
 };
 
 export default function Page() {

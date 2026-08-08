@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     title: 'Blog & Articles | Australian Prop Money',
     description: 'Read the latest insights, tips, and news about using prop money australia, fake australian money prop, and prop american money in your next production.',
     url: `${cleanBaseUrl}/blog`,
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog & Articles | Australian Prop Money',
+    description: 'Read the latest insights, tips, and news about using prop money australia, fake australian money prop, and prop american money in your next production.',
+  },
+
 };
 
 export default function Page() {

@@ -10,7 +10,19 @@ export const metadata: Metadata = {
   description: 'Read our refund and return policy for prop money au and prop australian money purchases.',
   alternates: {
     canonical: `${cleanBaseUrl}/refund-policy`,
-  }
+  },
+  openGraph: {
+    title: 'Refund Policy | Australian Prop Money',
+    description: 'Read our refund and return policy for prop money au and prop australian money purchases.',
+    url: `${cleanBaseUrl}/refund-policy`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Refund Policy | Australian Prop Money',
+    description: 'Read our refund and return policy for prop money au and prop australian money purchases.',
+  },
+
 };
 
 

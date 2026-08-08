@@ -10,7 +10,19 @@ export const metadata: Metadata = {
   description: 'Our commitment to your privacy when purchasing australian prop money and au prop money.',
   alternates: {
     canonical: `${cleanBaseUrl}/privacy-policy`,
-  }
+  },
+  openGraph: {
+    title: 'Privacy Policy | Australian Prop Money',
+    description: 'Our commitment to your privacy when purchasing australian prop money and au prop money.',
+    url: `${cleanBaseUrl}/privacy-policy`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Australian Prop Money',
+    description: 'Our commitment to your privacy when purchasing australian prop money and au prop money.',
+  },
+
 };
 
 

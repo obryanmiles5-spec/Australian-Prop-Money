@@ -133,12 +133,16 @@ export default function CheckoutPage() {
       if (!result.success) {
         setFormErrors([result.error || 'Failed to dispatch order requisition.']);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (method === 'whatsapp' && result.details) {
-        // Automatically try to open WhatsApp in a new tab
-        const waText = generateWhatsAppMessage(result.details);
-        const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682");
-        const waUrl = `https://wa.me/${waNum}?text=${waText}`;
-        window.open(waUrl, '_blank', 'noopener,noreferrer');
+      } else {
+        if (paymentMethod === 'creditcard') {
+          window.open('https://flutterwave.com/pay/xl8olgxzbsjy', '_blank', 'noopener,noreferrer');
+        } else if (method === 'whatsapp' && result.details) {
+          // Automatically try to open WhatsApp in a new tab
+          const waText = generateWhatsAppMessage(result.details);
+          const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682");
+          const waUrl = `https://wa.me/${waNum}?text=${waText}`;
+          window.open(waUrl, '_blank', 'noopener,noreferrer');
+        }
       }
     } catch (err: any) {
       setFormErrors([err.message || 'An error occurred during order dispatch.']);
@@ -277,7 +281,7 @@ Please confirm receipt of this order and reply with tracking details once transf
           <div>
             <span className="block uppercase font-bold tracking-wider text-[9px] text-gray-400">Payment Channel</span>
             <span className="font-bold text-black text-sm capitalize block mt-1">
-              {details.paymentMethod === 'bank' ? 'Bank Transfer' : details.paymentMethod === 'payid' ? 'PayID Instant' : 'Crypto Address'}
+              {details.paymentMethod === 'bank' ? 'Bank Transfer' : details.paymentMethod === 'payid' ? 'PayID Instant' : details.paymentMethod === 'creditcard' ? 'Credit / Debit Card' : 'Crypto Address'}
             </span>
           </div>
         </div>
@@ -295,6 +299,25 @@ Please confirm receipt of this order and reply with tracking details once transf
             </p>
 
             {/* Render exact details */}
+            {details.paymentMethod === 'creditcard' && (
+              <div className="bg-gray-50 p-5 rounded-2xl space-y-4 font-mono text-[11px] border text-center">
+                <p className="text-gray-600 font-sans">
+                  Please click the secure payment link below to complete your order via credit or debit card. 
+                  The link should have automatically opened in a new tab.
+                </p>
+                <div className="flex justify-center mt-4">
+                  <a 
+                    href="https://flutterwave.com/pay/xl8olgxzbsjy" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-black hover:bg-gold-dark text-white hover:text-black font-bold uppercase tracking-widest px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2"
+                  >
+                    <ExternalLink className="w-4 h-4" /> Pay with Credit Card
+                  </a>
+                </div>
+              </div>
+            )}
+
             {details.paymentMethod === 'bank' && (
               <div className="bg-gray-50 p-5 rounded-2xl space-y-3 font-mono text-[11px] border text-center">
                 <p className="text-gray-600 font-sans">
@@ -782,7 +805,30 @@ Please confirm receipt of this order and reply with tracking details once transf
             <h2 className="font-serif text-lg font-bold text-black border-b pb-3">Select Settlement Channel</h2>
             
             <div className="space-y-2.5">
-              
+
+              {/* Credit Card */}
+              <label 
+                className={`p-3.5 border rounded-2xl flex items-start gap-3 cursor-pointer transition-all ${
+                  paymentMethod === 'creditcard' 
+                    ? 'border-black bg-black/5' 
+                    : 'border-gray-200 bg-white hover:border-gray-400'
+                }`}
+                id="checkout-pay-label-creditcard"
+              >
+                <input
+                  type="radio"
+                  name="checkoutPaymentMethod"
+                  value="creditcard"
+                  checked={paymentMethod === 'creditcard'}
+                  onChange={() => setPaymentMethod('creditcard')}
+                  className="mt-1 text-black focus:ring-0 focus:outline-none focus:ring-offset-0 focus:ring-transparent focus:border-transparent cursor-pointer"
+                />
+                <div className="text-xs">
+                  <span className="font-bold text-black block flex items-center gap-1.5"><CreditCard className="w-3.5 h-3.5" /> Credit / Debit Card</span>
+                  <span className="text-gray-500 mt-1 block">Secure online checkout via Flutterwave. Link opens securely upon order submission.</span>
+                </div>
+              </label>
+
               {/* EFT Bank */}
               <label 
                 className={`p-3.5 border rounded-2xl flex items-start gap-3 cursor-pointer transition-all ${

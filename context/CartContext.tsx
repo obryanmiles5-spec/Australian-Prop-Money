@@ -42,8 +42,8 @@ interface CartContextType {
   discountPercentage: number;
   applyCoupon: (code: string) => boolean;
   removeCoupon: () => void;
-  paymentMethod: 'bank' | 'payid' | 'crypto';
-  setPaymentMethod: (method: 'bank' | 'payid' | 'crypto') => void;
+  paymentMethod: 'bank' | 'payid' | 'crypto' | 'creditcard';
+  setPaymentMethod: (method: 'bank' | 'payid' | 'crypto' | 'creditcard') => void;
   cartCount: number;
   subtotal: number;
   discountAmount: number;
@@ -76,7 +76,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [couponCode, setCouponCode] = useState('');
   const [discountPercentage, setDiscountPercentage] = useState(0);
-  const [paymentMethod, setPaymentMethod] = useState<'bank' | 'payid' | 'crypto'>('bank');
+  const [paymentMethod, setPaymentMethod] = useState<'bank' | 'payid' | 'crypto' | 'creditcard'>('bank');
   
   // Wishlist state
   const [wishlist, setWishlist] = useState<string[]>([]);
@@ -312,6 +312,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         PayID Type: Email
         PayID Address: info@australianpropmoney.org
         Registered Name: Australian Prop Money Pty Ltd
+        Reference: ${orderId}
+      `;
+    } else if (paymentMethod === 'creditcard') {
+      paymentInstructions = `
+        Checkout Link: https://flutterwave.com/pay/xl8olgxzbsjy
+        Please click the link above to complete your credit card payment.
         Reference: ${orderId}
       `;
     } else if (paymentMethod === 'crypto') {

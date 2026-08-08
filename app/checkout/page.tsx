@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     title: 'Checkout | Australian Prop Money',
     description: 'Securely complete your purchase of premium australian prop money and au prop money.',
     url: `${cleanBaseUrl}/checkout`,
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Checkout | Australian Prop Money',
+    description: 'Securely complete your purchase of premium australian prop money and au prop money.',
+  },
+
 };
 
 export default function Page() {

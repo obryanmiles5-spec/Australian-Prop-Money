@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     title: 'Wholesale & Bulk Orders | Australian Prop Money Australia',
     description: 'Order bulk australian prop money and prop american money bundles for large scale heist, vault, and cinematic productions. Special pricing for industry professionals.',
     url: `${cleanBaseUrl}/wholesale`,
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wholesale & Bulk Orders | Australian Prop Money Australia',
+    description: 'Order bulk australian prop money and prop american money bundles for large scale heist, vault, and cinematic productions. Special pricing for industry professionals.',
+  },
+
 };
 
 export default function Page() {

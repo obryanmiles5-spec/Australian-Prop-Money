@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     title: 'FAQ | Australian Prop Money Legal Guidelines & Information',
     description: 'Frequently asked questions about prop money australia. Learn about the legality, shipping, and usage of our fake australian money prop for film and TV.',
     url: `${cleanBaseUrl}/faq`,
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQ | Australian Prop Money Legal Guidelines & Information',
+    description: 'Frequently asked questions about prop money australia. Learn about the legality, shipping, and usage of our fake australian money prop for film and TV.',
+  },
+
 };
 
 export default function Page() {

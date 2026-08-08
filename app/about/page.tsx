@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     title: 'About Us | Australian Prop Money | Prop Money Australia',
     description: 'Learn about Australian Prop Money, the leading provider of premium fake australian money prop and replica notes for film, television, and creative productions in Australia.',
     url: `${cleanBaseUrl}/about`,
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | Australian Prop Money | Prop Money Australia',
+    description: 'Learn about Australian Prop Money, the leading provider of premium fake australian money prop and replica notes for film, television, and creative productions in Australia.',
+  },
+
 };
 
 export default function Page() {
