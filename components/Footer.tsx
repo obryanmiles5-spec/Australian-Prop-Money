@@ -162,6 +162,11 @@ export default function Footer() {
           &quot;All products sold on this website are replica prop items intended exclusively for film production, television, theatre, photography, training, educational and novelty purposes. They are not legal tender and must not be used for any unlawful or fraudulent activity.&quot;
         </div>
 
+        {/* SEO Text Box */}
+        <div className="text-[9px] text-gray-600 leading-relaxed text-center mb-4 max-w-4xl mx-auto px-4">
+          Looking for the best australian prop money? Whether you need prop money australia, prop bundles of money australia, or just wondering where to buy australian prop money, we are your #1 source. We supply high quality prop money, fake australian money prop, fake money props, and aus prop money to top film and television sets. All our movie prop money australia is legally compliant and designed strictly for cameras. If you want to buy prop money near me securely, order today for fast AU delivery.
+        </div>
+
         {/* Copy & Fineprint */}
         <div className="pt-3 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left text-[10px] text-gray-500">
           <p>© 2026 Australian Prop Money. All rights reserved.</p>

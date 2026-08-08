@@ -29,7 +29,7 @@ export default function HomePage() {
   };
 
   const featuredProducts = PRODUCTS.filter(p => 
-    ['buy-counterfeit-$100-aud-new', 'buy-counterfeit-$50-aud-new', 'film-producer-pack'].includes(p.id)
+    ['100-aud-new-prop-money', '50-aud-new-prop-money', 'film-producer-pack'].includes(p.id)
   );
 
   return (
@@ -66,9 +66,9 @@ export default function HomePage() {
             </h1>
             
             {/* Subheading */}
-            <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-md font-sans font-light leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-lg font-sans font-light leading-relaxed">
               Professional prop money australia and fake australian money prop replica notes for film, television, photography, theatre and creative productions. 
-              The most realistic au prop money, conforming strictly to federal legal standards and optimized for high-definition camera lenses.
+              The most realistic au prop money, money heist props, and prop bundles of money australia, conforming strictly to federal legal standards and optimized for high-definition camera lenses. Buy prop money and fake money props securely online today.
             </p>
 
             {/* CTA Buttons */}

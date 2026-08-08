@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { PRODUCTS } from '@/lib/products';
+import { PRODUCTS, BLOG_POSTS } from '@/lib/products';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
@@ -35,5 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...productEntries];
+  const blogEntries: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${cleanBase}/blog/${post.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...productEntries, ...blogEntries];
 }

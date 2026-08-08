@@ -1,4 +1,6 @@
-'use client';
+import re
+
+content = """'use client';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -165,3 +167,7 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
     </div>
   );
 }
+"""
+
+with open('components/ProductCard.tsx', 'w') as f:
+    f.write(content)

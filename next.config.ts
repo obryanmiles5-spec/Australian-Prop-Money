@@ -35,6 +35,50 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/product/buy-counterfeit-$10-aud-old',
+        destination: '/product/10-aud-old-prop-money',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-counterfeit-$20-aud-old',
+        destination: '/product/20-aud-old-prop-money',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-counterfeit-$50-aud-old',
+        destination: '/product/50-aud-old-prop-money',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-counterfeit-$100-aud-old',
+        destination: '/product/100-aud-old-prop-money',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-counterfeit-$10-aud-new',
+        destination: '/product/10-aud-new-prop-money',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-counterfeit-$20-aud-new',
+        destination: '/product/20-aud-new-prop-money',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-counterfeit-$50-aud-new',
+        destination: '/product/50-aud-new-prop-money',
+        permanent: true,
+      },
+      {
+        source: '/product/buy-counterfeit-$100-aud-new',
+        destination: '/product/100-aud-new-prop-money',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [

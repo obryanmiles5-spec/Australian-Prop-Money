@@ -50,17 +50,17 @@ export function getCategoryLabel(cat: string): string {
 
 export const PRODUCTS: Product[] = [
   {
-    id: 'buy-counterfeit-$10-aud-old',
-    name: 'Buy Counterfeit $10 AUD (Old Design)',
+    id: '10-aud-old-prop-money',
+    name: 'Buy $10 AUD (Old Design)',
     price: 150.00,
     description: 'High-fidelity replica $10 AUD banknote (classic design), engineered to match look and dimensions for film sets.',
     longDescription: 'This replica $10 AUD banknote captures the classic pre-2016 design elements. Meticulously designed for cinematic sets, it features correct color matching and matte non-reflective inks to prevent studio light flares, ensuring total realism on camera.',
     category: 'australian-notes',
     sku: 'AUD-10-OLD',
-    seoTitle: 'Buy Counterfeit $10 AUD Old Design Prop | Australian Prop Money',
+    seoTitle: 'Buy $10 AUD Old Design Prop | Australian Prop Money',
     metaDescription: 'High-quality $10 AUD classic design prop banknotes for film and television productions.',
     stockStatus: 'in-stock',
-    relatedProducts: ['buy-counterfeit-$20-aud-old', 'buy-counterfeit-$50-aud-old'],
+    relatedProducts: ['20-aud-old-prop-money', '50-aud-old-prop-money'],
     features: ['Matte non-glare ink', 'Double-sided crisp paper bond', 'Exact dimension matching', 'RBA guideline compliant marking'],
     specifications: {
       'Denomination': '$10 AUD',
@@ -71,17 +71,17 @@ export const PRODUCTS: Product[] = [
     image: 'https://drive.google.com/thumbnail?id=1rFp5hvKCKqccY34q6GsFDDo9XiIA6s-a&sz=w1000'
   },
   {
-    id: 'buy-counterfeit-$20-aud-old',
-    name: 'Buy Counterfeit $20 AUD (Old Design)',
+    id: '20-aud-old-prop-money',
+    name: 'Buy $20 AUD (Old Design)',
     price: 150.00,
     description: 'Highly accurate $20 AUD prop bank note in the vintage pre-2016 style, optimized for realistic set dressing.',
     longDescription: 'This classic $20 AUD prop banknote is crafted specifically for action scenes, heist themes, and television dramas. It delivers high-resolution visual performance under direct studio key-lights without any artificial shine.',
     category: 'australian-notes',
     sku: 'AUD-20-OLD',
-    seoTitle: 'Buy Counterfeit $20 AUD Old Design Prop | Australian Prop Money',
+    seoTitle: 'Buy $20 AUD Old Design Prop | Australian Prop Money',
     metaDescription: 'Vintage style $20 AUD replica prop banknote printed on professional non-glare paper.',
     stockStatus: 'in-stock',
-    relatedProducts: ['buy-counterfeit-$10-aud-old', 'buy-counterfeit-$50-aud-old'],
+    relatedProducts: ['10-aud-old-prop-money', '50-aud-old-prop-money'],
     features: ['Professional lithographic style print', 'Perfect size matching', 'Zero-glare under high-intensity lights', 'RBA-compliant disclaimers'],
     specifications: {
       'Denomination': '$20 AUD',
@@ -92,17 +92,17 @@ export const PRODUCTS: Product[] = [
     image: 'https://drive.google.com/thumbnail?id=1h866VxjaoChlsMzU_Y8CcNUoCOPIJvYi&sz=w1000'
   },
   {
-    id: 'buy-counterfeit-$50-aud-old',
-    name: 'Buy Counterfeit $50 AUD (Old Design)',
+    id: '50-aud-old-prop-money',
+    name: 'Buy $50 AUD (Old Design)',
     price: 150.00,
     description: 'Perfect replica of the classic $50 AUD polymer note, printed on non-glare prop paper.',
     longDescription: 'Our classic $50 AUD banknote replica is one of our most popular prop pieces. Printed with custom matte organic inks on high-density paper, it mimics the hand-feel and crisp sound of paper currency while remaining 100% compliant with national laws.',
     category: 'australian-notes',
     sku: 'AUD-50-OLD',
-    seoTitle: 'Buy Counterfeit $50 AUD Old Design Prop | Australian Prop Money',
+    seoTitle: 'Buy $50 AUD Old Design Prop | Australian Prop Money',
     metaDescription: 'Prisinte $50 AUD classic design prop banknotes. Ideal for stacks, bags, and close-ups.',
     stockStatus: 'in-stock',
-    relatedProducts: ['buy-counterfeit-$20-aud-old', 'buy-counterfeit-$100-aud-old'],
+    relatedProducts: ['20-aud-old-prop-money', '100-aud-old-prop-money'],
     features: ['Vibrant color replication', 'Heavy matte finish', 'Double-sided high-DPI print', '100% legal RBA compliance'],
     specifications: {
       'Denomination': '$50 AUD',
@@ -113,17 +113,17 @@ export const PRODUCTS: Product[] = [
     image: 'https://drive.google.com/thumbnail?id=1AXxLQYJ6jqjD4IHj7NmwKczTFN6sCYeF&sz=w1000'
   },
   {
-    id: 'buy-counterfeit-$100-aud-old',
-    name: 'Buy Counterfeit $100 AUD (Old Design)',
+    id: '100-aud-old-prop-money',
+    name: 'Buy $100 AUD (Old Design)',
     price: 200.00,
     description: 'High-denomination $100 AUD classic note prop. Elegant double-sided printing on premium matte bond.',
     longDescription: 'Make a lasting impression in luxury scenes, ransom setups, or poker games. This classic $100 AUD prop bank note features meticulous detail on every millimetre, perfectly adapted for sharp cinematic focus.',
     category: 'australian-notes',
     sku: 'AUD-100-OLD',
-    seoTitle: 'Buy Counterfeit $100 AUD Old Design Prop | Australian Prop Money',
+    seoTitle: 'Buy $100 AUD Old Design Prop | Australian Prop Money',
     metaDescription: 'High-denomination classic $100 AUD replica banknotes. Perfect for high-stakes scenes.',
     stockStatus: 'in-stock',
-    relatedProducts: ['buy-counterfeit-$50-aud-old', 'buy-counterfeit-$100-new'],
+    relatedProducts: ['50-aud-old-prop-money', '100-aud-new-prop-money'],
     features: ['Rich high-contrast inks', 'Realistic visual depth', 'Authentic weight and handling', 'Clear prop markings'],
     specifications: {
       'Denomination': '$100 AUD',
@@ -134,17 +134,17 @@ export const PRODUCTS: Product[] = [
     image: 'https://drive.google.com/thumbnail?id=1J80lhZkLkQ5jYCMW2p-09rXptQL_22sr&sz=w1000'
   },
   {
-    id: 'buy-counterfeit-$10-aud-new',
-    name: 'Buy Counterfeit $10 AUD (New Design)',
+    id: '10-aud-new-prop-money',
+    name: 'Buy $10 AUD (New Design)',
     price: 150.00,
     description: 'The modern-style $10 AUD note replica featuring correct color matching for high-definition close-up shots.',
     longDescription: 'This replica represents the latest generation of Australian $10 banknotes. Designed to mimic the vibrant colors and signature layout of the modern series, it is optimized for high-resolution 4K and 8K cinematic lenses.',
     category: 'australian-notes',
     sku: 'AUD-10-NEW',
-    seoTitle: 'Buy Counterfeit $10 AUD New Design Prop | Australian Prop Money',
+    seoTitle: 'Buy $10 AUD New Design Prop | Australian Prop Money',
     metaDescription: 'Next-generation style $10 AUD prop banknotes with precise color matching.',
     stockStatus: 'in-stock',
-    relatedProducts: ['buy-counterfeit-$20-aud-new', 'buy-counterfeit-$50-aud-new'],
+    relatedProducts: ['20-aud-new-prop-money', '50-aud-new-prop-money'],
     features: ['Next-gen design layout', 'High fidelity color match', 'Thick organic paper base', 'Clear compliant disclaimer'],
     specifications: {
       'Denomination': '$10 AUD',
@@ -155,17 +155,17 @@ export const PRODUCTS: Product[] = [
     image: 'https://drive.google.com/thumbnail?id=1I4bmiTRbvzoBBlkxlc9zjQDtCyG6ptYn&sz=w1000'
   },
   {
-    id: 'buy-counterfeit-$20-aud-new',
-    name: 'Buy Counterfeit $20 AUD (New Design)',
+    id: '20-aud-new-prop-money',
+    name: 'Buy $20 AUD (New Design)',
     price: 150.00,
     description: 'New-generation $20 AUD design prop note. Features matte non-reflective inks designed for modern film sensors.',
     longDescription: 'Optimized for modern camera sensors, this $20 AUD replica mimics the bold red hues of the contemporary Australian series. It is perfect for fast cash counts, wallet scene fillers, or dynamic action-packed close-ups.',
     category: 'australian-notes',
     sku: 'AUD-20-NEW',
-    seoTitle: 'Buy Counterfeit $20 AUD New Design Prop | Australian Prop Money',
+    seoTitle: 'Buy $20 AUD New Design Prop | Australian Prop Money',
     metaDescription: 'Contemporary style $20 AUD replica prop banknotes. Meticulous detail for modern film.',
     stockStatus: 'in-stock',
-    relatedProducts: ['buy-counterfeit-$10-aud-new', 'buy-counterfeit-$50-aud-new'],
+    relatedProducts: ['10-aud-new-prop-money', '50-aud-new-prop-money'],
     features: ['Bold new-series colors', 'Strict dimension compliance', 'Zero camera reflections', 'NOT LEGAL TENDER printed'],
     specifications: {
       'Denomination': '$20 AUD',
@@ -176,17 +176,17 @@ export const PRODUCTS: Product[] = [
     image: 'https://drive.google.com/thumbnail?id=1zdW0Ftk185yyt66l9hasBdXrlOrjpMMW&sz=w1000'
   },
   {
-    id: 'buy-counterfeit-$50-aud-new',
-    name: 'Buy Counterfeit $50 AUD (New Design)',
+    id: '50-aud-new-prop-money',
+    name: 'Buy $50 AUD (New Design)',
     price: 150.00,
     description: 'Next-gen $50 AUD prop note. Meticulously designed according to Reserve Bank of Australia compliance guidelines.',
     longDescription: 'Bring extreme accuracy to your heist, corporate boardroom, or luxury sets with the modern-style $50 AUD banknote replica. This high-demand prop utilizes deep yellow-gold pigments formulated strictly to avoid yellow flare under harsh flashes.',
     category: 'australian-notes',
     sku: 'AUD-50-NEW',
-    seoTitle: 'Buy Counterfeit $50 AUD New Design Prop | Australian Prop Money',
+    seoTitle: 'Buy $50 AUD New Design Prop | Australian Prop Money',
     metaDescription: 'Modern style $50 AUD prop notes. Vibrant yellow-gold hues for beautiful set staging.',
     stockStatus: 'in-stock',
-    relatedProducts: ['buy-counterfeit-$20-aud-new', 'buy-counterfeit-$100-aud-new'],
+    relatedProducts: ['20-aud-new-prop-money', '100-aud-new-prop-money'],
     features: ['Vibrant next-gen graphics', 'Excellent hand-handling properties', 'Anti-reflective surface finish', 'Compliant disclaimer lettering'],
     specifications: {
       'Denomination': '$50 AUD',
@@ -197,17 +197,17 @@ export const PRODUCTS: Product[] = [
     image: 'https://drive.google.com/thumbnail?id=113xEHLGgkJ8TO5IR5kmojH7YKf5aTOTk&sz=w1000'
   },
   {
-    id: 'buy-counterfeit-$100-aud-new',
-    name: 'Buy Counterfeit $100 AUD (New Design)',
+    id: '100-aud-new-prop-money',
+    name: 'Buy $100 AUD (New Design)',
     price: 200.00,
     description: 'Our highest denomination $100 AUD prop bank note (new series), perfect for cinematic high-stakes reveals.',
     longDescription: 'Complete your high-stakes narrative with the supreme next-generation $100 AUD replica note. Expertly color-graded for optimal video presence, it is the ideal prop for suitcases, safes, and detailed foreground counts.',
     category: 'australian-notes',
     sku: 'AUD-100-NEW',
-    seoTitle: 'Buy Counterfeit $100 AUD New Design Prop | Australian Prop Money',
+    seoTitle: 'Buy $100 AUD New Design Prop | Australian Prop Money',
     metaDescription: 'Modern series $100 AUD prop banknotes. Ultimate cash prop for film masterclasses.',
     stockStatus: 'in-stock',
-    relatedProducts: ['buy-counterfeit-$50-aud-new', 'buy-counterfeit-$100-aud-old'],
+    relatedProducts: ['50-aud-new-prop-money', '100-aud-old-prop-money'],
     features: ['Flawless digital replication', 'Unparalleled color depth', 'Double-sided precision mapping', 'RBA-compliant markings'],
     specifications: {
       'Denomination': '$100 AUD',
@@ -606,6 +606,44 @@ Complete the banking atmosphere by placing our [Canvas Money Bag](/product/canva
     category: 'Production',
     readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'how-to-make-prop-money-look-and-feel-real',
+    title: 'How to Make Prop Money Look and Feel Real',
+    excerpt: 'Want to know how to make prop money feel real for your next film shoot? Learn the secrets to weathering and aging australian prop money realistic.',
+    content: `When shooting close-up scenes, directors always want the highest quality prop money. But even the best australian prop money can look too pristine out of the box. So, how to make prop money feel real? 
+
+### Weathering Fake Australian Money Props
+To make your fake australian money prop for sale look circulated, you need to break down the paper fibers slightly. 
+1. **The Crumple Method:** Crumple your prop money australian dollars tightly, then smooth them out. This gives the $100 prop money a worn-in texture.
+2. **Staining:** Use coffee or tea to lightly stain your fake money stack prop. This is especially useful for vintage or old design notes. 
+
+### Does MrBeast Use Prop Money?
+Yes, large productions and YouTubers often use custom prop money or ready prop money for safety and visual impact. Using prop bundles of money australia ensures that sets remain secure while achieving the "money heist props" aesthetic. 
+
+When you buy fake australian money props from us, you're getting double-sided, matte finish notes that already look fantastic on camera. Weathering them just adds that final touch of realism.`,
+    date: '2026-08-01',
+    category: 'Tutorial',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1580519542036-ed47f3e42f9b?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'is-prop-money-illegal-australia-laws',
+    title: 'Is Prop Money Illegal? Understanding Australia Laws',
+    excerpt: 'Is it illegal to buy prop money? We explore prop money australia laws and what makes our fake money props 100% legal to own and use on set.',
+    content: `A common question we receive is: *is prop money illegal?* or *is it illegal to own prop money?* The short answer is no, it is perfectly legal to buy australian prop money and use it for artistic purposes, provided it follows the rules.
+
+### Is Buying Prop Money Illegal?
+Buying prop money is legal as long as the product adheres to the Reserve Bank of Australia (RBA) guidelines. Our australian movie prop money features the necessary disclaimers such as "PROP ONLY - NOT LEGAL TENDER". 
+
+### Are They Counterfeit?
+No. There is a distinct difference between a counterfeit money prop and a legal replica. Counterfeits attempt to deceive people into thinking they are real money. Our realistic prop money australia is designed strictly for cameras. We do not use polymer substrates (so no australian polymer prop money), which makes it instantly recognizable as a prop by touch. You might also wonder about euro prop money, canadian prop money, prop british money, or american prop money. Most international props have similar guidelines.
+
+If you are looking for where to buy australian prop money safely, our store provides fully compliant motion picture prop money, ensuring your production stays out of legal trouble.`,
+    date: '2026-08-05',
+    category: 'Legal',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
@@ -629,6 +667,36 @@ export const FAQS: FAQItem[] = [
     category: 'ordering',
     question: 'Do you offer custom aus prop money or bulk crates?',
     answer: 'Absolutely! We specialize in bulk prop australian money orders for high-intensity heist and vault scenes, supplying up to 100 stacks in customized lockable aluminum briefcases or industrial crates. For customized solutions or commercial proposals for prop american money or local notes, please contact us via our Wholesale page.'
+  },
+  {
+    category: 'legality',
+    question: 'Is it illegal to have or own prop money?',
+    answer: 'No, it is not illegal to own or have prop money. The possession of fake australian money prop or movie prop money australia is completely legal as long as the replica notes follow the Crimes (Currency) Act 1981 and RBA rules, meaning they cannot be mistaken for real Australian dollars in a deceptive manner. You can buy prop money for films, photoshoots, and events legally.'
+  },
+  {
+    category: 'ordering',
+    question: 'Can you buy prop money in Australia and where to buy it?',
+    answer: 'Yes, you can buy australian prop money directly from us. We are the leading supplier of realistic prop money australia, offering high quality prop money and prop bundles of money australia. We provide overnight shipping to major cities, making it easy to buy prop money near me if you are located in AU. Skip the wait of alibaba prop money or dhgate prop money and get fast local delivery.'
+  },
+  {
+    category: 'custom',
+    question: 'Does prop money work in vending machines?',
+    answer: 'No, our australian money props are specifically designed to fail in vending machines, ATMs, and counting machines. This ensures our fake money stack prop and prop australian money wod remain compliant and cannot be used for illegal activities.'
+  },
+  {
+    category: 'ordering',
+    question: 'How much does prop money cost?',
+    answer: 'The cost of prop money varies depending on the quantity. A single stack of 100 notes typically starts around $20 to $30 AUD. For larger film productions, we offer cheap prop money in bulk, such as our millionaire heist master crates, giving you the best australian prop money at wholesale prices.'
+  },
+  {
+    category: 'legality',
+    question: 'Is prop money counterfeit?',
+    answer: 'No, prop money is not counterfeit. Counterfeit money prop implies an intent to deceive and use as real currency, which is illegal. Our fake money props australia and real australian prop money are explicitly marked as "PROP ONLY" and printed on matte paper to comply with laws, making it distinct from actual counterfeit prop money.'
+  },
+  {
+    category: 'custom',
+    question: 'Do prop firms use real money and how do they make money?',
+    answer: 'While we specialize in motion picture prop money, people often ask about trading prop firms. Prop trading firms usually provide funded accounts with real money once a trader passes an evaluation, though the evaluation phase may use simulated funds. Prop firms make money by charging evaluation fees and taking a split of the traders profits. If you are asking how prop firms make money or how do prop firms not lose money, it relies on strict risk management and evaluation fees. Are stainless props worth the money for boating? Yes, but for film, paper props are what you need.'
   }
 ];
 

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import ClientPage from './ClientPage';
 
 const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
@@ -18,5 +19,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ClientPage />;
+  return (
+    <Suspense fallback={<div className="p-12 text-center">Loading shop...</div>}>
+      <ClientPage />
+    </Suspense>
+  );
 }

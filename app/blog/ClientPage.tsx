@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Clock, BookOpen, ChevronRight, X, Sparkles } from 'lucide-react';
 import { BLOG_POSTS, BlogPost } from '@/lib/products';
@@ -73,10 +74,10 @@ export default function BlogPage() {
       {/* Blog Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {BLOG_POSTS.map((post) => (
-          <article 
-            key={post.id} 
+          <Link
+            key={post.id}
+            href={`/blog/${post.id}`}
             className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group cursor-pointer"
-            onClick={() => setActiveArticle(post)}
             id={`blog-card-${post.id}`}
           >
             <div>
@@ -134,7 +135,7 @@ export default function BlogPage() {
                 <ChevronRight className="w-4 h-4 text-gold" />
               </button>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
 

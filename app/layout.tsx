@@ -39,6 +39,14 @@ const cleanBaseUrl = baseUrl.replace(/\/$/, '');
 const rawSearchConsoleId = process.env.NEXT_PUBLIC_SEARCH_CONSOLE_ID;
 const searchConsoleId = rawSearchConsoleId ? cleanSearchConsoleId(rawSearchConsoleId) : undefined;
 
+import type { Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ffffff',
+};
+
 export const metadata: Metadata = {
   title: 'Australian Prop Money | Professional Prop Money Australia for Film & TV',
   description: 'Premium Australian prop money and fake australian money prop notes for film, television, theatre, photography, and training. Realistic size, dual-sided premium prints conforming to RBA legal rules.',
@@ -143,7 +151,7 @@ const localBusinessSchema = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en-AU" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         {/* Google tag (gtag.js) */}
         <Script 
