@@ -93,7 +93,7 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     'telephone': '+61 480 852 682',
     'contactType': 'customer service',
-    'email': 'info@australianpropmoney.com.au',
+    'email': 'info@australianpropmoney.org',
     'availableLanguage': 'en'
   },
   'sameAs': [

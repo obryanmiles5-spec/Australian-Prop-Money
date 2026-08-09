@@ -248,7 +248,7 @@ Please confirm receipt of this order and reply with tracking details once transf
   };
 
   // STAGE 1: SUCCESS CONFIRMATION RECEIPT
-  if (isOrderSimulated && simulatedOrderDetails) {
+  if (isOrderSimulated && simulatedOrderDetails && cart.length === 0) {
     const details = simulatedOrderDetails;
     const isCrypto = details.paymentMethod === 'crypto';
     
@@ -416,7 +416,7 @@ Please confirm receipt of this order and reply with tracking details once transf
 
             {/* Email verification checkout */}
             <a
-              href={`mailto:info@australianpropmoney.com.au?subject=${encodeURIComponent(generateEmailSubject())}&body=${encodeURIComponent(generateEmailBody())}`}
+              href={`mailto:info@australianpropmoney.org?subject=${encodeURIComponent(generateEmailSubject())}&body=${encodeURIComponent(generateEmailBody())}`}
               className="bg-black hover:bg-gold text-white hover:text-black py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 text-center"
               id="btn-checkout-email"
             >

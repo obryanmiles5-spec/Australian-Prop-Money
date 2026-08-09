@@ -1,1 +1,1 @@
-console.log('done');
+console.log("Waiting for build...")

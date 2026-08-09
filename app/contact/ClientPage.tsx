@@ -101,8 +101,8 @@ export default function ContactPage() {
               </div>
               <div className="space-y-1">
                 <span className="text-[10px] uppercase font-bold text-gray-400 block font-mono">Email Communications</span>
-                <a href="mailto:info@australianpropmoney.com.au" className="text-sm font-bold text-black hover:text-gold transition-colors block">
-                  info@australianpropmoney.com.au
+                <a href="mailto:info@australianpropmoney.org" className="text-sm font-bold text-black hover:text-gold transition-colors block">
+                  info@australianpropmoney.org
                 </a>
               </div>
             </div>

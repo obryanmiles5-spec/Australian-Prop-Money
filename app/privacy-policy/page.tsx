@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="bg-gray-50 p-5 rounded-2xl border text-center space-y-2">
           <p className="font-bold text-xs text-black uppercase tracking-wider">Want Your Personal Records Purged?</p>
-          <p className="text-xs text-gray-500">You may request complete removal of your order logs and email data post-dispatch by contacting our Privacy Desk at <a href="mailto:info@australianpropmoney.com.au" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.com.au</a>.</p>
+          <p className="text-xs text-gray-500">You may request complete removal of your order logs and email data post-dispatch by contacting our Privacy Desk at <a href="mailto:info@australianpropmoney.org" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.org</a>.</p>
         </div>
 
       </div>

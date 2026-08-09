@@ -177,6 +177,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   const addToCart = (product: Product, quantity: number, options?: CartItem['options']) => {
+    resetOrderSimulation();
+    
     const cartItemId = generateCartItemId(product.id, options);
     const existingIndex = cart.findIndex((item) => item.id === cartItemId);
     const itemPrice = calculateItemPrice(product, options);
@@ -302,29 +304,22 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     let paymentInstructions = '';
     if (paymentMethod === 'bank') {
       paymentInstructions = `
-        Account Name: Australian Prop Money Pty Ltd
-        BSB: 062-900 (Commonwealth Bank of Australia)
-        Account Number: 1048 3922
+        An administrator will email you the Bank Transfer details shortly.
         Reference: ${orderId}
       `;
     } else if (paymentMethod === 'payid') {
       paymentInstructions = `
-        PayID Type: Email
-        PayID Address: info@australianpropmoney.org
-        Registered Name: Australian Prop Money Pty Ltd
+        An administrator will email you the PayID details shortly.
         Reference: ${orderId}
       `;
     } else if (paymentMethod === 'creditcard') {
       paymentInstructions = `
-        Checkout Link: https://flutterwave.com/pay/xl8olgxzbsjy
-        Please click the link above to complete your credit card payment.
+        If you missed the secure checkout window, an administrator will email you the credit card payment link shortly.
         Reference: ${orderId}
       `;
     } else if (paymentMethod === 'crypto') {
       paymentInstructions = `
-        USDT (TRC-20) Address: TXYz89aXyZ89qRwX19BcdEfGhIjKlMnOpQ
-        Bitcoin (BTC) Address: bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfJH7
-        Ethereum (ETH) Address: 0x71C7656EC7ab88b098defB751B7401B5f6d8976F
+        Bitcoin (BTC) Address: bc1qz0u5ctpj9v2fnn9mj5dlfsma9f533jjse9sxpa
         Please send exactly: ${((subtotal - discountAmount + shippingCost) / 1.5).toFixed(2)} USD value
         Reference / Memo: ${orderId}
       `;

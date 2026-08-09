@@ -52,7 +52,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '10-aud-old-prop-money',
     name: 'Buy $10 AUD (Old Design)',
-    price: 150.00,
+    price: 200.00,
     description: 'High-fidelity replica $10 AUD banknote (classic design), engineered to match look and dimensions for film sets.',
     longDescription: 'This replica $10 AUD banknote captures the classic pre-2016 design elements. Meticulously designed for cinematic sets, it features correct color matching and matte non-reflective inks to prevent studio light flares, ensuring total realism on camera.',
     category: 'australian-notes',
@@ -73,7 +73,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '20-aud-old-prop-money',
     name: 'Buy $20 AUD (Old Design)',
-    price: 150.00,
+    price: 200.00,
     description: 'Highly accurate $20 AUD prop bank note in the vintage pre-2016 style, optimized for realistic set dressing.',
     longDescription: 'This classic $20 AUD prop banknote is crafted specifically for action scenes, heist themes, and television dramas. It delivers high-resolution visual performance under direct studio key-lights without any artificial shine.',
     category: 'australian-notes',
@@ -94,7 +94,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '50-aud-old-prop-money',
     name: 'Buy $50 AUD (Old Design)',
-    price: 150.00,
+    price: 200.00,
     description: 'Perfect replica of the classic $50 AUD polymer note, printed on non-glare prop paper.',
     longDescription: 'Our classic $50 AUD banknote replica is one of our most popular prop pieces. Printed with custom matte organic inks on high-density paper, it mimics the hand-feel and crisp sound of paper currency while remaining 100% compliant with national laws.',
     category: 'australian-notes',
@@ -115,7 +115,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '100-aud-old-prop-money',
     name: 'Buy $100 AUD (Old Design)',
-    price: 200.00,
+    price: 250.00,
     description: 'High-denomination $100 AUD classic note prop. Elegant double-sided printing on premium matte bond.',
     longDescription: 'Make a lasting impression in luxury scenes, ransom setups, or poker games. This classic $100 AUD prop bank note features meticulous detail on every millimetre, perfectly adapted for sharp cinematic focus.',
     category: 'australian-notes',
@@ -136,7 +136,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '10-aud-new-prop-money',
     name: 'Buy $10 AUD (New Design)',
-    price: 150.00,
+    price: 200.00,
     description: 'The modern-style $10 AUD note replica featuring correct color matching for high-definition close-up shots.',
     longDescription: 'This replica represents the latest generation of Australian $10 banknotes. Designed to mimic the vibrant colors and signature layout of the modern series, it is optimized for high-resolution 4K and 8K cinematic lenses.',
     category: 'australian-notes',
@@ -157,7 +157,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '20-aud-new-prop-money',
     name: 'Buy $20 AUD (New Design)',
-    price: 150.00,
+    price: 200.00,
     description: 'New-generation $20 AUD design prop note. Features matte non-reflective inks designed for modern film sensors.',
     longDescription: 'Optimized for modern camera sensors, this $20 AUD replica mimics the bold red hues of the contemporary Australian series. It is perfect for fast cash counts, wallet scene fillers, or dynamic action-packed close-ups.',
     category: 'australian-notes',
@@ -178,7 +178,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '50-aud-new-prop-money',
     name: 'Buy $50 AUD (New Design)',
-    price: 150.00,
+    price: 200.00,
     description: 'Next-gen $50 AUD prop note. Meticulously designed according to Reserve Bank of Australia compliance guidelines.',
     longDescription: 'Bring extreme accuracy to your heist, corporate boardroom, or luxury sets with the modern-style $50 AUD banknote replica. This high-demand prop utilizes deep yellow-gold pigments formulated strictly to avoid yellow flare under harsh flashes.',
     category: 'australian-notes',
@@ -199,7 +199,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '100-aud-new-prop-money',
     name: 'Buy $100 AUD (New Design)',
-    price: 200.00,
+    price: 250.00,
     description: 'Our highest denomination $100 AUD prop bank note (new series), perfect for cinematic high-stakes reveals.',
     longDescription: 'Complete your high-stakes narrative with the supreme next-generation $100 AUD replica note. Expertly color-graded for optimal video presence, it is the ideal prop for suitcases, safes, and detailed foreground counts.',
     category: 'australian-notes',
@@ -460,7 +460,7 @@ For fast, private dispatch across Sydney, Melbourne, Brisbane, and beyond, our s
     date: '2026-07-15',
     category: 'Production',
     readTime: '4 min read',
-    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'legality-of-prop-money-australia-crimes-currency-act-1981-explained',
@@ -481,7 +481,7 @@ Keep your shoot safe and secure. Learn more about our compliance standards or br
     date: '2026-07-14',
     category: 'Legal',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'real-polymer-vs-matte-prop-money-keeping-film-sets-flare-free',
@@ -503,7 +503,7 @@ For professional results on your next television commercial or feature drama, in
     date: '2026-07-13',
     category: 'Production',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'how-to-style-high-stakes-heist-scenes-bulk-cash-stacks',
@@ -524,7 +524,7 @@ Want to achieve a massive visual scale for your heist? Save up to 25% by orderin
     date: '2026-07-12',
     category: 'Tutorial',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'guide-to-rba-compliant-disclaimers-on-replica-australian-banknotes',
@@ -544,7 +544,7 @@ Ensure compliance on your next shoot. Browse our certified [Australian Notes](/s
     date: '2026-07-11',
     category: 'Legal',
     readTime: '4 min read',
-    image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'prop-money-guns-adding-dynamic-action-music-videos-events-australia',
@@ -564,7 +564,7 @@ Make a major impact on screen. Grab the [Prop Money Gun](/product/prop-money-gun
     date: '2026-07-10',
     category: 'Promotion',
     readTime: '4 min read',
-    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'how-prop-masters-manage-and-age-movie-money-vintage-grit',
@@ -584,7 +584,7 @@ Get started on your gritty indie project with our flexible [Film Producer Pack](
     date: '2026-07-09',
     category: 'Tutorial',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'setting-up-realistic-bank-vault-scene-indie-budget',
@@ -605,7 +605,7 @@ Complete the banking atmosphere by placing our [Canvas Money Bag](/product/canva
     date: '2026-07-08',
     category: 'Production',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'how-to-make-prop-money-look-and-feel-real',
@@ -625,7 +625,7 @@ When you buy fake australian money props from us, you're getting double-sided, m
     date: '2026-08-01',
     category: 'Tutorial',
     readTime: '4 min read',
-    image: 'https://images.unsplash.com/photo-1580519542036-ed47f3e42f9b?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   },
   {
     id: 'is-prop-money-illegal-australia-laws',
@@ -643,7 +643,7 @@ If you are looking for where to buy australian prop money safely, our store prov
     date: '2026-08-05',
     category: 'Legal',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80'
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   }
 ];
 

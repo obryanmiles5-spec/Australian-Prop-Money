@@ -128,7 +128,7 @@ export async function POST(req: NextRequest) {
 
           <div style="background-color: #f9f9f9; padding: 15px; border-left: 4px solid #111; margin: 15px 0; font-family: sans-serif; font-size: 13px; border-radius: 4px;">
             <h4 style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 13px;">Selected Settlement Method: <span style="text-transform: uppercase; color: #d4af37;">${details.paymentMethod || 'N/A'}</span></h4>
-            <pre style="margin: 0; font-family: monospace; white-space: pre-wrap; font-size: 11px; background-color: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 4px; color: #333;">${details.paymentInstructions || 'None provided'}</pre>
+            ${details.paymentMethod === 'crypto' ? `<pre style="margin: 0; font-family: monospace; white-space: pre-wrap; font-size: 11px; background-color: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 4px; color: #333;">${details.paymentInstructions || 'None provided'}</pre>` : '<p style="margin: 4px 0;">An administrator will contact you with payment details shortly.</p>'}
           </div>
 
           <div style="background-color: #fafafa; border: 1px solid #eee; padding: 15px; border-radius: 6px; font-family: sans-serif; font-size: 13px; margin-top: 15px;">

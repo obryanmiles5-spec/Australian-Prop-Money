@@ -58,7 +58,7 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </h2>
           <p>
-            By accessing this website, placing an order, or completing a wholesale brief with Australian Prop Money (australianpropmoney.com.au), you explicitly represent and warrant that you are at least 18 years of age, and that you are procuring these replica prop notes exclusively for lawful artistic, theatrical, commercial, training, or novelty purposes.
+            By accessing this website, placing an order, or completing a wholesale brief with Australian Prop Money (australianpropmoney.org), you explicitly represent and warrant that you are at least 18 years of age, and that you are procuring these replica prop notes exclusively for lawful artistic, theatrical, commercial, training, or novelty purposes.
           </p>
         </section>
 
@@ -106,7 +106,7 @@ export default function TermsPage() {
 
         <div className="bg-gray-50 p-5 rounded-2xl border text-center space-y-2">
           <p className="font-bold text-xs text-black uppercase tracking-wider">Need Official Compliance Certificates?</p>
-          <p className="text-xs text-gray-500">Our prop studio issues custom Certificates of Compliance conforming to Crimes (Currency) Act guidelines on request. Contact us at <a href="mailto:info@australianpropmoney.com.au" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.com.au</a>.</p>
+          <p className="text-xs text-gray-500">Our prop studio issues custom Certificates of Compliance conforming to Crimes (Currency) Act guidelines on request. Contact us at <a href="mailto:info@australianpropmoney.org" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.org</a>.</p>
         </div>
 
       </div>

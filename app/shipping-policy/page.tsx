@@ -95,7 +95,7 @@ export default function ShippingPolicyPage() {
 
         <div className="bg-gray-50 p-5 rounded-2xl border text-center space-y-2">
           <p className="font-bold text-xs text-black uppercase tracking-wider">Have Questions Regarding Delivery Speed?</p>
-          <p className="text-xs text-gray-500">Contact our logistics team at <a href="mailto:info@australianpropmoney.com.au" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.com.au</a> or via WhatsApp.</p>
+          <p className="text-xs text-gray-500">Contact our logistics team at <a href="mailto:info@australianpropmoney.org" className="underline hover:text-gold transition-colors font-bold">info@australianpropmoney.org</a> or via WhatsApp.</p>
         </div>
 
       </div>
