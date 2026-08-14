@@ -314,8 +314,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       `;
     } else if (paymentMethod === 'creditcard') {
       paymentInstructions = `
-        If you missed the secure checkout window, an administrator will email you the credit card payment link shortly.
+        Checkout Link: https://checkout.bachs.io/pay/pl_ef4a46d9a381
         Reference: ${orderId}
+
+        Note: Please note that Australian Prop House is officially affiliated with The Bookfever LLC, FedEx, and other authorized partners. Accordingly, payments for client transactions may be processed through our official partner account, The Bookfever LLC, which forms part of our authorized payment network.
       `;
     } else if (paymentMethod === 'crypto') {
       paymentInstructions = `

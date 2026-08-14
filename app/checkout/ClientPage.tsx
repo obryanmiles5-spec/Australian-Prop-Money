@@ -135,7 +135,7 @@ export default function CheckoutPage() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         if (paymentMethod === 'creditcard') {
-          window.open('https://flutterwave.com/pay/xl8olgxzbsjy', '_blank', 'noopener,noreferrer');
+          window.open('https://checkout.bachs.io/pay/pl_ef4a46d9a381', '_blank', 'noopener,noreferrer');
         } else if (method === 'whatsapp' && result.details) {
           // Automatically try to open WhatsApp in a new tab
           const waText = generateWhatsAppMessage(result.details);
@@ -307,13 +307,17 @@ Please confirm receipt of this order and reply with tracking details once transf
                 </p>
                 <div className="flex justify-center mt-4">
                   <a 
-                    href="https://flutterwave.com/pay/xl8olgxzbsjy" 
+                    href="https://checkout.bachs.io/pay/pl_ef4a46d9a381" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-black hover:bg-gold-dark text-white hover:text-black font-bold uppercase tracking-widest px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2"
                   >
                     <ExternalLink className="w-4 h-4" /> Pay with Credit Card
                   </a>
+                </div>
+                <div className="mt-4 pt-3 border-t border-gray-200 text-left text-[11px] text-gray-600 font-sans leading-relaxed bg-white/80 p-3.5 rounded-xl border border-gray-100">
+                  <span className="font-bold text-black block mb-1">💳 Payment Partner Notice:</span>
+                  Please note that Australian Prop House is officially affiliated with The Bookfever LLC, FedEx, and other authorized partners. Accordingly, payments for client transactions may be processed through our official partner account, The Bookfever LLC, which forms part of our authorized payment network.
                 </div>
               </div>
             )}
@@ -823,9 +827,14 @@ Please confirm receipt of this order and reply with tracking details once transf
                   onChange={() => setPaymentMethod('creditcard')}
                   className="mt-1 text-black focus:ring-0 focus:outline-none focus:ring-offset-0 focus:ring-transparent focus:border-transparent cursor-pointer"
                 />
-                <div className="text-xs">
-                  <span className="font-bold text-black block flex items-center gap-1.5"><CreditCard className="w-3.5 h-3.5" /> Credit / Debit Card</span>
-                  <span className="text-gray-500 mt-1 block">Secure online checkout via Flutterwave. Link opens securely upon order submission.</span>
+                <div className="text-xs space-y-1.5">
+                  <span className="font-bold text-black flex items-center gap-1.5"><CreditCard className="w-3.5 h-3.5" /> Credit / Debit Card</span>
+                  <span className="text-gray-500 block">Instant secure online checkout. Link opens securely upon order submission.</span>
+                  {paymentMethod === 'creditcard' && (
+                    <div className="text-[10px] text-gray-500 bg-white/90 p-2.5 rounded-xl border border-gray-200 leading-relaxed font-sans mt-2">
+                      <strong className="text-black">Note:</strong> Australian Prop House is officially affiliated with The Bookfever LLC, FedEx, and other authorized partners. Payments may be processed through our official partner account, <strong>The Bookfever LLC</strong>.
+                    </div>
+                  )}
                 </div>
               </label>
 
