@@ -48,38 +48,122 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Australian Prop Money | Professional Prop Money Australia for Film & TV',
-  description: 'Premium Australian prop money and fake australian money prop notes for film, television, theatre, photography, and training. Realistic size, dual-sided premium prints conforming to RBA legal rules.',
+  metadataBase: new URL(cleanBaseUrl),
+  title: {
+    default: 'Australian Prop Money | #1 Prop Money Australia & Fake Australian Money Props',
+    template: '%s | Australian Prop Money'
+  },
+  description: 'Australia’s leading supplier of RBA-compliant Australian prop money, fake australian money prop notes, old and new $100, $50, $20, $10 AUD notes, and USD prop cash for film, TV, music videos, and photography. Fast shipping to Sydney, Melbourne, Brisbane, Perth & nationwide.',
   keywords: [
+    // Primary High-Volume Search Keywords
     'australian prop money',
     'prop money australia',
-    'prop money',
-    'au prop money',
+    'buy prop money australia',
     'fake australian money prop',
+    'fake money australia',
     'prop australian money',
+    'au prop money',
     'prop money au',
-    'prop american money',
     'aus prop money',
     'australia prop money',
+    'prop money buy online',
+    'movie money australia',
+    'cinema prop money australia',
+    'prop cash australia',
+    'realistic prop money australia',
+
+    // Specific Denomination Terms
+    'fake $100 notes australia',
+    'fake $50 notes australia',
+    'fake $20 notes australia',
+    'fake $10 notes australia',
+    '100 AUD prop notes',
+    '50 AUD prop notes',
+    '20 AUD prop notes',
+    '10 AUD prop notes',
+    'old design australian prop money',
+    'new design australian prop notes',
+    'australian polymer prop cash',
+
+    // City & Location Search Keywords
+    'prop money sydney',
+    'prop money melbourne',
+    'prop money brisbane',
+    'prop money perth',
+    'prop money adelaide',
+    'prop money gold coast',
+    'prop money Canberra',
+
+    // Production & Use-Case Keywords
+    'film prop money australia',
+    'tv show prop cash',
+    'music video prop money',
+    'photography prop notes',
+    'theatre prop money australia',
+    'training prop money australia',
+    'casino prop money australia',
+    'heist scene prop cash',
+
+    // Multi-Currency & Special Items
+    'prop american money',
+    'US dollar prop notes australia',
+    '100 USD prop cash',
+    'prop money gun australia',
+    'bulk prop money wholesale australia',
+    'full print prop money stacks',
+
+    // Legality & Compliance Queries
+    'RBA compliant prop money',
+    'is prop money legal in australia',
+    'non-negotiable prop cash australia',
+    'Reserve Bank of Australia prop money rules'
   ],
+  authors: [{ name: 'Australian Prop Money Specialist' }],
+  creator: 'Australian Prop Money',
+  publisher: 'Australian Prop Money',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: cleanBaseUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   verification: {
     google: searchConsoleId || 'rrCPhA4xaJmRhlVmKy3oo6aKP4rYE3Wa5QLwS3SEV04',
   },
   openGraph: {
-    title: 'Australian Prop Money | Professional Prop Money Australia for Film & TV',
-    description: 'Premium Australian prop money and fake australian money prop notes for film, television, theatre, photography, and training. Realistic size, dual-sided premium prints conforming to RBA legal rules.',
+    title: 'Australian Prop Money | #1 Prop Money Australia for Film & TV',
+    description: 'Australia’s top source for camera-ready RBA-compliant Australian prop money notes ($100, $50, $20, $10) and prop bundles. Fast shipping to Sydney, Melbourne, Brisbane, and nationwide.',
     url: cleanBaseUrl,
     siteName: 'Australian Prop Money',
+    images: [
+      {
+        url: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
+        width: 1200,
+        height: 630,
+        alt: 'Australian Prop Money - Camera Ready Prop Cash Stacks',
+      },
+    ],
     locale: 'en_AU',
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Australian Prop Money | Professional Prop Money Australia',
-    description: 'Premium Australian prop money and fake australian money prop notes for film, television, theatre, photography, and training. Conforming to RBA guidelines.',
+    description: 'Australia’s top source for camera-ready RBA-compliant Australian prop money notes and prop bundles. Fast shipping nationwide.',
+    images: ['https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
   },
 };
 

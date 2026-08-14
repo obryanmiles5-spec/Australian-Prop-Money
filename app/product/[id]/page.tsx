@@ -29,22 +29,44 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cleanBase = baseUrl.replace(/\/$/, '');
   const productUrl = `${cleanBase}/product/${product.id}`;
 
+  const productImage = product.image || 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000';
+
   return {
     title: `${product.seoTitle} | Australian Prop Money`,
     description: product.metaDescription,
+    keywords: [
+      product.name.toLowerCase(),
+      'australian prop money',
+      'prop money australia',
+      'buy prop money australia',
+      'fake australian money prop',
+      'prop money au',
+      'aus prop money',
+      'movie money australia',
+      'RBA compliant prop money'
+    ],
     alternates: {
       canonical: productUrl,
     },
     openGraph: {
-      title: product.seoTitle,
+      title: `${product.seoTitle} | Australian Prop Money`,
       description: product.metaDescription,
       url: productUrl,
       type: 'website',
+      images: [
+        {
+          url: productImage,
+          width: 1000,
+          height: 1000,
+          alt: product.name,
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: product.seoTitle,
       description: product.metaDescription,
+      images: [productImage],
     }
   };
 }
