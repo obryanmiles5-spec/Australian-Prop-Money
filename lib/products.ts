@@ -442,6 +442,34 @@ export const CATEGORIES: { id: string; name: string; description: string; }[] = 
 ];
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'how-to-tell-counterfeit-money-australia-vs-prop-money',
+    title: 'How to Tell Counterfeit Money in Australia: Prop Money vs. Fake Cash',
+    excerpt: 'Learn the difference between legal prop money, counterfeit cash, and what to do if you encounter fake notes in Australia. We cover detectors, penalties, and RBA compliance.',
+    content: `When producing a film, it's crucial to understand the difference between legal **australian prop money** and illegal **counterfeit money**. Many people ask, "what is counterfeit money?" or "define counterfeit money"—it is illegal currency created to deceive. Legal **props money** and **fake australian money prop** notes are expressly designed *not* to deceive.
+
+### How to Tell if Money is Fake in Australia
+If you're wondering **how to tell if money is fake australia** or **how to tell counterfeit money australia**, the Reserve Bank of Australia (RBA) has clear guidelines. Real Australian notes are made of polymer. If you use a **fake money tester pen** or a **fake cash detector**, real notes have specific UV properties and clear windows. In contrast, our **australian prop money realistic** notes are printed on premium matte paper. They will fail any **counterfeit money tester**, **fake money detector**, or **false money detector**. 
+
+### Counterfeit Money Detectors & ATMs
+Will an ATM accept our props? Absolutely not. **ATM counterfeit money** detectors and regular bank scanners will immediately reject paper props. If you ever say "an **atm gave me fake money**", that is a serious banking issue—but our **aus prop money** is explicitly marked and sized differently so it cannot be mistaken for real currency in a machine. Whether it's a standard **australian counterfeit money detector** or a retail **pen test counterfeit money**, our props are designed to be safe and legally compliant for camera use only.
+
+### The Law: Counterfeit Money Australia Penalty
+The **counterfeit money australia penalty** is severe. The **minimum sentence for counterfeit money australia** can involve heavy fines and jail time under the Crimes (Currency) Act 1981. If you are caught **making counterfeit money**, **making fake money**, or using **fake money flex** notes to buy goods, you face federal charges. We strictly prohibit the use of our **prop money au** for anything other than media production. You cannot use it as **baccarat fake money** in a real casino, nor as **pokies fake money**. 
+
+### What Do I Do With Fake Money?
+If you find a **fake note australia** or suspect you have **australian counterfeit** cash in circulation (like the recent **fake money circulating tasmania** or **counterfeit money charges hervey bay**), do not spend it. Turn it into the local police. If you ask, "**will the bank replace fake money**?" the answer is no; you bear the loss. 
+
+### Why Choose Our Australian Prop Money For Sale
+We provide the **best fake money** for cinema. Whether you need a **bag of fake money**, **1 1 prop money**, **$100 prop money**, or even **fake american money** / **american prop money** for a US-based script shot in Sydney, we are your trusted supplier. Avoid sketchy **alibaba fake money** or **alibaba prop money** which often violates RBA size and material rules. We supply **ready prop money**, **aud prop money**, and **fake us dollars** (**fake usd**) that look incredible on camera but remain 100% legal.
+
+From **fake notes australia** for indie films to a massive **1000 fake money** stack for a heist scene, our **prop australian money** provides the **realistic fake money australia online** experience without the legal risks of actual **counterfiet money**.`,
+    date: '2026-08-25',
+    category: 'Compliance',
+    readTime: '6 min read',
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+  },
+
+  {
     id: 'where-to-buy-realistic-australian-prop-money-film-photography',
     title: 'Where to Buy Realistic Australian Prop Money for Film & Photography',
     excerpt: 'Looking for camera-ready replica cash in Sydney, Melbourne, or Brisbane? Our guide covers what to look for and where to buy premium, fully-compliant prop banknotes.',
@@ -648,6 +676,22 @@ If you are looking for where to buy australian prop money safely, our store prov
 ];
 
 export const FAQS: FAQItem[] = [
+  {
+    category: 'legality',
+    question: 'Counterfeit vs Prop Money: What is the difference and what does counterfeit money mean?',
+    answer: 'The **counterfeit money meaning** (or **define counterfeit money**) refers to illegal replica currency designed to defraud. In contrast, our **australian prop money** (or **artificial money**, **another word for fake money**) is strictly for film and photography. It is not a **fake money template** or **fake money to print off** at home. Attempting to **create fake money**, **fake money making**, or finding out **how to make fake money feel more real at home** for illegal use is a federal crime. Our **australian prop money for sale** is pre-printed on non-polymer paper so any **counterfeit money detector australia** or **fake money big w** checker will easily flag it as a prop.'
+  },
+  {
+    category: 'custom',
+    question: 'Do you sell fake coins, fake toonies, or British prop money?',
+    answer: 'Currently, our main focus is on high-quality paper **au prop money**, **prop american money**, and **fake notes**. We do not manufacture **fake coins**, **fake coin**, or **fake toonies**. If you need **prop money uk** or **british prop money**, we can do custom print runs upon request for international productions.'
+  },
+  {
+    category: 'ordering',
+    question: 'Where is the best place to use counterfeit money?',
+    answer: 'Nowhere. Using **counterfeit money** or **counterfeit cash** is a severe crime. Our products are **props money** strictly for use on closed film sets, music videos, and theater stages. It is the **best fake money reddit** users recommend for *legal* film production, not for illegal circulation.'
+  },
+
   {
     category: 'legality',
     question: 'Is it legal to buy and use replica prop money in Australia?',

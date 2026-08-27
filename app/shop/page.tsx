@@ -8,10 +8,13 @@ const cleanBaseUrl = baseUrl.replace(/\/$/, '');
 export const metadata: Metadata = {
   title: 'Shop Australian Prop Money | Buy Realistic Fake Australian Money Props & USD Stacks',
   description: 'Shop our premium collection of Australian prop money, fake australian money prop notes, old/new AUD designs ($100, $50, $20, $10), USD prop cash, and heist bundle crates. Engineered for 4K cameras with RBA-compliant non-glare prints.',
-  keywords: [
+    keywords: [
     'shop australian prop money',
     'buy prop money australia',
+    'australian prop money for sale',
     'fake australian money prop',
+    'realistic fake money australia online',
+    'australian counterfeit money for sale',
     'prop money shop sydney',
     'prop money melbourne',
     'au prop money store',
@@ -19,7 +22,11 @@ export const metadata: Metadata = {
     'buy fake $100 notes australia',
     'buy fake $50 notes australia',
     'prop american money shop',
-    'wholesale prop cash australia'
+    'wholesale prop cash australia',
+    'bag of fake money',
+    'fake usd',
+    'fake us dollars',
+    'american fake money'
   ],
   alternates: {
     canonical: `${cleanBaseUrl}/shop`,
