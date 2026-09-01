@@ -139,7 +139,7 @@ export default function CheckoutPage() {
         } else if (method === 'whatsapp' && result.details) {
           // Automatically try to open WhatsApp in a new tab
           const waText = generateWhatsAppMessage(result.details);
-          const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682");
+          const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61468187340");
           const waUrl = `https://wa.me/${waNum}?text=${waText}`;
           window.open(waUrl, '_blank', 'noopener,noreferrer');
         }
@@ -366,6 +366,15 @@ Please confirm receipt of this order and reply with tracking details once transf
                   <span className="text-emerald-600 font-bold font-sans">${(details.total / 1.5).toFixed(2)} USD</span>
                 </div>
                 <div className="space-y-1.5 border-b pb-2 border-gray-100">
+                  <span className="text-gray-400 block font-bold uppercase tracking-wider text-[8px]">USDT (TRC20) Wallet Address</span>
+                  <div className="flex gap-2 items-center bg-white p-2 rounded border justify-between">
+                    <span className="text-black font-semibold select-all break-all">TPKN5X472PTe6NrjwjD1GYhqqxZcmR1c4g</span>
+                    <button onClick={() => handleCopy('TPKN5X472PTe6NrjwjD1GYhqqxZcmR1c4g', 'USDT')} className="text-gold hover:underline p-1 shrink-0 bg-gray-50 rounded">
+                      {copiedState === 'USDT' ? 'Copied' : <Copy className="w-3.5 h-3.5" />}
+                    </button>
+                  </div>
+                </div>
+                <div className="space-y-1.5 border-b pb-2 border-gray-100 mt-2">
                   <span className="text-gray-400 block font-bold uppercase tracking-wider text-[8px]">Bitcoin (BTC) Wallet Address</span>
                   <div className="flex gap-2 items-center bg-white p-2 rounded border justify-between">
                     <span className="text-black font-semibold select-all break-all">bc1qz0u5ctpj9v2fnn9mj5dlfsma9f533jjse9sxpa</span>
@@ -407,7 +416,7 @@ Please confirm receipt of this order and reply with tracking details once transf
             {/* WhatsApp verification checkout */}
             {true && (
               <a
-                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682")}?text=${generateWhatsAppMessage()}`}
+                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61468187340")}?text=${generateWhatsAppMessage()}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#20ba59] text-white py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 text-center focus:outline-none"
@@ -893,9 +902,9 @@ Please confirm receipt of this order and reply with tracking details once transf
                 }`}
                 id="checkout-pay-label-crypto"
               >
-                {couponCode === 'PROPMONEYAU' && (
+                {(couponCode === 'PROPMONEYAU' || couponCode === 'USDT10') && (
                   <span className="absolute -top-1.5 -right-1 bg-red-500 text-white font-sans text-[7px] px-2 py-0.5 rounded-full animate-bounce">
-                    30% Off
+                    {couponCode === 'PROPMONEYAU' ? '30% Off' : '10% Off'}
                   </span>
                 )}
                 <input
@@ -907,8 +916,8 @@ Please confirm receipt of this order and reply with tracking details once transf
                   className="mt-1 text-black focus:ring-0 focus:outline-none focus:ring-offset-0 focus:ring-transparent focus:border-transparent cursor-pointer"
                 />
                 <div className="text-xs">
-                  <span className="font-bold text-black block">Cryptocurrency (BTC)</span>
-                  <p className="text-gray-400 mt-0.5 leading-tight text-[10px]">Secure, fast, and completely anonymous. We offer an extra 30% discount on Crypto transfers with coupon <strong>PROPMONEYAU</strong>.</p>
+                  <span className="font-bold text-black block">Cryptocurrency (USDT / BTC)</span>
+                  <p className="text-gray-400 mt-0.5 leading-tight text-[10px]">Secure, fast, and anonymous. We offer an extra 10% discount on USDT transfers with coupon <strong>USDT10</strong> (or 30% for BTC with <strong>PROPMONEYAU</strong>).</p>
                 </div>
               </label>
 

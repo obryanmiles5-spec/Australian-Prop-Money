@@ -48,7 +48,8 @@ export default function Footer() {
             <p className="text-[10.5px] text-gray-400 leading-relaxed">
               Premium replica currency for film, television, theatre, commercial photography, financial training, and creative media productions. Formulated with color-calibrated matte finishes to achieve 100% realistic representation on modern digital lenses.
             </p>
-            <div className="text-[9.5px] text-gray-500 uppercase tracking-wider space-y-1">
+            <div className="text-[9.5px] text-gray-500 uppercase tracking-wider space-y-1 mt-2">
+              <p>Phone: <a href="tel:+61468187340" className="hover:text-gold transition-colors text-white">+61 468 187 340</a></p>
               <p>Email: <a href="mailto:info@australianpropmoney.org" className="hover:text-gold transition-colors text-white">info@australianpropmoney.org</a></p>
             </div>
           </div>
@@ -100,7 +101,7 @@ export default function Footer() {
               <div className="p-2 rounded-lg bg-white/[0.02] border border-white/5 space-y-0.5">
                 <span className="text-[8.5px] uppercase font-bold text-gold tracking-widest block">WhatsApp Rapid Desk</span>
                 <a 
-                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682')}`} 
+                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61468187340')}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center gap-1 text-[11px] text-white hover:text-gold font-bold transition-colors"

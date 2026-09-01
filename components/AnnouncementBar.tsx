@@ -1,13 +1,15 @@
 'use client';
 
 import React from 'react';
-import { MessageSquare, AlertCircle } from 'lucide-react';
+import { MessageSquare, AlertCircle, Phone } from 'lucide-react';
 
 const ANNOUNCEMENTS = [
+  { text: 'ABN: 46 674 267 559 | Australian Prop Money', icon: null },
+  { text: 'Direct Call & SMS: +61 468 187 340', icon: Phone },
   { text: 'Minimum Order AUD $150 for compliance standards', icon: AlertCircle },
   { text: 'Wholesale Orders Welcome — Bulk Pricing Available', icon: null },
   { text: 'Fast Express Shipping Australia-Wide', icon: null },
-  { text: '30% OFF First Crypto Payment (Coupon: PROPMONEYAU)', icon: null },
+  { text: '10% OFF USDT Crypto Payment (Coupon: USDT10)', icon: null },
   { text: 'WhatsApp Support available 24/7', icon: MessageSquare },
   { text: 'Follow us on TikTok @AustralianPropMoney', icon: null },
 ];

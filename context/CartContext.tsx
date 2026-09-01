@@ -232,6 +232,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem('amp_discount', '30');
       return true;
     }
+    if (cleanCode === 'USDT10') {
+      setCouponCode('USDT10');
+      setDiscountPercentage(10);
+      localStorage.setItem('amp_coupon', 'USDT10');
+      localStorage.setItem('amp_discount', '10');
+      return true;
+    }
     if (cleanCode === 'WELCOME10') {
       setCouponCode('WELCOME10');
       setDiscountPercentage(10);
@@ -283,7 +290,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // Dynamic calculations based on option pricing
   const activeDiscountPercentage = (couponCode === 'PROPMONEYAU' && paymentMethod === 'crypto') 
     ? 30 
-    : (couponCode === 'WELCOME10' ? 10 : 0);
+    : (couponCode === 'USDT10' && paymentMethod === 'crypto')
+      ? 10
+      : (couponCode === 'WELCOME10' ? 10 : 0);
 
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
   const subtotal = cart.reduce((acc, item) => acc + (item.priceAtTimeOfAdding ?? item.product?.price ?? 0) * item.quantity, 0);
@@ -316,11 +325,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       paymentInstructions = `
         Checkout Link: https://checkout.bachs.io/pay/pl_ef4a46d9a381
         Reference: ${orderId}
-
-        Note: Please note that Australian Prop House is officially affiliated with The Bookfever LLC, FedEx, and other authorized partners. Accordingly, payments for client transactions may be processed through our official partner account, The Bookfever LLC, which forms part of our authorized payment network.
       `;
     } else if (paymentMethod === 'crypto') {
       paymentInstructions = `
+        USDT (TRC20) Wallet Address: TPKN5X472PTe6NrjwjD1GYhqqxZcmR1c4g
         Bitcoin (BTC) Address: bc1qz0u5ctpj9v2fnn9mj5dlfsma9f533jjse9sxpa
         Please send exactly: ${((subtotal - discountAmount + shippingCost) / 1.5).toFixed(2)} USD value
         Reference / Memo: ${orderId}
