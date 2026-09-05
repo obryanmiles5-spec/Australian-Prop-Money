@@ -185,7 +185,7 @@ export default function ContactPage() {
               <div className="space-y-2">
                 <h3 className="font-serif font-bold text-xl text-black">Message Dispatched</h3>
                 <p className="text-xs sm:text-sm text-gray-500 max-w-md mx-auto leading-relaxed">
-                  Thank you for reaching out. Your inquiry has been routed directly to our studio desk at <strong className="text-black font-mono">info@australianpropmoney.org</strong>. A confirmation copy has also been sent to your email.
+                  Thank you for reaching out. Your inquiry has been routed directly to our Sydney lead prop specialist. A formal response will be dispatched within 2 hours.
                 </p>
               </div>
               <button

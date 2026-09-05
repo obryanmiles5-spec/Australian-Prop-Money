@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
         width: 1200,
         height: 630,
         alt: 'About Australian Prop Money',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Us | Australian Prop Money',
     description: 'Learn about Australian Prop Money, the leading provider of premium fake australian money prop and replica notes.',
-    images: ['/images/og-image.jpg'],
+    images: ['https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
   },
 };
 

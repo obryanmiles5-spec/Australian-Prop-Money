@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: ['Australian Prop Money Specialist'],
       images: [
         {
-          url: post.image || '/images/og-image.jpg',
+          url: post.image || 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
           width: 1200,
           height: 630,
           alt: post.title,
@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: [post.image || '/images/og-image.jpg'],
+      images: [post.image || 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
     },
   };
 }

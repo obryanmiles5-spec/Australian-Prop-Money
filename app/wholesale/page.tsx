@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
         width: 1200,
         height: 630,
         alt: 'Wholesale Australian Prop Money Bundles',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Wholesale Prop Money Australia | Bulk Orders & Film Crates',
     description: 'Order bulk Australian prop money and USD prop stacks for large scale film and TV productions.',
-    images: ['/images/og-image.jpg'],
+    images: ['https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
   },
 };
 

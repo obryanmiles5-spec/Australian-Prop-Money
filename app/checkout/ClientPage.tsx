@@ -315,6 +315,10 @@ Please confirm receipt of this order and reply with tracking details once transf
                     <ExternalLink className="w-4 h-4" /> Pay with Credit Card
                   </a>
                 </div>
+                <div className="mt-4 pt-3 border-t border-gray-200 text-left text-[11px] text-gray-600 font-sans leading-relaxed bg-white/80 p-3.5 rounded-xl border border-gray-100">
+                  <span className="font-bold text-black block mb-1">💳 Payment Partner Notice:</span>
+                  Please note that Australian Prop House is officially affiliated with The Bookfever LLC, FedEx, and other authorized partners. Accordingly, payments for client transactions may be processed through our official partner account, The Bookfever LLC, which forms part of our authorized payment network.
+                </div>
               </div>
             )}
 
@@ -835,6 +839,11 @@ Please confirm receipt of this order and reply with tracking details once transf
                 <div className="text-xs space-y-1.5">
                   <span className="font-bold text-black flex items-center gap-1.5"><CreditCard className="w-3.5 h-3.5" /> Credit / Debit Card</span>
                   <span className="text-gray-500 block">Instant secure online checkout. Link opens securely upon order submission.</span>
+                  {paymentMethod === 'creditcard' && (
+                    <div className="text-[10px] text-gray-500 bg-white/90 p-2.5 rounded-xl border border-gray-200 leading-relaxed font-sans mt-2">
+                      <strong className="text-black">Note:</strong> Australian Prop House is officially affiliated with The Bookfever LLC, FedEx, and other authorized partners. Payments may be processed through our official partner account, <strong>The Bookfever LLC</strong>.
+                    </div>
+                  )}
                 </div>
               </label>
 

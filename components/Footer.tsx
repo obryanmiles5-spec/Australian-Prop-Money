@@ -8,38 +8,12 @@ import { cleanWhatsAppNumber } from '@/lib/utils';
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubscribe = async (e: React.FormEvent) => {
+  const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim() || !email.includes('@')) return;
-
-    setIsSubmitting(true);
-    setErrorMsg('');
-
-    try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: email.trim(),
-          type: 'subscription',
-          source: 'Website Footer Form',
-        }),
-      });
-
-      const data = await res.json();
-      if (data.success) {
-        setSubscribed(true);
-        setEmail('');
-      } else {
-        setErrorMsg(data.error || 'Failed to subscribe. Please try again.');
-      }
-    } catch (err) {
-      setErrorMsg('Network error. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+    if (email.trim()) {
+      setSubscribed(true);
+      setEmail('');
     }
   };
 
@@ -150,17 +124,12 @@ export default function Footer() {
             </p>
             
             {subscribed ? (
-              <div className="bg-white/[0.04] p-3 rounded-lg border border-gold/30 space-y-1 text-[10.5px] text-gold animate-scale-in">
-                <div className="flex items-center gap-1.5 font-bold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" />
-                  <span>VIP Confirmation Sent!</span>
-                </div>
-                <p className="text-[9.5px] text-gray-300 leading-normal">
-                  Your 15% welcome code (<strong className="text-white font-mono">WELCOME15</strong>) was dispatched to your email, and studio notification sent to <span className="text-white font-mono">info@australianpropmoney.org</span>.
-                </p>
+              <div className="bg-white/[0.04] p-2.5 rounded-lg border border-gold/20 flex items-center gap-1.5 text-[10.5px] text-gold animate-scale-in">
+                <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" />
+                <span>Thank you! Coupon sent.</span>
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="space-y-1.5">
+              <form onSubmit={handleSubscribe} className="space-y-1">
                 <div className="flex border border-white/10 rounded overflow-hidden">
                   <input
                     type="email"
@@ -168,24 +137,19 @@ export default function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="EMAIL ADDRESS"
-                    disabled={isSubmitting}
-                    className="w-full bg-black/50 text-white text-[10px] px-2.5 py-1.5 focus:outline-none focus:bg-black/85 transition-all disabled:opacity-60"
+                    className="w-full bg-black/50 text-white text-[10px] px-2.5 py-1.5 focus:outline-none focus:bg-black/85 transition-all"
                     id="input-footer-newsletter"
                   />
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="bg-gold hover:bg-gold-dark text-white px-2.5 text-[9px] font-bold uppercase tracking-widest transition-colors focus:outline-none disabled:opacity-60 shrink-0"
+                    className="bg-gold hover:bg-gold-dark text-white px-2.5 text-[9px] font-bold uppercase tracking-widest transition-colors focus:outline-none"
                     id="btn-footer-newsletter-submit"
                   >
-                    {isSubmitting ? 'Joining...' : 'Join'}
+                    Join
                   </button>
                 </div>
-                {errorMsg && (
-                  <p className="text-[9px] text-red-400 font-sans">{errorMsg}</p>
-                )}
                 <span className="text-[8.5px] text-gray-500 font-mono tracking-wide block">
-                  Zero spam. Direct dispatch to studio desk.
+                  Zero spam. Unsubscribe anytime.
                 </span>
               </form>
             )}
@@ -196,65 +160,21 @@ export default function Footer() {
 
         {/* Legal Disclaimer Box */}
         <div className="bg-[#1A1A1A] p-2.5 rounded-xl border border-white/5 text-[9.5px] text-gray-500 leading-relaxed text-center font-serif italic mb-4">
-          &quot;All products sold on this website are replica prop items intended exclusively for film production, television, theatre, photography, training, educational and novelty purposes. They are not legal tender and must not be used for any unlawful or fraudulent activity. Strictly adhering to Reserve Bank of Australia (RBA) guidelines and Crimes (Currency) Act 1981.&quot;
+          &quot;All products sold on this website are replica prop items intended exclusively for film production, television, theatre, photography, training, educational and novelty purposes. They are not legal tender and must not be used for any unlawful or fraudulent activity.&quot;
         </div>
 
-        {/* Australia Keyword & Production Directory Grid */}
-        <div className="text-[9px] text-gray-500 leading-relaxed border-t border-b border-white/5 py-4 mb-4 space-y-3">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
-            <div>
-              <strong className="text-white block font-mono text-[9.5px] uppercase tracking-wider mb-1">Film &amp; Theatre Hubs</strong>
-              <ul className="space-y-1 text-gray-400">
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Film Production Prop Money Sydney</Link></li>
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Theatre Prop Money Melbourne</Link></li>
-                <li><Link href="/shop" className="hover:text-gold transition-colors">TV Production Money Props Brisbane</Link></li>
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Legal Prop Money for Film Australia</Link></li>
-              </ul>
-            </div>
-            <div>
-              <strong className="text-white block font-mono text-[9.5px] uppercase tracking-wider mb-1">Denominations</strong>
-              <ul className="space-y-1 text-gray-400">
-                <li><Link href="/product/100-aud-new-prop-money" className="hover:text-gold transition-colors">New Series 100 AUD Prop Money</Link></li>
-                <li><Link href="/product/50-aud-new-prop-money" className="hover:text-gold transition-colors">Prop 50 Dollar Note Australia</Link></li>
-                <li><Link href="/product/20-aud-new-prop-money" className="hover:text-gold transition-colors">Prop 20 Dollar Note AUD</Link></li>
-                <li><Link href="/product/100-aud-old-prop-money" className="hover:text-gold transition-colors">Australian 100 Dollar Prop Notes</Link></li>
-              </ul>
-            </div>
-            <div>
-              <strong className="text-white block font-mono text-[9.5px] uppercase tracking-wider mb-1">Production Formats</strong>
-              <ul className="space-y-1 text-gray-400">
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Full Print Prop Money AUD</Link></li>
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Double Sided Prop Money Australia</Link></li>
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Blank Filler Prop Money Stacks</Link></li>
-                <li><Link href="/product/millionaire-briefcase-bundle" className="hover:text-gold transition-colors">Prop Money Briefcase Bundle</Link></li>
-              </ul>
-            </div>
-            <div>
-              <strong className="text-white block font-mono text-[9.5px] uppercase tracking-wider mb-1">Creative &amp; Training</strong>
-              <ul className="space-y-1 text-gray-400">
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Prop Cash for Music Videos Australia</Link></li>
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Cashier Training Prop Money</Link></li>
-                <li><Link href="/shop" className="hover:text-gold transition-colors">Photography Prop Money AUD</Link></li>
-                <li><Link href="/product/prop-money-gun-shooter" className="hover:text-gold transition-colors">AUD Money Gun Prop Cash</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <p className="text-center max-w-4xl mx-auto pt-2 text-gray-500">
-            Australian Prop Money is the trusted supplier where to buy prop money in Australia. Whether ordering single 100 AUD prop stacks, cheap prop money Australia bundles, or wholesale prop money Australia reserves, all replica currency is 100% compliant with Reserve Bank of Australia prop money guidelines and counterfeit vs prop money Australia standards. Enjoy prop money Australia next day delivery and Afterpay.
-          </p>
+        {/* SEO Text Box */}
+        <div className="text-[9px] text-gray-600 leading-relaxed text-center mb-4 max-w-4xl mx-auto px-4">
+          Looking for the best australian prop money? Whether you need prop money australia, prop bundles of money australia, or just wondering where to buy australian prop money, we are your #1 source. We supply high quality prop money, fake australian money prop, fake money props, and aus prop money to top film and television sets. All our movie prop money australia is legally compliant and designed strictly for cameras. If you want to buy prop money near me securely, order today for fast AU delivery.
         </div>
 
-        {/* Copy & Social Media Links */}
-        <div className="pt-3 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[10px] text-gray-500">
-          <p>© 2026 Australian Prop Money (ABN: 46 674 267 559). All rights reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 uppercase tracking-wider text-[9px]">
+        {/* Copy & Fineprint */}
+        <div className="pt-3 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left text-[10px] text-gray-500">
+          <p>© 2026 Australian Prop Money. All rights reserved.</p>
+          <div className="flex gap-3 uppercase tracking-wider text-[9px]">
             <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-gold transition-colors">Terms of Use</Link>
-            <a href="https://instagram.com/australianpropmoney" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Instagram</a>
             <a href="https://tiktok.com/@australianpropmoney" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">TikTok</a>
-            <a href="https://youtube.com/@australianpropmoney" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">YouTube</a>
-            <a href="https://facebook.com/australianpropmoney" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Facebook</a>
           </div>
         </div>
 

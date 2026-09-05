@@ -7,8 +7,7 @@ import {
   ArrowRight, Sparkles, ChevronRight, MessageSquare, 
   Plus, Minus, Film, Star, ShieldAlert, CheckCircle2 
 } from 'lucide-react';
-import { FAQS, PRODUCTS, Product } from '@/lib/products';
-import ReviewsSlider from "@/components/ReviewsSlider";
+import { FAQS, REVIEWS, PRODUCTS, Product } from '@/lib/products';
 import TrustSection from '@/components/TrustSection';
 import EntertainmentLogosCarousel from '@/components/EntertainmentLogosCarousel';
 import { cleanWhatsAppNumber } from '@/lib/utils';
@@ -41,7 +40,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <Image
-            src="/images/hero-macro.jpg"
+            src="https://drive.google.com/thumbnail?id=18Lkpjp0VSgrZ2CHuB0Yo_gK-1pHbP-hU&sz=w1920"
             alt="Australian Prop Money Cinematic Hero Banner"
             fill
             priority
@@ -147,7 +146,7 @@ export default function HomePage() {
               description: 'Individual premium australian prop money notes. Choose from classic old styles or next-generation polymer look designs.',
               cta: 'Shop Note Series',
               icon: Sparkles,
-              image: '/images/hero-macro.jpg',
+              image: 'https://drive.google.com/thumbnail?id=18Lkpjp0VSgrZ2CHuB0Yo_gK-1pHbP-hU&sz=w1000',
               label: 'Individual Series'
             },
             {
@@ -156,7 +155,7 @@ export default function HomePage() {
               description: 'Massive volume stacks, crates, and bundles of prop money curated specifically for action-heavy heist and bank scenes.',
               cta: 'Browse Production Bundles',
               icon: Film,
-              image: '/images/bundle-macro.jpg',
+              image: 'https://drive.google.com/thumbnail?id=1F9m1tgScgYGfgGYlAPt_VAsClDFsjSvq&sz=w1000',
               label: 'Production Stacks'
             },
             {
@@ -165,7 +164,7 @@ export default function HomePage() {
               description: 'Stunt canvas bags, cash pistols, aluminium briefcases, and professional high-speed note counters.',
               cta: 'Explore Accessories',
               icon: Star,
-              image: '/images/accessories.jpg',
+              image: 'https://drive.google.com/thumbnail?id=1fPZnvtxGu602xPCpIpCh-cfJuZTsqRVZ&sz=w1000',
               label: 'Set Accessories'
             }
           ].map((cat) => {
@@ -230,38 +229,36 @@ export default function HomePage() {
 
       {/* CINEMATIC PROPS VISUAL SHOWCASE */}
       <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16" id="cinematic-showcase">
-        <div className="relative aspect-[16/10] md:aspect-[21/9] min-h-[360px] md:min-h-[440px] bg-zinc-950 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 flex items-end p-6 sm:p-10 md:p-12">
-          {/* High-Resolution Background Image with Maximum Visibility */}
+        <div className="relative aspect-[16/10] md:aspect-[21/9] min-h-[340px] md:min-h-[420px] bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 flex items-end p-6 sm:p-10 md:p-12">
+          {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/cinematic-showcase.png"
-              alt="A Grade Standards for Cinematic Production - Engineered for 4K Digital Cinema Lenses"
+              src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1200"
+              alt="Engineered for high-definition digital lenses and 4K cameras"
               fill
               priority
-              quality={100}
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover object-center opacity-95 transition-transform duration-700 hover:scale-[1.01]"
+              
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover object-center opacity-70 transition-transform duration-700 hover:scale-[1.02]"
               referrerPolicy="no-referrer"
             />
-            {/* Subtle soft directional gradient to preserve image clarity while ensuring headline legibility */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
           </div>
           
-          <div className="relative z-10 max-w-xl text-white backdrop-blur-[2px] bg-black/30 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl">
+          <div className="relative z-10 max-w-xl text-white">
             <span className="text-gold font-mono uppercase tracking-widest text-[10px] sm:text-xs font-bold block mb-2">
               Industry Standard Props
             </span>
             <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-white leading-tight">
               A Grade Standards for Cinematic Production
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-200 font-sans font-normal leading-relaxed mt-2 sm:mt-3">
+            <p className="text-xs sm:text-sm text-zinc-300 font-sans font-light leading-relaxed mt-2 sm:mt-3">
               Engineered specifically for high-definition digital lenses and 4K cameras. Our fake australian money prop replicas maintain pristine, non-glare visual clarity under intense studio lighting setups, making us the top choice for prop money australia.
             </p>
             <div className="pt-4 sm:pt-6">
               <Link 
                 href="/shop" 
-                className="inline-flex items-center gap-2 bg-white text-black hover:bg-gold hover:text-black px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-all duration-300 rounded shadow-md"
+                className="inline-flex items-center gap-2 bg-white text-black hover:bg-gold hover:text-black px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-all duration-300 rounded"
                 id="showcase-cta-btn"
               >
                 Explore Pro Series
@@ -283,9 +280,10 @@ export default function HomePage() {
         {/* Background Image with Cinematic Overlays */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <Image
-            src="/images/how-it-works-bg.jpg"
+            src="https://drive.google.com/thumbnail?id=1ce6RMCnovIG5nM9Uj2ulENR6OcaNnWg8&sz=w1920"
             alt="From Press to Production Background"
             fill
+            
             sizes="100vw"
             referrerPolicy="no-referrer"
             className="object-cover object-center opacity-80"
@@ -338,131 +336,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 6.5: AUSTRALIAN FILM & TV PRODUCTION GUIDE (SEO & AI CITATION AUTHORITY HUB) */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 space-y-12" id="production-guide-hub">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">Australia Industry Hub</span>
-          <h2 className="text-3xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
-            Australian Prop Money Guide: Legality, Uses &amp; Ordering
-          </h2>
-          <div className="w-12 h-[1px] bg-gold mx-auto mt-4 mb-4"></div>
-          <p className="text-xs text-gray-500 leading-relaxed font-sans max-w-2xl mx-auto">
-            Everything production designers, art directors, creators, and corporate trainers need to know about purchasing legal replica Australian currency.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* SECTION 7: PRODUCTION REVIEWS */}
+      <section className="bg-[#0D0D0D] py-24 text-white" id="production-reviews">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">Set Reports</span>
+            <h2 className="text-3xl font-light text-white tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>Trusted by Prop Masters</h2>
+            <div className="w-12 h-[1px] bg-gold mx-auto mt-6 mb-4"></div>
+          </div>
           
-          {/* Card 1: Legality & RBA Guidelines */}
-          <div className="bg-white border border-gray-200/80 rounded-2xl p-8 space-y-4 hover:border-gold/50 transition-all shadow-xs">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-gold" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {REVIEWS.slice(0, 3).map((review) => (
+              <div key={review.id} className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-gold/30 transition-colors">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                  ))}
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 font-light italic">
+                  &quot;{review.comment}&quot;
+                </p>
+                <div>
+                  <strong className="block text-white text-sm font-bold">{review.name}</strong>
+                  <span className="text-gray-500 text-xs">{review.role} — {review.production}</span>
+                </div>
               </div>
-              <h3 className="font-serif text-lg font-bold text-black">
-                Is Prop Money Legal in Australia? RBA Guidelines
-              </h3>
-            </div>
-            <p className="text-xs text-gray-600 leading-relaxed">
-              Yes, prop money is 100% legal to buy and use in Australia for artistic, cinematographic, and educational projects. Under the <strong>Reserve Bank of Australia prop money guidelines</strong> and the <em>Crimes (Currency) Act 1981</em>, reproductions must be readily distinguishable from real tender.
-            </p>
-            <ul className="text-xs text-gray-500 space-y-2 list-disc list-inside">
-              <li><strong>RBA prop money reproduction rules:</strong> Never printed on polymer plastic; non-glare studio bond paper only.</li>
-              <li><strong>Counterfeit vs prop money Australia:</strong> Counterfeiting involves criminal intent to defraud. Prop money is legitimate motion picture currency with indelible &quot;PROP ONLY — NOT LEGAL TENDER&quot; markings.</li>
-              <li><strong>Legal prop money for film Australia:</strong> Pre-cleared for Australian broadcast, theatrical release, and TV commercial spots.</li>
-            </ul>
-            <div className="pt-2">
-              <Link href="/faq" className="text-[11px] font-bold uppercase tracking-wider text-gold hover:text-black transition-colors inline-flex items-center gap-1">
-                Read Full Legal Framework <ChevronRight className="w-3 h-3" />
-              </Link>
-            </div>
+            ))}
           </div>
-
-          {/* Card 2: Film, Theatre & TV Across Sydney, Melbourne, Brisbane */}
-          <div className="bg-white border border-gray-200/80 rounded-2xl p-8 space-y-4 hover:border-gold/50 transition-all shadow-xs">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                <Film className="w-5 h-5 text-gold" />
-              </div>
-              <h3 className="font-serif text-lg font-bold text-black">
-                Film, Theatre &amp; TV Props Across Capital Cities
-              </h3>
-            </div>
-            <p className="text-xs text-gray-600 leading-relaxed">
-              We are Australia&apos;s leading on-set supplier for major studio sound stages, independent short films, and live theater productions.
-            </p>
-            <ul className="text-xs text-gray-500 space-y-2 list-disc list-inside">
-              <li><strong>Film production prop money Sydney:</strong> Dispatched overnight to Fox Studios, Disney Studios Australia, and Western Sydney sets.</li>
-              <li><strong>Theatre prop money Melbourne:</strong> Trusted by East End Theatre District and MTC stages for tactile live performance props.</li>
-              <li><strong>TV production money props Brisbane:</strong> Supplying Gold Coast Village Roadshow Studios and Brisbane media crews.</li>
-              <li><strong>How to get prop money for videos:</strong> Order online directly with instant tax invoices featuring our verified ABN: 46 674 267 559.</li>
-            </ul>
-            <div className="pt-2">
-              <Link href="/shop" className="text-[11px] font-bold uppercase tracking-wider text-gold hover:text-black transition-colors inline-flex items-center gap-1">
-                Explore Studio Stacks <ChevronRight className="w-3 h-3" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 3: Music Videos, Training, Photography & Pranks */}
-          <div className="bg-white border border-gray-200/80 rounded-2xl p-8 space-y-4 hover:border-gold/50 transition-all shadow-xs">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                <Sparkles className="w-5 h-5 text-gold" />
-              </div>
-              <h3 className="font-serif text-lg font-bold text-black">
-                Music Videos, Cashier Training &amp; Photography
-              </h3>
-            </div>
-            <p className="text-xs text-gray-600 leading-relaxed">
-              Beyond traditional cinema, our realistic prop money Australia powers creative visual productions and professional staff workshops nationwide:
-            </p>
-            <ul className="text-xs text-gray-500 space-y-2 list-disc list-inside">
-              <li><strong>Prop cash for music videos Australia:</strong> High-energy visual fanning, cash rain, and slow-motion drops.</li>
-              <li><strong>AUD money gun prop cash:</strong> Perfectly weighted 100-note stacks calibrated for high-speed motorized money guns.</li>
-              <li><strong>Cashier training prop money Australia:</strong> Used by hospitality and retail organizations for risk-free currency counting drills.</li>
-              <li><strong>Photography prop money AUD:</strong> Premium macro texture that eliminates studio light reflection under 4K and 8K sensors.</li>
-              <li><strong>Prank prop money Australia:</strong> Social media comedic content with clear on-screen legal disclaimers.</li>
-            </ul>
-            <div className="pt-2">
-              <Link href="/shop?category=accessories" className="text-[11px] font-bold uppercase tracking-wider text-gold hover:text-black transition-colors inline-flex items-center gap-1">
-                View Cash Guns &amp; Accessories <ChevronRight className="w-3 h-3" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 4: Denominations, Full Print vs Blank Filler & Afterpay */}
-          <div className="bg-white border border-gray-200/80 rounded-2xl p-8 space-y-4 hover:border-gold/50 transition-all shadow-xs">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                <Star className="w-5 h-5 text-gold" />
-              </div>
-              <h3 className="font-serif text-lg font-bold text-black">
-                Denominations, Stacks &amp; Next Day Delivery
-              </h3>
-            </div>
-            <p className="text-xs text-gray-600 leading-relaxed">
-              Find exactly where to buy prop money in Australia with comprehensive denomination availability and flexible financing:
-            </p>
-            <ul className="text-xs text-gray-500 space-y-2 list-disc list-inside">
-              <li><strong>Denominations:</strong> New series 100 AUD prop money, prop 100 dollar note Australia, prop 50 dollar note Australia, and prop 20 dollar note AUD.</li>
-              <li><strong>Full print prop money AUD:</strong> Double-sided high-resolution artwork on every single bill in the stack.</li>
-              <li><strong>Blank filler prop money stacks Australia:</strong> Top and bottom printed notes with blank filler for high-volume bank vaults and briefcase scenes.</li>
-              <li><strong>Prop money briefcase bundle Australia:</strong> Complete with aluminum lockable cases, currency straps, and up to $1,000,000 in prop cash.</li>
-              <li><strong>Prop money Australia next day delivery &amp; Afterpay:</strong> Split payments across 4 interest-free instalments with express priority dispatch.</li>
-            </ul>
-            <div className="pt-2">
-              <Link href="/shop" className="text-[11px] font-bold uppercase tracking-wider text-gold hover:text-black transition-colors inline-flex items-center gap-1">
-                Buy Prop Money Australia <ChevronRight className="w-3 h-3" />
-              </Link>
-            </div>
-          </div>
-
         </div>
       </section>
-
-      {/* SECTION 7: 20 REAL-TIME TRUSTPILOT REVIEWS IN REV SLIDER */}
-      <ReviewsSlider />
 
       {/* SECTION 8: HOMEPAGE FAQS */}
       <section className="max-w-4xl mx-auto px-6 sm:px-12 lg:px-16" id="homepage-faqs">
@@ -473,7 +375,7 @@ export default function HomePage() {
         </div>
         
         <div className="space-y-4">
-          {FAQS.slice(0, 8).map((faq, idx) => {
+          {FAQS.slice(0, 4).map((faq, idx) => {
             const isOpen = activeFaq === idx;
             return (
               <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white hover:border-gold/30 transition-colors shadow-sm">

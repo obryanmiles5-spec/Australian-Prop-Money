@@ -8,8 +8,6 @@ export default function NewsletterPopup() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     // Check if user has already dismissed or subscribed
@@ -27,36 +25,13 @@ export default function NewsletterPopup() {
     setIsOpen(false);
   };
 
-  const handleSubscribe = async (e: React.FormEvent) => {
+  const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim() || !email.includes('@')) return;
     
-    setIsSubmitting(true);
-    setErrorMsg('');
-
-    try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: email.trim(),
-          type: 'subscription',
-          source: 'VIP Welcome Modal Popup',
-        }),
-      });
-
-      const data = await res.json();
-      if (data.success) {
-        localStorage.setItem('amp_newsletter_dismissed', 'true');
-        setSubscribed(true);
-      } else {
-        setErrorMsg(data.error || 'Failed to register subscription. Please try again.');
-      }
-    } catch (err) {
-      setErrorMsg('Network error. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Simulate API registration
+    localStorage.setItem('amp_newsletter_dismissed', 'true');
+    setSubscribed(true);
   };
 
   const handleCopy = () => {
@@ -114,29 +89,23 @@ export default function NewsletterPopup() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your crew email address..."
-                  disabled={isSubmitting}
-                  className="w-full bg-gray-50 border border-gray-200/80 pl-10 pr-4 py-3 rounded-xl focus:outline-gold focus:bg-white text-black text-xs font-sans disabled:opacity-60"
+                  className="w-full bg-gray-50 border border-gray-200/80 pl-10 pr-4 py-3 rounded-xl focus:outline-gold focus:bg-white text-black text-xs font-sans"
                   required
                   id="newsletter-email-input"
                 />
               </div>
 
-              {errorMsg && (
-                <p className="text-[11px] text-red-500 font-sans">{errorMsg}</p>
-              )}
-
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-black hover:bg-gold text-white hover:text-black py-3.5 rounded-xl font-bold uppercase tracking-widest text-[10px] transition-all duration-300 shadow-md disabled:opacity-60"
+                className="w-full bg-black hover:bg-gold text-white hover:text-black py-3.5 rounded-xl font-bold uppercase tracking-widest text-[10px] transition-all duration-300 shadow-md"
                 id="btn-newsletter-subscribe"
               >
-                {isSubmitting ? 'Registering...' : 'Join Creative Registry'}
+                Join Creative Registry
               </button>
             </form>
 
             <span className="text-[9px] text-gray-400 block font-mono">
-              🔒 Zero spam. Direct dispatch to studio desk.
+              🔒 Zero spam. High-fidelity set guides only.
             </span>
           </div>
         ) : (
@@ -146,8 +115,8 @@ export default function NewsletterPopup() {
             
             <div className="space-y-2">
               <h2 className="font-serif text-2xl font-light text-black tracking-tight">Welcome to the Registry</h2>
-              <p className="text-xs text-gray-600 max-w-xs mx-auto leading-relaxed">
-                Confirmation dispatched! A copy of your 15% discount code has been emailed to you, and notification sent to <span className="font-mono text-black font-semibold">info@australianpropmoney.org</span>.
+              <p className="text-xs text-gray-500 max-w-xs mx-auto">
+                You are registered. Copy the credential code below to claim your introductory 15% discount during checkout:
               </p>
             </div>
 

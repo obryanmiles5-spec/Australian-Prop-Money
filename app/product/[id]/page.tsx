@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cleanBase = baseUrl.replace(/\/$/, '');
   const productUrl = `${cleanBase}/product/${product.id}`;
 
-  const productImage = product.image || '/images/og-image.jpg';
+  const productImage = product.image || 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000';
 
   return {
     title: `${product.seoTitle} | Australian Prop Money`,
@@ -39,24 +39,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'australian prop money',
       'prop money australia',
       'buy prop money australia',
-      'where to buy prop money in australia',
-      'legal prop money for film australia',
-      'prop money aud',
-      'australian dollar prop notes',
-      'realistic prop money australia',
-      'buy fake australian money props',
-      'prop money australia next day delivery',
-      'prop money australia afterpay',
-      'cheap prop money australia',
-      'wholesale prop money australia',
-      'prop money bundle australia',
       'fake australian money prop',
       'prop money au',
       'aus prop money',
-      'movie prop money australia',
-      'rba prop money reproduction rules',
-      'reserve bank of australia prop money guidelines',
-      'counterfeit vs prop money australia'
+      'movie money australia',
+      'RBA compliant prop money'
     ],
     alternates: {
       canonical: productUrl,

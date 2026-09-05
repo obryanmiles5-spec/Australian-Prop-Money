@@ -148,7 +148,7 @@ export default function WholesaleForm() {
 
             <div className="bg-gray-50 p-6 rounded-2xl border text-left max-w-md mx-auto text-xs space-y-2 leading-relaxed">
               <p className="font-bold text-[10px] text-gray-400 uppercase tracking-widest">Next Compliance Actions:</p>
-              <p>⏱️ <strong>Guaranteed 2-Hour Response:</strong> A formal written invoice with compliant corporate bulk discount pricing will be emailed to <span className="font-bold text-black">{formData.email}</span>, and notification sent to <span className="font-bold text-black font-mono">info@australianpropmoney.org</span>.</p>
+              <p>⏱️ <strong>Guaranteed 2-Hour Response:</strong> A formal written invoice with compliant corporate bulk discount pricing will be emailed to <span className="font-bold text-black">{formData.email}</span>.</p>
               <p>💬 <strong>WhatsApp Priority Line:</strong> Need custom distressing previews? Send your reference photos to our support team and quote reference ID <strong>AMP-WHOLESALE-{refId}</strong>.</p>
             </div>
 
