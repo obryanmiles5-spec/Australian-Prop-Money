@@ -217,23 +217,28 @@ export default function ProductDetailClient({ productId }: { productId: string }
         {/* Left: Image Display (Grid-Span 6) */}
         <div className="lg:col-span-6 space-y-4">
           
-          {/* Main Visual Display */}
-          <div className="relative aspect-[4/3] bg-zinc-950 overflow-hidden border border-zinc-800 rounded-3xl flex items-center justify-center">
-            {product.image ? (
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  referrerPolicy="no-referrer"
-                  className="object-cover object-center"
-                />
-              </div>
-            ) : (
-              <div className="text-zinc-500 font-mono text-xs">No Image Available</div>
-            )}
+          {/* Main WooCommerce Visual Display */}
+          <div className="relative aspect-square w-full bg-[#f8f9fa] overflow-hidden border border-gray-200 rounded-2xl flex items-center justify-center shadow-xs">
+            <Image
+              src={product.image || '/images/hero-macro.jpg'}
+              alt={product.name}
+              fill
+              priority
+              quality={100}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              referrerPolicy="no-referrer"
+              className="object-cover object-center w-full h-full"
+            />
+            {/* Top Badges */}
+            <div className="absolute top-4 left-4 z-10 flex flex-col gap-1.5 pointer-events-none">
+              <span className="bg-[#111111]/90 backdrop-blur-xs text-gold text-[9px] uppercase font-bold tracking-[0.15em] px-2.5 py-1 rounded-sm border border-gold/30">
+                {getCategoryLabel(product.category)}
+              </span>
+              <span className="bg-emerald-700 text-white text-[8px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-sm flex items-center gap-1 w-fit">
+                <ShieldCheck className="w-2.5 h-2.5" />
+                RBA Compliant
+              </span>
+            </div>
           </div>
 
         </div>

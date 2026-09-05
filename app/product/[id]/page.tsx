@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cleanBase = baseUrl.replace(/\/$/, '');
   const productUrl = `${cleanBase}/product/${product.id}`;
 
-  const productImage = product.image || 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000';
+  const productImage = product.image || '/images/og-image.jpg';
 
   return {
     title: `${product.seoTitle} | Australian Prop Money`,

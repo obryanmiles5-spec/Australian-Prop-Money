@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Australian Prop Money Production Journal',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Australian Prop Money Journal & Compliance Guides',
     description: 'Expert production guides and RBA compliance breakdowns for Australian prop money and film props.',
-    images: ['https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
+    images: ['/images/og-image.jpg'],
   },
 };
 

@@ -37,7 +37,7 @@ export default function TrustSection() {
       {/* Background Image with Cinematic Overlays */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <Image
-          src="https://drive.google.com/thumbnail?id=10daoD6MvIYLnfXQSR0qB98JHIn7IyRZr&sz=w1920"
+          src="/images/trust-bg.jpg"
           alt="Why Production Crews Choose Australian Prop Money Background"
           fill
           sizes="100vw"

@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Australian Prop Money Stacks & Bundles Australia',
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Australian Prop Money | Legal Fake Australian Money Props & Stacks',
     description: 'Buy premium Australian prop money and fake australian money prop notes for film, TV, music videos, and photography. Next day delivery Australia-wide.',
-    images: ['https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
+    images: ['/images/og-image.jpg'],
   },
 };
 

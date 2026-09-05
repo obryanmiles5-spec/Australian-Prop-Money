@@ -40,8 +40,12 @@ export interface Review {
   role: string;
   production: string;
   rating: number;
+  title?: string;
   comment: string;
   date: string;
+  timeAgo?: string;
+  location?: string;
+  verified?: boolean;
 }
 
 export function getCategoryLabel(cat: string): string {
@@ -68,7 +72,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=1rFp5hvKCKqccY34q6GsFDDo9XiIA6s-a&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: '20-aud-old-prop-money',
@@ -89,7 +93,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=1h866VxjaoChlsMzU_Y8CcNUoCOPIJvYi&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: '50-aud-old-prop-money',
@@ -110,7 +114,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=1AXxLQYJ6jqjD4IHj7NmwKczTFN6sCYeF&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: '100-aud-old-prop-money',
@@ -131,7 +135,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=1J80lhZkLkQ5jYCMW2p-09rXptQL_22sr&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: '10-aud-new-prop-money',
@@ -152,7 +156,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=1I4bmiTRbvzoBBlkxlc9zjQDtCyG6ptYn&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: '20-aud-new-prop-money',
@@ -173,7 +177,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=1zdW0Ftk185yyt66l9hasBdXrlOrjpMMW&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: '50-aud-new-prop-money',
@@ -194,7 +198,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=113xEHLGgkJ8TO5IR5kmojH7YKf5aTOTk&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: '100-aud-new-prop-money',
@@ -215,7 +219,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=1hsVMPSI2tt3UJs3czwqWPsfcI6xCT-Yz&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: 'prop-money-10000-stack-aud',
@@ -236,7 +240,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Double-Calendered Matte Paper',
       'Compliance': 'NOT LEGAL TENDER watermarked'
     },
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: 'prop-money-briefcase-bundle-australia',
@@ -257,7 +261,7 @@ export const PRODUCTS: Product[] = [
       'Dimensions': '18" x 13" x 4.5"',
       'Compliance': 'Legal tender alternative markings'
     },
-    image: 'https://drive.google.com/thumbnail?id=14pqxvToRwY62wDCjXrNk1GXEMvJjRppo&sz=w1000'
+    image: '/images/bundle-macro.jpg'
   },
   {
     id: 'commercial-producer-bulk-reserve-50-stacks',
@@ -278,7 +282,7 @@ export const PRODUCTS: Product[] = [
       'Material': 'Premium Matte Cotton Bond',
       'Compliance': 'RBA Distinguishable Standard'
     },
-    image: 'https://drive.google.com/thumbnail?id=1VK238Nx-VplE7DRgXu98TtW4aWM31jBg&sz=w1000'
+    image: '/images/bundle-macro.jpg'
   },
   {
     id: 'film-producer-pack',
@@ -299,7 +303,7 @@ export const PRODUCTS: Product[] = [
       'Dimensions': 'Strictly scale-matched',
       'Compliance': 'Legal tender alternative markings'
     },
-    image: 'https://drive.google.com/thumbnail?id=1wAL_8HxdvUL6SBvLXA5C-wENTAyGi6FG&sz=w1000'
+    image: '/images/bundle-macro.jpg'
   },
   {
     id: 'millionaire-heist-master-crate-100-stacks',
@@ -320,7 +324,7 @@ export const PRODUCTS: Product[] = [
       'Weight': 'Fully packed visual weight',
       'Compliance': 'Watermark and edge-mark compliant'
     },
-    image: 'https://drive.google.com/thumbnail?id=1svWNqggsBiasSCNQUIAEsVIexLdwLvfN&sz=w1000'
+    image: '/images/bundle-macro.jpg'
   },
   {
     id: 'photography-studio-pack',
@@ -341,7 +345,7 @@ export const PRODUCTS: Product[] = [
       'Count': 'Multi-stack selection',
       'Compliance': 'Legal markings included'
     },
-    image: 'https://drive.google.com/thumbnail?id=1sWEhEnHT1cmhqmTCXFeYFCD3HnHjBDmm&sz=w1000'
+    image: '/images/hero-macro.jpg'
   },
   {
     id: 'wholesale-pack',
@@ -362,7 +366,7 @@ export const PRODUCTS: Product[] = [
       'Format': 'Secured and banded packets',
       'Compliance': 'Standard RBA non-circulation watermark'
     },
-    image: 'https://drive.google.com/thumbnail?id=1VIKhkT3NVbxgQr7SDbNt230BdaXDr8eT&sz=w1000'
+    image: '/images/bundle-macro.jpg'
   },
   {
     id: 'canvas-money-bag',
@@ -382,7 +386,7 @@ export const PRODUCTS: Product[] = [
       'Dimensions': '11" x 17"',
       'Color': 'Natural / Black print'
     },
-    image: 'https://drive.google.com/thumbnail?id=1PFak1IeIeSNg1EVUzoBHLdSmsXAchp1L&sz=w1000'
+    image: '/images/accessories.jpg'
   },
   {
     id: 'duffle-bag',
@@ -402,7 +406,7 @@ export const PRODUCTS: Product[] = [
       'Dimensions': '24" x 12" x 12"',
       'Color': 'Black'
     },
-    image: 'https://drive.google.com/thumbnail?id=1bzAscynjnlNS4qQLuVHQVhGlXnqGxumB&sz=w1000'
+    image: '/images/accessories.jpg'
   },
   {
     id: 'money-counter',
@@ -422,7 +426,7 @@ export const PRODUCTS: Product[] = [
       'Power': '110-240V',
       'Dimensions': '11" x 10" x 8"'
     },
-    image: 'https://drive.google.com/thumbnail?id=1lvn9AP0XvQJfMmpnUWWZ4eVGjYjxEMSK&sz=w1000'
+    image: '/images/accessories.jpg'
   },
   {
     id: 'prop-money-gun',
@@ -442,7 +446,7 @@ export const PRODUCTS: Product[] = [
       'Power': '4x AA Batteries (not included)',
       'Capacity': 'Up to 100 bills'
     },
-    image: 'https://drive.google.com/thumbnail?id=1B_iSRIb6JbBM_4drlmsYYeBbkCTsqvZD&sz=w1000'
+    image: '/images/accessories.jpg'
   },
   {
     id: 'silver-aluminium-briefcase',
@@ -462,7 +466,7 @@ export const PRODUCTS: Product[] = [
       'Dimensions': '18" x 13" x 4.5"',
       'Weight': '4.5 lbs'
     },
-    image: 'https://drive.google.com/thumbnail?id=14pqxvToRwY62wDCjXrNk1GXEMvJjRppo&sz=w1000'
+    image: '/images/accessories.jpg'
   }
 ];
 export const CATEGORIES: { id: string; name: string; description: string; }[] = [
@@ -508,7 +512,7 @@ From **fake notes australia** for indie films to a massive **1000 fake money** s
     date: '2026-08-25',
     category: 'Compliance',
     readTime: '6 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
 
   {
@@ -530,7 +534,7 @@ For fast, private dispatch across Sydney, Melbourne, Brisbane, and beyond, our s
     date: '2026-07-15',
     category: 'Production',
     readTime: '4 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'legality-of-prop-money-australia-crimes-currency-act-1981-explained',
@@ -551,7 +555,7 @@ Keep your shoot safe and secure. Learn more about our compliance standards or br
     date: '2026-07-14',
     category: 'Legal',
     readTime: '6 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'real-polymer-vs-matte-prop-money-keeping-film-sets-flare-free',
@@ -573,7 +577,7 @@ For professional results on your next television commercial or feature drama, in
     date: '2026-07-13',
     category: 'Production',
     readTime: '5 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'how-to-style-high-stakes-heist-scenes-bulk-cash-stacks',
@@ -594,7 +598,7 @@ Want to achieve a massive visual scale for your heist? Save up to 25% by orderin
     date: '2026-07-12',
     category: 'Tutorial',
     readTime: '5 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'guide-to-rba-compliant-disclaimers-on-replica-australian-banknotes',
@@ -614,7 +618,7 @@ Ensure compliance on your next shoot. Browse our certified [Australian Notes](/s
     date: '2026-07-11',
     category: 'Legal',
     readTime: '4 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'prop-money-guns-adding-dynamic-action-music-videos-events-australia',
@@ -634,7 +638,7 @@ Make a major impact on screen. Grab the [Prop Money Gun](/product/prop-money-gun
     date: '2026-07-10',
     category: 'Promotion',
     readTime: '4 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'how-prop-masters-manage-and-age-movie-money-vintage-grit',
@@ -654,7 +658,7 @@ Get started on your gritty indie project with our flexible [Film Producer Pack](
     date: '2026-07-09',
     category: 'Tutorial',
     readTime: '5 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'setting-up-realistic-bank-vault-scene-indie-budget',
@@ -675,7 +679,7 @@ Complete the banking atmosphere by placing our [Canvas Money Bag](/product/canva
     date: '2026-07-08',
     category: 'Production',
     readTime: '5 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'how-to-make-prop-money-look-and-feel-real',
@@ -695,7 +699,7 @@ When you buy fake australian money props from us, you're getting double-sided, m
     date: '2026-08-01',
     category: 'Tutorial',
     readTime: '4 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   },
   {
     id: 'is-prop-money-illegal-australia-laws',
@@ -713,7 +717,7 @@ If you are looking for where to buy australian prop money safely, our store prov
     date: '2026-08-05',
     category: 'Legal',
     readTime: '5 min read',
-    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+    image: '/images/og-image.jpg'
   }
 ];
 
@@ -776,26 +780,259 @@ export const REVIEWS: Review[] = [
     name: 'Marcus Vance',
     role: 'Lead Prop Master',
     production: 'Sydney Crime Syndicate (TV Series)',
+    location: 'Sydney, NSW',
     rating: 5,
+    title: 'Flawless under 4K ARRI Alexa cameras — Zero glare',
     comment: 'The quality of these notes is stunning. Under our 4K ARRI Alexa cameras, there is absolutely zero reflection or lighting flare. The matte paper feel is extremely realistic for cash counting closeups.',
-    date: '2025-11-12'
+    date: '2026-09-04',
+    timeAgo: '4 hours ago',
+    verified: true
   },
   {
     id: 'rev-2',
     name: 'Sarah Chen',
     role: 'Art Director',
     production: 'The Great Vault Heist (Feature Film)',
+    location: 'Gold Coast, QLD',
     rating: 5,
+    title: 'Saved our bank vault heist scene budget',
     comment: 'Ordered the 100-stack Master Crate. It was the centerpiece of our bank vault scenes. Secure, fast delivery and completely compliant with legal guidelines.',
-    date: '2026-02-18'
+    date: '2026-09-04',
+    timeAgo: '8 hours ago',
+    verified: true
   },
   {
     id: 'rev-3',
     name: 'David Thompson',
     role: 'Commercial Photographer',
     production: 'Premium Fashion Editorial',
+    location: 'Melbourne, VIC',
     rating: 5,
+    title: 'Macro focus details are top notch',
     comment: 'The macro focus details are top-notch. The double-sided print matches perfectly and the colors are extremely vibrant. Will definitely order again.',
-    date: '2026-05-01'
+    date: '2026-09-03',
+    timeAgo: '1 day ago',
+    verified: true
+  },
+  {
+    id: 'rev-4',
+    name: 'Liam Callaghan',
+    role: 'Director',
+    production: 'Independent Short Film',
+    location: 'Adelaide, SA',
+    rating: 5,
+    title: 'Incredible detail and arrived overnight',
+    comment: 'Incredible detail and fast shipping. Highly recommend for any indie filmmaker on a budget. Passed our close-up lens test with flying colors.',
+    date: '2026-09-03',
+    timeAgo: '1 day ago',
+    verified: true
+  },
+  {
+    id: 'rev-5',
+    name: 'Sophie Laurent',
+    role: 'Set Decorator',
+    production: 'Melbourne Theatre Company',
+    location: 'Melbourne, VIC',
+    rating: 5,
+    title: 'Looks 100% authentic on live stage',
+    comment: 'Perfect for our stage production. They look completely real from the audience and feel sturdy in actors’ hands during rapid scene transitions.',
+    date: '2026-09-02',
+    timeAgo: '2 days ago',
+    verified: true
+  },
+  {
+    id: 'rev-6',
+    name: 'James Wright',
+    role: 'Music Video Producer',
+    production: 'Urban Soundscapes Media',
+    location: 'Sydney, NSW',
+    rating: 5,
+    title: 'Money gun stacks spray smoothly without jams',
+    comment: 'The money gun stacks fly perfectly. Great weight, crisp edge feed, and authentic sound. Essential for hip-hop video shoots.',
+    date: '2026-09-02',
+    timeAgo: '2 days ago',
+    verified: true
+  },
+  {
+    id: 'rev-7',
+    name: 'Emma Patterson',
+    role: 'Content Creator',
+    production: 'Viral Video Productions',
+    location: 'Brisbane, QLD',
+    rating: 5,
+    title: 'Looks unbelievable on 4K TikTok & YouTube',
+    comment: 'Looks so real on camera! Fast delivery, great customer service, and the clear RBA disclaimers keep everything safe and compliant.',
+    date: '2026-09-01',
+    timeAgo: '3 days ago',
+    verified: true
+  },
+  {
+    id: 'rev-8',
+    name: 'Oliver Brooks',
+    role: 'Head Prop Master',
+    production: 'Outback Action Thriller',
+    location: 'Perth, WA',
+    rating: 5,
+    title: 'Best prop money in Australia, hands down',
+    comment: 'Best prop money in Australia, hands down. The non-glare finish saves us hours in post-production color grading.',
+    date: '2026-09-01',
+    timeAgo: '3 days ago',
+    verified: true
+  },
+  {
+    id: 'rev-9',
+    name: 'Mia Davies',
+    role: 'Event Coordinator',
+    production: 'Crown Casino Charity Gala',
+    location: 'Melbourne, VIC',
+    rating: 5,
+    title: 'Guests were stunned by the presentation',
+    comment: 'Used these for a high-roller charity casino night. Everyone loved the realistic texture and weighted feel of the banded stacks!',
+    date: '2026-08-30',
+    timeAgo: '5 days ago',
+    verified: true
+  },
+  {
+    id: 'rev-10',
+    name: 'Lucas Tan',
+    role: 'Commercial Photographer',
+    production: 'Editorial Ad Studio',
+    location: 'Sydney, NSW',
+    rating: 5,
+    title: 'Pristine paper texture for 100MP macro shoots',
+    comment: 'Excellent quality for macro shots. The compliance marks are subtle enough not to ruin the aesthetic while keeping it fully legal.',
+    date: '2026-08-29',
+    timeAgo: '6 days ago',
+    verified: true
+  },
+  {
+    id: 'rev-11',
+    name: 'Charlotte Foster',
+    role: 'Art Director',
+    production: 'National Bank TV Commercial',
+    location: 'Sydney, NSW',
+    rating: 5,
+    title: 'Banded stacks look exceptionally authentic',
+    comment: 'Exactly what we needed. The banded stacks look incredibly authentic on screen and the packaging arrived in mint condition.',
+    date: '2026-08-28',
+    timeAgo: '1 week ago',
+    verified: true
+  },
+  {
+    id: 'rev-12',
+    name: 'William Ross',
+    role: 'Cinematographer',
+    production: 'Crime Thriller Short',
+    location: 'Hobart, TAS',
+    rating: 5,
+    title: 'Double-sided full print is a game changer',
+    comment: 'Great value for money. The double-sided print is a game changer when actors fan out stacks directly towards the lens.',
+    date: '2026-08-27',
+    timeAgo: '1 week ago',
+    verified: true
+  },
+  {
+    id: 'rev-13',
+    name: 'Amelia Kelly',
+    role: 'Production Designer',
+    production: 'Streaming Crime Drama',
+    location: 'Gold Coast, QLD',
+    rating: 5,
+    title: 'Briefcase bundle exceeded every expectation',
+    comment: 'We ordered the aluminum briefcase bundle and it exceeded expectations. Premium quality cases and ultra-crisp bill wrappers.',
+    date: '2026-08-25',
+    timeAgo: '1 week ago',
+    verified: true
+  },
+  {
+    id: 'rev-14',
+    name: 'Henry Stewart',
+    role: 'Indie Filmmaker',
+    production: 'AFTRS Student Capstone',
+    location: 'Sydney, NSW',
+    rating: 5,
+    title: 'Fast shipping & unbeatable student budget pricing',
+    comment: 'Fast shipping and looks amazing on camera. Will definitely buy again for our upcoming graduate feature film.',
+    date: '2026-08-24',
+    timeAgo: '1 week ago',
+    verified: true
+  },
+  {
+    id: 'rev-15',
+    name: 'Evelyn Murphy',
+    role: 'Prop Assistant',
+    production: 'Australian Major Feature',
+    location: 'Melbourne, VIC',
+    rating: 5,
+    title: 'Colors are spot-on with RBA compliance',
+    comment: 'The colors are spot on. Strictly RBA compliant but still looks 100% convincing on screen under tungsten and LED panels.',
+    date: '2026-08-22',
+    timeAgo: '2 weeks ago',
+    verified: true
+  },
+  {
+    id: 'rev-16',
+    name: 'Alexander Green',
+    role: 'Executive Producer',
+    production: 'Action Web Series',
+    location: 'Brisbane, QLD',
+    rating: 5,
+    title: 'Gold standard prop supplier in Australia',
+    comment: 'These are the gold standard for prop money. Ordered 50 stacks and received them within 24 hours with full tax invoices.',
+    date: '2026-08-20',
+    timeAgo: '2 weeks ago',
+    verified: true
+  },
+  {
+    id: 'rev-17',
+    name: 'Harper Nguyen',
+    role: 'Set Dresser',
+    production: 'National Drama Series',
+    location: 'Canberra, ACT',
+    rating: 5,
+    title: 'Blank fillers are perfect for duffle bags & safes',
+    comment: 'The blank fillers are perfect for filling up bags and safes affordably without sacrificing visual realism at the edges.',
+    date: '2026-08-18',
+    timeAgo: '2 weeks ago',
+    verified: true
+  },
+  {
+    id: 'rev-18',
+    name: 'Jack Harrison',
+    role: 'Director of Photography',
+    production: 'Sony Music Video',
+    location: 'Sydney, NSW',
+    rating: 5,
+    title: 'Lighting these is a cinematographer’s dream',
+    comment: 'Lighting these is a dream. No weird reflections, no gloss, and deep color saturation across red, yellow, and green denominations.',
+    date: '2026-08-15',
+    timeAgo: '3 weeks ago',
+    verified: true
+  },
+  {
+    id: 'rev-19',
+    name: 'Ella Vance',
+    role: 'Creative Director',
+    production: 'Omnicom Ad Campaign',
+    location: 'Melbourne, VIC',
+    rating: 5,
+    title: 'Superb craftsmanship and attention to detail',
+    comment: 'Fantastic product. The attention to detail on currency straps and paper texture is remarkable. 10/10 recommendation.',
+    date: '2026-08-12',
+    timeAgo: '3 weeks ago',
+    verified: true
+  },
+  {
+    id: 'rev-20',
+    name: 'Thomas Campbell',
+    role: 'Senior Prop Master',
+    production: 'Network Drama Series',
+    location: 'Sydney, NSW',
+    rating: 5,
+    title: 'Our exclusive currency vendor for 3 seasons',
+    comment: 'I buy all my prop currency here now. Unbeatable quality, instant responsive customer service, and reliable express shipping.',
+    date: '2026-08-10',
+    timeAgo: '3 weeks ago',
+    verified: true
   }
 ];

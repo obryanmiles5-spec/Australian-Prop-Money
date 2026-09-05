@@ -7,7 +7,8 @@ import {
   ArrowRight, Sparkles, ChevronRight, MessageSquare, 
   Plus, Minus, Film, Star, ShieldAlert, CheckCircle2 
 } from 'lucide-react';
-import { FAQS, REVIEWS, PRODUCTS, Product } from '@/lib/products';
+import { FAQS, PRODUCTS, Product } from '@/lib/products';
+import ReviewsSlider from "@/components/ReviewsSlider";
 import TrustSection from '@/components/TrustSection';
 import EntertainmentLogosCarousel from '@/components/EntertainmentLogosCarousel';
 import { cleanWhatsAppNumber } from '@/lib/utils';
@@ -40,7 +41,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <Image
-            src="https://drive.google.com/thumbnail?id=18Lkpjp0VSgrZ2CHuB0Yo_gK-1pHbP-hU&sz=w1920"
+            src="/images/hero-macro.jpg"
             alt="Australian Prop Money Cinematic Hero Banner"
             fill
             priority
@@ -146,7 +147,7 @@ export default function HomePage() {
               description: 'Individual premium australian prop money notes. Choose from classic old styles or next-generation polymer look designs.',
               cta: 'Shop Note Series',
               icon: Sparkles,
-              image: 'https://drive.google.com/thumbnail?id=18Lkpjp0VSgrZ2CHuB0Yo_gK-1pHbP-hU&sz=w1000',
+              image: '/images/hero-macro.jpg',
               label: 'Individual Series'
             },
             {
@@ -155,7 +156,7 @@ export default function HomePage() {
               description: 'Massive volume stacks, crates, and bundles of prop money curated specifically for action-heavy heist and bank scenes.',
               cta: 'Browse Production Bundles',
               icon: Film,
-              image: 'https://drive.google.com/thumbnail?id=1F9m1tgScgYGfgGYlAPt_VAsClDFsjSvq&sz=w1000',
+              image: '/images/bundle-macro.jpg',
               label: 'Production Stacks'
             },
             {
@@ -164,7 +165,7 @@ export default function HomePage() {
               description: 'Stunt canvas bags, cash pistols, aluminium briefcases, and professional high-speed note counters.',
               cta: 'Explore Accessories',
               icon: Star,
-              image: 'https://drive.google.com/thumbnail?id=1fPZnvtxGu602xPCpIpCh-cfJuZTsqRVZ&sz=w1000',
+              image: '/images/accessories.jpg',
               label: 'Set Accessories'
             }
           ].map((cat) => {
@@ -229,36 +230,38 @@ export default function HomePage() {
 
       {/* CINEMATIC PROPS VISUAL SHOWCASE */}
       <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16" id="cinematic-showcase">
-        <div className="relative aspect-[16/10] md:aspect-[21/9] min-h-[340px] md:min-h-[420px] bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 flex items-end p-6 sm:p-10 md:p-12">
-          {/* Background Image */}
+        <div className="relative aspect-[16/10] md:aspect-[21/9] min-h-[360px] md:min-h-[440px] bg-zinc-950 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 flex items-end p-6 sm:p-10 md:p-12">
+          {/* High-Resolution Background Image with Maximum Visibility */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1200"
-              alt="Engineered for high-definition digital lenses and 4K cameras"
+              src="/images/cinematic-showcase.png"
+              alt="A Grade Standards for Cinematic Production - Engineered for 4K Digital Cinema Lenses"
               fill
               priority
-              
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="object-cover object-center opacity-70 transition-transform duration-700 hover:scale-[1.02]"
+              quality={100}
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover object-center opacity-95 transition-transform duration-700 hover:scale-[1.01]"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+            {/* Subtle soft directional gradient to preserve image clarity while ensuring headline legibility */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
           </div>
           
-          <div className="relative z-10 max-w-xl text-white">
+          <div className="relative z-10 max-w-xl text-white backdrop-blur-[2px] bg-black/30 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl">
             <span className="text-gold font-mono uppercase tracking-widest text-[10px] sm:text-xs font-bold block mb-2">
               Industry Standard Props
             </span>
             <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-white leading-tight">
               A Grade Standards for Cinematic Production
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-300 font-sans font-light leading-relaxed mt-2 sm:mt-3">
+            <p className="text-xs sm:text-sm text-zinc-200 font-sans font-normal leading-relaxed mt-2 sm:mt-3">
               Engineered specifically for high-definition digital lenses and 4K cameras. Our fake australian money prop replicas maintain pristine, non-glare visual clarity under intense studio lighting setups, making us the top choice for prop money australia.
             </p>
             <div className="pt-4 sm:pt-6">
               <Link 
                 href="/shop" 
-                className="inline-flex items-center gap-2 bg-white text-black hover:bg-gold hover:text-black px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-all duration-300 rounded"
+                className="inline-flex items-center gap-2 bg-white text-black hover:bg-gold hover:text-black px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-all duration-300 rounded shadow-md"
                 id="showcase-cta-btn"
               >
                 Explore Pro Series
@@ -280,10 +283,9 @@ export default function HomePage() {
         {/* Background Image with Cinematic Overlays */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <Image
-            src="https://drive.google.com/thumbnail?id=1ce6RMCnovIG5nM9Uj2ulENR6OcaNnWg8&sz=w1920"
+            src="/images/how-it-works-bg.jpg"
             alt="From Press to Production Background"
             fill
-            
             sizes="100vw"
             referrerPolicy="no-referrer"
             className="object-cover object-center opacity-80"
@@ -459,35 +461,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7: PRODUCTION REVIEWS */}
-      <section className="bg-[#0D0D0D] py-24 text-white" id="production-reviews">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">Set Reports</span>
-            <h2 className="text-3xl font-light text-white tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>Trusted by Prop Masters</h2>
-            <div className="w-12 h-[1px] bg-gold mx-auto mt-6 mb-4"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {REVIEWS.slice(0, 3).map((review) => (
-              <div key={review.id} className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-gold/30 transition-colors">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
-                  ))}
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed mb-6 font-light italic">
-                  &quot;{review.comment}&quot;
-                </p>
-                <div>
-                  <strong className="block text-white text-sm font-bold">{review.name}</strong>
-                  <span className="text-gray-500 text-xs">{review.role} — {review.production}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* SECTION 7: 20 REAL-TIME TRUSTPILOT REVIEWS IN REV SLIDER */}
+      <ReviewsSlider />
 
       {/* SECTION 8: HOMEPAGE FAQS */}
       <section className="max-w-4xl mx-auto px-6 sm:px-12 lg:px-16" id="homepage-faqs">

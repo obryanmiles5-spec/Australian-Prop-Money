@@ -301,17 +301,20 @@ const DOUBLE_LOGOS = [...LOGO_ITEMS, ...LOGO_ITEMS];
 export default function EntertainmentLogosCarousel() {
   return (
     <section className="bg-zinc-950 py-20 sm:py-24 border-y border-zinc-800 overflow-hidden relative" id="trusted-entertainment-section">
-      {/* Background Image with Overlay */}
+      {/* High-Resolution Cinematic Production Backdrop Image */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <Image
-          src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1920"
+          src="/images/cinematic-showcase.png"
           alt="Cinematic production backdrop"
           fill
+          priority
+          quality={100}
           sizes="100vw"
-          className="object-cover object-center opacity-30"
+          className="object-cover object-center opacity-90 transition-opacity duration-500"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/85 to-zinc-950 pointer-events-none" />
+        {/* Balanced cinematic atmospheric vignette to keep logos and text crystal clear while maximizing image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/75 via-zinc-950/50 to-zinc-950/85 pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">

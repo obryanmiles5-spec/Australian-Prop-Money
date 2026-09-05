@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Shop Australian Prop Money Catalog',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Shop Australian Prop Money | Buy Realistic Fake Australian Money Props',
     description: 'Shop our premium collection of australian prop money, au prop money, and aus prop money bundles.',
-    images: ['https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
+    images: ['/images/og-image.jpg'],
   },
 };
 

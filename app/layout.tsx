@@ -173,7 +173,7 @@ export const metadata: Metadata = {
     siteName: 'Australian Prop Money',
     images: [
       {
-        url: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Australian Prop Money - Camera Ready Prop Cash Stacks Australia',
@@ -186,7 +186,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Australian Prop Money | Professional Prop Money Australia',
     description: 'Australia’s leading source for camera-ready RBA-compliant Australian prop money notes and prop bundles. Next day delivery nationwide with Afterpay.',
-    images: ['https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
+    images: ['/images/og-image.jpg'],
   },
 };
 

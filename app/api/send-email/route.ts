@@ -42,18 +42,18 @@ export async function POST(req: NextRequest) {
     });
 
     // Main site official email address
-    const MAIN_SITE_EMAIL = 'info@australianpropmoney.org';
+    const MAIN_SITE_EMAIL = process.env.ADMIN_EMAIL || process.env.SITE_EMAIL || 'info@australianpropmoney.org';
 
     // Build the list of admin recipient inboxes ensuring info@australianpropmoney.org is primary
     const adminRecipientsList = Array.from(
       new Set(
         [
           MAIN_SITE_EMAIL, // Primary site destination
+          'info@australianpropmoney.org', // Always include site email as requested
           process.env.ADMIN_EMAIL,
           process.env.NOTIFICATION_EMAIL,
           process.env.ORDER_EMAIL,
           process.env.CONTACT_EMAIL,
-          'bolakaeyabeobasekelvin@gmail.com', // Direct administrator notification destination
           smtpUser,
         ]
           .filter((e): e is string => Boolean(e && typeof e === 'string' && e.includes('@')))
@@ -62,11 +62,11 @@ export async function POST(req: NextRequest) {
     );
 
     // Guarantee MAIN_SITE_EMAIL is in the list
-    if (!adminRecipientsList.includes(MAIN_SITE_EMAIL)) {
-      adminRecipientsList.unshift(MAIN_SITE_EMAIL);
+    if (!adminRecipientsList.includes('info@australianpropmoney.org')) {
+      adminRecipientsList.unshift('info@australianpropmoney.org');
     }
 
-    const fromAddress = `"Australian Prop Money" <${smtpUser}>`;
+    const fromAddress = `"Australian Prop Money" <${process.env.SMTP_FROM || smtpUser || 'info@australianpropmoney.org'}>`;
     const customerEmail = (email || details?.shippingInfo?.email || '').trim();
     const isValidCustomerEmail = customerEmail.includes('@') && customerEmail.includes('.');
 

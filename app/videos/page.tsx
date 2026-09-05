@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Australian Prop Money Video Showcase',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Video Showcase & Camera Tests | Australian Prop Money On Screen',
     description: 'Watch realistic Australian prop money and fake australian money prop notes in action under 4K studio lighting.',
-    images: ['https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'],
+    images: ['/images/og-image.jpg'],
   },
 };
 
