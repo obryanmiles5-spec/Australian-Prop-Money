@@ -336,6 +336,129 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SECTION 6.5: AUSTRALIAN FILM & TV PRODUCTION GUIDE (SEO & AI CITATION AUTHORITY HUB) */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 space-y-12" id="production-guide-hub">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">Australia Industry Hub</span>
+          <h2 className="text-3xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            Australian Prop Money Guide: Legality, Uses &amp; Ordering
+          </h2>
+          <div className="w-12 h-[1px] bg-gold mx-auto mt-4 mb-4"></div>
+          <p className="text-xs text-gray-500 leading-relaxed font-sans max-w-2xl mx-auto">
+            Everything production designers, art directors, creators, and corporate trainers need to know about purchasing legal replica Australian currency.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* Card 1: Legality & RBA Guidelines */}
+          <div className="bg-white border border-gray-200/80 rounded-2xl p-8 space-y-4 hover:border-gold/50 transition-all shadow-xs">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-5 h-5 text-gold" />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-black">
+                Is Prop Money Legal in Australia? RBA Guidelines
+              </h3>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed">
+              Yes, prop money is 100% legal to buy and use in Australia for artistic, cinematographic, and educational projects. Under the <strong>Reserve Bank of Australia prop money guidelines</strong> and the <em>Crimes (Currency) Act 1981</em>, reproductions must be readily distinguishable from real tender.
+            </p>
+            <ul className="text-xs text-gray-500 space-y-2 list-disc list-inside">
+              <li><strong>RBA prop money reproduction rules:</strong> Never printed on polymer plastic; non-glare studio bond paper only.</li>
+              <li><strong>Counterfeit vs prop money Australia:</strong> Counterfeiting involves criminal intent to defraud. Prop money is legitimate motion picture currency with indelible &quot;PROP ONLY — NOT LEGAL TENDER&quot; markings.</li>
+              <li><strong>Legal prop money for film Australia:</strong> Pre-cleared for Australian broadcast, theatrical release, and TV commercial spots.</li>
+            </ul>
+            <div className="pt-2">
+              <Link href="/faq" className="text-[11px] font-bold uppercase tracking-wider text-gold hover:text-black transition-colors inline-flex items-center gap-1">
+                Read Full Legal Framework <ChevronRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 2: Film, Theatre & TV Across Sydney, Melbourne, Brisbane */}
+          <div className="bg-white border border-gray-200/80 rounded-2xl p-8 space-y-4 hover:border-gold/50 transition-all shadow-xs">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                <Film className="w-5 h-5 text-gold" />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-black">
+                Film, Theatre &amp; TV Props Across Capital Cities
+              </h3>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed">
+              We are Australia&apos;s leading on-set supplier for major studio sound stages, independent short films, and live theater productions.
+            </p>
+            <ul className="text-xs text-gray-500 space-y-2 list-disc list-inside">
+              <li><strong>Film production prop money Sydney:</strong> Dispatched overnight to Fox Studios, Disney Studios Australia, and Western Sydney sets.</li>
+              <li><strong>Theatre prop money Melbourne:</strong> Trusted by East End Theatre District and MTC stages for tactile live performance props.</li>
+              <li><strong>TV production money props Brisbane:</strong> Supplying Gold Coast Village Roadshow Studios and Brisbane media crews.</li>
+              <li><strong>How to get prop money for videos:</strong> Order online directly with instant tax invoices featuring our verified ABN: 46 674 267 559.</li>
+            </ul>
+            <div className="pt-2">
+              <Link href="/shop" className="text-[11px] font-bold uppercase tracking-wider text-gold hover:text-black transition-colors inline-flex items-center gap-1">
+                Explore Studio Stacks <ChevronRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 3: Music Videos, Training, Photography & Pranks */}
+          <div className="bg-white border border-gray-200/80 rounded-2xl p-8 space-y-4 hover:border-gold/50 transition-all shadow-xs">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                <Sparkles className="w-5 h-5 text-gold" />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-black">
+                Music Videos, Cashier Training &amp; Photography
+              </h3>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed">
+              Beyond traditional cinema, our realistic prop money Australia powers creative visual productions and professional staff workshops nationwide:
+            </p>
+            <ul className="text-xs text-gray-500 space-y-2 list-disc list-inside">
+              <li><strong>Prop cash for music videos Australia:</strong> High-energy visual fanning, cash rain, and slow-motion drops.</li>
+              <li><strong>AUD money gun prop cash:</strong> Perfectly weighted 100-note stacks calibrated for high-speed motorized money guns.</li>
+              <li><strong>Cashier training prop money Australia:</strong> Used by hospitality and retail organizations for risk-free currency counting drills.</li>
+              <li><strong>Photography prop money AUD:</strong> Premium macro texture that eliminates studio light reflection under 4K and 8K sensors.</li>
+              <li><strong>Prank prop money Australia:</strong> Social media comedic content with clear on-screen legal disclaimers.</li>
+            </ul>
+            <div className="pt-2">
+              <Link href="/shop?category=accessories" className="text-[11px] font-bold uppercase tracking-wider text-gold hover:text-black transition-colors inline-flex items-center gap-1">
+                View Cash Guns &amp; Accessories <ChevronRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 4: Denominations, Full Print vs Blank Filler & Afterpay */}
+          <div className="bg-white border border-gray-200/80 rounded-2xl p-8 space-y-4 hover:border-gold/50 transition-all shadow-xs">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                <Star className="w-5 h-5 text-gold" />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-black">
+                Denominations, Stacks &amp; Next Day Delivery
+              </h3>
+            </div>
+            <p className="text-xs text-gray-600 leading-relaxed">
+              Find exactly where to buy prop money in Australia with comprehensive denomination availability and flexible financing:
+            </p>
+            <ul className="text-xs text-gray-500 space-y-2 list-disc list-inside">
+              <li><strong>Denominations:</strong> New series 100 AUD prop money, prop 100 dollar note Australia, prop 50 dollar note Australia, and prop 20 dollar note AUD.</li>
+              <li><strong>Full print prop money AUD:</strong> Double-sided high-resolution artwork on every single bill in the stack.</li>
+              <li><strong>Blank filler prop money stacks Australia:</strong> Top and bottom printed notes with blank filler for high-volume bank vaults and briefcase scenes.</li>
+              <li><strong>Prop money briefcase bundle Australia:</strong> Complete with aluminum lockable cases, currency straps, and up to $1,000,000 in prop cash.</li>
+              <li><strong>Prop money Australia next day delivery &amp; Afterpay:</strong> Split payments across 4 interest-free instalments with express priority dispatch.</li>
+            </ul>
+            <div className="pt-2">
+              <Link href="/shop" className="text-[11px] font-bold uppercase tracking-wider text-gold hover:text-black transition-colors inline-flex items-center gap-1">
+                Buy Prop Money Australia <ChevronRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* SECTION 7: PRODUCTION REVIEWS */}
       <section className="bg-[#0D0D0D] py-24 text-white" id="production-reviews">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
@@ -375,7 +498,7 @@ export default function HomePage() {
         </div>
         
         <div className="space-y-4">
-          {FAQS.slice(0, 4).map((faq, idx) => {
+          {FAQS.slice(0, 8).map((faq, idx) => {
             const isOpen = activeFaq === idx;
             return (
               <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white hover:border-gold/30 transition-colors shadow-sm">

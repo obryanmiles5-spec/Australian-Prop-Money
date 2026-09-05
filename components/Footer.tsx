@@ -196,21 +196,65 @@ export default function Footer() {
 
         {/* Legal Disclaimer Box */}
         <div className="bg-[#1A1A1A] p-2.5 rounded-xl border border-white/5 text-[9.5px] text-gray-500 leading-relaxed text-center font-serif italic mb-4">
-          &quot;All products sold on this website are replica prop items intended exclusively for film production, television, theatre, photography, training, educational and novelty purposes. They are not legal tender and must not be used for any unlawful or fraudulent activity.&quot;
+          &quot;All products sold on this website are replica prop items intended exclusively for film production, television, theatre, photography, training, educational and novelty purposes. They are not legal tender and must not be used for any unlawful or fraudulent activity. Strictly adhering to Reserve Bank of Australia (RBA) guidelines and Crimes (Currency) Act 1981.&quot;
         </div>
 
-        {/* SEO Text Box */}
-        <div className="text-[9px] text-gray-600 leading-relaxed text-center mb-4 max-w-4xl mx-auto px-4">
-          Looking for the best australian prop money? Whether you need prop money australia, prop bundles of money australia, or just wondering where to buy australian prop money, we are your #1 source. We supply high quality prop money, fake australian money prop, fake money props, and aus prop money to top film and television sets. All our movie prop money australia is legally compliant and designed strictly for cameras. If you want to buy prop money near me securely, order today for fast AU delivery.
+        {/* Australia Keyword & Production Directory Grid */}
+        <div className="text-[9px] text-gray-500 leading-relaxed border-t border-b border-white/5 py-4 mb-4 space-y-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
+            <div>
+              <strong className="text-white block font-mono text-[9.5px] uppercase tracking-wider mb-1">Film &amp; Theatre Hubs</strong>
+              <ul className="space-y-1 text-gray-400">
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Film Production Prop Money Sydney</Link></li>
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Theatre Prop Money Melbourne</Link></li>
+                <li><Link href="/shop" className="hover:text-gold transition-colors">TV Production Money Props Brisbane</Link></li>
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Legal Prop Money for Film Australia</Link></li>
+              </ul>
+            </div>
+            <div>
+              <strong className="text-white block font-mono text-[9.5px] uppercase tracking-wider mb-1">Denominations</strong>
+              <ul className="space-y-1 text-gray-400">
+                <li><Link href="/product/100-aud-new-prop-money" className="hover:text-gold transition-colors">New Series 100 AUD Prop Money</Link></li>
+                <li><Link href="/product/50-aud-new-prop-money" className="hover:text-gold transition-colors">Prop 50 Dollar Note Australia</Link></li>
+                <li><Link href="/product/20-aud-new-prop-money" className="hover:text-gold transition-colors">Prop 20 Dollar Note AUD</Link></li>
+                <li><Link href="/product/100-aud-old-prop-money" className="hover:text-gold transition-colors">Australian 100 Dollar Prop Notes</Link></li>
+              </ul>
+            </div>
+            <div>
+              <strong className="text-white block font-mono text-[9.5px] uppercase tracking-wider mb-1">Production Formats</strong>
+              <ul className="space-y-1 text-gray-400">
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Full Print Prop Money AUD</Link></li>
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Double Sided Prop Money Australia</Link></li>
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Blank Filler Prop Money Stacks</Link></li>
+                <li><Link href="/product/millionaire-briefcase-bundle" className="hover:text-gold transition-colors">Prop Money Briefcase Bundle</Link></li>
+              </ul>
+            </div>
+            <div>
+              <strong className="text-white block font-mono text-[9.5px] uppercase tracking-wider mb-1">Creative &amp; Training</strong>
+              <ul className="space-y-1 text-gray-400">
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Prop Cash for Music Videos Australia</Link></li>
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Cashier Training Prop Money</Link></li>
+                <li><Link href="/shop" className="hover:text-gold transition-colors">Photography Prop Money AUD</Link></li>
+                <li><Link href="/product/prop-money-gun-shooter" className="hover:text-gold transition-colors">AUD Money Gun Prop Cash</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-center max-w-4xl mx-auto pt-2 text-gray-500">
+            Australian Prop Money is the trusted supplier where to buy prop money in Australia. Whether ordering single 100 AUD prop stacks, cheap prop money Australia bundles, or wholesale prop money Australia reserves, all replica currency is 100% compliant with Reserve Bank of Australia prop money guidelines and counterfeit vs prop money Australia standards. Enjoy prop money Australia next day delivery and Afterpay.
+          </p>
         </div>
 
-        {/* Copy & Fineprint */}
-        <div className="pt-3 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left text-[10px] text-gray-500">
-          <p>© 2026 Australian Prop Money. All rights reserved.</p>
-          <div className="flex gap-3 uppercase tracking-wider text-[9px]">
+        {/* Copy & Social Media Links */}
+        <div className="pt-3 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[10px] text-gray-500">
+          <p>© 2026 Australian Prop Money (ABN: 46 674 267 559). All rights reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-4 uppercase tracking-wider text-[9px]">
             <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-gold transition-colors">Terms of Use</Link>
+            <a href="https://instagram.com/australianpropmoney" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Instagram</a>
             <a href="https://tiktok.com/@australianpropmoney" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">TikTok</a>
+            <a href="https://youtube.com/@australianpropmoney" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">YouTube</a>
+            <a href="https://facebook.com/australianpropmoney" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Facebook</a>
           </div>
         </div>
 
