@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShoppingBag, Menu, X, DollarSign, Heart } from 'lucide-react';
+import { ShoppingBag, Menu, X, DollarSign, Heart, ShieldCheck } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 const NAV_ITEMS = [
@@ -47,7 +47,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname === item.href;
                 return (
@@ -65,6 +65,19 @@ export default function Header() {
                   </Link>
                 );
               })}
+
+              {/* Verified ABN Link */}
+              <a
+                href="https://abr.business.gov.au/ABN/View?id=46674267559"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="header-menu-verified-abn"
+                title="Verify Australian Business Number on the official Australian Business Register"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/10 hover:bg-gold/20 text-black border border-gold/40 hover:border-gold transition-all duration-300 text-[11px] font-semibold tracking-wider uppercase group select-none"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-gold shrink-0 group-hover:scale-110 transition-transform" />
+                <span>Verified ABN: <span className="font-mono text-[10.5px] font-bold text-gray-800 lowercase tracking-normal">46 674 267 559</span></span>
+              </a>
             </nav>
 
             {/* Icons & Mobile Trigger */}
@@ -157,7 +170,7 @@ export default function Header() {
               </button>
             </div>
 
-            <nav className="flex flex-col gap-5">
+            <nav className="flex flex-col gap-4">
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname === item.href;
                 return (
@@ -176,6 +189,30 @@ export default function Header() {
                   </Link>
                 );
               })}
+
+              {/* Verified ABN Mobile Link */}
+              <a
+                href="https://abr.business.gov.au/ABN/View?id=46674267559"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="mobile-nav-link-verified-abn"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg bg-gold/10 border border-gold/30 hover:bg-gold/20 transition-all text-black mt-2 group"
+                title="Verify Australian Business Number on Australian Business Register"
+              >
+                <div className="w-7 h-7 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[11px] uppercase tracking-wider font-bold text-black flex items-center gap-1.5">
+                    Verified ABN
+                    <span className="text-[9px] bg-emerald-600 text-white font-mono font-medium px-1.5 py-0.5 rounded leading-none normal-case">Official</span>
+                  </span>
+                  <span className="font-mono text-xs font-bold text-gray-800 mt-0.5">
+                    46 674 267 559
+                  </span>
+                </div>
+              </a>
             </nav>
           </div>
 

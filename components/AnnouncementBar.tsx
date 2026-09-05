@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { MessageSquare, AlertCircle, Phone } from 'lucide-react';
+import { MessageSquare, AlertCircle, Phone, ShieldCheck } from 'lucide-react';
 
 const ANNOUNCEMENTS = [
-  { text: 'ABN: 46 674 267 559 | Australian Prop Money', icon: null },
+  { text: 'Verified ABN: 46 674 267 559 | Australian Prop Money', icon: ShieldCheck },
   { text: 'Direct Call & SMS: +61 468 187 340', icon: Phone },
   { text: 'Minimum Order AUD $150 for compliance standards', icon: AlertCircle },
   { text: 'Wholesale Orders Welcome — Bulk Pricing Available', icon: null },

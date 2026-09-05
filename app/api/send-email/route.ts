@@ -41,22 +41,30 @@ export async function POST(req: NextRequest) {
       socketTimeout: 20000,
     });
 
-    // Build the list of admin recipient inboxes to ensure notifications are never missed
+    // Main site official email address
+    const MAIN_SITE_EMAIL = 'info@australianpropmoney.org';
+
+    // Build the list of admin recipient inboxes ensuring info@australianpropmoney.org is primary
     const adminRecipientsList = Array.from(
       new Set(
         [
+          MAIN_SITE_EMAIL, // Primary site destination
           process.env.ADMIN_EMAIL,
           process.env.NOTIFICATION_EMAIL,
           process.env.ORDER_EMAIL,
           process.env.CONTACT_EMAIL,
-          smtpUser,
-          'info@australianpropmoney.org',
           'bolakaeyabeobasekelvin@gmail.com', // Direct administrator notification destination
+          smtpUser,
         ]
           .filter((e): e is string => Boolean(e && typeof e === 'string' && e.includes('@')))
           .map((e) => e.trim().toLowerCase())
       )
     );
+
+    // Guarantee MAIN_SITE_EMAIL is in the list
+    if (!adminRecipientsList.includes(MAIN_SITE_EMAIL)) {
+      adminRecipientsList.unshift(MAIN_SITE_EMAIL);
+    }
 
     const fromAddress = `"Australian Prop Money" <${smtpUser}>`;
     const customerEmail = (email || details?.shippingInfo?.email || '').trim();
@@ -227,7 +235,7 @@ export async function POST(req: NextRequest) {
       `;
 
       // --- Admin Email Template ---
-      const adminEmailSubject = `🚨 [NEW ORDER] #${orderId} - $${totalFormatted} AUD (${customerName})`;
+      const adminEmailSubject = `🚨 [ORDER NOTIFICATION] #${orderId} - $${totalFormatted} AUD (${customerName})`;
       const adminEmailHtml = `
         <div style="font-family: Georgia, serif; max-width: 620px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e4e4e7; border-radius: 8px; overflow: hidden;">
           <div style="background-color: #09090b; padding: 24px; text-align: center; border-bottom: 3px solid #d4af37;">
@@ -241,7 +249,7 @@ export async function POST(req: NextRequest) {
 
           <div style="padding: 24px;">
             <div style="background-color: #fef3c7; border: 1px solid #fde68a; border-radius: 6px; padding: 12px 16px; font-family: sans-serif; font-size: 13px; color: #92400e; margin-bottom: 20px;">
-              <strong>Action Required:</strong> A new replica currency order has been placed. Please confirm settlement clearance and prepare discrete warehouse dispatch.
+              <strong>Action Required:</strong> A new replica currency order has been placed. Primary notification destination: <strong>${MAIN_SITE_EMAIL}</strong>. Please confirm settlement clearance and prepare discrete warehouse dispatch.
             </div>
 
             ${orderSummaryCardHtml}
@@ -249,7 +257,7 @@ export async function POST(req: NextRequest) {
 
             <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #e4e4e7; font-family: sans-serif; font-size: 11px; color: #71717a;">
               Direct Reply: <a href="mailto:${customerEmail}" style="color: #d4af37; font-weight: bold;">${customerEmail}</a> • Phone: ${customerPhone}<br/>
-              Notification automatically routed to studio administration.
+              Notification dispatched to ${MAIN_SITE_EMAIL} and studio administrators.
             </div>
           </div>
         </div>
@@ -401,7 +409,7 @@ export async function POST(req: NextRequest) {
           transporter.sendMail({
             from: fromAddress,
             to: customerEmail,
-            replyTo: 'info@australianpropmoney.org',
+            replyTo: MAIN_SITE_EMAIL,
             subject: customerEmailSubject,
             html: customerEmailHtml,
           }).catch((err) => console.error('⚠️ Customer wholesale ack error:', err))
@@ -409,14 +417,154 @@ export async function POST(req: NextRequest) {
       }
 
       await Promise.allSettled(dispatchPromises);
-      return NextResponse.json({ success: true, message: 'Wholesale brief sent successfully.' });
+      console.log(`✅ Wholesale brief email notifications sent to ${MAIN_SITE_EMAIL} & customer ${customerEmail}`);
+      return NextResponse.json({ 
+        success: true, 
+        message: `Wholesale brief sent successfully to ${MAIN_SITE_EMAIL}.`,
+        primaryEmail: MAIN_SITE_EMAIL,
+      });
     }
 
     // -------------------------------------------------------------
-    // 3. CONTACT FORM / GENERAL INQUIRY
+    // 3. NEWSLETTER / VIP SUBSCRIPTION NOTIFICATION
+    // -------------------------------------------------------------
+    if (type === 'subscription' || type === 'newsletter') {
+      const subscriberEmail = (email || '').trim().toLowerCase();
+      if (!subscriberEmail || !subscriberEmail.includes('@') || !subscriberEmail.includes('.')) {
+        return NextResponse.json(
+          { success: false, error: 'A valid email address is required to subscribe.' },
+          { status: 400 }
+        );
+      }
+
+      const subscriptionSource = body.source || 'Website VIP Newsletter';
+      const timestamp = new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' });
+      const promoCode = 'WELCOME15';
+
+      const adminEmailSubject = `🎉 [NEW SUBSCRIPTION NOTIFICATION] VIP Subscriber: ${subscriberEmail}`;
+      const adminEmailHtml = `
+        <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e4e4e7; border-radius: 8px; padding: 24px;">
+          <div style="background-color: #09090b; padding: 18px; text-align: center; border-bottom: 3px solid #d4af37; border-radius: 6px 6px 0 0; margin: -24px -24px 20px -24px;">
+            <h1 style="color: #ffffff; font-size: 18px; margin: 0; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase;">
+              AUSTRALIAN PROP MONEY
+            </h1>
+            <p style="color: #d4af37; font-size: 11px; margin: 4px 0 0 0; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+              VIP Inner Circle Newsletter Notification
+            </p>
+          </div>
+
+          <div style="background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 6px; padding: 12px 16px; font-family: sans-serif; font-size: 13px; color: #065f46; margin-bottom: 20px;">
+            <strong>New Subscriber Alert:</strong> A new creative crew member has subscribed to the Australian Prop Money VIP registry and unlocked their 15% welcome discount.
+          </div>
+
+          <table style="width: 100%; font-family: sans-serif; font-size: 13px; color: #09090b; margin: 16px 0; border-collapse: collapse;">
+            <tr style="border-bottom: 1px solid #f4f4f5;">
+              <td style="padding: 10px 0; color: #71717a; width: 35%;"><strong>Subscriber Email:</strong></td>
+              <td style="padding: 10px 0;"><a href="mailto:${subscriberEmail}" style="color: #d4af37; font-weight: bold;">${subscriberEmail}</a></td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f4f4f5;">
+              <td style="padding: 10px 0; color: #71717a;"><strong>Primary Studio Desk:</strong></td>
+              <td style="padding: 10px 0; color: #09090b;"><strong>${MAIN_SITE_EMAIL}</strong></td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f4f4f5;">
+              <td style="padding: 10px 0; color: #71717a;"><strong>Signup Source:</strong></td>
+              <td style="padding: 10px 0;">${subscriptionSource}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f4f4f5;">
+              <td style="padding: 10px 0; color: #71717a;"><strong>Promo Code Issued:</strong></td>
+              <td style="padding: 10px 0;"><span style="background-color: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-weight: bold;">${promoCode} (15% OFF)</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 0; color: #71717a;"><strong>Timestamp:</strong></td>
+              <td style="padding: 10px 0; color: #71717a; font-size: 12px;">${timestamp} (AEST)</td>
+            </tr>
+          </table>
+
+          <div style="text-align: center; margin-top: 24px; padding-top: 18px; border-top: 1px solid #e4e4e7; font-family: sans-serif; font-size: 11px; color: #71717a;">
+            Australian Prop Money • ABN: 46 674 267 559 • Direct Contact: +61 468 187 340
+          </div>
+        </div>
+      `;
+
+      const customerEmailSubject = `Welcome to the Inner Circle - 15% Off Your Replica Order [Code: ${promoCode}]`;
+      const customerEmailHtml = `
+        <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e4e4e7; border-radius: 8px; padding: 24px;">
+          <div style="background-color: #09090b; padding: 20px; text-align: center; border-bottom: 3px solid #d4af37; border-radius: 6px 6px 0 0; margin: -24px -24px 20px -24px;">
+            <h1 style="color: #ffffff; font-size: 20px; margin: 0; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase;">
+              AUSTRALIAN PROP MONEY
+            </h1>
+            <p style="color: #d4af37; font-size: 11px; margin: 6px 0 0 0; font-family: sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+              Prop Master & Creative Media Registry
+            </p>
+          </div>
+
+          <h2 style="font-size: 18px; color: #09090b; margin: 0 0 12px 0;">
+            Welcome to the Inner Circle!
+          </h2>
+          <p style="font-family: sans-serif; font-size: 13px; color: #3f3f46; line-height: 1.6;">
+            Thank you for joining the Australian Prop Money creative registry. As an official subscriber, you receive priority alerts on discrete polymer stock batches, custom aging masterclasses, and private bulk coupon releases.
+          </p>
+
+          <div style="background-color: #fefce8; border: 2px dashed #d4af37; border-radius: 8px; padding: 20px; text-align: center; margin: 24px 0;">
+            <span style="font-family: sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #854d0e; font-weight: bold; display: block; margin-bottom: 6px;">
+              Your Exclusive 15% Discount Code
+            </span>
+            <span style="font-family: monospace; font-size: 24px; font-weight: bold; color: #09090b; letter-spacing: 0.15em; display: block; background: #ffffff; padding: 8px 16px; border-radius: 6px; border: 1px solid #e4e4e7; width: fit-content; margin: 0 auto;">
+              ${promoCode}
+            </span>
+            <span style="font-family: sans-serif; font-size: 11px; color: #71717a; display: block; margin-top: 8px;">
+              Apply this coupon at checkout to deduct 15% instantly from any replica currency stack or bundle.
+            </span>
+          </div>
+
+          <p style="font-family: sans-serif; font-size: 13px; color: #3f3f46; line-height: 1.6;">
+            All our replica banknotes are 100% legally compliant with RBA specifications, crafted with non-reflective matte polymer to ensure realistic representation under studio lighting.
+          </p>
+
+          <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 14px; border-radius: 6px; font-family: sans-serif; font-size: 12px; color: #475569; margin: 20px 0; line-height: 1.5;">
+            ✉️ <strong>Studio Desk:</strong> You can reply directly to this email or reach us anytime at <a href="mailto:${MAIN_SITE_EMAIL}" style="color: #d4af37; font-weight: bold;">${MAIN_SITE_EMAIL}</a> or WhatsApp at <strong>+61 468 187 340</strong>.
+          </div>
+
+          <div style="text-align: center; margin-top: 24px; padding-top: 18px; border-top: 1px solid #e4e4e7; font-family: sans-serif; font-size: 11px; color: #71717a; line-height: 1.6;">
+            Australian Prop Money • ABN: 46 674 267 559<br/>
+            Intended exclusively for film, television, theatre, photography, and training. Not legal tender.
+          </div>
+        </div>
+      `;
+
+      const dispatchPromises: Promise<any>[] = [
+        transporter.sendMail({
+          from: fromAddress,
+          to: adminRecipientsList.join(', '),
+          replyTo: subscriberEmail,
+          subject: adminEmailSubject,
+          html: adminEmailHtml,
+        }),
+        transporter.sendMail({
+          from: fromAddress,
+          to: subscriberEmail,
+          replyTo: MAIN_SITE_EMAIL,
+          subject: customerEmailSubject,
+          html: customerEmailHtml,
+        }).catch((err) => console.error('⚠️ Customer subscription welcome email error:', err)),
+      ];
+
+      await Promise.allSettled(dispatchPromises);
+      console.log(`✅ Subscription email dispatched: notified ${MAIN_SITE_EMAIL} & subscriber ${subscriberEmail}`);
+
+      return NextResponse.json({
+        success: true,
+        message: `Subscription notification sent to ${MAIN_SITE_EMAIL} and welcome code sent to ${subscriberEmail}`,
+        promoCode,
+        primaryEmail: MAIN_SITE_EMAIL,
+      });
+    }
+
+    // -------------------------------------------------------------
+    // 4. CONTACT FORM / GENERAL INQUIRY
     // -------------------------------------------------------------
     const inquirySubject = subject || 'General Studio Inquiry';
-    const adminEmailSubject = `📩 [CONTACT INQUIRY] ${inquirySubject} (${name})`;
+    const adminEmailSubject = `📩 [CONTACT NOTIFICATION] ${inquirySubject} (${name})`;
     const adminEmailHtml = `
       <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e4e4e7; border-radius: 8px; padding: 24px;">
         <h2 style="color: #09090b; margin-top: 0; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">
@@ -436,6 +584,10 @@ export async function POST(req: NextRequest) {
             <td style="padding: 6px 0;">${phone || 'Not provided'}</td>
           </tr>
           <tr>
+            <td style="padding: 6px 0; color: #71717a;"><strong>Primary Studio Desk:</strong></td>
+            <td style="padding: 6px 0;"><strong>${MAIN_SITE_EMAIL}</strong></td>
+          </tr>
+          <tr>
             <td style="padding: 6px 0; color: #71717a;"><strong>Subject:</strong></td>
             <td style="padding: 6px 0;">${inquirySubject}</td>
           </tr>
@@ -445,7 +597,7 @@ export async function POST(req: NextRequest) {
           <p style="margin: 6px 0 0 0; white-space: pre-wrap;">${message || 'No message provided'}</p>
         </div>
         <p style="font-family: sans-serif; font-size: 11px; color: #a1a1aa; margin-top: 20px; border-top: 1px solid #f4f4f5; padding-top: 10px;">
-          Reply directly to this email to contact the sender.
+          Direct Reply: <a href="mailto:${email}" style="color: #d4af37;">${email}</a> • Studio: ${MAIN_SITE_EMAIL}
         </p>
       </div>
     `;
@@ -466,7 +618,7 @@ export async function POST(req: NextRequest) {
         </div>
         <p style="font-family: sans-serif; font-size: 12px; color: #71717a; line-height: 1.6; margin-top: 20px; border-top: 1px solid #e4e4e7; padding-top: 14px;">
           For urgent set clearance or custom aging requests, you can also contact us immediately on WhatsApp or Phone at <strong>+61 468 187 340</strong>.<br/>
-          ABN: 46 674 267 559 • Australian Prop Money
+          Main Desk: <a href="mailto:${MAIN_SITE_EMAIL}" style="color: #d4af37;">${MAIN_SITE_EMAIL}</a> • ABN: 46 674 267 559
         </p>
       </div>
     `;
@@ -486,7 +638,7 @@ export async function POST(req: NextRequest) {
         transporter.sendMail({
           from: fromAddress,
           to: customerEmail,
-          replyTo: 'info@australianpropmoney.org',
+          replyTo: MAIN_SITE_EMAIL,
           subject: customerEmailSubject,
           html: customerEmailHtml,
         }).catch((err) => console.error('⚠️ Customer contact ack error:', err))
@@ -494,7 +646,12 @@ export async function POST(req: NextRequest) {
     }
 
     await Promise.allSettled(dispatchPromises);
-    return NextResponse.json({ success: true, message: 'Contact inquiry processed successfully.' });
+    console.log(`✅ Contact inquiry notifications sent to ${MAIN_SITE_EMAIL} & sender ${customerEmail}`);
+    return NextResponse.json({ 
+      success: true, 
+      message: `Contact inquiry sent successfully to ${MAIN_SITE_EMAIL}.`,
+      primaryEmail: MAIN_SITE_EMAIL,
+    });
   } catch (error: any) {
     console.error('❌ Nodemailer SMTP Error occurred while sending email:', error);
     return NextResponse.json(

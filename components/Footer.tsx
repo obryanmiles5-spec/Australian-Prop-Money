@@ -8,12 +8,38 @@ import { cleanWhatsAppNumber } from '@/lib/utils';
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setEmail('');
+    if (!email.trim() || !email.includes('@')) return;
+
+    setIsSubmitting(true);
+    setErrorMsg('');
+
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim(),
+          type: 'subscription',
+          source: 'Website Footer Form',
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setSubscribed(true);
+        setEmail('');
+      } else {
+        setErrorMsg(data.error || 'Failed to subscribe. Please try again.');
+      }
+    } catch (err) {
+      setErrorMsg('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -124,12 +150,17 @@ export default function Footer() {
             </p>
             
             {subscribed ? (
-              <div className="bg-white/[0.04] p-2.5 rounded-lg border border-gold/20 flex items-center gap-1.5 text-[10.5px] text-gold animate-scale-in">
-                <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" />
-                <span>Thank you! Coupon sent.</span>
+              <div className="bg-white/[0.04] p-3 rounded-lg border border-gold/30 space-y-1 text-[10.5px] text-gold animate-scale-in">
+                <div className="flex items-center gap-1.5 font-bold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" />
+                  <span>VIP Confirmation Sent!</span>
+                </div>
+                <p className="text-[9.5px] text-gray-300 leading-normal">
+                  Your 15% welcome code (<strong className="text-white font-mono">WELCOME15</strong>) was dispatched to your email, and studio notification sent to <span className="text-white font-mono">info@australianpropmoney.org</span>.
+                </p>
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="space-y-1">
+              <form onSubmit={handleSubscribe} className="space-y-1.5">
                 <div className="flex border border-white/10 rounded overflow-hidden">
                   <input
                     type="email"
@@ -137,19 +168,24 @@ export default function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="EMAIL ADDRESS"
-                    className="w-full bg-black/50 text-white text-[10px] px-2.5 py-1.5 focus:outline-none focus:bg-black/85 transition-all"
+                    disabled={isSubmitting}
+                    className="w-full bg-black/50 text-white text-[10px] px-2.5 py-1.5 focus:outline-none focus:bg-black/85 transition-all disabled:opacity-60"
                     id="input-footer-newsletter"
                   />
                   <button
                     type="submit"
-                    className="bg-gold hover:bg-gold-dark text-white px-2.5 text-[9px] font-bold uppercase tracking-widest transition-colors focus:outline-none"
+                    disabled={isSubmitting}
+                    className="bg-gold hover:bg-gold-dark text-white px-2.5 text-[9px] font-bold uppercase tracking-widest transition-colors focus:outline-none disabled:opacity-60 shrink-0"
                     id="btn-footer-newsletter-submit"
                   >
-                    Join
+                    {isSubmitting ? 'Joining...' : 'Join'}
                   </button>
                 </div>
+                {errorMsg && (
+                  <p className="text-[9px] text-red-400 font-sans">{errorMsg}</p>
+                )}
                 <span className="text-[8.5px] text-gray-500 font-mono tracking-wide block">
-                  Zero spam. Unsubscribe anytime.
+                  Zero spam. Direct dispatch to studio desk.
                 </span>
               </form>
             )}
