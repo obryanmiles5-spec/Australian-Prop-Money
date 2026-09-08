@@ -679,75 +679,92 @@ If you are looking for where to buy australian prop money safely, our store prov
     category: 'Legal',
     readTime: '5 min read',
     image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+  },
+  {
+    id: 'is-prop-money-legal-in-australia-rba-reproduction-rules',
+    title: 'Is Prop Money Legal in Australia? RBA Reproduction Rules & Guidelines',
+    excerpt: 'Detailed legal breakdown: Reserve Bank of Australia prop money guidelines, RBA reproduction rules, Crimes (Currency) Act 1981, and counterfeit vs prop money Australia.',
+    content: `### Is Prop Money Legal in Australia?
+Yes. Purchasing, possessing, and utilizing replica currency for artistic, educational, and theatrical purposes is completely legal under Australian Federal law and the **Crimes (Currency) Act 1981**, provided that the notes comply with the **Reserve Bank of Australia (RBA) reproduction rules and guidelines**.
+
+### RBA Prop Money Reproduction Rules Explained
+The Reserve Bank of Australia mandates strict guidelines to ensure imitation bank notes cannot be circulated as genuine currency:
+1. **Material & Substrate Differences:** Real Australian banknotes are printed on advanced polymer bi-axially oriented polypropylene. Legal Australian prop money is printed on double-calendered matte paper or bond paper—never polymer.
+2. **Prominent Disclaimers:** Every legal prop note displays prominent text such as *"PROP ONLY — NOT LEGAL TENDER"* or *"FOR MOTION PICTURE USE ONLY"*.
+3. **Dimensions & Optical Properties:** Inks are engineered without reflective foils, micro-printing, or authentic holographic windows.
+
+### Counterfeit vs Prop Money Australia
+- **Counterfeit Money (Cash Counterfeit):** Defined as unauthorized reproductions created with the intent to deceive or pass off as genuine tender. Manufacturing or circulating counterfeit money in Australia carries penalties of up to 14 years imprisonment.
+- **Prop Money AUD (Australian Dollar Prop Notes):** Specifically manufactured as non-negotiable set pieces for film production, theatre, music videos, and photography.
+
+Whether you need a **prop 100 dollar note australia**, **prop 50 dollar note australia**, or **new series 100 aud prop money**, Australian Prop Money provides 100% compliant, camera-ready replicas.`,
+    date: '2026-08-10',
+    category: 'Legal',
+    readTime: '6 min read',
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
+  },
+  {
+    id: 'where-to-buy-prop-money-in-australia-delivery-guide',
+    title: 'Where to Buy Prop Money in Australia: Sydney, Melbourne, Brisbane & Perth Delivery',
+    excerpt: 'Looking for where to buy prop money in Australia? Discover fast next day delivery, Afterpay options, full print double sided stacks, and wholesale prop money bundles.',
+    content: `### Where to Buy Prop Money in Australia
+Finding reliable, high-definition **movie prop money australia** locally used to be difficult. International shipments often face border seizures by Australian Border Force if not properly certified. **Australian Prop Money** is the leading domestic supplier, shipping directly from Sydney with express overnight delivery across NSW, VIC, QLD, WA, SA, ACT, and TAS.
+
+### Sourcing for Film, TV, Music Videos & Events
+- **Film Production Prop Money Sydney & Melbourne Theatre:** Designed with non-glare inks so studio key-lights and stage spotlights do not create flares on camera.
+- **Prop Cash for Music Videos & AUD Money Gun Prop Cash:** High-speed bill dimensions engineered to feed smoothly through motorized cash guns without jamming.
+- **Cashier Training Prop Money Australia & Educational Mockups:** Ideal for banking institutions and retail staff training to recognize genuine vs non-negotiable cash.
+- **Photography Prop Money AUD & High-Fashion Stills:** Vibrant color fidelity and high-contrast typography that look indistinguishable on 4K/8K macro lenses.
+
+### Stacks, Briefcases & Bundles
+Choose between **full print prop money aud** (double sided prop money australia with every bill printed front and back) and **blank filler prop money stacks australia** for massive volume set decoration. Buy with instant **Afterpay** checkout and next day dispatch.`,
+    date: '2026-08-15',
+    category: 'Production',
+    readTime: '5 min read',
+    image: 'https://drive.google.com/thumbnail?id=1KjvH98mJVQDUJKvTGL6O-Bl6xaggGuRR&sz=w1000'
   }
 ];
 
 export const FAQS: FAQItem[] = [
   {
     category: 'legality',
-    question: 'Counterfeit vs Prop Money: What is the difference and what does counterfeit money mean?',
-    answer: 'The **counterfeit money meaning** (or **define counterfeit money**) refers to illegal replica currency designed to defraud. In contrast, our **australian prop money** (or **artificial money**, **another word for fake money**) is strictly for film and photography. It is not a **fake money template** or **fake money to print off** at home. Attempting to **create fake money**, **fake money making**, or finding out **how to make fake money feel more real at home** for illegal use is a federal crime. Our **australian prop money for sale** is pre-printed on non-polymer paper so any **counterfeit money detector australia** or **fake money big w** checker will easily flag it as a prop.'
+    question: 'Is prop money legal in Australia and what are the RBA prop money reproduction rules?',
+    answer: 'Yes, prop money is 100% legal in Australia for artistic, film, television, theatre, educational, and commercial photography purposes. Under the **Reserve Bank of Australia (RBA) prop money guidelines** and the **Crimes (Currency) Act 1981**, legal prop money must have distinguishable visual differences, feature clear disclaimers like "PROP ONLY — NOT LEGAL TENDER", and be printed on specialty non-reflective matte paper rather than authentic polymer substrate. Our Australian prop money adheres strictly to these RBA reproduction rules.'
+  },
+  {
+    category: 'legality',
+    question: 'Counterfeit vs Prop Money Australia: What is the difference between counterfeit cash and legal prop notes?',
+    answer: 'There is a critical legal difference between **counterfeit money** and **prop money aud**: **Counterfeit money** (or fake money counterfeit / cash counterfeit) refers to illegal reproductions made with the fraudulent intent to deceive and pass as real legal tender in circulation—which is a severe federal crime in Australia. In contrast, **australian dollar prop notes** and **movie prop money australia** are manufactured strictly as non-negotiable, non-polymer visual tools for cameras, labeled with legal disclaimers, and fail all counterfeit detector tests.'
+  },
+  {
+    category: 'ordering',
+    question: 'Where to buy prop money in Australia and how fast is delivery?',
+    answer: 'You can buy high-quality **realistic prop money australia** directly from our online store. We provide **prop money australia next day delivery** and express dispatch from our Sydney warehouse across Sydney, Melbourne, Brisbane, Perth, Adelaide, Gold Coast, Hobart, and Canberra. We also support flexible payment options including **prop money australia Afterpay**, Credit/Debit cards, PayID instant, and direct bank transfer.'
+  },
+  {
+    category: 'ordering',
+    question: 'What is the difference between full print prop money AUD, double sided prop money Australia, and blank filler stacks?',
+    answer: 'We supply both formats for every production requirement: **Full print prop money AUD** (or **double sided prop money australia**) features 100 complete, double-sided printed notes with high-resolution artwork on the front and back of every single bill in the stack. **Blank filler prop money stacks australia** feature authentic double-sided top and bottom bills with blank filler paper in between, designed for budget-friendly background set filling, large vault scenes, and prop money briefcase bundles.'
+  },
+  {
+    category: 'ordering',
+    question: 'Do you sell prop 100 dollar note Australia, prop 50 dollar note Australia, and prop 20 dollar note AUD?',
+    answer: 'Yes! We manufacture the full range of Australian currency denominations: **prop 100 dollar note australia** (both classic vintage design and **new series 100 aud prop money**), **prop 50 dollar note australia**, **prop 20 dollar note aud**, and $10 AUD notes. We also offer pre-bundled **prop money 10000 stack aud** and heavy **prop money briefcase bundle australia** sets for heist and luxury shoots.'
   },
   {
     category: 'custom',
-    question: 'Do you sell fake coins, fake toonies, or British prop money?',
-    answer: 'Currently, our main focus is on high-quality paper **au prop money**, **prop american money**, and **fake notes**. We do not manufacture **fake coins**, **fake coin**, or **fake toonies**. If you need **prop money uk** or **british prop money**, we can do custom print runs upon request for international productions.'
+    question: 'Can prop money be used for music videos, AUD money guns, theatre, and cashier training?',
+    answer: 'Yes! Our **prop cash for music videos australia** is specifically weighted to glide cleanly through an **aud money gun prop cash** dispenser without jamming. We also supply **film production prop money sydney**, **theatre prop money melbourne**, **tv production money props brisbane**, **photography prop money aud**, and **cashier training prop money australia** for banks and retail staff simulation.'
   },
   {
     category: 'ordering',
-    question: 'Where is the best place to use counterfeit money?',
-    answer: 'Nowhere. Using **counterfeit money** or **counterfeit cash** is a severe crime. Our products are **props money** strictly for use on closed film sets, music videos, and theater stages. It is the **best fake money reddit** users recommend for *legal* film production, not for illegal circulation.'
-  },
-
-  {
-    category: 'legality',
-    question: 'Is it legal to buy and use replica prop money in Australia?',
-    answer: 'Yes, it is 100% legal to buy, own, and use replica prop money for artistic and media productions, provided they conform strictly to the Reserve Bank of Australia (RBA) regulations and Crimes (Currency) Act 1981. Our fake australian money prop features standard RBA non-circulation watermarks, "PROP ONLY — NOT LEGAL TENDER" wording, is printed on non-glossy, heavy-bond matte paper (never polymer), and has scaled/modified dimensions to prevent any confusion with real currency.'
-  },
-  {
-    category: 'legality',
-    question: 'What are the main RBA design rules for props?',
-    answer: 'The RBA requires that prop notes are printed with distinguishable differences. This includes being significantly larger or smaller (usually more than 1.5 times or less than 0.5 times the size of the original note), being printed only on one side, or if printed double-sided, possessing prominent, clear legal disclaimers. Our double-sided australia prop money and prop money au notes are custom engineered with high-contrast warning lines and strict matte paper finishes to easily distinguish them from real currency upon tactile touch.'
-  },
-  {
-    category: 'shipping',
-    question: 'How fast is dispatch and shipping for prop money australia?',
-    answer: 'All orders are dispatched from our warehouse in Sydney within 24 hours of purchase on business days. We offer secure, private checkout and dispatch items in unmarked, plain packaging. Standard delivery for au prop money takes 3-5 business days, while Express Fast Shipping delivers within 1-2 business days to metropolitan areas across Australia.'
+    question: 'How to get prop money for videos, YouTube skits, or prank prop money in Australia?',
+    answer: 'Ordering is seamless: browse our catalog of **cheap prop money australia** and **prop money bundle australia** packages, add your desired stacks to cart, and checkout with fast express delivery. Please note: while used for entertainment and creative skits, prop notes must never be used to attempt purchases in retail stores or public businesses.'
   },
   {
     category: 'ordering',
-    question: 'Do you offer custom aus prop money or bulk crates?',
-    answer: 'Absolutely! We specialize in bulk prop australian money orders for high-intensity heist and vault scenes, supplying up to 100 stacks in customized lockable aluminum briefcases or industrial crates. For customized solutions or commercial proposals for prop american money or local notes, please contact us via our Wholesale page.'
-  },
-  {
-    category: 'legality',
-    question: 'Is it illegal to have or own prop money?',
-    answer: 'No, it is not illegal to own or have prop money. The possession of fake australian money prop or movie prop money australia is completely legal as long as the replica notes follow the Crimes (Currency) Act 1981 and RBA rules, meaning they cannot be mistaken for real Australian dollars in a deceptive manner. You can buy prop money for films, photoshoots, and events legally.'
-  },
-  {
-    category: 'ordering',
-    question: 'Can you buy prop money in Australia and where to buy it?',
-    answer: 'Yes, you can buy australian prop money directly from us. We are the leading supplier of realistic prop money australia, offering high quality prop money and prop bundles of money australia. We provide overnight shipping to major cities, making it easy to buy prop money near me if you are located in AU. Skip the wait of alibaba prop money or dhgate prop money and get fast local delivery.'
-  },
-  {
-    category: 'custom',
-    question: 'Does prop money work in vending machines?',
-    answer: 'No, our australian money props are specifically designed to fail in vending machines, ATMs, and counting machines. This ensures our fake money stack prop and prop australian money wod remain compliant and cannot be used for illegal activities.'
-  },
-  {
-    category: 'ordering',
-    question: 'How much does prop money cost?',
-    answer: 'The cost of prop money varies depending on the quantity. A single stack of 100 notes typically starts around $20 to $30 AUD. For larger film productions, we offer cheap prop money in bulk, such as our millionaire heist master crates, giving you the best australian prop money at wholesale prices.'
-  },
-  {
-    category: 'legality',
-    question: 'Is prop money counterfeit?',
-    answer: 'No, prop money is not counterfeit. Counterfeit money prop implies an intent to deceive and use as real currency, which is illegal. Our fake money props australia and real australian prop money are explicitly marked as "PROP ONLY" and printed on matte paper to comply with laws, making it distinct from actual counterfeit prop money.'
-  },
-  {
-    category: 'custom',
-    question: 'Do prop firms use real money and how do they make money?',
-    answer: 'While we specialize in motion picture prop money, people often ask about trading prop firms. Prop trading firms usually provide funded accounts with real money once a trader passes an evaluation, though the evaluation phase may use simulated funds. Prop firms make money by charging evaluation fees and taking a split of the traders profits. If you are asking how prop firms make money or how do prop firms not lose money, it relies on strict risk management and evaluation fees. Are stainless props worth the money for boating? Yes, but for film, paper props are what you need.'
+    question: 'Do you offer wholesale prop money Australia for high-volume film studios?',
+    answer: 'Yes! For large-scale cinematic productions, streaming series, and commercial art departments, we offer **wholesale prop money australia** crates containing 50 to 100+ full stacks with volume discounts. You can submit custom quotes via our Wholesale page.'
   }
 ];
 

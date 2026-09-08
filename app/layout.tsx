@@ -55,7 +55,51 @@ export const metadata: Metadata = {
   },
   description: 'Australia’s leading supplier of RBA-compliant Australian prop money, fake australian money prop notes, old and new $100, $50, $20, $10 AUD notes, and USD prop cash for film, TV, music videos, and photography. Fast shipping to Sydney, Melbourne, Brisbane, Perth & nationwide.',
   keywords: [
-        // Primary High-Volume Search Keywords
+    // Core User Injected High-Intent Keywords
+    'is prop money legal in australia',
+    'rba prop money reproduction rules',
+    'reserve bank of australia prop money guidelines',
+    'counterfeit vs prop money australia',
+    'where to buy prop money in australia',
+    'legal prop money for film australia',
+    'how to get prop money for videos',
+    'movie prop money australia',
+    'film production prop money sydney',
+    'theatre prop money melbourne',
+    'prop cash for music videos australia',
+    'cashier training prop money australia',
+    'photography prop money aud',
+    'tv production money props brisbane',
+    'prank prop money australia',
+    'aud money gun prop cash',
+    'prop 100 dollar note australia',
+    'prop 50 dollar note australia',
+    'prop 20 dollar note aud',
+    'australian 100 dollar prop notes',
+    'new series 100 aud prop money',
+    'prop money 10000 stack aud',
+    'prop money briefcase bundle australia',
+    'full print prop money aud',
+    'double sided prop money australia',
+    'blank filler prop money stacks australia',
+    'buy prop money australia',
+    'australian prop money for sale',
+    'prop money aud',
+    'australian dollar prop notes',
+    'realistic prop money australia',
+    'buy fake australian money props',
+    'prop money australia next day delivery',
+    'prop money australia afterpay',
+    'cheap prop money australia',
+    'wholesale prop money australia',
+    'prop money bundle australia',
+    'counterfeit',
+    'counterfeit money',
+    'cash counterfeit',
+    'fake money counterfeit',
+    'counterfeit money australia',
+
+    // Primary High-Volume Search Keywords
     'australian prop money',
     'prop money australia',
     'prop australian money',
@@ -69,7 +113,6 @@ export const metadata: Metadata = {
     'props money',
     'australia fake money',
     'best fake money',
-    'buy prop money australia',
     'prop money buy online',
     
     // Counterfeit/Detector Related (Educational/Legal context)
@@ -81,22 +124,10 @@ export const metadata: Metadata = {
     'fake notes australia',
     'counterfeit money tester',
     'fake cash detector',
-    'australian counterfeit money',
 
-    // Specific Items
+    // Specific Items & Denominations
     'fake $100 australia',
     '$100 prop money',
-    'fake coins',
-    'fake coin',
-    'bag of fake money',
-    '1 1 prop money',
-    'fake money print',
-    'prop money aud',
-    'aud prop money',
-    'prop american money',
-    'fake us dollars',
-
-    // Specific Denomination Terms
     'fake $100 notes australia',
     'fake $50 notes australia',
     'fake $20 notes australia',
@@ -108,6 +139,12 @@ export const metadata: Metadata = {
     'old design australian prop money',
     'new design australian prop notes',
     'australian polymer prop cash',
+    'bag of fake money',
+    '1 1 prop money',
+    'fake money print',
+    'prop american money',
+    'fake us dollars',
+    '100 USD prop cash',
 
     // City & Location Search Keywords
     'prop money sydney',
@@ -127,18 +164,12 @@ export const metadata: Metadata = {
     'training prop money australia',
     'casino prop money australia',
     'heist scene prop cash',
-
-    // Multi-Currency & Special Items
-    'prop american money',
-    'US dollar prop notes australia',
-    '100 USD prop cash',
     'prop money gun australia',
     'bulk prop money wholesale australia',
     'full print prop money stacks',
 
     // Legality & Compliance Queries
     'RBA compliant prop money',
-    'is prop money legal in australia',
     'non-negotiable prop cash australia',
     'Reserve Bank of Australia prop money rules'
   ],

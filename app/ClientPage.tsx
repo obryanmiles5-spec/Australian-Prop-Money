@@ -432,13 +432,15 @@ export default function HomePage() {
       {/* SECTION 8: HOMEPAGE FAQS */}
       <section className="max-w-4xl mx-auto px-6 sm:px-12 lg:px-16" id="homepage-faqs">
         <div className="text-center space-y-4 mb-12">
-          <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">Support</span>
-          <h2 className="text-3xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>Common Questions</h2>
+          <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">Legal & Buying Guide</span>
+          <h2 className="text-3xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            Frequently Asked Questions
+          </h2>
           <div className="w-12 h-[1px] bg-gold mx-auto mt-4 mb-8"></div>
         </div>
         
         <div className="space-y-4">
-          {FAQS.slice(0, 4).map((faq, idx) => {
+          {FAQS.slice(0, 6).map((faq, idx) => {
             const isOpen = activeFaq === idx;
             return (
               <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-white hover:border-gold/30 transition-colors shadow-sm">
@@ -456,8 +458,8 @@ export default function HomePage() {
                   )}
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 text-gray-600 text-xs leading-relaxed border-t border-gray-50 pt-4 bg-gray-50/50">
-                    {faq.answer}
+                  <div className="px-6 pb-6 text-gray-600 text-xs leading-relaxed border-t border-gray-50 pt-4 bg-gray-50/50 space-y-2">
+                    <p>{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -470,9 +472,124 @@ export default function HomePage() {
             className="inline-flex items-center gap-1 bg-black hover:bg-gold text-white hover:text-black px-6 py-3 rounded-lg text-xs uppercase tracking-widest font-bold transition-all"
             id="btn-all-faqs"
           >
-            Read All Legal FAQs
+            Read All Legal FAQs & Compliance Guides
             <ChevronRight className="w-4 h-4" />
           </Link>
+        </div>
+      </section>
+
+      {/* SECTION 8.5: COMPREHENSIVE SEO KNOWLEDGE HUB (Targeting Search Engines & AI Assistants) */}
+      <section className="bg-zinc-50/70 py-16 sm:py-24 border-t border-gray-200" id="seo-knowledge-hub">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-gold text-xs font-mono font-bold uppercase tracking-[0.3em] block">
+              Official Australian Currency Replica Authority
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
+              The Definitive Guide to Prop Money in Australia
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-600 font-sans leading-relaxed">
+              Everything you need to know regarding RBA prop money reproduction rules, where to buy prop money in Australia, counterfeit vs prop money distinctions, and sourcing for cinema, TV, music videos, and training.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Box 1: Legality & RBA Guidelines */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 space-y-3 shadow-xs">
+              <h3 className="text-base font-bold text-black font-sans flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold"></span>
+                Is Prop Money Legal in Australia?
+              </h3>
+              <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                Yes. Under the <strong>Reserve Bank of Australia prop money guidelines</strong> and the <strong>Crimes (Currency) Act 1981</strong>, owning and using replica bank notes for artistic, educational, and media productions is 100% legal. Compliant notes must feature non-reflective matte paper (never real polymer) and clear markings such as <em>&quot;PROP ONLY — NOT LEGAL TENDER&quot;</em>.
+              </p>
+              <div className="pt-2">
+                <Link href="/faq" className="text-[11px] font-bold text-black hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                  Read RBA Reproduction Rules <ChevronRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Box 2: Counterfeit vs Prop Money Australia */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 space-y-3 shadow-xs">
+              <h3 className="text-base font-bold text-black font-sans flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold"></span>
+                Counterfeit vs Prop Money Australia
+              </h3>
+              <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                <strong>Counterfeit money</strong> (or <strong>cash counterfeit</strong> / <strong>fake money counterfeit</strong>) refers to illicit currency created to deceive the public and circulate illegally. In contrast, <strong>prop money aud</strong> and <strong>australian dollar prop notes</strong> are legitimate non-negotiable tools strictly for cameras and stage sets that immediately fail counterfeit tester pens and detector machines.
+              </p>
+              <div className="pt-2">
+                <Link href="/blog/is-prop-money-legal-in-australia-rba-reproduction-rules" className="text-[11px] font-bold text-black hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                  Counterfeit Law Guide <ChevronRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Box 3: Where to Buy Prop Money in Australia */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 space-y-3 shadow-xs">
+              <h3 className="text-base font-bold text-black font-sans flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold"></span>
+                Where to Buy Prop Money in Australia
+              </h3>
+              <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                Australian Prop Money is the premier local provider when you want to <strong>buy prop money australia</strong>. We offer <strong>prop money australia next day delivery</strong> across Sydney, Melbourne, Brisbane, Perth, and Adelaide with express tracking and flexible <strong>prop money australia Afterpay</strong> checkout.
+              </p>
+              <div className="pt-2">
+                <Link href="/shop" className="text-[11px] font-bold text-black hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                  Explore Prop Stacks <ChevronRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Box 4: Film, TV, Theatre & Music Videos */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 space-y-3 shadow-xs">
+              <h3 className="text-base font-bold text-black font-sans flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold"></span>
+                Film, TV, Theatre & Music Videos
+              </h3>
+              <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                Trusted for <strong>film production prop money Sydney</strong>, <strong>theatre prop money Melbourne</strong>, <strong>TV production money props Brisbane</strong>, and <strong>prop cash for music videos Australia</strong>. Our notes are treated with anti-reflective finishes to prevent studio glare under 4K and 8K cinema camera lights.
+              </p>
+              <div className="pt-2">
+                <Link href="/shop?category=australian-notes" className="text-[11px] font-bold text-black hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                  View Cinema Notes <ChevronRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Box 5: Stacks, Briefcases & Denominations */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 space-y-3 shadow-xs">
+              <h3 className="text-base font-bold text-black font-sans flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold"></span>
+                Denominations & Briefcase Bundles
+              </h3>
+              <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                We supply the complete currency line: <strong>prop 100 dollar note australia</strong>, <strong>new series 100 aud prop money</strong>, <strong>prop 50 dollar note australia</strong>, and <strong>prop 20 dollar note aud</strong>. Available in <strong>prop money 10000 stack aud</strong>, <strong>full print prop money aud</strong>, <strong>double sided prop money australia</strong>, and <strong>prop money briefcase bundle australia</strong> setups.
+              </p>
+              <div className="pt-2">
+                <Link href="/shop?category=bundle-packs" className="text-[11px] font-bold text-black hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                  View Briefcase Bundles <ChevronRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Box 6: Training, Prank & Money Gun Cash */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 space-y-3 shadow-xs">
+              <h3 className="text-base font-bold text-black font-sans flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold"></span>
+                Training, Photography & Money Guns
+              </h3>
+              <p className="text-xs text-gray-600 leading-relaxed font-sans">
+                Whether you need <strong>cashier training prop money australia</strong> for banking staff, <strong>photography prop money aud</strong> for luxury photoshoots, <strong>prank prop money australia</strong> for online video skits, or high-velocity <strong>aud money gun prop cash</strong>, our products deliver exceptional tactile quality and 100% compliance.
+              </p>
+              <div className="pt-2">
+                <Link href="/wholesale" className="text-[11px] font-bold text-black hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                  Wholesale & Commercial Orders <ChevronRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

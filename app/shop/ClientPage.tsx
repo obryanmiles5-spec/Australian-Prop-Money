@@ -50,11 +50,26 @@ function ShopContent() {
 
     // Search Query Filter
     if (searchQuery.trim() !== '') {
-      const q = searchQuery.toLowerCase();
-      const matchName = p.name.toLowerCase().includes(q);
-      const matchDesc = p.description.toLowerCase().includes(q);
-      const matchFeatures = p.features.some((f) => f.toLowerCase().includes(q));
-      if (!matchName && !matchDesc && !matchFeatures) {
+      const q = searchQuery.toLowerCase().trim();
+      const searchTokens = q.split(/\s+/).filter(Boolean);
+      const searchableText = [
+        p.name,
+        p.description,
+        p.longDescription,
+        p.seoTitle,
+        p.metaDescription,
+        p.category,
+        p.sku,
+        ...p.features,
+        ...Object.values(p.specifications || {})
+      ].join(' ').toLowerCase();
+
+      // Check if full query matches, or if all individual tokens match
+      const fullMatch = searchableText.includes(q);
+      const tokensMatch = searchTokens.every((token) => searchableText.includes(token));
+      
+      // Also match common synonym queries like "10000 stack", "new series", "double sided", "briefcase", etc.
+      if (!fullMatch && !tokensMatch) {
         return false;
       }
     }
