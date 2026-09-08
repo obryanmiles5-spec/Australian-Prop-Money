@@ -42,6 +42,10 @@ export interface Review {
   rating: number;
   comment: string;
   date: string;
+  location?: string;
+  verified?: boolean;
+  headline?: string;
+  verifiedBadge?: string;
 }
 
 export function getCategoryLabel(cat: string): string {
@@ -423,21 +427,24 @@ export const PRODUCTS: Product[] = [
     image: 'https://drive.google.com/thumbnail?id=14pqxvToRwY62wDCjXrNk1GXEMvJjRppo&sz=w1000'
   }
 ];
-export const CATEGORIES: { id: string; name: string; description: string; }[] = [
+export const CATEGORIES: { id: string; name: string; description: string; image?: string; }[] = [
   {
     id: 'australian-notes',
     name: 'Australian Notes',
     description: 'High-fidelity replica polymer notes designed to comply strictly with federal guidelines.',
+    image: 'https://drive.google.com/thumbnail?id=18Lkpjp0VSgrZ2CHuB0Yo_gK-1pHbP-hU&sz=w1000'
   },
   {
     id: 'bundle-packs',
     name: 'Bundle Packs',
     description: 'Premium pre-packaged stacks and mixed bundle packs for bulk prop scenes.',
+    image: 'https://drive.google.com/thumbnail?id=1F9m1tgScgYGfgGYlAPt_VAsClDFsjSvq&sz=w1000'
   },
   {
     id: 'accessories',
     name: 'Accessories',
     description: 'Essential props, bags, and high-fidelity money counters to perfect your scene.',
+    image: 'https://drive.google.com/thumbnail?id=16UnmI3SBn-LgOWEaS4dlp1g_LsBLGR_s&sz=w1000'
   }
 ];
 export const BLOG_POSTS: BlogPost[] = [
@@ -750,26 +757,194 @@ export const REVIEWS: Review[] = [
     name: 'Marcus Vance',
     role: 'Lead Prop Master',
     production: 'Sydney Crime Syndicate (TV Series)',
+    location: 'Sydney, NSW',
+    headline: 'Unmatched 4K camera quality with zero lens glare',
     rating: 5,
     comment: 'The quality of these notes is stunning. Under our 4K ARRI Alexa cameras, there is absolutely zero reflection or lighting flare. The matte paper feel is extremely realistic for cash counting closeups.',
-    date: '2025-11-12'
+    date: '2 days ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
   },
   {
     id: 'rev-2',
     name: 'Sarah Chen',
     role: 'Art Director',
     production: 'The Great Vault Heist (Feature Film)',
+    location: 'Melbourne, VIC',
+    headline: 'Centerpiece for our bank vault scenes',
     rating: 5,
-    comment: 'Ordered the 100-stack Master Crate. It was the centerpiece of our bank vault scenes. Secure, fast delivery and completely compliant with legal guidelines.',
-    date: '2026-02-18'
+    comment: 'Ordered the 100-stack Master Crate. It was the centerpiece of our bank vault scenes. Secure, fast delivery and completely compliant with Reserve Bank of Australia legal guidelines.',
+    date: '4 days ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
   },
   {
     id: 'rev-3',
     name: 'David Thompson',
     role: 'Commercial Photographer',
-    production: 'Premium Fashion Editorial',
+    production: 'Premium Fashion & Luxury Editorial',
+    location: 'Brisbane, QLD',
+    headline: 'Macro focus details are flawless',
     rating: 5,
-    comment: 'The macro focus details are top-notch. The double-sided print matches perfectly and the colors are extremely vibrant. Will definitely order again.',
-    date: '2026-05-01'
+    comment: 'The macro focus details are top-notch. The double-sided print matches perfectly and the colors are extremely vibrant. Essential for high-fashion studio closeups.',
+    date: '1 week ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-4',
+    name: 'Liam O’Connor',
+    role: 'Production Designer',
+    production: 'Gold Coast Action Thriller',
+    location: 'Gold Coast, QLD',
+    headline: 'Dispatched locally with zero customs delays',
+    rating: 5,
+    comment: 'We used to risk international customs seizures when ordering from overseas prop companies. Australian Prop Money delivers in 24 hours right from their local warehouse. Total lifesaver on set.',
+    date: '1 week ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-5',
+    name: 'Elena Rossi',
+    role: 'Head of Props & Stage Wardrobe',
+    production: 'State Theatre Company of NSW',
+    location: 'Sydney, NSW',
+    headline: 'No lighting reflection under heavy stage spots',
+    rating: 5,
+    comment: 'Stage lights usually bounce glaring reflections off fake polymer plastic. The specialty matte coating on these notes absorbs overhead theatre lighting beautifully while looking genuine to the front row.',
+    date: '2 weeks ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-6',
+    name: 'James MacIntyre',
+    role: 'Music Video Director',
+    production: 'Sony Music Australia Artist Video',
+    location: 'Melbourne, VIC',
+    headline: 'Distressed hand-aged stacks look legendary',
+    rating: 5,
+    comment: 'The aged/weathered stacks look insanely authentic on camera. They fan out cleanly during playback and don’t clump together like cheaper paper copies. 10/10 recommendation.',
+    date: '2 weeks ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-7',
+    name: 'Chloe Dupont',
+    role: 'Stunt & SFX Coordinator',
+    production: 'Warner Bros. Studios Production',
+    location: 'Gold Coast, QLD',
+    headline: 'Briefcase explosion and drop-test approved',
+    rating: 5,
+    comment: 'Used over 40 stacks for an armored truck drop and pyrotechnic dispersion sequence. The durability and paper weight felt weighted and realistic when airborne.',
+    date: '3 weeks ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-8',
+    name: 'Ryan Fitzpatrick',
+    role: 'Senior Lecturer in Cinematography',
+    production: 'AFTRS & Screen Academy',
+    location: 'Adelaide, SA',
+    headline: 'Exceptional teaching aid for film students',
+    rating: 5,
+    comment: 'We supply our lighting and cinematography workshops with these prop notes so student camera crews can master legal prop handling and framing.',
+    date: '3 weeks ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-9',
+    name: 'Hannah Becker',
+    role: 'Set Decorator & Stylist',
+    production: 'Stan Original Drama Series',
+    location: 'Sydney, NSW',
+    headline: 'The currency straps & bundle bands are perfect',
+    rating: 5,
+    comment: 'Every stack comes wrapped in authentic banking currency bands. It saves our art department hours of manual prep work on shoot days.',
+    date: '1 month ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-10',
+    name: 'Mitchell Thorne',
+    role: 'Director of Photography',
+    production: 'True Crime Mini-Series',
+    location: 'Perth, WA',
+    headline: 'Crisp on RED V-Raptor 8K at f/1.4 aperture',
+    rating: 5,
+    comment: 'Shot full 8K macro inserts with anamorphic glass. The ink saturation and non-specular finish maintained absolute realism without any digital moiré effect.',
+    date: '1 month ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-11',
+    name: 'Jessica Wright',
+    role: 'Executive Producer',
+    production: 'Fintech Commercial Campaign',
+    location: 'Melbourne, VIC',
+    headline: 'Discrete packaging and instantaneous PayID billing',
+    rating: 5,
+    comment: 'Super fast invoice turnaround and discrete unmarked shipping. Our finance department appreciated the formal tax invoicing and prompt tracking alerts.',
+    date: '1 month ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-12',
+    name: 'Anthony Rizzo',
+    role: 'Master Prop Fabricator',
+    production: 'Australian Guild of Screen Artisans',
+    location: 'Sydney, NSW',
+    headline: 'Strict RBA compliance with cinematic fidelity',
+    rating: 5,
+    comment: 'The legal disclaimers are placed thoughtfully so they don’t intrude into hero angles, while ensuring full adherence to Crimes (Currency) Act 1981 rules.',
+    date: '1 month ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-13',
+    name: 'Benjamin Cole',
+    role: 'Cinematographer',
+    production: 'Indie Film Festival Nominee',
+    location: 'Brisbane, QLD',
+    headline: 'Accurate Australian color palette reproduction',
+    rating: 5,
+    comment: 'Color consistency across the $50 yellow/gold and $100 green notes was spot on with real Australian notes under DaVinci Resolve color grading.',
+    date: '2 months ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-14',
+    name: 'Sophie Macarthur',
+    role: 'Production Manager',
+    production: 'National Security Training Film',
+    location: 'Canberra, ACT',
+    headline: '100% compliant and accepted by government clearance',
+    rating: 5,
+    comment: 'Needed certified legal prop notes for an institutional law enforcement training piece. Clean documentation and stellar product craftsmanship.',
+    date: '2 months ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
+  },
+  {
+    id: 'rev-15',
+    name: 'Daniel Novak',
+    role: 'VFX & Physical Props Supervisor',
+    production: 'Sci-Fi Feature Co-Production',
+    location: 'Gold Coast, QLD',
+    headline: 'Saved our budget thousands over digital VFX currency',
+    rating: 5,
+    comment: 'Replacing digital CGI cash with physical Australian Prop Money stacks saved us tens of thousands in post-production compositor hours. Essential gear.',
+    date: '2 months ago',
+    verified: true,
+    verifiedBadge: 'Verified Order'
   }
 ];

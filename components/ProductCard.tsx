@@ -40,89 +40,85 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
       <Link href={`/product/${product.id}`} className="absolute inset-0 z-10">
         <span className="sr-only">View {product.name}</span>
       </Link>
-      {/* Compliance & Badge Header (with Optional Image) */}
-      <div className="relative aspect-[4/2] bg-gradient-to-br from-zinc-950 via-zinc-900 to-slate-900 flex flex-col justify-between p-4 overflow-hidden border-b border-zinc-800">
-        {product.image && (
-          <div className="absolute inset-0 z-0 select-none pointer-events-none">
+      {/* Clean 1:1 Square Image Display (No Text Overlays on Image) */}
+      <div className="relative aspect-square bg-[#0e0e11] overflow-hidden border-b border-gray-100 flex items-center justify-center">
+        {product.image ? (
+          <div className="absolute inset-0 z-0 select-none">
             <Image
               src={product.image}
               alt={product.name}
               fill
+              loading="lazy"
+              decoding="async"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               referrerPolicy="no-referrer"
-              className="object-cover object-center opacity-65 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500 z-0"
+              className="object-contain object-center p-3 group-hover:scale-105 transition-all duration-500 z-0"
             />
-            {/* Soft dark gradient overlays on the image to ensure high text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 z-1" />
           </div>
+        ) : (
+          <div className="text-zinc-600 font-mono text-xs">No Image Available</div>
         )}
-        
-        <div className="relative z-10 flex items-center justify-between">
-          <span className="bg-gold/15 text-gold text-[8px] uppercase font-bold tracking-[0.2em] px-2.5 py-1 rounded-sm border border-gold/30 backdrop-blur-xs">
-            {getCategoryLabel(product.category)}
-          </span>
-          <span className="text-[9px] font-mono text-zinc-300 font-semibold bg-black/40 px-2 py-0.5 rounded backdrop-blur-xs">{product.sku}</span>
-        </div>
-
-        <div className="relative z-10">
-          <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-zinc-200 font-mono block">
-            Replica Currency
-          </span>
-          <span className="text-[8px] tracking-widest text-zinc-400 block uppercase font-mono mt-0.5">
-            RBA COMPLIANT
-          </span>
-        </div>
         
         {/* Wishlist Button (Heart) */}
         <button
           type="button"
           onClick={handleWishlistToggle}
-          className="absolute top-3 right-3 z-20 bg-zinc-800/80 hover:bg-zinc-800 text-white hover:text-red-500 p-2 rounded-full transition-all duration-300 shadow-xs focus:outline-none relative"
+          className="absolute top-3 right-3 z-20 bg-black/60 hover:bg-black text-white hover:text-red-500 p-2 rounded-full transition-all duration-300 shadow-xs focus:outline-none backdrop-blur-xs"
           aria-label={isFavorited ? "Remove from Wishlist" : "Add to Wishlist"}
           id={`btn-wishlist-toggle-${product.id}`}
         >
-          <Heart className={`w-3 h-3 ${isFavorited ? 'fill-red-500 text-red-500' : 'text-gray-400 hover:text-red-500'}`} />
+          <Heart className={`w-3.5 h-3.5 ${isFavorited ? 'fill-red-500 text-red-500' : 'text-white hover:text-red-500'}`} />
         </button>
 
-        {/* Quick View Button overlay on hover */}
-        <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 z-20">
+        {/* Quick View & Add Button overlay on hover */}
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 z-20 pointer-events-none group-hover:pointer-events-auto">
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               onViewDetails(product);
             }}
-            className="bg-white hover:bg-gold text-black p-2.5 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0 relative z-20"
+            className="bg-white hover:bg-gold text-black p-2.5 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0 cursor-pointer"
             title="Quick View Specs"
             id={`btn-product-quickview-${product.id}`}
           >
-            <Eye className="w-3.5 h-3.5" />
+            <Eye className="w-4 h-4" />
           </button>
           
           <button
             type="button"
             onClick={handleAddToCart}
-            className="bg-black hover:bg-gold-dark text-white hover:text-black p-2.5 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0 relative z-20"
+            className="bg-black hover:bg-gold-dark text-white hover:text-black p-2.5 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0 cursor-pointer"
             title="Add to Shopping Bag"
             id={`btn-product-add-overlay-${product.id}`}
           >
-            {added ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <ShoppingCart className="w-3.5 h-3.5" />}
+            {added ? <Check className="w-4 h-4 text-emerald-500" /> : <ShoppingCart className="w-4 h-4" />}
           </button>
         </div>
       </div>
 
       {/* Product Information */}
-      <div className="p-6 flex-1 flex flex-col justify-between space-y-4 relative z-20 pointer-events-none">
-        <div className="space-y-2">
+      <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4 relative z-20 pointer-events-none">
+        <div className="space-y-2.5">
+          {/* Category Label & SKU */}
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] uppercase font-bold tracking-widest text-gold font-mono">
+              {getCategoryLabel(product.category)}
+            </span>
+            <span className="text-[9px] font-mono text-zinc-400 font-medium">
+              {product.sku}
+            </span>
+          </div>
+
           {/* Stars & Rating */}
-          <div className="flex items-center gap-0.5">
+          <div className="flex items-center gap-1">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-3 h-3 fill-gold text-gold" />
             ))}
-            <span className="text-[9px] text-gray-400 font-mono ml-1.5 uppercase tracking-wider">5.0 (Set Tested)</span>
+            <span className="text-[9px] text-gray-400 font-mono ml-1 uppercase tracking-wider">5.0 (Set Tested)</span>
           </div>
           
-          <h3 className="text-md text-black group-hover:text-gold transition-colors leading-snug font-light" style={{ fontFamily: 'Georgia, serif' }}>
+          <h3 className="text-base text-black group-hover:text-gold transition-colors leading-snug font-normal" style={{ fontFamily: 'Georgia, serif' }}>
             {product.name}
           </h3>
           

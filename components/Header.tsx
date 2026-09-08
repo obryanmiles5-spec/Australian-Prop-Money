@@ -8,11 +8,12 @@ import { useCart } from '@/context/CartContext';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
   { label: 'Shop', href: '/shop' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'Videos', href: '/videos' },
+  { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
@@ -54,6 +55,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    prefetch={false}
                     id={`nav-link-${item.label.toLowerCase()}`}
                     className={`text-[11px] uppercase tracking-widest font-semibold transition-all duration-300 pb-1 border-b-2 ${
                       isActive 
@@ -164,6 +166,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    prefetch={false}
                     id={`mobile-nav-link-${item.label.toLowerCase()}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`text-sm uppercase tracking-widest font-bold py-2 border-l-2 pl-4 transition-all duration-300 ${

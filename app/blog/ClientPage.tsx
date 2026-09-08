@@ -88,6 +88,8 @@ export default function BlogPage() {
                     src={post.image} 
                     alt={post.title} 
                     fill 
+                    loading="lazy"
+                    decoding="async"
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
@@ -167,6 +169,8 @@ export default function BlogPage() {
                   src={activeArticle.image} 
                   alt={activeArticle.title} 
                   fill 
+                  loading="lazy"
+                  decoding="async"
                   sizes="(max-width: 768px) 100vw, 640px"
                   className="object-cover"
                   referrerPolicy="no-referrer"

@@ -25,13 +25,29 @@ export default function NewsletterPopup() {
     setIsOpen(false);
   };
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim() || !email.includes('@')) return;
     
-    // Simulate API registration
+    // Save state and notify backend
     localStorage.setItem('amp_newsletter_dismissed', 'true');
     setSubscribed(true);
+
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'VIP Newsletter Subscriber',
+          email: email.trim(),
+          type: 'newsletter',
+          subject: 'New VIP Discount Code Subscriber',
+          message: `Visitor subscribed via the 15% OFF VIP newsletter popup.`
+        })
+      });
+    } catch {
+      // Non-blocking for newsletter signup
+    }
   };
 
   const handleCopy = () => {

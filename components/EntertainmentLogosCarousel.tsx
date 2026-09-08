@@ -304,14 +304,16 @@ export default function EntertainmentLogosCarousel() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <Image
-          src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1920"
+          src="https://lh3.googleusercontent.com/d/1bb0IoCmrqAesCg3xCOnoT42Ake-o7cnQ"
           alt="Cinematic production backdrop"
           fill
+          unoptimized
+          priority
           sizes="100vw"
-          className="object-cover object-center opacity-30"
+          className="object-cover object-center opacity-80"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/85 to-zinc-950 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black/80 pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">

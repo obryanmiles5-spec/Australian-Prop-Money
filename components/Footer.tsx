@@ -9,11 +9,28 @@ export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
+    if (email.trim() && email.includes('@')) {
+      const subscriberEmail = email.trim();
       setSubscribed(true);
       setEmail('');
+
+      try {
+        await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: 'Footer Newsletter Subscriber',
+            email: subscriberEmail,
+            type: 'newsletter',
+            subject: 'New Footer Newsletter Subscriber',
+            message: `Visitor subscribed via the footer newsletter box.`
+          })
+        });
+      } catch {
+        // Non-blocking
+      }
     }
   };
 
@@ -63,6 +80,7 @@ export default function Footer() {
               {[
                 { label: 'Home Page', href: '/' },
                 { label: 'Shop Props', href: '/shop' },
+                { label: 'Prop Videos Showcase', href: '/videos' },
                 { label: 'Wholesale & Bulk Quotes', href: '/wholesale' },
                 { label: 'About Our Mission', href: '/about' },
                 { label: 'Production Blog & Tutorials', href: '/blog' },
@@ -70,7 +88,7 @@ export default function Footer() {
                 { label: 'Contact Us', href: '/contact' },
               ].map((link) => (
                 <li key={link.href}>
-                   <Link href={link.href} id={`footer-nav-link-${link.label.toLowerCase().replace(/ /g, '-')}`} className="hover:text-gold transition-all duration-300">
+                   <Link href={link.href} prefetch={false} id={`footer-nav-link-${link.label.toLowerCase().replace(/ /g, '-')}`} className="hover:text-gold transition-all duration-300">
                     {link.label}
                   </Link>
                 </li>

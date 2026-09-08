@@ -61,47 +61,34 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
           <X className="w-5 h-5" />
         </button>
 
-        {/* Left Side: Compliance & Quality Shield */}
-        <div className="relative w-full md:w-1/2 aspect-4/3 md:aspect-auto md:min-h-[450px] bg-gradient-to-br from-zinc-950 via-zinc-900 to-black p-8 flex flex-col justify-between text-white border-r border-zinc-800 overflow-hidden">
-          {product.image && (
-            <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        {/* Left Side: Clean Product Image Showcase */}
+        <div className="relative w-full md:w-1/2 aspect-square md:aspect-auto md:min-h-[450px] bg-[#0d0d10] p-6 flex flex-col justify-between text-white border-r border-zinc-800 overflow-hidden">
+          {product.image ? (
+            <div className="absolute inset-0 z-0 select-none flex items-center justify-center p-6">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 referrerPolicy="no-referrer"
-                className="object-cover object-center opacity-45"
+                className="object-contain object-center p-4"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30 z-1" />
+            </div>
+          ) : (
+            <div className="flex items-center justify-center h-full text-zinc-600 font-mono text-xs">
+              No Image Available
             </div>
           )}
           
-          <div className="relative z-10 space-y-6 pt-10">
-            <div className="w-12 h-12 rounded-full bg-gold/15 border border-gold/30 flex items-center justify-center backdrop-blur-xs">
-              <ShieldCheck className="w-6 h-6 text-gold" />
+          {/* Subtle Bottom Compliance Tag */}
+          <div className="relative z-10 mt-auto pt-4 flex items-center justify-between bg-black/60 backdrop-blur-md px-3 py-2 rounded-xl border border-white/10">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-gold" />
+              <span className="text-[10px] font-mono text-zinc-200 font-bold uppercase">RBA Compliant Replica</span>
             </div>
-            <div className="space-y-2">
-              <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-gold font-mono block">
-                Official Prop Registry
-              </span>
-              <h4 className="text-xl font-serif font-light tracking-wide text-zinc-100">
-                Premium Cinema Grade
-              </h4>
-            </div>
-            <p className="text-xs text-zinc-300 leading-relaxed font-light">
-              Meticulously designed replica notes. Features double-sided printing, premium heavy-bond calendered matte paper, precise dimension scaling, and legal RBA compliant marking.
-            </p>
-          </div>
-
-          <div className="relative z-10 space-y-4 border-t border-zinc-800/80 pt-6">
-            <div className="flex items-center gap-3">
-              <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-300 font-bold">RBA Compliance Certified</span>
-            </div>
-            <p className="text-[10px] text-zinc-400 italic leading-relaxed">
-              &quot;PROP MONEY ONLY — NOT LEGAL TENDER&quot; is printed with high-contrast legibility across all replica notes.
-            </p>
+            <span className="text-[9px] font-mono text-zinc-400">{product.sku}</span>
           </div>
         </div>
 

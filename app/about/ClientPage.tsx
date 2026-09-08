@@ -23,13 +23,13 @@ export default function AboutPage() {
       {/* Cinematic banner */}
       <div className="relative aspect-[16/10] md:aspect-[21/9] min-h-[300px] md:min-h-[400px] bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 max-w-5xl mx-auto flex items-end p-6 sm:p-10">
         <Image
-          src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1200"
+          src="https://drive.google.com/thumbnail?id=1bb0IoCmrqAesCg3xCOnoT42Ake-o7cnQ&sz=w1200"
           alt="Engineered for high-definition digital lenses and 4K cameras"
           fill
-          priority
-          
+          loading="lazy"
+          decoding="async"
           sizes="(max-width: 1024px) 100vw, 1024px"
-          className="object-cover object-center opacity-60"
+          className="object-cover object-center opacity-70"
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent pointer-events-none" />

@@ -10,6 +10,7 @@ import {
 import { FAQS, REVIEWS, PRODUCTS, Product } from '@/lib/products';
 import TrustSection from '@/components/TrustSection';
 import EntertainmentLogosCarousel from '@/components/EntertainmentLogosCarousel';
+import TrustpilotReviewsSlider from '@/components/TrustpilotReviewsSlider';
 import { cleanWhatsAppNumber } from '@/lib/utils';
 import ProductCard from '@/components/ProductCard';
 import ProductDetailsModal from '@/components/ProductDetailsModal';
@@ -164,7 +165,7 @@ export default function HomePage() {
               description: 'Stunt canvas bags, cash pistols, aluminium briefcases, and professional high-speed note counters.',
               cta: 'Explore Accessories',
               icon: Star,
-              image: 'https://drive.google.com/thumbnail?id=1fPZnvtxGu602xPCpIpCh-cfJuZTsqRVZ&sz=w1000',
+              image: 'https://drive.google.com/thumbnail?id=16UnmI3SBn-LgOWEaS4dlp1g_LsBLGR_s&sz=w1000',
               label: 'Set Accessories'
             }
           ].map((cat) => {
@@ -172,54 +173,63 @@ export default function HomePage() {
             return (
               <div 
                 key={cat.id} 
-                className="group relative h-80 rounded-3xl overflow-hidden border border-zinc-800 shadow-xl flex flex-col justify-between p-8 bg-black"
+                id={`category-card-${cat.id}`}
+                className="group flex flex-col rounded-3xl overflow-hidden border border-zinc-200/80 bg-white shadow-sm hover:shadow-xl hover:border-zinc-300 transition-all duration-300"
                 style={{ contentVisibility: 'auto' }}
               >
-                {/* Background Image with Premium Zoom Transition */}
-                {cat.image && (
-                  <div className="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+                {/* Image Banner */}
+                <Link 
+                  href={`/shop?category=${cat.id}`}
+                  className="relative aspect-[16/10] w-full overflow-hidden block bg-zinc-950"
+                  id={`category-banner-${cat.id}`}
+                >
+                  {cat.image && (
                     <Image
                       src={cat.image}
                       alt={`${cat.title} Category Preview`}
                       fill
-                      
+                      loading="lazy"
+                      decoding="async"
                       sizes="(max-width: 768px) 100vw, 33vw"
                       referrerPolicy="no-referrer"
-                      className="object-cover object-center opacity-60 group-hover:opacity-85 group-hover:scale-105 transition-all duration-700 ease-out"
+                      className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                  </div>
-                )}
+                  )}
+                </Link>
                 
-                {/* High Contrast Gradient Overlays for Text Legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/30 pointer-events-none z-1" />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-1" />
-                
-                {/* Top Row: Icon & Label */}
-                <div className="relative z-10 flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center group-hover:border-gold/40 group-hover:bg-gold/10 transition-all duration-300">
-                    <IconComponent className="w-5 h-5 text-gold group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-300 group-hover:text-gold transition-colors duration-300 font-mono">
-                    {cat.label}
-                  </span>
-                </div>
+                {/* Write-ups Under Image Banner */}
+                <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between bg-white">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] uppercase font-bold tracking-widest text-gold font-mono">
+                        {cat.label}
+                      </span>
+                      <div className="w-8 h-8 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-zinc-500 group-hover:text-gold group-hover:border-gold/30 transition-colors">
+                        <IconComponent className="w-4 h-4" />
+                      </div>
+                    </div>
 
-                {/* Bottom Row: Details & CTA */}
-                <div className="relative z-10 space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-serif font-light text-xl text-white tracking-wide">{cat.title}</h3>
-                    <p className="text-xs text-zinc-200 font-light leading-relaxed line-clamp-3">
+                    <h3 className="font-serif font-normal text-2xl text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                      <Link href={`/shop?category=${cat.id}`} className="hover:text-gold transition-colors">
+                        {cat.title}
+                      </Link>
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-zinc-600 font-light leading-relaxed">
                       {cat.description}
                     </p>
                   </div>
                   
-                  <Link 
-                    href={`/shop?category=${cat.id}`}
-                    className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-gold group-hover:text-white transition-colors pt-2"
-                  >
-                    {cat.cta}
-                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="pt-6 mt-4 border-t border-zinc-100">
+                    <Link 
+                      href={`/shop?category=${cat.id}`}
+                      className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-black group-hover:text-gold transition-colors"
+                      id={`category-link-${cat.id}`}
+                    >
+                      <span>{cat.cta}</span>
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             );
@@ -229,40 +239,65 @@ export default function HomePage() {
 
       {/* CINEMATIC PROPS VISUAL SHOWCASE */}
       <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16" id="cinematic-showcase">
-        <div className="relative aspect-[16/10] md:aspect-[21/9] min-h-[340px] md:min-h-[420px] bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 flex items-end p-6 sm:p-10 md:p-12">
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
+        <div className="bg-zinc-950 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 grid grid-cols-1 lg:grid-cols-12 items-stretch">
+          {/* Visual Showcase (Image visible & full content show) */}
+          <div className="lg:col-span-7 relative min-h-[340px] sm:min-h-[400px] lg:min-h-[480px] bg-zinc-900 flex items-center justify-center overflow-hidden">
             <Image
-              src="https://drive.google.com/thumbnail?id=1Up8efD1IdipBIEAS3jAfLECAlPoeRz68&sz=w1200"
-              alt="Engineered for high-definition digital lenses and 4K cameras"
+              src="https://lh3.googleusercontent.com/d/1bb0IoCmrqAesCg3xCOnoT42Ake-o7cnQ"
+              alt="A Grade Standards for Cinematic Production"
               fill
               priority
-              
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="object-cover object-center opacity-70 transition-transform duration-700 hover:scale-[1.02]"
+              unoptimized
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="object-cover sm:object-contain object-center hover:scale-[1.02] transition-transform duration-500"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
           </div>
           
-          <div className="relative z-10 max-w-xl text-white">
-            <span className="text-gold font-mono uppercase tracking-widest text-[10px] sm:text-xs font-bold block mb-2">
-              Industry Standard Props
-            </span>
-            <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-white leading-tight">
-              A Grade Standards for Cinematic Production
-            </h2>
-            <p className="text-xs sm:text-sm text-zinc-300 font-sans font-light leading-relaxed mt-2 sm:mt-3">
-              Engineered specifically for high-definition digital lenses and 4K cameras. Our fake australian money prop replicas maintain pristine, non-glare visual clarity under intense studio lighting setups, making us the top choice for prop money australia.
-            </p>
-            <div className="pt-4 sm:pt-6">
+          {/* Write-up & Actions */}
+          <div className="lg:col-span-5 p-8 sm:p-10 md:p-12 flex flex-col justify-between text-white bg-zinc-950 border-t lg:border-t-0 lg:border-l border-zinc-800 space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="text-gold font-mono uppercase tracking-widest text-[10px] sm:text-xs font-bold bg-gold/10 border border-gold/20 px-2.5 py-1 rounded">
+                  Industry Standard Props
+                </span>
+                <span className="text-zinc-400 font-mono text-[10px] uppercase">
+                  4K Studio Ready
+                </span>
+              </div>
+
+              <h2 className="font-serif font-bold text-2xl sm:text-3xl text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                A Grade Standards for Cinematic Production
+              </h2>
+
+              <p className="text-xs sm:text-sm text-zinc-300 font-sans font-light leading-relaxed">
+                Engineered specifically for high-definition digital lenses and 4K cameras. Our fake australian money prop replicas maintain pristine, non-glare visual clarity under intense studio lighting setups, making us the top choice for prop money australia.
+              </p>
+
+              <div className="space-y-2.5 pt-2">
+                <div className="flex items-center gap-2.5 text-xs text-zinc-300 font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                  <span>Ultra-matte anti-glare finish for studio lighting</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs text-zinc-300 font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                  <span>Exact scale & double-sided polymer texture</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs text-zinc-300 font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                  <span>100% compliant with Reserve Bank of Australia rules</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2">
               <Link 
                 href="/shop" 
-                className="inline-flex items-center gap-2 bg-white text-black hover:bg-gold hover:text-black px-6 py-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-all duration-300 rounded"
+                className="inline-flex items-center gap-2 bg-white text-black hover:bg-gold hover:text-black px-6 py-3.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-xl shadow-md"
                 id="showcase-cta-btn"
               >
-                Explore Pro Series
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>Explore Pro Series</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -275,45 +310,68 @@ export default function HomePage() {
       {/* SECTION 2.8: ENTERTAINMENT LOGO CAROUSEL */}
       <EntertainmentLogosCarousel />
 
-      {/* SECTION 5: HOW IT WORKS */}
-      <section className="relative bg-black py-28 border-y border-zinc-900 overflow-hidden" id="how-it-works">
-        {/* Background Image with Cinematic Overlays */}
-        <div className="absolute inset-0 z-0 select-none pointer-events-none">
-          <Image
-            src="https://drive.google.com/thumbnail?id=1ce6RMCnovIG5nM9Uj2ulENR6OcaNnWg8&sz=w1920"
-            alt="From Press to Production Background"
-            fill
-            
-            sizes="100vw"
-            referrerPolicy="no-referrer"
-            className="object-cover object-center opacity-80"
-          />
-          {/* Gradients to merge cleanly and guarantee high text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/85 z-1" />
-          <div className="absolute inset-0 bg-black/20 z-1" />
-        </div>
-
+      {/* SECTION 5: HOW IT WORKS (From Press to Production) */}
+      <section className="relative bg-white py-20 sm:py-28 border-y border-gray-200 text-black overflow-hidden" id="how-it-works">
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block mb-4">The Process</span>
-            <h2 className="text-3xl font-light text-white tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>From Press to Production</h2>
-            <div className="w-12 h-[1px] bg-gold mx-auto mt-6 mb-4"></div>
+          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+            <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">The Process</span>
+            <h2 className="text-3xl sm:text-4xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
+              From Press to Production
+            </h2>
+            <div className="w-12 h-[1px] bg-gold mx-auto mt-4 mb-3"></div>
+            <p className="text-gray-600 text-sm max-w-lg mx-auto font-sans leading-relaxed">
+              Precision engineering and strict Reserve Bank compliance at every stage of the manufacturing process.
+            </p>
+          </div>
+
+          {/* Featured Cover Image Showcase (Visible & High Fidelity) */}
+          <div className="mb-14 relative rounded-3xl overflow-hidden border border-gray-200 shadow-md bg-zinc-950 group">
+            <div className="relative aspect-[21/9] sm:aspect-[2.4/1] min-h-[260px] sm:min-h-[360px] lg:min-h-[420px] w-full flex items-center justify-center">
+              <Image
+                src="https://lh3.googleusercontent.com/d/1M7oRix6yupBUKnWiiL7f91JJBSHV0p2Z"
+                alt="From Press to Production - Australian Prop Money Manufacturing"
+                fill
+                priority
+                unoptimized
+                sizes="100vw"
+                referrerPolicy="no-referrer"
+                className="object-cover object-center group-hover:scale-[1.01] transition-transform duration-700"
+              />
+              {/* Subtle top/bottom edge gradients for smooth presentation */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
+              
+              {/* Cover Floating Badge */}
+              <div className="absolute bottom-5 left-6 sm:left-10 sm:bottom-8 z-10 max-w-md">
+                <span className="inline-flex items-center gap-2 bg-black/80 backdrop-blur-md border border-gold/40 text-gold text-[11px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-2">
+                  <Sparkles className="w-3.5 h-3.5 text-gold" />
+                  Industrial Offset Press
+                </span>
+                <h3 className="text-white text-base sm:text-xl font-bold tracking-tight drop-shadow-sm">
+                  Precision Non-Glare Polymer Print Run
+                </h3>
+              </div>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* 4 Process Steps in Clean White Theme */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { step: '01', title: 'Select Currency', desc: 'Choose from our range of RBA-compliant new series polymer looks or classic paper prop notes.' },
               { step: '02', title: 'Specify Volume', desc: 'Order individual stacks for photography or bulk briefcase bundles for feature film heist scenes.' },
               { step: '03', title: 'Secure Dispatch', desc: 'All orders are packed securely in plain, unmarked boxes and dispatched within 24 hours Australia-wide.' },
               { step: '04', title: 'Action', desc: 'Receive cinematic-grade non-glare notes ready immediately for high-definition 4K camera lenses.' },
             ].map((item, idx) => (
-              <div key={idx} className="relative group p-6 bg-zinc-950/45 backdrop-blur-md border border-zinc-800/80 hover:border-gold/50 hover:bg-zinc-900/60 transition-all duration-500 rounded-2xl">
-                <span className="text-4xl font-light text-zinc-800 group-hover:text-gold/20 absolute top-4 right-6 transition-colors duration-500" style={{ fontFamily: 'Georgia, serif' }}>
+              <div key={idx} className="relative group p-7 bg-white border border-gray-200 hover:border-gold hover:shadow-xl transition-all duration-300 rounded-2xl flex flex-col justify-between">
+                <span className="text-4xl font-light text-gray-200 group-hover:text-gold/40 absolute top-4 right-6 transition-colors duration-300" style={{ fontFamily: 'Georgia, serif' }}>
                   {item.step}
                 </span>
-                <div className="space-y-4 pt-8">
-                  <h3 className="font-bold text-sm text-white uppercase tracking-wider">{item.title}</h3>
-                  <p className="text-xs text-zinc-300 leading-relaxed font-sans">{item.desc}</p>
+                <div className="space-y-3 pt-6">
+                  <h3 className="font-bold text-sm text-black uppercase tracking-wider">{item.title}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans">{item.desc}</p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-[11px] font-semibold text-gray-400 group-hover:text-gold transition-colors">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
+                  <span>Quality Assured</span>
                 </div>
               </div>
             ))}
@@ -336,33 +394,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 7: PRODUCTION REVIEWS */}
-      <section className="bg-[#0D0D0D] py-24 text-white" id="production-reviews">
+      {/* SECTION 7: PRODUCTION REVIEWS (Trusted by Prop Masters with 15 Trustpilot Reviews Slider) */}
+      <section className="bg-white py-20 sm:py-28 text-black border-y border-gray-200" id="production-reviews">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">Set Reports</span>
-            <h2 className="text-3xl font-light text-white tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>Trusted by Prop Masters</h2>
-            <div className="w-12 h-[1px] bg-gold mx-auto mt-6 mb-4"></div>
+          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+            <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">Verified Set Reports</span>
+            <h2 className="text-3xl sm:text-4xl font-light text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
+              Trusted by Prop Masters
+            </h2>
+            <div className="w-12 h-[1px] bg-gold mx-auto mt-4 mb-3"></div>
+            <p className="text-gray-600 text-sm max-w-lg mx-auto font-sans leading-relaxed">
+              Read real-time verified client reviews from cinematographers, art directors, and studio producers across Australia.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {REVIEWS.slice(0, 3).map((review) => (
-              <div key={review.id} className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-gold/30 transition-colors">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
-                  ))}
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed mb-6 font-light italic">
-                  &quot;{review.comment}&quot;
-                </p>
-                <div>
-                  <strong className="block text-white text-sm font-bold">{review.name}</strong>
-                  <span className="text-gray-500 text-xs">{review.role} — {review.production}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Trustpilot Review Slider with 15 Client Reviews */}
+          <TrustpilotReviewsSlider reviews={REVIEWS} />
         </div>
       </section>
 

@@ -218,9 +218,9 @@ export default function ProductDetailClient({ productId }: { productId: string }
         <div className="lg:col-span-6 space-y-4">
           
           {/* Main Visual Display */}
-          <div className="relative aspect-[4/3] bg-zinc-950 overflow-hidden border border-zinc-800 rounded-3xl flex items-center justify-center">
+          <div className="relative aspect-square sm:aspect-[4/3] bg-[#0c0c0f] overflow-hidden border border-zinc-800 rounded-3xl flex items-center justify-center">
             {product.image ? (
-              <div className="absolute inset-0 z-0">
+              <div className="absolute inset-0 z-0 select-none">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -228,7 +228,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   referrerPolicy="no-referrer"
-                  className="object-cover object-center"
+                  className="object-contain object-center p-4"
                 />
               </div>
             ) : (
