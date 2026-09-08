@@ -65,9 +65,22 @@ export default function Footer() {
             <p className="text-[10.5px] text-gray-400 leading-relaxed">
               Premium replica currency for film, television, theatre, commercial photography, financial training, and creative media productions. Formulated with color-calibrated matte finishes to achieve 100% realistic representation on modern digital lenses.
             </p>
-            <div className="text-[9.5px] text-gray-500 uppercase tracking-wider space-y-1 mt-2">
+            <div className="text-[9.5px] text-gray-400 uppercase tracking-wider space-y-1.5 mt-2">
               <p>Phone: <a href="tel:+61468187340" className="hover:text-gold transition-colors text-white">+61 468 187 340</a></p>
               <p>Email: <a href="mailto:info@australianpropmoney.org" className="hover:text-gold transition-colors text-white">info@australianpropmoney.org</a></p>
+              <p>
+                <a 
+                  href="https://abr.business.gov.au/ABN/View?id=674267559" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors font-mono font-bold"
+                  aria-label="View ABN Verification 46 674 267 559 on Australian Business Register"
+                  id="footer-abn-link"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  ABN: 46 674 267 559 (Verified) ↗
+                </a>
+              </p>
             </div>
           </div>
 

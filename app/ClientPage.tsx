@@ -37,7 +37,7 @@ export default function HomePage() {
     <div className="animate-fade-in space-y-16 sm:space-y-24 pb-16">
       
       {/* SECTION 1: CINEMATIC HERO BANNER */}
-      <section className="relative h-[500px] sm:h-[600px] flex items-center bg-gray-900 overflow-hidden" id="homepage-hero">
+      <section className="relative min-h-[580px] sm:min-h-[640px] py-12 sm:py-16 flex items-center bg-gray-900 overflow-hidden" id="homepage-hero">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <Image
@@ -57,11 +57,52 @@ export default function HomePage() {
 
         {/* Content Container */}
         <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full text-left">
-          <div className="max-w-2xl text-white space-y-6">
-            <span className="text-gold text-xs font-bold uppercase tracking-[0.4em] block">
-              EST. 2024
-            </span>
-            <h1 className="font-serif font-light text-4xl sm:text-5xl md:text-6xl tracking-tight leading-tight">
+          <div className="max-w-2xl text-white space-y-5">
+            
+            {/* Upper Hero Brand Logo & ABN Verification Badge */}
+            <div className="space-y-3 select-none" id="hero-brand-abn-container">
+              {/* Logo Emblem & Brand Name */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 bg-black/80 text-gold rounded-xl flex items-center justify-center border border-gold/40 shadow-lg backdrop-blur-xs shrink-0">
+                  <svg viewBox="0 0 100 100" className="w-6 h-6 fill-none stroke-current" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="50" cy="50" r="42" stroke="#D4AF37" strokeWidth="4"/>
+                    <circle cx="50" cy="50" r="36" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="3 2"/>
+                    <path d="M50 25 L53.5 35 L64 35 L55.5 41 L59 51 L50 45 L41 51 L44.5 41 L36 35 L46.5 35 Z" fill="#D4AF37" stroke="none"/>
+                    <path d="M32 60 H68 M35 65 H65" stroke="#D4AF37" strokeWidth="2.5"/>
+                  </svg>
+                </div>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-xs sm:text-sm font-serif font-bold tracking-wider text-white">
+                    AUSTRALIAN PROP MONEY
+                  </span>
+                  <span className="text-[9px] font-mono tracking-[0.25em] text-gold font-semibold uppercase">
+                    EST. 2024 • OFFICIAL REPRODUCTION STUDIO
+                  </span>
+                </div>
+              </div>
+
+              {/* ABN VERIFIED: Link to ABN Website */}
+              <div className="pt-0.5">
+                <a
+                  href="https://abr.business.gov.au/ABN/View?id=674267559"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/70 hover:bg-black/90 border border-emerald-500/60 hover:border-emerald-400 text-white transition-all duration-300 shadow-md backdrop-blur-xs group"
+                  id="hero-abn-verified-link"
+                  aria-label="ABN VERIFIED: 46 674 267 559 - View Australian Business Register Record"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                  <span className="text-[10.5px] sm:text-xs font-mono font-bold tracking-wider text-emerald-400 uppercase">
+                    ABN VERIFIED:
+                  </span>
+                  <span className="text-[10.5px] sm:text-xs font-mono font-bold text-white tracking-wide group-hover:text-gold transition-colors underline decoration-gold/60 underline-offset-2">
+                    46 674 267 559 ↗
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <h1 className="font-serif font-light text-4xl sm:text-5xl md:text-6xl tracking-tight leading-tight pt-1">
               Premium <span className="italic text-gold">Australian</span> <br />
               Prop Money
             </h1>
