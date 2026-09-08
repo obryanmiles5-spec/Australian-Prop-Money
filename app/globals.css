@@ -6,6 +6,7 @@
   --color-gold: #D4AF37;
   --color-gold-light: #F3E5AB;
   --color-gold-dark: #AA7C11;
+  --color-gold-accessible: #8A6508;
 }
 
 @layer base {
@@ -17,5 +18,9 @@
 /* Custom utilities */
 .text-stroke-gold {
   -webkit-text-stroke: 1px #D4AF37;
+}
+
+.text-gold-accessible {
+  color: #8A6508;
 }
 

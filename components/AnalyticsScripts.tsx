@@ -40,9 +40,9 @@ export default function AnalyticsScripts() {
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
-          <Script id="google-analytics-init" strategy="afterInteractive">
+          <Script id="google-analytics-init" strategy="lazyOnload">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -57,7 +57,7 @@ export default function AnalyticsScripts() {
 
       {/* Microsoft Clarity */}
       {hasClarity ? (
-        <Script id="microsoft-clarity-init" strategy="afterInteractive">
+        <Script id="microsoft-clarity-init" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

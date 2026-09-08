@@ -292,12 +292,18 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en-AU" className={`${inter.variable} ${playfair.variable}`}>
       <head>
+        {/* Preconnect & DNS-Prefetch for Fast Asset Loading */}
+        <link rel="preconnect" href="https://drive.google.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://drive.google.com" />
+        <link rel="preconnect" href="https://lh3.googleusercontent.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+        
         {/* Google tag (gtag.js) */}
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-ZWRWC5Z63W" 
-          strategy="afterInteractive" 
+          strategy="lazyOnload" 
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

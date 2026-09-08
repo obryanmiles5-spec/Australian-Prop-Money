@@ -78,8 +78,8 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
               e.stopPropagation();
               onViewDetails(product);
             }}
-            className="bg-white hover:bg-gold text-black p-2.5 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0 cursor-pointer"
-            title="Quick View Specs"
+            className="bg-white hover:bg-gold text-black p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0 cursor-pointer"
+            aria-label={`Quick view specifications for ${product.name}`}
             id={`btn-product-quickview-${product.id}`}
           >
             <Eye className="w-4 h-4" />
@@ -88,8 +88,8 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
           <button
             type="button"
             onClick={handleAddToCart}
-            className="bg-black hover:bg-gold-dark text-white hover:text-black p-2.5 rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0 cursor-pointer"
-            title="Add to Shopping Bag"
+            className="bg-black hover:bg-gold text-white hover:text-black p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-all duration-300 shadow-md transform translate-y-1 group-hover:translate-y-0 cursor-pointer"
+            aria-label={`Add ${product.name} to shopping bag`}
             id={`btn-product-add-overlay-${product.id}`}
           >
             {added ? <Check className="w-4 h-4 text-emerald-500" /> : <ShoppingCart className="w-4 h-4" />}
@@ -102,10 +102,10 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
         <div className="space-y-2.5">
           {/* Category Label & SKU */}
           <div className="flex items-center justify-between">
-            <span className="text-[10px] uppercase font-bold tracking-widest text-gold font-mono">
+            <span className="text-[10px] uppercase font-bold tracking-widest text-[#8A6508] font-mono">
               {getCategoryLabel(product.category)}
             </span>
-            <span className="text-[9px] font-mono text-zinc-400 font-medium">
+            <span className="text-[9px] font-mono text-zinc-500 font-medium">
               {product.sku}
             </span>
           </div>
@@ -115,14 +115,14 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-3 h-3 fill-gold text-gold" />
             ))}
-            <span className="text-[9px] text-gray-400 font-mono ml-1 uppercase tracking-wider">5.0 (Set Tested)</span>
+            <span className="text-[9px] text-gray-500 font-mono ml-1 uppercase tracking-wider">5.0 (Set Tested)</span>
           </div>
           
-          <h3 className="text-base text-black group-hover:text-gold transition-colors leading-snug font-normal" style={{ fontFamily: 'Georgia, serif' }}>
+          <h3 className="text-base text-black group-hover:text-[#8A6508] transition-colors leading-snug font-normal" style={{ fontFamily: 'Georgia, serif' }}>
             {product.name}
           </h3>
           
-          <p className="text-[11px] text-gray-500 line-clamp-2 leading-relaxed">
+          <p className="text-[11px] text-gray-600 line-clamp-2 leading-relaxed">
             {product.description}
           </p>
         </div>
@@ -130,16 +130,17 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
         {/* Pricing and Main CTA */}
         <div className="pt-4 border-t border-gray-100 flex items-center justify-between pointer-events-auto">
           <div>
-            <span className="text-[9px] uppercase font-bold text-gray-400 tracking-wider block leading-none mb-1">Price (AUD)</span>
+            <span className="text-[9px] uppercase font-bold text-gray-500 tracking-wider block leading-none mb-1">Price (AUD)</span>
             <span className="text-md text-black font-semibold" style={{ fontFamily: 'Georgia, serif' }}>${product.price.toFixed(2)}</span>
           </div>
           
           <button
             type="button"
             onClick={handleAddToCart}
-            className={`px-4 py-2 text-[10px] uppercase font-bold tracking-widest transition-all duration-300 flex items-center gap-1.5 ${
+            aria-label={`Add ${product.name} to shopping bag`}
+            className={`px-4 py-2.5 min-h-[44px] text-[10px] uppercase font-bold tracking-widest transition-all duration-300 flex items-center gap-1.5 rounded-lg ${
               added 
-                ? 'bg-emerald-500 text-white' 
+                ? 'bg-emerald-600 text-white' 
                 : 'bg-[#111111] text-white hover:bg-gold hover:text-black'
             }`}
             id={`btn-product-add-${product.id}`}

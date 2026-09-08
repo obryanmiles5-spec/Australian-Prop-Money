@@ -76,9 +76,11 @@ export default function SideCart() {
                 Bag & Wishlist
               </h2>
               <button
+                type="button"
                 onClick={() => setIsCartOpen(false)}
-                className="p-2 -mr-2 text-gray-400 hover:text-black rounded-full hover:bg-gray-50 transition-colors"
+                className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2 text-gray-600 hover:text-black rounded-full hover:bg-gray-50 transition-colors"
                 id="btn-cart-close"
+                aria-label="Close Shopping Bag drawer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -173,19 +175,21 @@ export default function SideCart() {
                               <button
                                 type="button"
                                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                className="px-2 py-0.5 text-gray-500 hover:bg-gray-50 hover:text-black transition-colors"
+                                className="px-2.5 py-1 text-gray-600 hover:bg-gray-50 hover:text-black transition-colors min-w-[28px] min-h-[28px] flex items-center justify-center font-bold"
                                 id={`btn-cart-qty-minus-${item.id}`}
+                                aria-label={`Decrease quantity of ${item.product.name}`}
                               >
                                 <Minus className="w-2.5 h-2.5" />
                               </button>
-                              <span className="px-2.5 py-0.5 text-[11px] font-semibold text-black bg-gray-50 border-x border-gray-200 min-w-[24px] text-center font-mono">
+                              <span className="px-2.5 py-1 text-[11px] font-semibold text-black bg-gray-50 border-x border-gray-200 min-w-[28px] text-center font-mono">
                                 {item.quantity}
                               </span>
                               <button
                                 type="button"
                                 onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                className="px-2 py-0.5 text-gray-500 hover:bg-gray-50 hover:text-black transition-colors"
+                                className="px-2.5 py-1 text-gray-600 hover:bg-gray-50 hover:text-black transition-colors min-w-[28px] min-h-[28px] flex items-center justify-center font-bold"
                                 id={`btn-cart-qty-plus-${item.id}`}
+                                aria-label={`Increase quantity of ${item.product.name}`}
                               >
                                 <Plus className="w-2.5 h-2.5" />
                               </button>
@@ -195,8 +199,8 @@ export default function SideCart() {
                             <button
                               type="button"
                               onClick={() => removeFromCart(item.id)}
-                              className="text-gray-400 hover:text-red-500 p-1 rounded-full hover:bg-red-50 transition-all"
-                              title="Remove item"
+                              className="text-gray-500 hover:text-red-500 p-2 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-full hover:bg-red-50 transition-all"
+                              aria-label={`Remove ${item.product.name} from bag`}
                               id={`btn-cart-remove-${item.id}`}
                             >
                               <Trash2 className="w-3.5 h-3.5" />

@@ -53,9 +53,10 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
         
         {/* Close Button */}
         <button
+          type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-black/60 hover:bg-black text-white p-2 rounded-full transition-colors focus:outline-none"
-          aria-label="Close Product Details"
+          className="absolute top-4 right-4 z-10 bg-black/60 hover:bg-black text-white p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-colors focus:outline-none"
+          aria-label="Close Product Details Modal"
           id="btn-modal-close"
         >
           <X className="w-5 h-5" />
@@ -159,18 +160,20 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
               <button
                 type="button"
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="px-3.5 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-black transition-colors"
+                className="px-3.5 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-black transition-colors min-w-[40px] min-h-[44px] flex items-center justify-center font-bold"
+                aria-label="Decrease quantity"
                 id="btn-modal-qty-minus"
               >
                 -
               </button>
-              <span className="px-4 py-2 text-xs font-bold text-black bg-gray-50 border-x border-gray-200 min-w-[32px] text-center">
+              <span className="px-4 py-2 text-xs font-bold text-black bg-gray-50 border-x border-gray-200 min-w-[36px] text-center font-mono">
                 {quantity}
               </span>
               <button
                 type="button"
                 onClick={() => setQuantity(quantity + 1)}
-                className="px-3.5 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-black transition-colors"
+                className="px-3.5 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-black transition-colors min-w-[40px] min-h-[44px] flex items-center justify-center font-bold"
+                aria-label="Increase quantity"
                 id="btn-modal-qty-plus"
               >
                 +
@@ -179,10 +182,11 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
 
             {/* Action button */}
             <button
+              type="button"
               onClick={handleAddToCart}
-              className={`flex-1 py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 shadow-md ${
+              className={`flex-1 py-3 px-4 min-h-[44px] rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 shadow-md ${
                 added 
-                  ? 'bg-emerald-500 text-white' 
+                  ? 'bg-emerald-600 text-white' 
                   : 'bg-black text-white hover:bg-gold hover:text-black'
               }`}
               id="btn-modal-add-to-cart"

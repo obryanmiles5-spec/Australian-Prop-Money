@@ -168,9 +168,9 @@ export default function TrustpilotReviewsSlider({ reviews }: TrustpilotReviewsSl
 
                 {/* Headline */}
                 {review.headline && (
-                  <h4 className="text-sm sm:text-[15px] font-bold text-black mb-2 leading-snug">
+                  <h3 className="text-sm sm:text-[15px] font-bold text-black mb-2 leading-snug">
                     {review.headline}
-                  </h4>
+                  </h3>
                 )}
 
                 {/* Comment */}
@@ -183,8 +183,8 @@ export default function TrustpilotReviewsSlider({ reviews }: TrustpilotReviewsSl
               <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                 <div>
                   <strong className="block text-black text-sm font-bold">{review.name}</strong>
-                  <span className="text-gray-500 text-xs block truncate max-w-[210px] sm:max-w-[240px]">
-                    {review.role} • <span className="text-zinc-700">{review.production}</span>
+                  <span className="text-gray-600 text-xs block truncate max-w-[210px] sm:max-w-[240px]">
+                    {review.role} • <span className="text-zinc-800 font-medium">{review.production}</span>
                   </span>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-zinc-100 border border-gray-200 flex items-center justify-center text-xs font-bold text-gray-700 uppercase shrink-0">
@@ -199,38 +199,43 @@ export default function TrustpilotReviewsSlider({ reviews }: TrustpilotReviewsSl
       {/* Navigation Controls: Arrows and Dots */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-4 border-t border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-xs text-gray-500 font-medium">
+          <span className="text-xs text-gray-600 font-medium">
             Showing <strong className="text-black">{currentIndex + 1}</strong> to <strong className="text-black">{Math.min(currentIndex + cardsPerView, reviews.length)}</strong> of <strong className="text-black">{reviews.length}</strong> client reviews
           </span>
         </div>
 
         {/* Dots Pagination */}
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1">
           {Array.from({ length: totalSlides }).map((_, idx) => (
             <button
               key={idx}
+              type="button"
               onClick={() => setCurrentIndex(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                currentIndex === idx ? 'w-6 bg-gold' : 'w-2 bg-gray-200 hover:bg-gray-400'
-              }`}
+              className="p-2 min-w-[32px] min-h-[32px] flex items-center justify-center focus:outline-none"
               aria-label={`Go to slide ${idx + 1}`}
-            />
+            >
+              <span className={`h-2 rounded-full transition-all duration-300 ${
+                currentIndex === idx ? 'w-6 bg-gold' : 'w-2 bg-gray-300 hover:bg-gray-400'
+              }`} />
+            </button>
           ))}
         </div>
 
         {/* Prev / Next Buttons */}
         <div className="flex items-center gap-2">
           <button
+            type="button"
             onClick={handlePrev}
-            className="w-10 h-10 rounded-full border border-gray-200 bg-white hover:bg-black hover:text-white hover:border-black text-black flex items-center justify-center shadow-xs transition-all duration-200 focus:outline-none"
-            aria-label="Previous reviews"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-gray-200 bg-white hover:bg-black hover:text-white hover:border-black text-black flex items-center justify-center shadow-xs transition-all duration-200 focus:outline-none"
+            aria-label="Previous client reviews"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
+            type="button"
             onClick={handleNext}
-            className="w-10 h-10 rounded-full border border-gray-200 bg-white hover:bg-black hover:text-white hover:border-black text-black flex items-center justify-center shadow-xs transition-all duration-200 focus:outline-none"
-            aria-label="Next reviews"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-gray-200 bg-white hover:bg-black hover:text-white hover:border-black text-black flex items-center justify-center shadow-xs transition-all duration-200 focus:outline-none"
+            aria-label="Next client reviews"
           >
             <ChevronRight className="w-4 h-4" />
           </button>

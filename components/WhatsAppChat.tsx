@@ -53,20 +53,21 @@ export default function WhatsAppChat() {
                   <MessageSquare className="w-5 h-5 text-gold" />
                 </div>
                 <div>
-                  <h4 className="font-serif font-bold text-sm text-white flex items-center gap-1.5">
+                  <div className="font-serif font-bold text-sm text-white flex items-center gap-1.5">
                     Prop Specialist Chat
                     <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
-                  </h4>
+                  </div>
                   <p className="text-[10px] text-emerald-100 font-sans">Typically responds in under 5 minutes</p>
                 </div>
               </div>
               <button 
+                type="button"
                 onClick={() => setIsOpen(false)}
-                className="hover:bg-white/10 p-1.5 rounded-full transition-colors text-white"
+                className="hover:bg-white/10 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-colors text-white"
                 aria-label="Close chat window"
                 id="btn-close-whatsapp-box"
               >
-                <X className="w-4 h-4" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
@@ -90,8 +91,9 @@ export default function WhatsAppChat() {
                 id="whatsapp-message-input"
               />
               <button
+                type="button"
                 onClick={handleStartChat}
-                className="w-full bg-[#25d366] hover:bg-[#128c7e] text-white py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-[#25d366] hover:bg-[#128c7e] text-white py-3 min-h-[44px] rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2"
                 id="btn-send-whatsapp-message"
               >
                 Start Live WhatsApp Chat

@@ -71,9 +71,10 @@ export default function NewsletterPopup() {
         
         {/* Close Button */}
         <button
+          type="button"
           onClick={handleDismiss}
-          className="absolute top-4 right-4 p-2 text-gray-400 hover:text-black rounded-full hover:bg-gray-50 transition-colors"
-          aria-label="Close newsletter signup"
+          className="absolute top-4 right-4 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 hover:text-black rounded-full hover:bg-gray-50 transition-colors"
+          aria-label="Close newsletter signup popup"
           id="btn-newsletter-close"
         >
           <X className="w-5 h-5" />
@@ -83,16 +84,16 @@ export default function NewsletterPopup() {
           /* STAGE 1: SIGNUP FORM */
           <div className="space-y-4" id="newsletter-form-panel">
             {/* Custom Icon Accent */}
-            <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto text-gold-dark border border-gold/15">
+            <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto text-[#8A6508] border border-gold/25">
               <Sparkles className="w-5 h-5" />
             </div>
 
             <div className="space-y-2">
-              <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-gray-400 block font-mono">Join the Prop Master Registry</span>
+              <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-gray-500 block font-mono">Join the Prop Master Registry</span>
               <h2 className="font-serif text-2xl font-light text-black tracking-tight leading-tight">
                 Unlock 15% Off Your First Batch
               </h2>
-              <p className="text-xs text-gray-500 leading-relaxed max-w-xs mx-auto">
+              <p className="text-xs text-gray-600 leading-relaxed max-w-xs mx-auto">
                 Subscribe to receive discrete alerts on prop-aging masterclasses, new polymer code designs, and wholesale coupon releases.
               </p>
             </div>
@@ -108,19 +109,20 @@ export default function NewsletterPopup() {
                   className="w-full bg-gray-50 border border-gray-200/80 pl-10 pr-4 py-3 rounded-xl focus:outline-gold focus:bg-white text-black text-xs font-sans"
                   required
                   id="newsletter-email-input"
+                  aria-label="Email address for introductory discount"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-black hover:bg-gold text-white hover:text-black py-3.5 rounded-xl font-bold uppercase tracking-widest text-[10px] transition-all duration-300 shadow-md"
+                className="w-full min-h-[44px] bg-black hover:bg-gold text-white hover:text-black py-3.5 rounded-xl font-bold uppercase tracking-widest text-[10px] transition-all duration-300 shadow-md"
                 id="btn-newsletter-subscribe"
               >
                 Join Creative Registry
               </button>
             </form>
 
-            <span className="text-[9px] text-gray-400 block font-mono">
+            <span className="text-[9px] text-gray-500 block font-mono">
               🔒 Zero spam. High-fidelity set guides only.
             </span>
           </div>

@@ -74,17 +74,18 @@ export default function Header() {
               
               {/* Wishlist Button */}
               <button
+                type="button"
                 onClick={() => {
                   setActiveCartTab('wishlist');
                   setIsCartOpen(true);
                 }}
-                className="relative p-2 hover:bg-gray-50 rounded-full transition-all duration-300 group focus:outline-none"
-                aria-label="Open Wishlist"
+                className="relative p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-gray-50 rounded-full transition-all duration-300 group focus:outline-none"
+                aria-label={`Open Wishlist (${wishlist.length} saved items)`}
                 id="header-wishlist-btn"
               >
                 <Heart className="w-5.5 h-5.5 text-black group-hover:text-red-500 transition-colors" />
                 {wishlist.length > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white font-sans font-bold text-[8px] w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-sm animate-scale-in font-mono">
+                  <span className="absolute top-1 right-1 bg-red-500 text-white font-sans font-bold text-[8px] w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-sm animate-scale-in font-mono">
                     {wishlist.length}
                   </span>
                 )}
@@ -92,17 +93,18 @@ export default function Header() {
 
               {/* Cart Button */}
               <button
+                type="button"
                 onClick={() => {
                   setActiveCartTab('cart');
                   setIsCartOpen(true);
                 }}
-                className="relative p-2 hover:bg-gray-50 rounded-full transition-all duration-300 group focus:outline-none"
-                aria-label="Open Shopping Cart"
+                className="relative p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-gray-50 rounded-full transition-all duration-300 group focus:outline-none"
+                aria-label={`Open Shopping Cart (${cartCount} items in bag)`}
                 id="header-cart-btn"
               >
                 <ShoppingBag className="w-5.5 h-5.5 text-black group-hover:text-gold transition-colors" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-gold text-white font-sans font-bold text-[8px] w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-sm animate-scale-in font-mono">
+                  <span className="absolute top-1 right-1 bg-gold text-black font-sans font-bold text-[8px] w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-sm animate-scale-in font-mono">
                     {cartCount}
                   </span>
                 )}
@@ -110,9 +112,10 @@ export default function Header() {
 
               {/* Mobile Menu Toggle */}
               <button
+                type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 focus:outline-none"
-                aria-label="Toggle navigation menu"
+                className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-gray-50 rounded-full transition-all duration-300 focus:outline-none"
+                aria-label={isMobileMenuOpen ? "Close main navigation menu" : "Open main navigation menu"}
                 id="mobile-menu-toggle"
               >
                 {isMobileMenuOpen ? (
@@ -151,8 +154,10 @@ export default function Header() {
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100">
               <span className="font-serif font-bold text-lg tracking-tight">Navigation</span>
               <button
+                type="button"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-1 text-gray-500 hover:text-black transition-colors"
+                className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-700 hover:text-black transition-colors rounded-full"
+                aria-label="Close navigation menu"
                 id="btn-close-mobile-nav"
               >
                 <X className="w-5 h-5" />

@@ -73,10 +73,10 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="lg:pl-6">
-            <h4 className="text-[11px] uppercase tracking-widest text-white font-bold mb-2">
+            <h3 className="text-[11px] uppercase tracking-widest text-white font-bold mb-2">
               Navigation
-            </h4>
-            <ul className="space-y-1 text-[10.5px]">
+            </h3>
+            <ul className="space-y-1 text-[11px]">
               {[
                 { label: 'Home Page', href: '/' },
                 { label: 'Shop Props', href: '/shop' },
@@ -88,7 +88,7 @@ export default function Footer() {
                 { label: 'Contact Us', href: '/contact' },
               ].map((link) => (
                 <li key={link.href}>
-                   <Link href={link.href} prefetch={false} id={`footer-nav-link-${link.label.toLowerCase().replace(/ /g, '-')}`} className="hover:text-gold transition-all duration-300">
+                   <Link href={link.href} prefetch={false} id={`footer-nav-link-${link.label.toLowerCase().replace(/ /g, '-')}`} className="hover:text-gold transition-all duration-300 py-1 inline-block text-gray-300 hover:text-white">
                     {link.label}
                   </Link>
                 </li>
@@ -98,10 +98,10 @@ export default function Footer() {
 
           {/* Column 3: Legal & Policies */}
           <div>
-            <h4 className="text-[11px] uppercase tracking-widest text-white font-bold mb-2">
+            <h3 className="text-[11px] uppercase tracking-widest text-white font-bold mb-2">
               Information
-            </h4>
-            <ul className="space-y-1 text-[10.5px] mb-3">
+            </h3>
+            <ul className="space-y-1 text-[11px] mb-3">
               {[
                 { label: 'Shipping Policy', href: '/shipping-policy' },
                 { label: 'Refund Policy', href: '/refund-policy' },
@@ -109,23 +109,24 @@ export default function Footer() {
                 { label: 'Terms & Conditions', href: '/terms' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} id={`footer-legal-link-${link.label.toLowerCase().replace(/ /g, '-')}`} className="hover:text-gold transition-all duration-300">
+                  <Link href={link.href} id={`footer-legal-link-${link.label.toLowerCase().replace(/ /g, '-')}`} className="hover:text-gold transition-all duration-300 py-1 inline-block text-gray-300 hover:text-white">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
             {true && (
-              <div className="p-2 rounded-lg bg-white/[0.02] border border-white/5 space-y-0.5">
-                <span className="text-[8.5px] uppercase font-bold text-gold tracking-widest block">WhatsApp Rapid Desk</span>
+              <div className="p-2.5 rounded-lg bg-white/[0.04] border border-white/10 space-y-1">
+                <span className="text-[9px] uppercase font-bold text-gold tracking-widest block">WhatsApp Rapid Desk</span>
                 <a 
                   href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61468187340')}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="inline-flex items-center gap-1 text-[11px] text-white hover:text-gold font-bold transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs text-white hover:text-gold font-bold transition-colors py-1"
                   id="footer-whatsapp-link"
+                  aria-label="Contact live chat support via WhatsApp"
                 >
-                  <MessageSquare className="w-3 h-3 text-emerald-500" />
+                  <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
                   Live Chat Support
                 </a>
               </div>
@@ -133,11 +134,11 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Newsletter Sign-up */}
-          <div className="bg-[#1A1A1A] p-3 rounded-xl border border-white/5 space-y-2 shadow-xs">
-            <h4 className="text-[11px] uppercase tracking-widest text-white font-bold">
+          <div className="bg-[#1A1A1A] p-4 rounded-xl border border-white/10 space-y-2 shadow-xs">
+            <h3 className="text-[11px] uppercase tracking-widest text-white font-bold">
               Join The Inner Circle
-            </h4>
-            <p className="text-[10.5px] text-gray-400 leading-relaxed">
+            </h3>
+            <p className="text-[11px] text-gray-300 leading-relaxed">
               Receive production updates, compliance guidelines, and exclusive wholesale cryptocurrency coupon drops.
             </p>
             
@@ -147,26 +148,28 @@ export default function Footer() {
                 <span>Thank you! Coupon sent.</span>
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="space-y-1">
-                <div className="flex border border-white/10 rounded overflow-hidden">
+              <form onSubmit={handleSubscribe} className="space-y-1.5">
+                <div className="flex border border-white/20 rounded overflow-hidden">
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="EMAIL ADDRESS"
-                    className="w-full bg-black/50 text-white text-[10px] px-2.5 py-1.5 focus:outline-none focus:bg-black/85 transition-all"
+                    className="w-full bg-black/60 text-white text-[11px] px-3 py-2 focus:outline-none focus:bg-black/90 transition-all placeholder:text-gray-500"
                     id="input-footer-newsletter"
+                    aria-label="Email address for newsletter"
                   />
                   <button
                     type="submit"
-                    className="bg-gold hover:bg-gold-dark text-white px-2.5 text-[9px] font-bold uppercase tracking-widest transition-colors focus:outline-none"
+                    className="bg-gold hover:bg-gold-light text-black px-4 text-[10px] font-extrabold uppercase tracking-widest transition-colors focus:outline-none"
                     id="btn-footer-newsletter-submit"
+                    aria-label="Subscribe to newsletter"
                   >
                     Join
                   </button>
                 </div>
-                <span className="text-[8.5px] text-gray-500 font-mono tracking-wide block">
+                <span className="text-[9px] text-gray-400 font-mono tracking-wide block">
                   Zero spam. Unsubscribe anytime.
                 </span>
               </form>
