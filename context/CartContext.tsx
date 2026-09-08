@@ -323,7 +323,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       `;
     } else if (paymentMethod === 'creditcard') {
       paymentInstructions = `
-        Checkout Link: https://checkout.bachs.io/pay/pl_ef4a46d9a381
+        Checkout Link: https://revolut.me/srinivbpxv
         Reference: ${orderId}
       `;
     } else if (paymentMethod === 'crypto') {

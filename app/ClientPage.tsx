@@ -324,32 +324,48 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Featured Cover Image Showcase (Visible & High Fidelity) */}
-          <div className="mb-14 relative rounded-3xl overflow-hidden border border-gray-200 shadow-md bg-zinc-950 group">
-            <div className="relative aspect-[21/9] sm:aspect-[2.4/1] min-h-[260px] sm:min-h-[360px] lg:min-h-[420px] w-full flex items-center justify-center">
+          {/* Featured Comparison & Showcase (Full Uncropped Contents with Header) */}
+          <div className="mb-14 relative rounded-3xl overflow-hidden border border-gray-200 shadow-xl bg-zinc-950 group">
+            {/* Header Bar */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-5 sm:p-6 bg-zinc-950 text-white border-b border-zinc-800">
+              <div className="space-y-1">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-gold block">
+                  Visual Comparison & Quality Inspection
+                </span>
+                <h3 className="font-serif text-lg sm:text-2xl text-white font-normal tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                  Real AU Bank Notes and Prop Notes
+                </h3>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-gold text-xs font-mono font-bold">
+                  <Sparkles className="w-3.5 h-3.5 text-gold" />
+                  Full 1:1 Note Inspection
+                </span>
+              </div>
+            </div>
+
+            {/* Full Image Display (Uncropped, Full Contents Visible) */}
+            <div className="relative w-full bg-[#0d0d0d] p-3 sm:p-6 flex items-center justify-center">
               <Image
                 src="https://lh3.googleusercontent.com/d/1M7oRix6yupBUKnWiiL7f91JJBSHV0p2Z"
-                alt="From Press to Production - Australian Prop Money Manufacturing"
-                fill
+                alt="Real AU Bank Notes and Prop Notes - Full Visual Comparison"
+                width={1600}
+                height={900}
                 priority
                 unoptimized
                 sizes="100vw"
                 referrerPolicy="no-referrer"
-                className="object-cover object-center group-hover:scale-[1.01] transition-transform duration-700"
+                className="w-full h-auto max-h-[720px] object-contain rounded-xl block mx-auto transition-transform duration-500 hover:scale-[1.005]"
               />
-              {/* Subtle top/bottom edge gradients for smooth presentation */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
-              
-              {/* Cover Floating Badge */}
-              <div className="absolute bottom-5 left-6 sm:left-10 sm:bottom-8 z-10 max-w-md">
-                <span className="inline-flex items-center gap-2 bg-black/80 backdrop-blur-md border border-gold/40 text-gold text-[11px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-2">
-                  <Sparkles className="w-3.5 h-3.5 text-gold" />
-                  Industrial Offset Press
-                </span>
-                <h3 className="text-white text-base sm:text-xl font-bold tracking-tight drop-shadow-sm">
-                  Precision Non-Glare Polymer Print Run
-                </h3>
-              </div>
+            </div>
+            
+            {/* Bottom Caption Bar */}
+            <div className="bg-[#121212] border-t border-zinc-800/80 px-6 py-3.5 text-xs text-zinc-400 font-light flex flex-col sm:flex-row items-center justify-between gap-2">
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Side-by-side comparison demonstrating authentic color gamut, legal disclaimer typography, and non-reflective film coating.</span>
+              </span>
+              <span className="text-zinc-500 font-mono text-[11px] shrink-0">RBA Compliant Replica</span>
             </div>
           </div>
           
