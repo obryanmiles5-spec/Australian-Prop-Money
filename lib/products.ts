@@ -739,7 +739,7 @@ export const FAQS: FAQItem[] = [
   {
     category: 'ordering',
     question: 'Where to buy prop money in Australia and how fast is delivery?',
-    answer: 'You can buy high-quality **realistic prop money australia** directly from our online store. We provide **prop money australia next day delivery** and express dispatch from our Sydney warehouse across Sydney, Melbourne, Brisbane, Perth, Adelaide, Gold Coast, Hobart, and Canberra. We also support flexible payment options including **prop money australia Afterpay**, Credit/Debit cards, PayID instant, and direct bank transfer.'
+    answer: 'You can buy high-quality **realistic prop money australia** directly from our online store. We provide **prop money australia next day delivery** and express dispatch from our Sydney warehouse across Sydney, Melbourne, Brisbane, Perth, Adelaide, Gold Coast, Hobart, and Canberra. We also support flexible payment options including **prop money australia Afterpay**, PayID instant, direct bank transfer, and cryptocurrency.'
   },
   {
     category: 'ordering',

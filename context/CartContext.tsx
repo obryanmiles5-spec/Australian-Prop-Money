@@ -42,8 +42,8 @@ interface CartContextType {
   discountPercentage: number;
   applyCoupon: (code: string) => boolean;
   removeCoupon: () => void;
-  paymentMethod: 'bank' | 'payid' | 'crypto' | 'creditcard';
-  setPaymentMethod: (method: 'bank' | 'payid' | 'crypto' | 'creditcard') => void;
+  paymentMethod: 'bank' | 'payid' | 'crypto';
+  setPaymentMethod: (method: 'bank' | 'payid' | 'crypto') => void;
   cartCount: number;
   subtotal: number;
   discountAmount: number;
@@ -76,7 +76,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [couponCode, setCouponCode] = useState('');
   const [discountPercentage, setDiscountPercentage] = useState(0);
-  const [paymentMethod, setPaymentMethod] = useState<'bank' | 'payid' | 'crypto' | 'creditcard'>('bank');
+  const [paymentMethod, setPaymentMethod] = useState<'bank' | 'payid' | 'crypto'>('bank');
   
   // Wishlist state
   const [wishlist, setWishlist] = useState<string[]>([]);
@@ -319,11 +319,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     } else if (paymentMethod === 'payid') {
       paymentInstructions = `
         An administrator will email you the PayID details shortly.
-        Reference: ${orderId}
-      `;
-    } else if (paymentMethod === 'creditcard') {
-      paymentInstructions = `
-        Checkout Link: https://revolut.me/srinivbpxv
         Reference: ${orderId}
       `;
     } else if (paymentMethod === 'crypto') {
