@@ -137,7 +137,7 @@ export default function CheckoutPage() {
         if (method === 'whatsapp' && result.details) {
           // Automatically try to open WhatsApp in a new tab
           const waText = generateWhatsAppMessage(result.details);
-          const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61468187340");
+          const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682");
           const waUrl = `https://wa.me/${waNum}?text=${waText}`;
           window.open(waUrl, '_blank', 'noopener,noreferrer');
         }
@@ -391,7 +391,7 @@ Please confirm receipt of this order and reply with tracking details once transf
             {/* WhatsApp verification checkout */}
             {true && (
               <a
-                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61468187340")}?text=${generateWhatsAppMessage()}`}
+                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682")}?text=${generateWhatsAppMessage()}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#20ba59] text-white py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 text-center focus:outline-none"

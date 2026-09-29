@@ -135,15 +135,15 @@ export default function Footer() {
               <div className="p-2.5 rounded-lg bg-white/[0.04] border border-white/10 space-y-1">
                 <span className="text-[9px] uppercase font-bold text-gold tracking-widest block">WhatsApp Rapid Desk</span>
                 <a 
-                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61468187340')}`} 
+                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682')}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center gap-1.5 text-xs text-white hover:text-gold font-bold transition-colors py-1"
                   id="footer-whatsapp-link"
-                  aria-label="Contact live chat support via WhatsApp"
+                  aria-label="Contact live chat support via WhatsApp at +61 480 852 682"
                 >
                   <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
-                  Live Chat Support
+                  +61 480 852 682 (Live Chat)
                 </a>
               </div>
             )}

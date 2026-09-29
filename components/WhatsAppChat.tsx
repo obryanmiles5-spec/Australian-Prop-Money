@@ -10,7 +10,7 @@ export default function WhatsAppChat() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [messageText, setMessageText] = useState('Hi, I need assistance with prop money for my upcoming production.');
 
-  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61468187340');
+  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682');
 
   useEffect(() => {
     if (!whatsappNumber) return;
@@ -57,7 +57,7 @@ export default function WhatsAppChat() {
                     Prop Specialist Chat
                     <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
                   </div>
-                  <p className="text-[10px] text-emerald-100 font-sans">Typically responds in under 5 minutes</p>
+                  <p className="text-[10px] text-emerald-100 font-sans">WhatsApp: +61 480 852 682 • Fast Reply</p>
                 </div>
               </div>
               <button 

@@ -130,13 +130,13 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <span className="text-[10px] uppercase font-bold text-gray-400 block font-mono">WhatsApp Rapid Support</span>
                   <a 
-                    href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61468187340')}`} 
+                    href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682')}`} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-sm font-bold text-black hover:text-gold transition-colors block"
                     id="contact-whatsapp-link-box"
                   >
-                    {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+61 468 187 340'}
+                    +61 480 852 682
                   </a>
                   <span className="text-[10px] text-emerald-600 font-semibold block">Available 24/7 for creative sets</span>
                 </div>

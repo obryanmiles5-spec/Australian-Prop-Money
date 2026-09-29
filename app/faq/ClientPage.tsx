@@ -146,14 +146,14 @@ export default function FAQPage() {
           </Link>
           {true && (
             <a 
-              href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61468187340")}`} 
+              href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682")}`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="bg-white/5 hover:bg-white/10 text-white border border-white/15 py-3 px-5 rounded-lg text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-1.5 flex-1"
               id="faq-cta-whatsapp"
             >
               <MessageSquare className="w-4 h-4 text-emerald-500" />
-              WhatsApp Chat
+              WhatsApp: +61 480 852 682
             </a>
           )}
         </div>
