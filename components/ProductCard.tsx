@@ -31,6 +31,7 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
   };
 
   const isFavorited = isInWishlist(product.id);
+  const isAustralianNotes = product.category === 'australian-notes';
 
   return (
     <div 
@@ -41,7 +42,7 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
         <span className="sr-only">View {product.name}</span>
       </Link>
       {/* Clean 1:1 Square Image Display (No Text Overlays on Image) */}
-      <div className="relative aspect-square bg-[#0e0e11] overflow-hidden border-b border-gray-100 flex items-center justify-center">
+      <div className={`relative aspect-square ${isAustralianNotes ? 'bg-zinc-100' : 'bg-[#0e0e11]'} overflow-hidden border-b border-gray-100 flex items-center justify-center`}>
         {product.image ? (
           <div className="absolute inset-0 z-0 select-none">
             <Image
@@ -52,7 +53,7 @@ export default function ProductCard({ product, onViewDetails }: ProductCardProps
               decoding="async"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               referrerPolicy="no-referrer"
-              className="object-contain object-center p-3 group-hover:scale-105 transition-all duration-500 z-0"
+              className={`${isAustralianNotes ? 'object-cover p-0' : 'object-contain p-3'} object-center group-hover:scale-105 transition-all duration-500 z-0`}
             />
           </div>
         ) : (

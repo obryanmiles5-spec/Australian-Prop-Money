@@ -221,7 +221,7 @@ export default function HomePage() {
                 {/* Image Banner */}
                 <Link 
                   href={`/shop?category=${cat.id}`}
-                  className="relative aspect-[16/10] w-full overflow-hidden block bg-zinc-950"
+                  className={`relative aspect-[16/10] w-full overflow-hidden block ${cat.id === 'australian-notes' ? 'bg-zinc-100' : 'bg-zinc-950'}`}
                   id={`category-banner-${cat.id}`}
                 >
                   {cat.image && (
@@ -233,7 +233,7 @@ export default function HomePage() {
                       decoding="async"
                       sizes="(max-width: 768px) 100vw, 33vw"
                       referrerPolicy="no-referrer"
-                      className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                      className={`${cat.id === 'australian-notes' ? 'object-cover' : 'object-contain'} object-center group-hover:scale-105 transition-transform duration-700 ease-out`}
                     />
                   )}
                 </Link>
