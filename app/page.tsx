@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import JsonLd from '@/components/JsonLd';
+import { FAQS, PRODUCTS } from '@/lib/products';
 
 const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
     'prop money au'
   ],
   alternates: {
-    canonical: `${cleanBaseUrl}/`,
+    canonical: cleanBaseUrl,
   },
   openGraph: {
     title: 'Australian Prop Money | #1 Fake Australian Money Prop Notes & AU Prop Stacks',
@@ -83,5 +85,37 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ClientPage />;
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': FAQS.slice(0, 6).map((faq) => ({
+      '@type': 'Question',
+      'name': faq.question,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': faq.answer
+      }
+    }))
+  };
+
+  const featuredItemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': 'Featured Australian Prop Money Notes',
+    'itemListElement': PRODUCTS.slice(0, 6).map((p, index) => ({
+      '@type': 'ListItem',
+      'position': index + 1,
+      'url': `${cleanBaseUrl}/product/${p.id}`,
+      'name': p.name,
+      'image': p.image
+    }))
+  };
+
+  return (
+    <>
+      <JsonLd schema={faqSchema} />
+      <JsonLd schema={featuredItemListSchema} />
+      <ClientPage />
+    </>
+  );
 }

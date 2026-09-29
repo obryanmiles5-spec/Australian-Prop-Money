@@ -491,7 +491,7 @@ To achieve total immersion under 4K and 8K camera lenses, prop money must posses
 ### Where to Purchase Compliant Australian Props Online
 For fast, private dispatch across Sydney, Melbourne, Brisbane, and beyond, our store offers premium non-glare, RBA-compliant banknotes. From individual stacks of $100 AUD, $50 AUD, and vintage old-style designs, to wholesale master crates of 100 stacks, we supply the finest quality movie money in Australia.
 
-**Ready to dress your set?** Explore our [Australian Notes](/shop?category=australian-notes) and pre-arranged [Bundle Packs](/shop?category=bundle-packs) to secure high-fidelity props with overnight fast shipping options.`,
+**Ready to dress your set?** Explore our [Australian Notes](/shop/australian-notes) and pre-arranged [Bundle Packs](/shop/bundle-packs) to secure high-fidelity props with overnight fast shipping options.`,
     date: '2026-07-15',
     category: 'Production',
     readTime: '4 min read',
@@ -575,7 +575,7 @@ To be safe for use in public film productions, theater, and corporate events, pr
 
 Our products meet all these benchmarks perfectly, protecting your shoot from legal complications while providing beautiful, camera-ready aesthetics.
 
-Ensure compliance on your next shoot. Browse our certified [Australian Notes](/shop?category=australian-notes) to buy securely.`,
+Ensure compliance on your next shoot. Browse our certified [Australian Notes](/shop/australian-notes) to buy securely.`,
     date: '2026-07-11',
     category: 'Legal',
     readTime: '4 min read',

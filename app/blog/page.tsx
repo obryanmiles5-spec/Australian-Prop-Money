@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import JsonLd from '@/components/JsonLd';
+import { BLOG_POSTS } from '@/lib/products';
 
 const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
@@ -43,5 +45,46 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ClientPage />;
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': cleanBaseUrl
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'Journal & Compliance',
+        'item': `${cleanBaseUrl}/blog`
+      }
+    ]
+  };
+
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    'name': 'Australian Prop Money Journal & Compliance Guides',
+    'description': 'Production guides, film set lighting tips, and Reserve Bank compliance breakdowns.',
+    'url': `${cleanBaseUrl}/blog`,
+    'blogPost': BLOG_POSTS.map((post) => ({
+      '@type': 'BlogPosting',
+      'headline': post.title,
+      'description': post.excerpt,
+      'url': `${cleanBaseUrl}/blog/${post.id}`,
+      'datePublished': post.date,
+      'image': post.image
+    }))
+  };
+
+  return (
+    <>
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={blogSchema} />
+      <ClientPage />
+    </>
+  );
 }

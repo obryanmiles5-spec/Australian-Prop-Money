@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import JsonLd from '@/components/JsonLd';
 
 const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
@@ -40,5 +41,43 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ClientPage />;
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': cleanBaseUrl
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'About Us',
+        'item': `${cleanBaseUrl}/about`
+      }
+    ]
+  };
+
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    'name': 'About Australian Prop Money',
+    'description': 'Leading supplier of camera-ready, RBA-compliant Australian replica currency for entertainment productions.',
+    'url': `${cleanBaseUrl}/about`,
+    'mainEntity': {
+      '@type': 'Organization',
+      'name': 'Australian Prop Money',
+      'url': cleanBaseUrl
+    }
+  };
+
+  return (
+    <>
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={aboutSchema} />
+      <ClientPage />
+    </>
+  );
 }

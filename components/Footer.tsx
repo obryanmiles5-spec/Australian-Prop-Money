@@ -92,7 +92,10 @@ export default function Footer() {
             <ul className="space-y-1 text-[11px]">
               {[
                 { label: 'Home Page', href: '/' },
-                { label: 'Shop Props', href: '/shop' },
+                { label: 'Shop Props (All)', href: '/shop' },
+                { label: 'Australian Notes', href: '/shop/australian-notes' },
+                { label: 'Bundle Packs', href: '/shop/bundle-packs' },
+                { label: 'Set Accessories', href: '/shop/accessories' },
                 { label: 'Prop Videos Showcase', href: '/videos' },
                 { label: 'Wholesale & Bulk Quotes', href: '/wholesale' },
                 { label: 'About Our Mission', href: '/about' },
@@ -101,7 +104,7 @@ export default function Footer() {
                 { label: 'Contact Us', href: '/contact' },
               ].map((link) => (
                 <li key={link.href}>
-                   <Link href={link.href} prefetch={false} id={`footer-nav-link-${link.label.toLowerCase().replace(/ /g, '-')}`} className="hover:text-gold transition-all duration-300 py-1 inline-block text-gray-300 hover:text-white">
+                   <Link href={link.href} prefetch={false} id={`footer-nav-link-${link.label.toLowerCase().replace(/[^a-z0-9]/g, '-')}`} className="hover:text-gold transition-all duration-300 py-0.5 inline-block text-gray-300 hover:text-white">
                     {link.label}
                   </Link>
                 </li>

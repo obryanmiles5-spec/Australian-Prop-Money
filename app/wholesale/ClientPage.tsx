@@ -28,11 +28,13 @@ export default function WholesalePage() {
         
         {/* Multi-step Form (Column 1-2) */}
         <div className="lg:col-span-2">
+          <h2 className="sr-only">Bulk Requisition & Wholesale Quote Request</h2>
           <WholesaleForm />
         </div>
 
         {/* Info Column (Column 3) */}
         <div className="space-y-6 lg:sticky lg:top-24">
+          <h2 className="sr-only">Wholesale Pricing & Delivery Specifications</h2>
           
           {/* Box 1: Wholesaler Tiers */}
           <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 space-y-4">

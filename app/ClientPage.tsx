@@ -220,8 +220,8 @@ export default function HomePage() {
               >
                 {/* Image Banner */}
                 <Link 
-                  href={`/shop?category=${cat.id}`}
-                  className={`relative aspect-[16/10] w-full overflow-hidden block ${cat.id === 'australian-notes' ? 'bg-zinc-100' : 'bg-zinc-950'}`}
+                  href={`/shop/${cat.id}`}
+                  className="relative aspect-[16/10] w-full overflow-hidden block bg-zinc-100"
                   id={`category-banner-${cat.id}`}
                 >
                   {cat.image && (
@@ -233,7 +233,7 @@ export default function HomePage() {
                       decoding="async"
                       sizes="(max-width: 768px) 100vw, 33vw"
                       referrerPolicy="no-referrer"
-                      className={`${cat.id === 'australian-notes' ? 'object-cover' : 'object-contain'} object-center group-hover:scale-105 transition-transform duration-700 ease-out`}
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                   )}
                 </Link>
@@ -251,7 +251,7 @@ export default function HomePage() {
                     </div>
 
                     <h3 className="font-serif font-normal text-2xl text-black tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
-                      <Link href={`/shop?category=${cat.id}`} className="hover:text-gold transition-colors">
+                      <Link href={`/shop/${cat.id}`} className="hover:text-gold transition-colors">
                         {cat.title}
                       </Link>
                     </h3>
@@ -263,7 +263,7 @@ export default function HomePage() {
                   
                   <div className="pt-6 mt-4 border-t border-zinc-100">
                     <Link 
-                      href={`/shop?category=${cat.id}`}
+                      href={`/shop/${cat.id}`}
                       className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-black group-hover:text-gold transition-colors"
                       id={`category-link-${cat.id}`}
                     >
@@ -290,7 +290,7 @@ export default function HomePage() {
               priority
               unoptimized
               sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover sm:object-contain object-center hover:scale-[1.02] transition-transform duration-500"
+              className="object-cover object-center hover:scale-[1.02] transition-transform duration-500"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -593,7 +593,7 @@ export default function HomePage() {
                 Trusted for <strong>film production prop money Sydney</strong>, <strong>theatre prop money Melbourne</strong>, <strong>TV production money props Brisbane</strong>, and <strong>prop cash for music videos Australia</strong>. Our notes are treated with anti-reflective finishes to prevent studio glare under 4K and 8K cinema camera lights.
               </p>
               <div className="pt-2">
-                <Link href="/shop?category=australian-notes" className="text-[11px] font-bold text-black hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                <Link href="/shop/australian-notes" className="text-[11px] font-bold text-black hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
                   View Cinema Notes <ChevronRight className="w-3 h-3" />
                 </Link>
               </div>

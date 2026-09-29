@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import ClientPage from './ClientPage';
+import JsonLd from '@/components/JsonLd';
+import { PRODUCTS } from '@/lib/products';
 
 const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
@@ -54,9 +56,50 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': cleanBaseUrl
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'Shop',
+        'item': `${cleanBaseUrl}/shop`
+      }
+    ]
+  };
+
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': 'Australian Prop Money Catalog',
+    'description': 'Complete inventory of RBA compliant Australian prop money notes, bundles, and accessories.',
+    'url': `${cleanBaseUrl}/shop`,
+    'mainEntity': {
+      '@type': 'ItemList',
+      'itemListElement': PRODUCTS.map((p, index) => ({
+        '@type': 'ListItem',
+        'position': index + 1,
+        'url': `${cleanBaseUrl}/product/${p.id}`,
+        'name': p.name,
+        'image': p.image
+      }))
+    }
+  };
+
   return (
-    <Suspense fallback={<div className="p-12 text-center">Loading shop...</div>}>
-      <ClientPage />
-    </Suspense>
+    <>
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={collectionSchema} />
+      <Suspense fallback={<div className="p-12 text-center">Loading shop...</div>}>
+        <ClientPage />
+      </Suspense>
+    </>
   );
 }

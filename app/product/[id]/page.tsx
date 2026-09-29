@@ -89,6 +89,7 @@ export default async function ProductPage({ params }: Props) {
     '@type': 'Product',
     'name': product.name,
     'description': product.longDescription,
+    'image': product.image ? [product.image] : [`${cleanBase}/icon.svg`],
     'sku': product.sku,
     'mpn': product.sku,
     'brand': {
@@ -100,11 +101,45 @@ export default async function ProductPage({ params }: Props) {
       'url': `${cleanBase}/product/${product.id}`,
       'priceCurrency': 'AUD',
       'price': product.price.toString(),
+      'priceValidUntil': '2027-12-31',
       'itemCondition': 'https://schema.org/NewCondition',
       'availability': (product.stockStatus === 'in-stock' || product.stockStatus === 'low-stock') ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
       'seller': {
         '@type': 'Organization',
         'name': 'Australian Prop Money'
+      },
+      'hasMerchantReturnPolicy': {
+        '@type': 'MerchantReturnPolicy',
+        'applicableCountry': 'AU',
+        'returnPolicyCategory': 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        'merchantReturnDays': 30
+      },
+      'shippingDetails': {
+        '@type': 'OfferShippingDetails',
+        'shippingRate': {
+          '@type': 'MonetaryAmount',
+          'value': '0',
+          'currency': 'AUD'
+        },
+        'shippingDestination': {
+          '@type': 'DefinedRegion',
+          'addressCountry': 'AU'
+        },
+        'deliveryTime': {
+          '@type': 'ShippingDeliveryTime',
+          'handlingTime': {
+            '@type': 'QuantitativeValue',
+            'minValue': 0,
+            'maxValue': 1,
+            'unitCode': 'DAY'
+          },
+          'transitTime': {
+            '@type': 'QuantitativeValue',
+            'minValue': 1,
+            'maxValue': 3,
+            'unitCode': 'DAY'
+          }
+        }
       }
     },
     'aggregateRating': {
@@ -135,7 +170,7 @@ export default async function ProductPage({ params }: Props) {
         '@type': 'ListItem',
         'position': 3,
         'name': getCategoryLabel(product.category),
-        'item': `${cleanBase}/shop?category=${product.category}`
+        'item': `${cleanBase}/shop/${product.category}`
       },
       {
         '@type': 'ListItem',

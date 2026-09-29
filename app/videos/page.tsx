@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import JsonLd from '@/components/JsonLd';
 
 const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
@@ -40,5 +41,50 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ClientPage />;
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': cleanBaseUrl
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'Prop Money Video Showcase',
+        'item': `${cleanBaseUrl}/videos`
+      }
+    ]
+  };
+
+  const videoSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    'name': 'Reviewing Prop Money Notes 20s, 50, and 100s',
+    'description': '4K macro camera test reviewing realistic Australian prop money notes ($20, $50, and $100 notes) under direct studio lighting.',
+    'thumbnailUrl': ['https://lh3.googleusercontent.com/d/1i3Rr-xJh9n_gvbAbtlwupWA6-GPB--GG'],
+    'uploadDate': '2026-07-20T10:00:00+10:00',
+    'duration': 'PT1M30S',
+    'contentUrl': `${cleanBaseUrl}/videos`,
+    'embedUrl': `${cleanBaseUrl}/videos`,
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Australian Prop Money',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${cleanBaseUrl}/icon.svg`
+      }
+    }
+  };
+
+  return (
+    <>
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={videoSchema} />
+      <ClientPage />
+    </>
+  );
 }

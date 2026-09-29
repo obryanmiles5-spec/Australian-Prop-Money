@@ -80,6 +80,7 @@ export default function FAQPage() {
 
       {/* FAQ Accordion List */}
       <div className="space-y-4 max-w-3xl mx-auto" id="faq-accordion-list">
+        <h2 className="sr-only">Frequently Asked Questions by Category</h2>
         {filteredFaqs.length === 0 ? (
           <p className="text-center py-10 text-gray-400 text-xs font-mono">No matching FAQs found.</p>
         ) : (
@@ -97,7 +98,7 @@ export default function FAQPage() {
                   className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none hover:bg-gray-50/30 transition-colors"
                   id={`btn-faq-accordion-${idx}`}
                 >
-                  <span className="font-serif font-bold text-xs sm:text-sm md:text-base text-black">{faq.question}</span>
+                  <h3 className="font-serif font-bold text-xs sm:text-sm md:text-base text-black">{faq.question}</h3>
                   <span className="text-gold shrink-0 font-bold font-mono text-lg">{isOpen ? '−' : '+'}</span>
                 </button>
                 {isOpen && (
@@ -127,9 +128,9 @@ export default function FAQPage() {
           <span className="text-gold uppercase font-mono tracking-widest text-[9px] font-bold block">
             Custom Inquiries Welcome
           </span>
-          <h3 className="font-serif font-bold text-lg sm:text-xl text-white">
+          <h2 className="font-serif font-bold text-lg sm:text-xl text-white">
             Still Have Questions About Scene Setup?
-          </h3>
+          </h2>
           <p className="text-xs text-gray-400 max-w-md mx-auto leading-relaxed">
             Need custom prop bundles, specialized distress treatments, or certificates of compliance for your legal department? Our team is standing by.
           </p>

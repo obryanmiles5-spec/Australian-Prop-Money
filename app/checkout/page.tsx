@@ -7,6 +7,10 @@ const cleanBaseUrl = baseUrl.replace(/\/$/, '');
 export const metadata: Metadata = {
   title: 'Checkout | Australian Prop Money',
   description: 'Securely complete your purchase of premium australian prop money and au prop money.',
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: `${cleanBaseUrl}/checkout`,
   },

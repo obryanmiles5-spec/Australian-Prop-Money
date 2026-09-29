@@ -83,7 +83,7 @@ export default function VideosPage() {
             <Lock className="w-4 h-4 text-gold" />
           </div>
           <div className="space-y-1 text-left">
-            <h4 className="text-xs font-bold text-gold uppercase tracking-wider">Protected Studio Media</h4>
+            <p className="text-xs font-bold text-gold uppercase tracking-wider">Protected Studio Media</p>
             <p className="text-xs text-zinc-300 leading-relaxed font-light">
               Right-click menu, video downloads, and stream copying are locked to preserve intellectual property and production compliance.
             </p>
@@ -261,59 +261,62 @@ export default function VideosPage() {
         </div>
 
         {/* 4K PRODUCTION SPECS & LEGAL HIGHLIGHTS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          {/* Card 1: Camera Test Rig */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-xs space-y-4 hover:border-gold/60 transition-all duration-300">
-            <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
-              <Camera className="w-5 h-5 text-black" />
+        <div className="space-y-4">
+          <h2 className="sr-only">Production Specifications & Security Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Card 1: Camera Test Rig */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-xs space-y-4 hover:border-gold/60 transition-all duration-300">
+              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <Camera className="w-5 h-5 text-black" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-sm text-black uppercase tracking-wider">4K Studio Camera Test</h3>
+                <p className="text-xs text-gray-600 leading-relaxed font-light">
+                  Recorded using anamorphic and macro cinema glass at f/2.0 to demonstrate optical sharpness, zero moiré, and anti-glare matte coating under continuous key lights.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px] font-mono text-gray-500">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00b67a]" />
+                <span>Tested on $20, $50 & $100 Stacks</span>
+              </div>
             </div>
-            <div className="space-y-1">
-              <h4 className="font-bold text-sm text-black uppercase tracking-wider">4K Studio Camera Test</h4>
-              <p className="text-xs text-gray-600 leading-relaxed font-light">
-                Recorded using anamorphic and macro cinema glass at f/2.0 to demonstrate optical sharpness, zero moiré, and anti-glare matte coating under continuous key lights.
-              </p>
-            </div>
-            <div className="pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px] font-mono text-gray-500">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#00b67a]" />
-              <span>Tested on $20, $50 & $100 Stacks</span>
-            </div>
-          </div>
 
-          {/* Card 2: Note Comparison */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-xs space-y-4 hover:border-gold/60 transition-all duration-300">
-            <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
-              <Layers className="w-5 h-5 text-black" />
+            {/* Card 2: Note Comparison */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-xs space-y-4 hover:border-gold/60 transition-all duration-300">
+              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <Layers className="w-5 h-5 text-black" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-sm text-black uppercase tracking-wider">20s, 50s & 100s Comparison</h3>
+                <p className="text-xs text-gray-600 leading-relaxed font-light">
+                  Comprehensive overview comparing the vibrant red ($20), gold/yellow ($50), and green ($100) color balance against real broadcast camera gamuts.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px] font-mono text-gray-500">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#00b67a]" />
+                <span>Full Double-Sided Realism</span>
+              </div>
             </div>
-            <div className="space-y-1">
-              <h4 className="font-bold text-sm text-black uppercase tracking-wider">20s, 50s & 100s Comparison</h4>
-              <p className="text-xs text-gray-600 leading-relaxed font-light">
-                Comprehensive overview comparing the vibrant red ($20), gold/yellow ($50), and green ($100) color balance against real broadcast camera gamuts.
-              </p>
-            </div>
-            <div className="pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px] font-mono text-gray-500">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#00b67a]" />
-              <span>Full Double-Sided Realism</span>
-            </div>
-          </div>
 
-          {/* Card 3: Security & Non-Deletable Protection */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-xs space-y-4 hover:border-gold/60 transition-all duration-300">
-            <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
-              <Lock className="w-5 h-5 text-black" />
+            {/* Card 3: Security & Non-Deletable Protection */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-xs space-y-4 hover:border-gold/60 transition-all duration-300">
+              <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                <Lock className="w-5 h-5 text-black" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="font-bold text-sm text-black uppercase tracking-wider">Protected Stream Security</h3>
+                <p className="text-xs text-gray-600 leading-relaxed font-light">
+                  This media is permanently locked and protected against deletion or unauthorized downloading. Right-click context menus and direct download captures are blocked.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px] font-mono text-gray-500">
+                <ShieldCheck className="w-3.5 h-3.5 text-gold" />
+                <span>Permanent Studio Showcase</span>
+              </div>
             </div>
-            <div className="space-y-1">
-              <h4 className="font-bold text-sm text-black uppercase tracking-wider">Protected Stream Security</h4>
-              <p className="text-xs text-gray-600 leading-relaxed font-light">
-                This media is permanently locked and protected against deletion or unauthorized downloading. Right-click context menus and direct download captures are blocked.
-              </p>
-            </div>
-            <div className="pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px] font-mono text-gray-500">
-              <ShieldCheck className="w-3.5 h-3.5 text-gold" />
-              <span>Permanent Studio Showcase</span>
-            </div>
-          </div>
 
+          </div>
         </div>
 
         {/* Bottom Contact & Quick Order Bar */}
@@ -323,9 +326,9 @@ export default function VideosPage() {
               <Sparkles className="w-3.5 h-3.5" />
               <span>Need Custom Stacks for Your Production?</span>
             </div>
-            <h3 className="font-serif text-xl sm:text-2xl font-light text-white" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="font-serif text-xl sm:text-2xl font-light text-white" style={{ fontFamily: 'Georgia, serif' }}>
               Ready-to-Shoot Australian Prop Stacks Delivered Fast
-            </h3>
+            </h2>
             <p className="text-xs text-zinc-400 font-light max-w-xl">
               Express overnight delivery to film sets, photo studios, and music video locations across Sydney, Melbourne, Brisbane, and Australia-wide.
             </p>

@@ -72,8 +72,10 @@ export default function BlogPage() {
       </div>
 
       {/* Blog Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {BLOG_POSTS.map((post) => (
+      <div className="max-w-6xl mx-auto space-y-4">
+        <h2 className="sr-only">Latest Production Articles & Guides</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {BLOG_POSTS.map((post) => (
           <Link
             key={post.id}
             href={`/blog/${post.id}`}
@@ -139,6 +141,7 @@ export default function BlogPage() {
             </div>
           </Link>
         ))}
+        </div>
       </div>
 
       {/* Dynamic Article Reader modal */}

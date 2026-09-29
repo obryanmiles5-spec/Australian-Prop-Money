@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, Suspense } from 'react';
+import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Search, Filter, ShieldAlert, Sparkles, SlidersHorizontal } from 'lucide-react';
 import { PRODUCTS, Product } from '@/lib/products';
@@ -157,15 +158,21 @@ function ShopContent() {
           {/* Category Tabs */}
           <div className="flex flex-wrap gap-1.5 w-full lg:w-auto" id="shop-category-filters">
             {[
-              { id: 'all', label: 'All Props' },
-              { id: 'australian-notes', label: 'Australian Notes' },
-              { id: 'bundle-packs', label: 'Bundle Packs' },
-              { id: 'accessories', label: 'Accessories' }
+              { id: 'all', label: 'All Props', href: '/shop' },
+              { id: 'australian-notes', label: 'Australian Notes', href: '/shop/australian-notes' },
+              { id: 'bundle-packs', label: 'Bundle Packs', href: '/shop/bundle-packs' },
+              { id: 'accessories', label: 'Accessories', href: '/shop/accessories' }
             ].map((cat) => (
-              <button
+              <Link
                 key={cat.id}
-                type="button"
-                onClick={() => handleCategoryChange(cat.id)}
+                href={cat.href}
+                onClick={(e) => {
+                  // Allow smooth in-page filter state switch without page reload if already on /shop
+                  if (window.location.pathname === '/shop') {
+                    e.preventDefault();
+                    handleCategoryChange(cat.id);
+                  }
+                }}
                 className={`px-4 py-2.5 rounded-xl text-xs uppercase tracking-widest font-bold transition-all shrink-0 ${
                   activeCategory === cat.id
                     ? 'bg-black text-white'
@@ -174,7 +181,7 @@ function ShopContent() {
                 id={`filter-tab-${cat.id}`}
               >
                 {cat.label}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -262,6 +269,7 @@ function ShopContent() {
 
       {/* Product Grid */}
       <div className="max-w-5xl mx-auto">
+        <h2 className="sr-only">Available Replica Prop Products</h2>
         {processedProducts.length === 0 ? (
           <div className="text-center py-20 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
             <SlidersHorizontal className="w-8 h-8 text-gray-300 mx-auto mb-3" />

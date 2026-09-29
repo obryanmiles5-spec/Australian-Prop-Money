@@ -228,6 +228,7 @@ const organizationSchema = {
   'name': 'Australian Prop Money',
   'alternateName': 'APM Prop Studios',
   'url': cleanBaseUrl,
+  'logo': `${cleanBaseUrl}/icon.svg`,
   'contactPoint': {
     '@type': 'ContactPoint',
     'telephone': '+61 468 187 340',
@@ -248,7 +249,10 @@ const websiteSchema = {
   'url': cleanBaseUrl,
   'potentialAction': {
     '@type': 'SearchAction',
-    'target': `${cleanBaseUrl}/shop?q={search_term_string}`,
+    'target': {
+      '@type': 'EntryPoint',
+      'urlTemplate': `${cleanBaseUrl}/shop?q={search_term_string}`
+    },
     'query-input': 'required name=search_term_string'
   }
 };

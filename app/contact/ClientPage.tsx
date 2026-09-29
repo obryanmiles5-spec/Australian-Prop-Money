@@ -199,7 +199,7 @@ export default function ContactPage() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5" id="contact-form-root">
               <div className="space-y-1">
-                <h3 className="font-serif font-bold text-lg text-black">Send A Message</h3>
+                <h2 className="font-serif font-bold text-lg text-black">Send A Message</h2>
                 <p className="text-xs text-gray-500">Provide details of your creative production requirements.</p>
               </div>
 

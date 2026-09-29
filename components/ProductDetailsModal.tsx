@@ -63,9 +63,9 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
         </button>
 
         {/* Left Side: Clean Product Image Showcase */}
-        <div className={`relative w-full md:w-1/2 aspect-square md:aspect-auto md:min-h-[450px] ${product.category === 'australian-notes' ? 'bg-zinc-100' : 'bg-[#0d0d10]'} p-6 flex flex-col justify-between text-white border-r border-zinc-200 overflow-hidden`}>
+        <div className="relative w-full md:w-1/2 aspect-square md:aspect-auto md:min-h-[450px] bg-zinc-100 p-6 flex flex-col justify-between text-white border-r border-zinc-200 overflow-hidden">
           {product.image ? (
-            <div className={`absolute inset-0 z-0 select-none flex items-center justify-center ${product.category === 'australian-notes' ? 'p-0' : 'p-6'}`}>
+            <div className="absolute inset-0 z-0 select-none flex items-center justify-center p-0">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -74,7 +74,7 @@ export default function ProductDetailsModal({ product, isOpen, onClose }: Produc
                 decoding="async"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 referrerPolicy="no-referrer"
-                className={`${product.category === 'australian-notes' ? 'object-cover' : 'object-contain p-4'} object-center`}
+                className="object-cover object-center"
               />
             </div>
           ) : (

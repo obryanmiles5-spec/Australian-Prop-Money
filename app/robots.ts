@@ -9,14 +9,20 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/checkout/success', '/api/*'],
+        disallow: ['/checkout', '/checkout/*', '/api/*'],
       },
       {
-        userAgent: ['GPTBot', 'ChatGPT-User', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'Bytespider', 'CCBot', 'Bingbot', 'Googlebot'],
+        userAgent: ['Googlebot', 'Bingbot', 'Applebot', 'DuckDuckBot', 'GPTBot', 'ChatGPT-User', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'Bytespider', 'CCBot'],
         allow: '/',
-        disallow: ['/checkout/success', '/api/*'],
+        disallow: ['/checkout', '/checkout/*', '/api/*'],
       }
     ],
-    sitemap: `${cleanBase}/sitemap.xml`,
+    sitemap: [
+      `${cleanBase}/sitemap.xml`,
+      `${cleanBase}/sitemap-products.xml`,
+      `${cleanBase}/sitemap-categories.xml`,
+      `${cleanBase}/sitemap-blog.xml`,
+      `${cleanBase}/sitemap-images.xml`,
+    ],
   };
 }

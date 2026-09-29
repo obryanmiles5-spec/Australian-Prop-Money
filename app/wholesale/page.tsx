@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import JsonLd from '@/components/JsonLd';
 
 const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
 const cleanBaseUrl = baseUrl.replace(/\/$/, '');
@@ -42,5 +43,41 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ClientPage />;
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': cleanBaseUrl
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'Wholesale & Bulk Production',
+        'item': `${cleanBaseUrl}/wholesale`
+      }
+    ]
+  };
+
+  const wholesaleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WholesaleStore',
+    'name': 'Australian Prop Money Wholesale',
+    'description': 'Bulk procurement and master crate dispatch for film studios, TV productions, and theatrical releases.',
+    'url': `${cleanBaseUrl}/wholesale`,
+    'telephone': '+61 468 187 340',
+    'email': 'info@australianpropmoney.org',
+    'priceRange': '$$$'
+  };
+
+  return (
+    <>
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={wholesaleSchema} />
+      <ClientPage />
+    </>
+  );
 }

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { PRODUCTS, BLOG_POSTS } from '@/lib/products';
+import { PRODUCTS, BLOG_POSTS, CATEGORIES } from '@/lib/products';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.APP_URL || 'https://www.australianpropmoney.org';
@@ -33,6 +33,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route.priority,
   }));
 
+  // Dynamic category paths with high priority
+  const categoryEntries: MetadataRoute.Sitemap = CATEGORIES.map((category) => ({
+    url: `${cleanBase}/shop/${category.id}`,
+    lastModified: now,
+    changeFrequency: 'daily',
+    priority: 0.9,
+    ...(category.image ? { images: [category.image] } : {}),
+  }));
+
   // Dynamic product paths with rich metadata
   const productEntries: MetadataRoute.Sitemap = PRODUCTS.map((product) => ({
     url: `${cleanBase}/product/${product.id}`,
@@ -51,6 +60,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(post.image ? { images: [post.image] } : {}),
   }));
 
-  return [...staticEntries, ...productEntries, ...blogEntries];
+  return [...staticEntries, ...categoryEntries, ...productEntries, ...blogEntries];
 }
 

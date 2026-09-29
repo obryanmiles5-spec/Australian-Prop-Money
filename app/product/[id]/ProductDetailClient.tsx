@@ -201,12 +201,19 @@ export default function ProductDetailClient({ productId }: { productId: string }
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16 animate-fade-in" id="product-detail-container">
       
       {/* Breadcrumb / Back button */}
-      <div className="flex items-center justify-between">
-        <Link href="/shop" className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold text-gray-400 hover:text-black transition-colors">
-          <ChevronLeft className="w-4 h-4" />
-          Back to Shop Inventory
-        </Link>
-        <span className="text-[10px] font-mono uppercase tracking-widest text-gold bg-gold/10 px-2.5 py-1 rounded border border-gold/15">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <nav aria-label="Breadcrumb" className="text-xs font-mono uppercase tracking-wider text-gray-400">
+          <ol className="flex items-center gap-2 flex-wrap">
+            <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+            <li>/</li>
+            <li><Link href="/shop" className="hover:text-black transition-colors">Shop</Link></li>
+            <li>/</li>
+            <li><Link href={`/shop/${product.category}`} className="hover:text-black transition-colors">{getCategoryLabel(product.category)}</Link></li>
+            <li>/</li>
+            <li className="text-black font-bold truncate max-w-[240px]" aria-current="page">{product.name}</li>
+          </ol>
+        </nav>
+        <span className="text-[10px] font-mono uppercase tracking-widest text-gold bg-gold/10 px-2.5 py-1 rounded border border-gold/15 shrink-0 self-start sm:self-auto">
           RBA Rule Compliant Prop
         </span>
       </div>
@@ -218,7 +225,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
         <div className="lg:col-span-6 space-y-4">
           
           {/* Main Visual Display */}
-          <div className={`relative aspect-square sm:aspect-[4/3] ${product.category === 'australian-notes' ? 'bg-zinc-100 border-zinc-200' : 'bg-[#0c0c0f] border-zinc-800'} overflow-hidden border rounded-3xl flex items-center justify-center`}>
+          <div className="relative aspect-square sm:aspect-[4/3] bg-zinc-100 border-zinc-200 overflow-hidden border rounded-3xl flex items-center justify-center">
             {product.image ? (
               <div className="absolute inset-0 z-0 select-none">
                 <Image
@@ -228,7 +235,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   referrerPolicy="no-referrer"
-                  className={`${product.category === 'australian-notes' ? 'object-cover p-0' : 'object-contain p-4'} object-center`}
+                  className="object-cover object-center"
                 />
               </div>
             ) : (
@@ -243,9 +250,9 @@ export default function ProductDetailClient({ productId }: { productId: string }
           
           {/* Headline & Pricing info */}
           <div className="space-y-3">
-            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 block font-mono">
+            <Link href={`/shop/${product.category}`} className="text-[10px] uppercase tracking-[0.2em] font-bold text-gold hover:underline block font-mono">
               {getCategoryLabel(product.category)}
-            </span>
+            </Link>
             <h1 className="font-serif text-3xl md:text-4xl font-light text-black tracking-tight leading-tight">
               {product.name}
             </h1>
@@ -275,7 +282,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
             
             {product.category === 'australian-notes' && (
               <div className="bg-gray-50 border border-gray-100 p-4 rounded-xl mt-4">
-                <h4 className="font-bold text-xs uppercase tracking-wider text-black mb-3">Value Received Per Stack</h4>
+                <p className="font-bold text-xs uppercase tracking-wider text-black mb-3">Value Received Per Stack</p>
                 {product.name.includes('New') ? (
                   <ul className="space-y-1.5 text-xs text-gray-600">
                     <li><span className="font-bold">$100s denomination</span> for $250 you get <span className="font-bold text-green-700">$25,000 AUD</span> worth prop money</li>
@@ -493,6 +500,7 @@ export default function ProductDetailClient({ productId }: { productId: string }
 
       {/* Tabs & Tech Specifications block */}
       <div className="space-y-6 pt-10 border-t border-gray-100">
+        <h2 className="sr-only">Product Specifications & Legal Compliance</h2>
         
         {/* Accordion Tabs selectors */}
         <div className="flex border-b border-gray-100">
@@ -582,16 +590,16 @@ export default function ProductDetailClient({ productId }: { productId: string }
         
         {/* Left: Review list (Grid-Span 7) */}
         <div className="lg:col-span-7 space-y-6">
-          <h3 className="font-serif text-2xl font-light text-black">
+          <h2 className="font-serif text-2xl font-light text-black">
             Verified Production Reviews ({reviews.length})
-          </h3>
+          </h2>
 
           <div className="space-y-4 divide-y divide-gray-100">
             {reviews.map((rev) => (
               <div key={rev.id} className="pt-4 first:pt-0 space-y-2">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-bold text-xs text-black">{rev.name}</h4>
+                    <h3 className="font-bold text-xs text-black">{rev.name}</h3>
                     <p className="text-[10px] text-gray-400 font-mono mt-0.5">{rev.role} • Verified Crew</p>
                   </div>
                   <div className="text-right">
@@ -696,9 +704,9 @@ export default function ProductDetailClient({ productId }: { productId: string }
       {/* RELATED REPLICAS SECTION */}
       {relatedProducts.length > 0 && (
         <div className="space-y-6 pt-10 border-t border-gray-100">
-          <h3 className="font-serif text-2xl font-light text-black">
+          <h2 className="font-serif text-2xl font-light text-black">
             Related Replicas
-          </h3>
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedProducts.map((p) => (
               <ProductCard
@@ -714,9 +722,9 @@ export default function ProductDetailClient({ productId }: { productId: string }
       {/* RECENTLY VIEWED SECTION */}
       {recentlyViewed.length > 1 && (
         <div className="space-y-6 pt-10 border-t border-gray-100">
-          <h3 className="font-serif text-2xl font-light text-black">
+          <h2 className="font-serif text-2xl font-light text-black">
             Recently Viewed Replicas
-          </h3>
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {recentlyViewed
               .filter((p) => p.id !== product.id)
@@ -731,9 +739,9 @@ export default function ProductDetailClient({ productId }: { productId: string }
                     <span className="text-gold font-bold text-[9px]">PROP</span>
                   </div>
                   <div className="min-w-0">
-                    <h4 className="font-serif font-bold text-xs text-black line-clamp-1 group-hover:text-gold transition-colors">
+                    <h3 className="font-serif font-bold text-xs text-black line-clamp-1 group-hover:text-gold transition-colors">
                       {p.name}
-                    </h4>
+                    </h3>
                     <span className="text-[10px] text-gray-400 font-mono block mt-0.5">${p.price.toFixed(2)} AUD</span>
                   </div>
                 </Link>
