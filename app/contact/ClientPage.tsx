@@ -107,20 +107,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Detail 1.5: Direct Call / SMS */}
-            <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-start gap-4">
-              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center shrink-0 border border-gold/15">
-                <Phone className="w-5 h-5 text-gold" />
-              </div>
-              <div className="space-y-1">
-                <span className="text-[10px] uppercase font-bold text-gray-400 block font-mono">Direct Call & SMS</span>
-                <a href="tel:+61468187340" className="text-sm font-bold text-black hover:text-gold transition-colors block">
-                  +61 468 187 340
-                </a>
-                <span className="text-[10px] text-gray-500 block">Available during operating hours</span>
-              </div>
-            </div>
-
             {/* Detail 2: WhatsApp */}
             {true && (
               <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-start gap-4">

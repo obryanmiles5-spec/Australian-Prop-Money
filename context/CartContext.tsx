@@ -40,13 +40,15 @@ interface CartContextType {
   clearCart: () => void;
   couponCode: string;
   discountPercentage: number;
+  discountAmount: number;
   applyCoupon: (code: string) => boolean;
   removeCoupon: () => void;
   paymentMethod: 'bank' | 'payid' | 'crypto';
   setPaymentMethod: (method: 'bank' | 'payid' | 'crypto') => void;
   cartCount: number;
   subtotal: number;
-  discountAmount: number;
+  shippingMethod: 'standard' | 'express';
+  setShippingMethod: (method: 'standard' | 'express') => void;
   shippingCost: number;
   total: number;
   isOrderSimulated: boolean;
@@ -76,6 +78,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [couponCode, setCouponCode] = useState('');
   const [discountPercentage, setDiscountPercentage] = useState(0);
+  const [shippingMethod, setShippingMethod] = useState<'standard' | 'express'>('standard');
   const [paymentMethod, setPaymentMethod] = useState<'bank' | 'payid' | 'crypto'>('bank');
   
   // Wishlist state
@@ -223,37 +226,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     removeCoupon();
   };
 
-  const applyCoupon = (code: string): boolean => {
-    const cleanCode = code.trim().toUpperCase();
-    if (cleanCode === 'PROPMONEYAU') {
-      setCouponCode('PROPMONEYAU');
-      setDiscountPercentage(30);
-      localStorage.setItem('amp_coupon', 'PROPMONEYAU');
-      localStorage.setItem('amp_discount', '30');
-      return true;
-    }
-    if (cleanCode === 'USDT10') {
-      setCouponCode('USDT10');
-      setDiscountPercentage(10);
-      localStorage.setItem('amp_coupon', 'USDT10');
-      localStorage.setItem('amp_discount', '10');
-      return true;
-    }
-    if (cleanCode === 'WELCOME10') {
-      setCouponCode('WELCOME10');
-      setDiscountPercentage(10);
-      localStorage.setItem('amp_coupon', 'WELCOME10');
-      localStorage.setItem('amp_discount', '10');
-      return true;
-    }
+  const applyCoupon = (_code: string): boolean => {
+    // Discounts disabled as requested
     return false;
   };
 
   const removeCoupon = () => {
     setCouponCode('');
     setDiscountPercentage(0);
-    localStorage.removeItem('amp_coupon');
-    localStorage.removeItem('amp_discount');
   };
 
   // Wishlist helpers
@@ -287,18 +267,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
-  // Dynamic calculations based on option pricing
-  const activeDiscountPercentage = (couponCode === 'PROPMONEYAU' && paymentMethod === 'crypto') 
-    ? 30 
-    : (couponCode === 'USDT10' && paymentMethod === 'crypto')
-      ? 10
-      : (couponCode === 'WELCOME10' ? 10 : 0);
-
+  // Standard shipping $25, Express shipping $60. No discounts.
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
   const subtotal = cart.reduce((acc, item) => acc + (item.priceAtTimeOfAdding ?? item.product?.price ?? 0) * item.quantity, 0);
-  const discountAmount = subtotal * (activeDiscountPercentage / 100);
-  const shippingCost = subtotal >= 200 ? 0 : 15.00; // Free shipping over $200, else $15 Express
-  const total = subtotal - discountAmount + shippingCost;
+  const discountAmount = 0;
+  const shippingCost = shippingMethod === 'express' ? 60.00 : 25.00;
+  const total = subtotal + shippingCost;
 
   const submitOrder = async (shippingInfo: ShippingInfo, method: 'email' | 'whatsapp' = 'email'): Promise<{ success: boolean; error?: string; details?: any }> => {
     const orderId = `AMP-${Math.floor(100000 + Math.random() * 900000)}`;
@@ -325,7 +299,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       paymentInstructions = `
         USDT (TRC20) Wallet Address: TPKN5X472PTe6NrjwjD1GYhqqxZcmR1c4g
         Bitcoin (BTC) Address: bc1qz0u5ctpj9v2fnn9mj5dlfsma9f533jjse9sxpa
-        Please send exactly: ${((subtotal - discountAmount + shippingCost) / 1.5).toFixed(2)} USD value
+        Please send exactly: ${((subtotal + shippingCost) / 1.5).toFixed(2)} USD value
         Reference / Memo: ${orderId}
       `;
     }
@@ -336,17 +310,35 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       shippingInfo,
       items: [...cart],
       subtotal,
-      discountAmount,
-      discountPercentage: activeDiscountPercentage,
+      discountAmount: 0,
+      discountPercentage: 0,
+      shippingMethod,
       shippingCost,
       total,
       paymentMethod,
       paymentInstructions,
-      couponCode: activeDiscountPercentage > 0 ? couponCode : '',
+      couponCode: '',
       requisitionMethod: method
     };
 
     try {
+      // 1. Dispatch order notification immediately via Resend API route
+      fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          orderId,
+          customerName: `${shippingInfo.firstName} ${shippingInfo.lastName}`,
+          customerEmail: shippingInfo.email,
+          totalAmount: total.toFixed(2),
+          shippingMethod,
+          shippingCost,
+          items: cart,
+          paymentMethod
+        })
+      }).catch(err => console.warn('Resend notification ping error:', err));
+
+      // 2. Dispatch full requisition email via send-email
       const res = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -395,15 +387,17 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         removeFromCart,
         updateQuantity,
         clearCart,
-        couponCode,
-        discountPercentage: activeDiscountPercentage,
+        couponCode: '',
+        discountPercentage: 0,
         applyCoupon,
         removeCoupon,
         paymentMethod,
         setPaymentMethod,
         cartCount,
         subtotal,
-        discountAmount,
+        discountAmount: 0,
+        shippingMethod,
+        setShippingMethod,
         shippingCost,
         total,
         isOrderSimulated,

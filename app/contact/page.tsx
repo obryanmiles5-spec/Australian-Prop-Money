@@ -48,16 +48,16 @@ export default function Page() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     'name': 'Contact Australian Prop Money',
-    'description': 'Direct studio contacts, email, phone, and WhatsApp rapid response desk for Australian prop currency orders.',
+    'description': 'Direct studio contact email and WhatsApp rapid response desk for Australian prop currency orders.',
     'url': `${cleanBaseUrl}/contact`,
     'mainEntity': {
       '@type': 'Organization',
       'name': 'Australian Prop Money',
-      'telephone': '+61 468 187 340',
+      'telephone': '+61 480 852 682',
       'email': 'info@australianpropmoney.org',
       'contactPoint': {
         '@type': 'ContactPoint',
-        'telephone': '+61 468 187 340',
+        'telephone': '+61 480 852 682',
         'contactType': 'customer support',
         'availableLanguage': 'English'
       }

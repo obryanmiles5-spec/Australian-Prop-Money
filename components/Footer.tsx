@@ -66,7 +66,6 @@ export default function Footer() {
               Premium replica currency for film, television, theatre, commercial photography, financial training, and creative media productions. Formulated with color-calibrated matte finishes to achieve 100% realistic representation on modern digital lenses.
             </p>
             <div className="text-[9.5px] text-gray-400 uppercase tracking-wider space-y-1.5 mt-2">
-              <p>Phone: <a href="tel:+61468187340" className="hover:text-gold transition-colors text-white">+61 468 187 340</a></p>
               <p>Email: <a href="mailto:info@australianpropmoney.org" className="hover:text-gold transition-colors text-white">info@australianpropmoney.org</a></p>
               <p>
                 <a 

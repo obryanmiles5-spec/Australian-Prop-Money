@@ -231,7 +231,7 @@ const organizationSchema = {
   'logo': `${cleanBaseUrl}/icon.svg`,
   'contactPoint': {
     '@type': 'ContactPoint',
-    'telephone': '+61 468 187 340',
+    'telephone': '+61 480 852 682',
     'contactType': 'customer service',
     'email': 'info@australianpropmoney.org',
     'availableLanguage': 'en'
@@ -263,7 +263,7 @@ const localBusinessSchema = {
   'name': 'Australian Prop Money',
   '@id': `${cleanBaseUrl}/#localbusiness`,
   'url': cleanBaseUrl,
-  'telephone': '+61468187340',
+  'telephone': '+61480852682',
   'priceRange': '$$',
   'address': {
     '@type': 'PostalAddress',

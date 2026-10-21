@@ -17,11 +17,8 @@ export default function SideCart() {
     removeFromCart,
     updateQuantity,
     subtotal,
-    discountAmount,
-    discountPercentage,
-    couponCode,
-    applyCoupon,
-    removeCoupon,
+    shippingMethod,
+    setShippingMethod,
     shippingCost,
     total,
     wishlist,
@@ -31,23 +28,7 @@ export default function SideCart() {
     setActiveCartTab
   } = useCart();
 
-  const [couponInput, setCouponInput] = useState('');
-  const [couponError, setCouponError] = useState(false);
-  const [couponSuccess, setCouponSuccess] = useState(false);
-
   if (!isCartOpen) return null;
-
-  const handleApplyCoupon = (e: React.FormEvent) => {
-    e.preventDefault();
-    setCouponError(false);
-    setCouponSuccess(false);
-    const success = applyCoupon(couponInput);
-    if (success) {
-      setCouponSuccess(true);
-    } else {
-      setCouponError(true);
-    }
-  };
 
   const handleProceedToCheckout = () => {
     setIsCartOpen(false);
@@ -288,59 +269,50 @@ export default function SideCart() {
           {activeCartTab === 'cart' && cart.length > 0 && (
             <div className="border-t border-gray-100 p-6 bg-gray-50/50 space-y-4">
               
-              {/* Coupon Input Form */}
-              <form onSubmit={handleApplyCoupon} className="space-y-2">
-                <label className="text-[9px] uppercase font-bold text-gray-400 tracking-wider block">Promo Coupon</label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={couponInput}
-                    onChange={(e) => setCouponInput(e.target.value)}
-                    placeholder="e.g. WELCOME10"
-                    className="flex-1 bg-white border border-gray-200 px-3 py-1.5 text-xs rounded-xs focus:outline-gold uppercase text-black"
-                    id="input-cart-coupon"
-                  />
+              {/* Shipping Method Selector */}
+              <div className="space-y-2">
+                <label className="text-[9px] uppercase font-bold text-gray-500 tracking-wider block">Shipping Method</label>
+                <div className="grid grid-cols-2 gap-2 text-xs">
                   <button
-                    type="submit"
-                    className="bg-[#111111] hover:bg-gold text-white hover:text-black text-[9px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-xs transition-all shrink-0"
-                    id="btn-cart-coupon-apply"
+                    type="button"
+                    onClick={() => setShippingMethod('standard')}
+                    className={`p-2 rounded-xs border text-left transition-all cursor-pointer ${
+                      shippingMethod === 'standard'
+                        ? 'border-black bg-white ring-1 ring-black shadow-2xs'
+                        : 'border-gray-200 bg-white/60 hover:border-gray-300'
+                    }`}
                   >
-                    Apply
+                    <span className="font-bold text-[11px] text-black block">Standard</span>
+                    <span className="font-mono text-[10px] text-gray-600 block mt-0.5">$25.00 AUD</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setShippingMethod('express')}
+                    className={`p-2 rounded-xs border text-left transition-all cursor-pointer ${
+                      shippingMethod === 'express'
+                        ? 'border-black bg-white ring-1 ring-black shadow-2xs'
+                        : 'border-gray-200 bg-white/60 hover:border-gray-300'
+                    }`}
+                  >
+                    <span className="font-bold text-[11px] text-black block">Express</span>
+                    <span className="font-mono text-[10px] text-gray-600 block mt-0.5">$60.00 AUD</span>
                   </button>
                 </div>
-                
-                {couponCode && (
-                  <div className="flex items-center justify-between bg-emerald-50 text-emerald-800 p-2 rounded-xs text-xs border border-emerald-100">
-                    <span>Code <strong>{couponCode}</strong> Active ({discountPercentage}% Off)</span>
-                    <button type="button" onClick={removeCoupon} className="text-red-600 font-bold text-[9px] uppercase hover:underline">Remove</button>
-                  </div>
-                )}
-                
-                {couponError && (
-                  <p className="text-[9px] text-red-500 font-semibold">Invalid coupon code. Try &apos;WELCOME10&apos;.</p>
-                )}
-              </form>
+              </div>
 
               <div className="space-y-1.5 text-xs border-t border-gray-100 pt-3">
                 <div className="flex justify-between text-gray-500">
                   <span>Subtotal</span>
-                  <span className="text-black font-semibold font-mono">${subtotal.toFixed(2)}</span>
+                  <span className="text-black font-semibold font-mono">${subtotal.toFixed(2)} AUD</span>
                 </div>
-                {discountAmount > 0 && (
-                  <div className="flex justify-between text-emerald-600">
-                    <span>Discount ({discountPercentage}%)</span>
-                    <span className="font-mono">-${discountAmount.toFixed(2)}</span>
-                  </div>
-                )}
                 <div className="flex justify-between text-gray-500">
-                  <span>Express Dispatch</span>
-                  <span className="text-black font-semibold font-mono">
-                    {shippingCost === 0 ? 'FREE' : `$${shippingCost.toFixed(2)}`}
-                  </span>
+                  <span>{shippingMethod === 'express' ? 'Express Dispatch' : 'Standard Shipping'}</span>
+                  <span className="text-black font-semibold font-mono">${shippingCost.toFixed(2)} AUD</span>
                 </div>
-                <div className="flex justify-between text-sm text-black border-t pt-2 mt-2">
-                  <span className="font-medium">Total Payable (AUD)</span>
-                  <span className="text-black font-bold text-md font-mono">${total.toFixed(2)}</span>
+                <div className="flex justify-between text-sm text-black border-t pt-2 mt-2 font-bold">
+                  <span>Total Payable (AUD)</span>
+                  <span className="text-gold-dark font-mono text-base">${total.toFixed(2)} AUD</span>
                 </div>
               </div>
 

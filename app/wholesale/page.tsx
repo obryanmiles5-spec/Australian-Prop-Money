@@ -68,7 +68,7 @@ export default function Page() {
     'name': 'Australian Prop Money Wholesale',
     'description': 'Bulk procurement and master crate dispatch for film studios, TV productions, and theatrical releases.',
     'url': `${cleanBaseUrl}/wholesale`,
-    'telephone': '+61 468 187 340',
+    'telephone': '+61 480 852 682',
     'email': 'info@australianpropmoney.org',
     'priceRange': '$$$'
   };

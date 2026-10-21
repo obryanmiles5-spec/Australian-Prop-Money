@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
 
     const smtpUser = process.env.SMTP_USER || process.env.SMTP_FROM || SITE_CANONICAL_EMAIL;
     const smtpPass = process.env.SMTP_PASS;
-    const siteRecipient = process.env.CONTACT_EMAIL || process.env.ORDER_EMAIL || SITE_CANONICAL_EMAIL;
+    const siteRecipient = process.env.NOTIFICATION_EMAIL || process.env.CONTACT_EMAIL || process.env.ORDER_EMAIL || SITE_CANONICAL_EMAIL;
 
     // Determine subject and sender label based on submission type
     let emailSubject = `[Prop Money Support] ${subject || 'New Web Submission'}`;
@@ -102,14 +102,9 @@ export async function POST(req: NextRequest) {
               <span style="color:#555;">Subtotal:</span>
               <strong style="margin-left: auto;">$${(details.subtotal || 0).toFixed(2)} AUD</strong>
             </div>
-            ${details.discountAmount > 0 ? `
-            <div style="display: flex; justify-content: space-between; margin-bottom: 6px; color: #b12704;">
-              <span>Discount (${details.discountPercentage}% ${details.couponCode ? '- ' + details.couponCode : ''}):</span>
-              <strong style="margin-left: auto;">-$${Number(details.discountAmount).toFixed(2)} AUD</strong>
-            </div>` : ''}
             <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
-              <span style="color:#555;">Express Secured Courier:</span>
-              <strong style="margin-left: auto;">${details.shippingCost === 0 ? 'FREE' : `$${Number(details.shippingCost).toFixed(2)} AUD`}</strong>
+              <span style="color:#555;">Shipping (${details.shippingMethod === 'express' ? 'Express Shipping ($60.00)' : 'Standard Shipping ($25.00)'}):</span>
+              <strong style="margin-left: auto;">$${Number(details.shippingCost || 25).toFixed(2)} AUD</strong>
             </div>
             <div style="display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 8px; margin-top: 8px; font-size: 15px;">
               <strong>TOTAL PAYABLE:</strong>

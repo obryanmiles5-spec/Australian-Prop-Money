@@ -17,11 +17,8 @@ export default function CheckoutPage() {
   const {
     cart,
     subtotal,
-    discountAmount,
-    discountPercentage,
-    couponCode,
-    applyCoupon,
-    removeCoupon,
+    shippingMethod,
+    setShippingMethod,
     shippingCost,
     total,
     paymentMethod,
@@ -46,10 +43,6 @@ export default function CheckoutPage() {
     specialNotes: ''
   });
 
-  const [couponInput, setCouponInput] = useState('');
-  const [couponError, setCouponError] = useState(false);
-  const [couponSuccess, setCouponSuccess] = useState(false);
-  
   const [formErrors, setFormErrors] = useState<string[]>([]);
   const [copiedState, setCopiedState] = useState<string | null>(null);
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -63,18 +56,6 @@ export default function CheckoutPage() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleApplyCouponInCheckout = (e: React.FormEvent) => {
-    e.preventDefault();
-    setCouponError(false);
-    setCouponSuccess(false);
-    const success = applyCoupon(couponInput);
-    if (success) {
-      setCouponSuccess(true);
-    } else {
-      setCouponError(true);
-    }
   };
 
   const handleCopy = (text: string, label: string) => {
@@ -182,7 +163,7 @@ ${itemsStr}
 
 ---------------------------------------
 *Subtotal:* $${details.subtotal.toFixed(2)} AUD
-${details.discountAmount > 0 ? `*Discount (${details.discountPercentage}%):* -$${details.discountAmount.toFixed(2)} AUD\n` : ''}*Express Shipping:* ${details.shippingCost === 0 ? 'FREE' : `$${details.shippingCost.toFixed(2)} AUD`}
+*Shipping (${details.shippingMethod === 'express' ? 'Express Shipping ($60.00)' : 'Standard Shipping ($25.00)'}):* $${details.shippingCost.toFixed(2)} AUD
 *TOTAL PAYABLE:* $${details.total.toFixed(2)} AUD
 
 *SHIPPING ADDRESS:*
@@ -230,8 +211,7 @@ INVENTORY ITEMS:
 ${itemsStr}
 
 Subtotal: $${details.subtotal.toFixed(2)} AUD
-Discount: -$${details.discountAmount.toFixed(2)} AUD
-Shipping: ${details.shippingCost === 0 ? 'FREE' : `$${details.shippingCost.toFixed(2)} AUD`}
+Shipping (${details.shippingMethod === 'express' ? 'Express Shipping ($60.00)' : 'Standard Shipping ($25.00)'}): $${details.shippingCost.toFixed(2)} AUD
 TOTAL PAYABLE: $${details.total.toFixed(2)} AUD
 
 SHIPPING ADDRESS:
@@ -731,61 +711,63 @@ Please confirm receipt of this order and reply with tracking details once transf
               ))}
             </div>
 
-            {/* Subtotal list */}
-            <div className="space-y-2 border-t pt-4 text-xs font-sans">
-              <div className="flex justify-between text-gray-500">
-                <span>Subtotal</span>
-                <span className="text-black font-semibold font-mono">${subtotal.toFixed(2)}</span>
-              </div>
-              {discountAmount > 0 && (
-                <div className="flex justify-between text-emerald-600">
-                  <span>Discount Coupon ({discountPercentage}%)</span>
-                  <span className="font-mono">-${discountAmount.toFixed(2)}</span>
-                </div>
-              )}
-              <div className="flex justify-between text-gray-500">
-                <span>Express Courier Dispatch</span>
-                <span className="text-black font-semibold font-mono">{shippingCost === 0 ? 'FREE' : `$${shippingCost.toFixed(2)}`}</span>
-              </div>
-              <div className="flex justify-between text-sm text-black border-t pt-3 mt-1 font-bold">
-                <span>Total Payable (AUD)</span>
-                <span className="text-gold-dark text-base font-mono">${total.toFixed(2)}</span>
-              </div>
-            </div>
-
-            {/* Quick checkout coupon applying box */}
-            <div className="bg-white p-3 rounded-2xl border border-gray-100 text-[10px] text-gray-400 flex items-center justify-between">
-              <span>Have a promo code? Apply below</span>
-              {couponCode ? (
-                <span className="text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded uppercase">{couponCode} Active</span>
-              ) : (
-                <span className="font-semibold">WELCOME10 = 10% Off</span>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={couponInput}
-                  onChange={(e) => setCouponInput(e.target.value)}
-                  placeholder="WELCOME10"
-                  className="flex-1 bg-white border border-gray-200 px-3 py-2 text-xs rounded-xl focus:outline-gold uppercase text-black"
-                  id="checkout-coupon-input"
-                />
+            {/* Shipping Method Selector */}
+            <div className="space-y-3 border-t border-gray-200 pt-4">
+              <label className="text-[10px] uppercase font-bold text-gray-500 tracking-wider block">
+                Select Shipping Method *
+              </label>
+              <div className="space-y-2">
                 <button
                   type="button"
-                  onClick={handleApplyCouponInCheckout}
-                  className="bg-black hover:bg-gold text-white hover:text-black text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-xl transition-all"
-                  id="checkout-coupon-btn"
+                  onClick={() => setShippingMethod('standard')}
+                  className={`w-full p-3.5 rounded-2xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                    shippingMethod === 'standard'
+                      ? 'border-black bg-white shadow-xs ring-1 ring-black'
+                      : 'border-gray-200 bg-white/70 hover:border-gray-300'
+                  }`}
+                  id="shipping-option-standard"
                 >
-                  Apply
+                  <div className="space-y-0.5">
+                    <span className="font-bold text-xs text-black block">Standard Shipping</span>
+                    <span className="text-[10px] text-gray-400 block">3-5 business days delivery across Australia</span>
+                  </div>
+                  <span className="font-mono font-bold text-sm text-black shrink-0">$25.00 AUD</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setShippingMethod('express')}
+                  className={`w-full p-3.5 rounded-2xl border text-left transition-all cursor-pointer flex items-center justify-between ${
+                    shippingMethod === 'express'
+                      ? 'border-black bg-white shadow-xs ring-1 ring-black'
+                      : 'border-gray-200 bg-white/70 hover:border-gray-300'
+                  }`}
+                  id="shipping-option-express"
+                >
+                  <div className="space-y-0.5">
+                    <span className="font-bold text-xs text-black block">Express Shipping</span>
+                    <span className="text-[10px] text-gray-400 block">1-2 business days priority express dispatch</span>
+                  </div>
+                  <span className="font-mono font-bold text-sm text-black shrink-0">$60.00 AUD</span>
                 </button>
               </div>
-              {couponSuccess && <p className="text-[9px] text-emerald-600 font-bold">Coupon successfully applied!</p>}
-              {couponError && <p className="text-[9px] text-red-500 font-bold">Invalid code. Try &apos;WELCOME10&apos;.</p>}
             </div>
 
+            {/* Subtotal list */}
+            <div className="space-y-2 border-t border-gray-200 pt-4 text-xs font-sans">
+              <div className="flex justify-between text-gray-500">
+                <span>Subtotal</span>
+                <span className="text-black font-semibold font-mono">${subtotal.toFixed(2)} AUD</span>
+              </div>
+              <div className="flex justify-between text-gray-500">
+                <span>{shippingMethod === 'express' ? 'Express Shipping' : 'Standard Shipping'}</span>
+                <span className="text-black font-semibold font-mono">${shippingCost.toFixed(2)} AUD</span>
+              </div>
+              <div className="flex justify-between text-sm text-black border-t border-gray-200 pt-3 mt-1 font-bold">
+                <span>Total Payable (AUD)</span>
+                <span className="text-gold-dark text-base font-mono">${total.toFixed(2)} AUD</span>
+              </div>
+            </div>
           </div>
 
           {/* Secure Offline Gateway selectors */}
@@ -849,11 +831,6 @@ Please confirm receipt of this order and reply with tracking details once transf
                 }`}
                 id="checkout-pay-label-crypto"
               >
-                {(couponCode === 'PROPMONEYAU' || couponCode === 'USDT10') && (
-                  <span className="absolute -top-1.5 -right-1 bg-red-500 text-white font-sans text-[7px] px-2 py-0.5 rounded-full animate-bounce">
-                    {couponCode === 'PROPMONEYAU' ? '30% Off' : '10% Off'}
-                  </span>
-                )}
                 <input
                   type="radio"
                   name="checkoutPaymentMethod"
@@ -864,7 +841,7 @@ Please confirm receipt of this order and reply with tracking details once transf
                 />
                 <div className="text-xs">
                   <span className="font-bold text-black block">Cryptocurrency (USDT / BTC)</span>
-                  <p className="text-gray-400 mt-0.5 leading-tight text-[10px]">Secure, fast, and anonymous. We offer an extra 10% discount on USDT transfers with coupon <strong>USDT10</strong> (or 30% for BTC with <strong>PROPMONEYAU</strong>).</p>
+                  <p className="text-gray-400 mt-0.5 leading-tight text-[10px]">Secure, fast, and anonymous cryptographic settlement via USDT (TRC20) or Bitcoin (BTC).</p>
                 </div>
               </label>
 
