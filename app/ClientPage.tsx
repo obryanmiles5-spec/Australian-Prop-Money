@@ -84,19 +84,19 @@ export default function HomePage() {
               {/* ABN VERIFIED: Link to ABN Website */}
               <div className="pt-0.5">
                 <a
-                  href="https://abr.business.gov.au/ABN/View?id=674267559"
+                  href="https://abr.business.gov.au/ABN/View?id=50181247291"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/70 hover:bg-black/90 border border-emerald-500/60 hover:border-emerald-400 text-white transition-all duration-300 shadow-md backdrop-blur-xs group"
                   id="hero-abn-verified-link"
-                  aria-label="ABN VERIFIED: 46 674 267 559 - View Australian Business Register Record"
+                  aria-label="ABN VERIFIED: 50 181 247 291 - View Australian Business Register Record"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                   <span className="text-[10.5px] sm:text-xs font-mono font-bold tracking-wider text-emerald-400 uppercase">
                     ABN VERIFIED:
                   </span>
                   <span className="text-[10.5px] sm:text-xs font-mono font-bold text-white tracking-wide group-hover:text-gold transition-colors underline decoration-gold/60 underline-offset-2">
-                    46 674 267 559 ↗
+                    50 181 247 291 ↗
                   </span>
                 </a>
               </div>

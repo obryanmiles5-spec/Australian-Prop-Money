@@ -227,6 +227,7 @@ const organizationSchema = {
   '@type': 'Organization',
   'name': 'Australian Prop Money',
   'alternateName': 'APM Prop Studios',
+  'taxID': '50 181 247 291',
   'url': cleanBaseUrl,
   'logo': `${cleanBaseUrl}/icon.svg`,
   'contactPoint': {
@@ -262,6 +263,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   'name': 'Australian Prop Money',
   '@id': `${cleanBaseUrl}/#localbusiness`,
+  'taxID': '50 181 247 291',
   'url': cleanBaseUrl,
   'telephone': '+61480852682',
   'priceRange': '$$',

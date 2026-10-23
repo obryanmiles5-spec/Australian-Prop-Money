@@ -69,15 +69,15 @@ export default function Footer() {
               <p>Email: <a href="mailto:info@australianpropmoney.org" className="hover:text-gold transition-colors text-white">info@australianpropmoney.org</a></p>
               <p>
                 <a 
-                  href="https://abr.business.gov.au/ABN/View?id=674267559" 
+                  href="https://abr.business.gov.au/ABN/View?id=50181247291" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors font-mono font-bold"
-                  aria-label="View ABN Verification 46 674 267 559 on Australian Business Register"
+                  aria-label="View ABN Verification 50 181 247 291 on Australian Business Register"
                   id="footer-abn-link"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  ABN: 46 674 267 559 (Verified) ↗
+                  ABN: 50 181 247 291 (Verified) ↗
                 </a>
               </p>
             </div>
