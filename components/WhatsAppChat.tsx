@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send } from 'lucide-react';
+import { MessageSquare, X, Send, Phone } from 'lucide-react';
 import { cleanWhatsAppNumber } from '@/lib/utils';
 
 export default function WhatsAppChat() {
@@ -10,7 +10,7 @@ export default function WhatsAppChat() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [messageText, setMessageText] = useState('Hi, I need assistance with prop money for my upcoming production.');
 
-  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682');
+  const whatsappNumber = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480802872');
 
   useEffect(() => {
     if (!whatsappNumber) return;
@@ -57,13 +57,13 @@ export default function WhatsAppChat() {
                     Prop Specialist Chat
                     <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
                   </div>
-                  <p className="text-[10px] text-emerald-100 font-sans">WhatsApp: +61 480 852 682 • Fast Reply</p>
+                  <p className="text-[10px] text-emerald-100 font-sans">Calls & WhatsApp: +61 480 802 872 • Fast Reply</p>
                 </div>
               </div>
               <button 
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="hover:bg-white/10 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-colors text-white"
+                className="hover:bg-white/10 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-colors text-white cursor-pointer"
                 aria-label="Close chat window"
                 id="btn-close-whatsapp-box"
               >
@@ -90,15 +90,26 @@ export default function WhatsAppChat() {
                 className="w-full border border-gray-200 p-3 rounded-xl text-xs text-gray-800 focus:outline-[#075e54] focus:ring-0 resize-none font-sans"
                 id="whatsapp-message-input"
               />
-              <button
-                type="button"
-                onClick={handleStartChat}
-                className="w-full bg-[#25d366] hover:bg-[#128c7e] text-white py-3 min-h-[44px] rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2"
-                id="btn-send-whatsapp-message"
-              >
-                Start Live WhatsApp Chat
-                <Send className="w-3.5 h-3.5" />
-              </button>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={handleStartChat}
+                  className="flex-1 bg-[#25d366] hover:bg-[#128c7e] text-white py-3 min-h-[44px] rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                  id="btn-send-whatsapp-message"
+                >
+                  WhatsApp Chat
+                  <Send className="w-3.5 h-3.5" />
+                </button>
+                <a
+                  href="tel:+61480802872"
+                  className="bg-black hover:bg-gold text-white hover:text-black px-4 py-3 min-h-[44px] rounded-xl text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-1.5 shrink-0"
+                  id="btn-direct-call-widget"
+                  aria-label="Direct Call +61 480 802 872"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  Call
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Package, ShieldAlert, Truck, Sparkles, MessageSquare } from 'lucide-react';
+import { Package, ShieldAlert, Truck, Sparkles, MessageSquare, Phone } from 'lucide-react';
 import WholesaleForm from '@/components/WholesaleForm';
 import { cleanWhatsAppNumber } from '@/lib/utils';
 
@@ -91,18 +91,28 @@ export default function WholesalePage() {
                 </h3>
               </div>
               <p className="text-xs text-gray-400 leading-relaxed">
-                Have a rush scene starting tomorrow or need customized distressing references (burned edges, blood splatters, water damage)? Connect instantly on our verified WhatsApp line.
+                Have a rush scene starting tomorrow or need customized distressing references (burned edges, blood splatters, water damage)? Connect instantly on our verified phone & WhatsApp line.
               </p>
-              <a 
-                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682")}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-full bg-white text-black hover:bg-gold hover:text-black py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-center transition-all flex items-center justify-center gap-2"
-                id="wholesale-wa-chat-box"
-              >
-                <MessageSquare className="w-4 h-4 text-emerald-500" />
-                Live WhatsApp: +61 480 852 682
-              </a>
+              <div className="space-y-2">
+                <a 
+                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480802872")}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-full bg-white text-black hover:bg-gold hover:text-black py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-center transition-all flex items-center justify-center gap-2"
+                  id="wholesale-wa-chat-box"
+                >
+                  <MessageSquare className="w-4 h-4 text-emerald-500" />
+                  Live WhatsApp: +61 480 802 872
+                </a>
+                <a 
+                  href="tel:+61480802872"
+                  className="w-full bg-white/10 hover:bg-white/20 text-white py-2.5 rounded-xl font-bold text-xs uppercase tracking-widest text-center transition-all flex items-center justify-center gap-2 border border-white/10"
+                  id="wholesale-call-box"
+                >
+                  <Phone className="w-4 h-4 text-gold" />
+                  Direct Call: +61 480 802 872
+                </a>
+              </div>
             </div>
           )}
 

@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { sendZohoMail, SITE_CANONICAL_EMAIL } from '@/lib/zoho-mail';
 
-const SITE_CANONICAL_EMAIL = 'info@australianpropmoney.org';
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
   try {
@@ -198,14 +199,13 @@ export async function POST(req: NextRequest) {
 
     // Check if SMTP credentials exist in environment
     if (!smtpPass) {
-      console.warn('⚠️ SMTP_PASS is not set in environment secrets. Email simulated for testing, logged payload to console.');
-      console.log('📬 Simulated Email Dispatch to:', siteRecipient, { type, name, email, subject });
+      console.warn(`⚠️ SMTP_PASS is not set in Vercel environment variables. Email to ${siteRecipient} recorded. Set SMTP_PASS in Vercel to activate live Zoho Mail delivery.`);
       
       return NextResponse.json({
         success: true,
-        message: `Inquiry recorded. (Notice: Add SMTP_PASS in Settings to trigger live Zoho email delivery to ${siteRecipient})`,
+        message: `Inquiry recorded for ${siteRecipient}. Note: Add SMTP_PASS in Vercel to receive real-time notifications in your Zoho Mail app.`,
         simulated: true,
-        destination: siteRecipient
+        destination: siteRecipient,
       });
     }
 

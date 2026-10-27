@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { MessageSquare, Truck } from 'lucide-react';
+import { MessageSquare, Truck, Phone } from 'lucide-react';
 
 const ANNOUNCEMENTS = [
   { text: 'ABN: 50 181 247 291 | Australian Prop Money', icon: null },
   { text: 'Standard Shipping $25 | Express Shipping $60 Australia-Wide', icon: Truck },
-  { text: 'WhatsApp Live Chat: +61 480 852 682', icon: MessageSquare },
+  { text: 'Direct Calls & WhatsApp: +61 480 802 872', icon: Phone },
   { text: 'Follow us on TikTok @AustralianPropMoney', icon: null },
 ];
 

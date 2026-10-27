@@ -177,7 +177,7 @@ export default function WholesaleForm() {
                 Submit Another Request
               </button>
               <a
-                href="https://wa.me/61480852682"
+                href="https://wa.me/61480802872"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-black hover:bg-gold text-white hover:text-black px-6 py-3 rounded-lg text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-2"
@@ -185,6 +185,14 @@ export default function WholesaleForm() {
               >
                 <MessageSquare className="w-4 h-4 text-emerald-500" />
                 WhatsApp Priority
+              </a>
+              <a
+                href="tel:+61480802872"
+                className="bg-white border border-gray-200 hover:border-black text-black px-5 py-3 rounded-lg text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-2"
+                id="btn-wholesale-call"
+              >
+                <Phone className="w-4 h-4 text-gold" />
+                Call +61 480 802 872
               </a>
             </div>
           </div>

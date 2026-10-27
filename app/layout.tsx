@@ -232,7 +232,7 @@ const organizationSchema = {
   'logo': `${cleanBaseUrl}/icon.svg`,
   'contactPoint': {
     '@type': 'ContactPoint',
-    'telephone': '+61 480 852 682',
+    'telephone': '+61 480 802 872',
     'contactType': 'customer service',
     'email': 'info@australianpropmoney.org',
     'availableLanguage': 'en'
@@ -265,7 +265,7 @@ const localBusinessSchema = {
   '@id': `${cleanBaseUrl}/#localbusiness`,
   'taxID': '50 181 247 291',
   'url': cleanBaseUrl,
-  'telephone': '+61480852682',
+  'telephone': '+61480802872',
   'priceRange': '$$',
   'address': {
     '@type': 'PostalAddress',

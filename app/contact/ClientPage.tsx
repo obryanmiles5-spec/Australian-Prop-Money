@@ -107,27 +107,39 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Detail 2: WhatsApp */}
-            {true && (
-              <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-start gap-4">
-                <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center shrink-0 border border-gold/15">
-                  <MessageSquare className="w-5 h-5 text-gold" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-bold text-gray-400 block font-mono">WhatsApp Rapid Support</span>
-                  <a 
-                    href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480852682')}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-sm font-bold text-black hover:text-gold transition-colors block"
-                    id="contact-whatsapp-link-box"
-                  >
-                    +61 480 852 682
-                  </a>
-                  <span className="text-[10px] text-emerald-600 font-semibold block">Available 24/7 for creative sets</span>
-                </div>
+            {/* Detail 1.5: Direct Phone Call */}
+            <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-start gap-4">
+              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center shrink-0 border border-gold/15">
+                <Phone className="w-5 h-5 text-gold" />
               </div>
-            )}
+              <div className="space-y-1">
+                <span className="text-[10px] uppercase font-bold text-gray-400 block font-mono">Direct Phone Call</span>
+                <a href="tel:+61480802872" className="text-sm font-bold text-black hover:text-gold transition-colors block">
+                  +61 480 802 872
+                </a>
+                <span className="text-[10px] text-gray-400 block">Immediate studio coordinator line</span>
+              </div>
+            </div>
+
+            {/* Detail 2: WhatsApp */}
+            <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-start gap-4">
+              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center shrink-0 border border-gold/15">
+                <MessageSquare className="w-5 h-5 text-gold" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[10px] uppercase font-bold text-gray-400 block font-mono">WhatsApp Rapid Support</span>
+                <a 
+                  href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '61480802872')}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-sm font-bold text-black hover:text-gold transition-colors block"
+                  id="contact-whatsapp-link-box"
+                >
+                  +61 480 802 872
+                </a>
+                <span className="text-[10px] text-emerald-600 font-semibold block">Available 24/7 for creative sets</span>
+              </div>
+            </div>
 
             {/* Detail 3: Hours */}
             <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-start gap-4">

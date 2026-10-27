@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { 
   ArrowRight, ShieldCheck, CheckCircle2, Copy, 
   Send, ExternalLink, HelpCircle, ChevronLeft,
-  X, MessageSquare, Mail
+  X, MessageSquare, Mail, Phone
 } from 'lucide-react';
 import { useCart, ShippingInfo } from '@/context/CartContext';
 import { cleanWhatsAppNumber } from '@/lib/utils';
@@ -118,7 +118,7 @@ export default function CheckoutPage() {
         if (method === 'whatsapp' && result.details) {
           // Automatically try to open WhatsApp in a new tab
           const waText = generateWhatsAppMessage(result.details);
-          const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682");
+          const waNum = cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480802872");
           const waUrl = `https://wa.me/${waNum}?text=${waText}`;
           window.open(waUrl, '_blank', 'noopener,noreferrer');
         }
@@ -371,7 +371,7 @@ Please confirm receipt of this order and reply with tracking details once transf
             {/* WhatsApp verification checkout */}
             {true && (
               <a
-                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480852682")}?text=${generateWhatsAppMessage()}`}
+                href={`https://wa.me/${cleanWhatsAppNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "61480802872")}?text=${generateWhatsAppMessage()}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#20ba59] text-white py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 text-center focus:outline-none"
@@ -390,6 +390,16 @@ Please confirm receipt of this order and reply with tracking details once transf
             >
               <Send className="w-4 h-4" />
               Submit Invoice via Email
+            </a>
+
+            {/* Direct Phone Call Support */}
+            <a
+              href="tel:+61480802872"
+              className="bg-gray-100 hover:bg-gray-200 text-black py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 text-center col-span-1 sm:col-span-2 border border-gray-200"
+              id="btn-checkout-direct-call"
+            >
+              <Phone className="w-4 h-4 text-gold" />
+              Direct Studio Coordinator Call (+61 480 802 872)
             </a>
 
           </div>
